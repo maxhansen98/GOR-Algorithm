@@ -21,12 +21,15 @@ isrunning_script="~/local_scripts/isrunning.sh"
 
 
 # main loop iterating over host names in $hosts
-cat "$hosts" | while IFS= read -r host; do
-    # Process each line here
+while IFS= read -r host; do
     echo "$host"
-    client_out=$(ssh -i ~/.ssh/cip weyrichm@"$host.cip.ifi.lmu.de" "cat /proc/loadavg")
-    echo $client_out
-    # exit 1
-    # load=$(ssh -i ~/.ssh/cip weyrichm@"$host" bash "$isrunning_script")
-done
+    client_out=$(ssh -n -i ~/.ssh/cip -o ConnectTimeout=10 weyrichm@"$host.cip.ifi.lmu.de" "bash $isrunning_script $POPT $UOPT")
+    # client_out=$(ssh -n -i ~/.ssh/cip -o ConnectTimeout=10 weyrichm@"$host.cip.ifi.lmu.de" "bash $isrunning_script ppurld berchtolde")
 
+    # capture exit status of ssh command
+    ssh_exit_status=$?
+
+    if [[ $ssh_exit_status == 1 ]]; then
+        echo "Running in: "$host
+    fi
+done < "$hosts"
