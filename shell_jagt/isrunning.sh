@@ -8,16 +8,12 @@ usr=$2
 # grep usr name
 # get all processes
 # grep $proc
-# found a better command on stackoverflow
-# res=$(top -b -n1 | grep -Pw "$usr" | awk '{print $12}' | grep -Pw "$proc")
-res=$(ps -u "$usr" -o cmd | grep -Pw "$proc")
-
+# setting the delay to be very short 
+res=$(top -b -d0.1 -n10 | grep -Pw "$usr" | grep -Pw "$proc")
 
 # return exit value 0 if process not is running, else 1
 if [ -z "$res" ]; then
-    # echo "Process $proc is not running"
     exit 0
 else
-    # echo "Process $proc is running"
     exit 1
 fi
