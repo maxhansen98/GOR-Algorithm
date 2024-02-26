@@ -24,12 +24,14 @@ isrunning_script="~/local_scripts/isrunning.sh"
 while IFS= read -r host; do
     echo "$host"
     client_out=$(ssh -n -i ~/.ssh/cip -o ConnectTimeout=10 weyrichm@"$host.cip.ifi.lmu.de" "bash $isrunning_script $POPT $UOPT")
-    # client_out=$(ssh -n -i ~/.ssh/cip -o ConnectTimeout=10 weyrichm@"$host.cip.ifi.lmu.de" "bash $isrunning_script ppurld berchtolde")
 
     # capture exit status of ssh command
     ssh_exit_status=$?
 
     if [[ $ssh_exit_status == 1 ]]; then
         echo "Running in: "$host
+
+        # get files in tmp dir
+        ssh -n -i ~/.ssh/cip -o ConnectTimeout=10 weyrichm@"$host.cip.ifi.lmu.de" "cd /tmp/ && ls -l"
     fi
 done < "$hosts"
