@@ -8,7 +8,7 @@ usr=$2
 # grep usr name
 # get all processes
 # grep $proc
-res=$(top -b -n1 | grep -P "$usr" | awk '{print $12}' | grep -Pw "$proc")
+res=$(top -b -n1 | grep -Pw "$usr" | awk '{print $12}' | grep -Pw "$proc")
 
 # return exit value 0 if process not is running, else 1
 if [ -z "$res" ]; then
