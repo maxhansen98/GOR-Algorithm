@@ -23,35 +23,46 @@ def get_all_kmers(k: int, seqs_dict: dict):
     """
     all_kmers = []
     for id, seq in seqs_dict.items():
-        per_seq_kmers = []
+        per_seq_kmers = set()
         for i in range(len(seq)-k+1):
             kmer = seq[i:i+k]
-            per_seq_kmers.append(kmer)
+            per_seq_kmers.add(kmer)
         all_kmers.append((id, per_seq_kmers))
+
+    # for id, li in all_kmers:
+    #     print(len(li))
+    
+    print(len(all_kmers))
 
     return all_kmers
 
 
-def search_all_kmers(kmer_list: list[tuple[str, list[str]]], ):
+def search_all_kmers(kmer_list: list[tuple[str, list[str]]]):
     """
     searches in all lists of kmers for matches except for the seq of origin
     """
-    counter = 0
+    total_count = 0
     for target_entry in kmer_list:
+        # get new target candidate
         target_id = target_entry[0]
         target_kmers = target_entry[1]
+
+        uniq_gene_counter = 0  # reset counter
+
         for target_kmer in target_kmers:
-            counter = 0
+            uniq_gene_counter = 0
             for search_entry in kmer_list:
                 # check if were not in the seq of origin 
                 if search_entry[0] != target_id:
-                    # print(search_entry[0])
-                    # print(target_id)
                     for search_kmer in search_entry[1]:
                         if target_kmer == search_kmer:
-                            counter += 1
+                            uniq_gene_counter += 1
+        if uniq_gene_counter == 0:
+            print("Seq found in ")
+            total_count+=1
 
-            print(target_kmer, counter)
+
+        print(f"{len(kmer_list[0])}\t")
         break
 
             
