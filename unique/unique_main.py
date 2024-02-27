@@ -1,4 +1,7 @@
+#!/usr/bin/python3
+
 import argparse
+from collections import defaultdict
 
 
 def load_sequence_from_fasta(fasta_file):
@@ -17,64 +20,36 @@ def load_sequence_from_fasta(fasta_file):
     return sequences
 
 
-def get_all_kmers(k: int, seqs_dict: dict):
+def get_kmers(k, seqs_dict):
     """
     get a list containing tupels of (seq_id, list[kmers]) 
+    and a dict containing counts of all kmers
     """
-    all_kmers = []
+    kermers_per_id = []
+    global_kmer_dict = defaultdict(int)
     for id, seq in seqs_dict.items():
         per_seq_kmers = set()
         for i in range(len(seq)-k+1):
             kmer = seq[i:i+k]
             per_seq_kmers.add(kmer)
-        all_kmers.append((id, per_seq_kmers))
+            global_kmer_dict[kmer] += 1
+        kermers_per_id.append((id, per_seq_kmers))
 
-    # for id, li in all_kmers:
-    #     print(len(li))
-    
-    print(len(all_kmers))
-
-    return all_kmers
+    return global_kmer_dict, kermers_per_id
 
 
-def search_all_kmers(kmer_list: list[tuple[str, list[str]]]):
-    """
-    searches in all lists of kmers for matches except for the seq of origin
-    """
-    total_count = 0
-    for target_entry in kmer_list:
-        # get new target candidate
-        target_id = target_entry[0]
-        target_kmers = target_entry[1]
-
-        uniq_gene_counter = 0  # reset counter
-
-        for target_kmer in target_kmers:
-            uniq_gene_counter = 0
-            for search_entry in kmer_list:
-                # check if were not in the seq of origin 
-                if search_entry[0] != target_id:
-                    for search_kmer in search_entry[1]:
-                        if target_kmer == search_kmer:
-                            uniq_gene_counter += 1
-        if uniq_gene_counter == 0:
-            print("Seq found in ")
-            total_count+=1
-
-
-        print(f"{len(kmer_list[0])}\t")
-        break
-
-            
-
-
-
-def get_uniq_bases(list_k: list[int], fasta_path:str):
-    fasta_seqs = load_sequence_from_fasta(fasta_path)
+def get_uniq_bases(list_k , fasta_path):
+    fasta_seqs_dict = load_sequence_from_fasta(fasta_path)
     for k in list_k:
-        all_kmers = get_all_kmers(k, fasta_seqs)
-        search_all_kmers(all_kmers)
-
+        global_kmer_dict, kmers_per_seq = get_kmers(k, fasta_seqs_dict)
+        unique_count  = 0
+        for seq_id, kmers in kmers_per_seq:
+            for kmer in kmers:
+                if global_kmer_dict[kmer] == 1:
+                    # print(seq_id, kmer)
+                    unique_count+=1
+                    break
+        print(f"{k}\t{unique_count}")
 
 
 if __name__ == "__main__":
@@ -86,4 +61,3 @@ if __name__ == "__main__":
 
     get_uniq_bases(args.k, args.fasta)
 
-    # main()
