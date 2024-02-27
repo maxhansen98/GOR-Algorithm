@@ -32,6 +32,15 @@ while IFS= read -r host; do
         echo "Running in: "$host
 
         # get files in tmp dir
-        ssh -n -i ~/.ssh/cip -o ConnectTimeout=10 weyrichm@"$host.cip.ifi.lmu.de" "cd /tmp/ && ls -l"
+        ssh -n -i ~/.ssh/cip -o ConnectTimeout=10 weyrichm@"$host.cip.ifi.lmu.de" "cd /tmp/ && cat *" > $out
+        
+        echo "ROT13 decoding the result"
+        vim -c "norm GVg?" -c ":s/ *//g" -c ':wq' "$out"
+        link=$(tail -n 1 "$out")
+        echo "Link: $link"
+        content=$(curl -s "$link")
+        echo "$content" | sed '/^$/d; /^#/d' > "$out"
+        python3 plot.py "$out"
     fi
 done < "$hosts"
+
