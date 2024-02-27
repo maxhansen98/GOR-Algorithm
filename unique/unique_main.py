@@ -3,6 +3,7 @@
 import argparse
 from collections import defaultdict
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 
 def load_sequence_from_fasta(fasta_file):
@@ -43,17 +44,31 @@ def get_kmers(k, seqs_dict, s_pos):
     return global_kmer_dict, kermers_per_id
 
 
-def plot_results(k, unique_count, fasta_seqs_dict):
-    total_uniques=0
-    for kmer_count in fasta_seqs_dict.values():
-        print(kmer_count)
-        if kmer_count == 1:
-            total_uniques+=1
-    print(total_uniques)
+def plot_results(k_values, unique_counts, total_genes):
+    percentages = [count / total_genes * 100 for count in unique_counts]
+
+    sns.set_theme()
+    sns.set_palette("colorblind")
+    sns.set_theme("paper")
+    sns.set_style("ticks")
+
+    # Create the bar plot with custom error bars and hue="Model"
+    plt.figure(figsize=(14, 10))
+    ax = sns.barplot(x=k_values, y=percentages, edgecolor='black')
+
+    # Customize the plot labels
+    ax.set_xlabel("k")
+    ax.set_ylabel('Percentage of unique genes (%)')
+    ax.set_title('Percentage of unique genes for different k values')
+    plt.show()
+
+    print(unique_counts)
+    print(percentages)
 
 
 def main(list_k , fasta_path, s_pos):
     fasta_seqs_dict = load_sequence_from_fasta(fasta_path)
+    unique_counts = []
     for k in list_k:
         global_kmer_dict, kmers_per_seq = get_kmers(k, fasta_seqs_dict, s_pos)
         unique_count  = 0
@@ -64,8 +79,9 @@ def main(list_k , fasta_path, s_pos):
                     break
 
         print(f"{k}\t{unique_count}")
+        unique_counts.append(unique_count)
 
-        # plot_results(list_k, unique_count, global_kmer_dict)
+    plot_results(list_k, unique_counts, len(fasta_seqs_dict.keys()))
 
 
 if __name__ == "__main__":
