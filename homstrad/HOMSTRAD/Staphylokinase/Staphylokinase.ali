@@ -1,0 +1,16 @@
+C; family: Staphylokinase/Streptokinase family
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 2sak   -   2sak
+C; 1qqr   a:   1qqra
+C; end:
+C; last update 23/8/01
+>P1;2sak
+structureX:2sak:  16 : : 136 : :staphylokinase:Staphylococcus aureus: 1.8: 18.1
+SYFEPTGPYLMVNVTGVDSKGNELLS---PHYVEFP-IKPGTTLTKEKIEYYVEWALDATAYKEFRVVELDPSAK
+IEVTYYDKNKKKEETKSFPIT-EKGFVVPDLSEHI-----------KNPGFNLITKVVIEKK---------*
+>P1;1qqra
+structureX:1qqr: 151 :A: 288 :A:streptokinase C:Streptococcus equisimilis: 2.30: 19.7
+IQNQAKSVDVEYTVQFTPLNPDDDFRPGLKLTKLLKTLAIGDTITSQELLAQAQSILNK-NHPGYTIYERD-SSI
+VTHDND------IFRTILPMDQEFTYRVKNREQAYRINKKSGLNEEINNTDLISEKYYVLKKGEKPYDPFD*

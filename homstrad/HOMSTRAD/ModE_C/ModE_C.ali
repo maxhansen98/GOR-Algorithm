@@ -1,0 +1,16 @@
+C; family: Molybdenum-binding protein C-terminal domain
+C; class: all beta
+C; type: subunit/domain
+C; domain:
+C; 1b9m   a:127-262   1b9ma
+C; 1h9m   a:   1h9ma
+C; end:
+C; last update 30/8/01
+>P1;1b9ma
+structureX:1b9m: 127 :A: 262 :A:molybdenum transport protein mode:Escherichia coli: 1.75: 23.4
+----ARNQWFGTITARDHDDVQQHVDVLLADGKTRLKVAITAQSGARLGLDEGKEVLILLKAPWVGITQDE-AVA
+QNADNQLPGIISHIERGAEQCEVL-ALPDGQTLCATVPVNEAT--SLQQGQNVTAYFNADSVIIATLC*
+>P1;1h9ma
+structureX:1h9m:   1 :A: 141 :A:potential molybdenum-pterin-binding-protein:Azotobacter vinelandii: 1.65: 19.1
+MKISARNVFKGTVSALKEGAVNAEVDILLGGG-DKLAAVVTLESARSLQLAAGKEVVAVVKAPWVLLMTDSSGYR
+LSARNILTGTVKTIETGAVNAEVTLALQGGTEITSMVTKEAVAELGLKPGASASAVIKASNVILGVP-*

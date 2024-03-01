@@ -1,0 +1,21 @@
+C; family: FERM domain (Band 4.1 family), region 1
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1ef1   a:4-87   1ef1a
+C; 1gc7   a:1-87   1gc7a
+C; 1gg3   a:1-81   1gg3a
+C; end:
+C; last update 30/8/01
+>P1;1ef1a
+structureX:1ef1:   4 :A:  87 :A:moesin:Homo sapiens: 1.90: 22.7
+---TISVRVTT-D-AELEFAIQPNTTG-KQLFDQVVKTIGLREVW-FFGLQYQDTKGFSTWLKLNKKVTAQDVRK
+ESPLLFKFRAKFYPE*
+>P1;1gc7a
+structureX:1gc7:   1 :A:  87 :A:radixin:Mus musculus: 2.80: 21.5
+MPKPINVRVTTMD-AELEFAIQPNTTG-KQLFDQVVKTVGLREVW-FFGLQYVDSKGYSTWLKLNKKVTQQDVKK
+ENPLQFKFRAKFFPE*
+>P1;1gg3a
+structureX:1gg3:   1 :A:  81 :A:protein 4.1R membrane binding domain:Homo sapiens: 2.80: 22.6
+----MHCKVSLLDDTVYECVVEKHAKGQDLLKRVCEHLNLLEEDYFGLAIWDN--ATSKTWLDSAKEIKKQ-VRG
+V-PWNFTFNVKFYP-*

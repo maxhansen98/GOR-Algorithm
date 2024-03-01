@@ -1,0 +1,18 @@
+C; family: Transglutaminase-like superfamily N terminal domain
+C; class: all beta
+C; type: domain
+C; domain:
+C; 1evu a:30-190 1evua
+C; 1g0d a:6-140  1g0da
+C; end:  
+C; last update 27/6/01
+>P1;1evua
+structureX:1evu:  30 :A: 190 :A:coagulation factor XIII A chain:Homo sapiens: 2.01: 20.8
+EEFLNVTSVHLFKERWDTNKVDHHTDKYENNKLIVRRGQSFYVQIDFSRPYDPRRDLFRVEYVIGRYPQENKGTY
+IPVPIVSELQSGKWGAKIVMREDRSVRLSIQSSPKCIVGKFRMYVAVWTPYG--VLRTSRNPETDTYILFNPWCE
+D*
+>P1;1g0da
+structureX:1g0d:   6 :A: 140 :A:protein-glutamine gamma-glutamyltransferase:Pagrus major: 2.50: 20
+---GLIVDVNGRSH---ENNLAHRTREIDRERLIVRRGQPFSITLQCSDSLPP-KHHLELVLHLGKRD-E---VV
+IKVQKE-HGARDKWWFNQ-QGAQDEILLTLHSPANAVIGHYRLAVLVMSPDGHIVERADKI---SFHMLFNPWCR
+D*

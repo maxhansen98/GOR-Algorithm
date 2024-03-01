@@ -1,0 +1,18 @@
+C; family: Cytidylyltransferase
+C; class: alpha beta
+C; type: subunit
+C; domain:
+C; 1coz a: 1coza
+C; 1b6t a: 1b6ta
+C; end:
+C; last update 5/6/01
+>P1;1coza
+structureX:1coz:   1 :A: 126 :A:glycerol-3-phosphate cytidylyltransferase:Bacillus subtilis: 2.00: 19.6
+MKKVITYGTFDLLHWGHIKLLERAKQLGDYLVVAISTDEFNLQKQKKAYHSYEHRKLILETI----RYVDEVIPE
+KNWEQKKQDIIDHNIDVFVMG-DDW-----EG-KFDFLK---DQCEVVYLPRTE---GISTTKIKEEI-------
+----------------*
+>P1;1b6ta
+structureX:1b6t:   3 :A: 159 :A:phosphopantetheine adenylyltransferase:Escherichia coli: 1.80: 20.5
+-KRAIYPGTFDPITNGHIDIVTRATQMFDHVILAIAA-SPS----KKPMFTLEERVALAQQATAHLGNV-EVVGF
+SD--LMANFARNQHATVLIRGLRAVADFEYEMQLAHMNRHLMPELESVFLMPSKEWSFISSSLVKEVARHQGDVT
+HFLPENVHQALMAKLA*

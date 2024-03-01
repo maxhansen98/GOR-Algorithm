@@ -1,0 +1,16 @@
+C; family: hemerythrin
+C; class: all alpha
+C; domain:
+C; 2mhr   -    2mhr
+C; 2hmq   a:   2hmqa
+C; end:
+C; reordered by kitschorder 1.0a
+C; reordered by kitschorder 1.0a
+>P1;2mhr
+structureX:2mhr:   1 : : 118 : :myohemerythrin:Themiste zostericola: 1.70:15.80
+GWEIPEPYVWDESFRVFYEQL-DEEHKKIFKGIFDCIRDNSAPNLATLVKVTTNHFTHEEAMMDAAKYSEVVPHK
+KMHKDFLEKIGGLSAPVDAKNVDYCKEWLVNHIKGTDFKYKGKL*
+>P1;2hmqa
+structureX:2hmq:   1 :A: 113 :A:hemerythrin:Themiste dyscritum: 2.00:17.30
+GFPIPDPYCWDISFRTFYTIVIDDEHKTLFNGILLLSQADNADHLNELRRCTGKHFLNEQQLMQASQYAGYAEHK
+KAHDDFIHKLDTWD-----GDVTYAKNWLVNHIKTIDFKYRGKI*

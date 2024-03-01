@@ -1,0 +1,22 @@
+C; family: CBS domain
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1b3o   b:112-159   1b3ob1
+C; 1zfj   a:95-158   1zfja1
+C; 1b3o   b:178-231   1b3ob2
+C; 1zfj   a:159-220   1zfja2
+C; end:
+C; last update 20/8/01
+>P1;1b3ob1
+structureX:1b3o: 112 :B: 158 :B:inosine-5'-monophosphate dehydrogenase 2:Homo sapiens: 2.90: 24.4
+QGFIT-DPVVLSPKDRVR-----------CGIPITDTGRMGSRLVGII-------------------*
+>P1;1zfja1
+structureX:1zfj:  95 :A: 158 :A:inosine-5'-monophosphate dehydrogenase:Streptococcus pyogenes: 1.90: 23.2
+NGVI-IDPFFLTPEHKVSEAEE-LQRYRISGVPIVETL-ANRKLVGIITNRD-RFIS-DYNAPISEH*
+>P1;1b3ob2
+structureX:1b3o: 178 :B: 231 :B:inosine-5'-monophosphate dehydrogenase 2:Homo sapiens: 2.90: 24.4
+IMTKREDLVVAPAGITLKEANEILQRSKKGKLPIVN---EDDELVAIIARTDLKK----------NR*
+>P1;1zfja2
+structureX:1zfj: 160 :A: 220 :A:inosine-5'-monophosphate dehydrogenase:Streptococcus pyogenes: 1.90: 23.2
+--TS-EHLVTAAVGTDLETAERILHEHRIEKLPLVD---NSGRLSGLITIKDIEKVIEFPHAAKDEF*

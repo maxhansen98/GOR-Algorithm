@@ -1,0 +1,21 @@
+C; family: Ribosomal protein L7Ae/L30e/S12e/Gadd45 family
+C; class: alpha plus beta
+C; type: subunit
+C; domain:
+C; 1jj2   f:   1jj2f
+C; 1e7k   a:   1e7ka
+C; 1cn9   a:   1cn9a
+C; end:
+C; last update 23/8/01
+>P1;1jj2f
+structureX:1jj2:   1 :F: 119 :F:50s ribosomal protein l7ae:Haloarcula marismortui: 2.40: 18.9
+---PVYVDFDVPADLEDDALEALEVARDTGAVKKGTNETTKSIERGSAELVFVAEDVQPEEIVMHIPELADEKGV
+PFIFVEQ-QDDLGHAAGLEVGSAAAAVTDA--GAAATVLEEIADKVEELR-*
+>P1;1e7ka
+structureX:1e7k:   4 :A: 128 :A:NHP2-like protein 1:Homo sapiens: 2.9: 21.6
+ADVNPKAYPLADAHLTKKLLDLVQQSCNYKQLRKGANEATKTLNRGISEFIVMAADAEPLEIILHLPLLCEDKNV
+PYVFVRS-KQALGRACGVSRPVIACSVTIKEGSQLKQQIQSIQQSIERLLV*
+>P1;1cn9a
+structureX:1cn9:   2 :A: 105 :A:60s ribosomal protein l30:Saccharomyces cerevisiae: -1: -1
+----------APVKSQESINQKLALVIKSGKYTLGYKSTVKSLRQGKSKLIIIAANT-PVLRKSELEYYAMLSKT
+KVYYFQGGNNELGTAVGKLFRVGVVSILEA--GDSD-ILTTLA--------*

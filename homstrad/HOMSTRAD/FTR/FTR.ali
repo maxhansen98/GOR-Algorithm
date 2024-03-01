@@ -1,0 +1,17 @@
+C; family: FTR
+C; class: alpha plus beta
+C; domain:
+C; 1ftr   a:19-161  1ftra1
+C; 1ftr   a:162-296,a:1-18  1ftra2
+C; end:
+C; last update 8/6/100
+>P1;1ftra1
+structure:1ftr: 19 :A: 161 :A:formylmethanofuran-tetrahydromethanopterin formyltransferase [domain swapped for 1-18]:Methanopyrus kandleri:1.7:19.8 
+---KMARVLITAASHKWAMIAVKEATGFGTSVIMCPAEAGI---DCGYVP-------------------PE----
+ETPDGR-PGVTIMIGHNDEDELKEQLLDRIGQCVMTAPTA-SAFDAMPE-AEKEDEDRVGYKLSFFGDGYQEEDE
+LDGRKVWKIPVVEGEFIVEDSFGIT---*
+>P1;1ftra2
+structure:1ftr: 162:A: 18 :A:formylmethanofuran-tetrahydromethanopterin formyltransferase [domain swapped for 149-161]:Methanopyrus kandleri:1.7:19.8
+TGVAGGNFYIMAESQPAGLQAAEAAVDAIKGV--EGAYAPFPGGIVASASKVGSKQYDFLPASTNDAYCPTVEDN
+ELPEGVKCVYEIVINGLNEEAVKEAMRVGIE-AACQQPGVVKISAGNFGGKLGQYEIHLHDLFM----------E
+IN------------GVEIEDTFAEAFEA*

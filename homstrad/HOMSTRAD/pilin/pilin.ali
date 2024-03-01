@@ -1,0 +1,24 @@
+C; family: Pilin (bacterial filament)
+C; class: alpha plus beta
+C; type: subunit/domain
+C; domain:
+C; 1hpw   a:   1hpwa
+C; 2pil   -   2pil
+C; 1dzo   a:   1dzoa
+C; end:
+C; last update 21/8/01
+>P1;1hpwa
+structureX:1hpw:  22 :A: 150 :A:fimbrial protein:Pseudomonas aeruginosa: -1: -1
+-------------------ALEGTEFARAQLSEAMTLASGLKTKVSDIFSQD-------GSCPANTAATA-----
+-GIEKDTDINGKYVAKVTTGG-TAAASGGCTIVATMKASDVATPLRGKTLTLTLGNADKGSYTWACTSNADNK--
+---------------YLPKTCQTATTTTP*
+>P1;2pil
+structureX:2pil:   1 : : 158 : :fimbrial protein:Neisseria gonorrhoeae: 2.6: 18.7
+FTLIELMIVIAIVGILAAVALP-----AYQDYTARAQVSEAILLAEGQKSAVTEYYLNHGKWPEN-----NTSAG
+VAPPS--DIKGKYVKEVEVK--------NGVVTATMLSSGVNNEIKGKKLSLWARREN-GSVKWFCGQPVTRTDD
+DTVADAKDGKEIDTKHLPSTCRDNFDAK-*
+>P1;1dzoa
+structureX:1dzo:  25 :A: 144 :A:fimbrial protein:Pseudomonas aeruginosa: 1.63: 15.3
+-----------------------------GTEFARSEGASALASVNPLKTTVEEALSR-GWSVKSGTGTEDATKK
+EVPLGVAADANKLG-TIALKPDPADGTADITLTFTMG--GAGPKNKGKIITLTRTAA---DGLWKCTS-------
+----------DQDEQFIPKGCSR------*

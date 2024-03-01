@@ -1,0 +1,15 @@
+C; family: C-terminal domain of Threonine dehydratase
+C; class: alpha beta
+C; domain:
+C; 1tdj  336-423    1tdj1 
+C; 1tdj  424-514    1tdj2
+C; end:
+C; last update 9/6/100
+>P1;1tdj1
+structureX:1tdj: 336 : : 423 : :threonine dehydratase biosynthetic:Escherichia coli: 2.8: 20
+-------QREALLAVTIPEEKGSFLKFCQLLG-GRSVTEFNYRFADAKNACIFVGVRLSRGLEERKEILQMLNDG
+GYSVVDLSDDEMAKLHVRYMV*
+>P1;1tdj2
+structureX:1tdj: 424 : : 514 : :threonine dehydratase biosynthetic:Escherichia coli: 2.8: 20
+GGRPSHPLQERLYSFEFPESPGALLRFLNTLGTYWNISLFHYRSHGTDYGRVLAAFE/-----------------
+YDCHDET-NNPAFRFFLAG--*

@@ -1,0 +1,24 @@
+C; family: PEP-utilizing enzyme, mobile domain
+C; class: alpha beta
+C; type: domain
+C; domain:
+C; 1h6z   a:404-532   1h6za
+C; 1kbl   a:377-509   1kbla
+C; 1zym   a:3-21,a:145-249   1zyma
+C; end:
+C; last update 18/6/02
+>P1;1h6za
+structureX:1h6z: 404 :A: 532 :A:Pyruvate phosphate dikinase:Trypanosoma brucei: 3.0: 24.5
+MHPNLEPGAEKANKPIGRGLAASPGAAVGQVVFDAESAKEWSGRGKKVIMVRLETSPEDLA--GMDAACGILTAR
+GGMTSHAAVVARGMGKCCVSGCGDM-VIR--GKSFKLNGSVFRE-GDYITID-GSKGLIYA--------------
+----*
+>P1;1kbla
+structureX:1kbl: 377 :A: 509 :A:Pyruvate phosphate dikinase:Clostridium symbiosum: 1.94: 19.5
+LHPTFNPAALKAGEVIGSALPASPGAAAGKVYFTADEAKAAHEKGERVILVRLETSPEDIE--GMHAAEGILTVR
+GGMTSHAAVVARGMGTCCVSGCGEI-KINEEAKTFELGGHTFAEGDYISLDGSTGKIYKGD--------------
+----*
+>P1;1zyma
+structureX:1zym:   3 :A: 249 :A:Enzyme I, amino-terminal domain:Escherichia coli: 2.5: 20.5
+-----------------SGILASPGIAFGKALLLKEKIIDLSAIQDEVILVAADLTPSETAQLNLKKVLGFITDA
+GGRTSHTSIMARSLELPAIVGTGSVTS-------------QVKNDDYLILDAVNNQVYVNPTNEVIDKMRAVQEQ
+VASE*

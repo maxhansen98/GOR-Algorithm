@@ -1,0 +1,16 @@
+C; family: Domain found in Dishevelled, Egl-10, and Pleckstrin
+C; class: all alpha
+C; type: domain
+C; domain:
+C; 1fsh   a:   1fsha
+C; 1o7f   a:180-273   1o7fa
+C; end:
+C; last update 8/1/03
+>P1;1fsha
+structureN:1fsh:  12 :A: 105 :A:dishevelled-1 DEP domain:Mus musculus: -1: -1
+EAPLTVKSDMSAIVRVMQLP-DSGLE--IRDRMWLKITIANAVIGADVVDWLYTHVEGFKERREARKYASSMLKH
+GFLRHTVNKITFSEQ-CYYVFGD*
+>P1;1o7fa
+structureX:1o7f: 180 :A: 273 :A:CAMP-dependent rap1 guanine-nucleotide exchange factor DEP domain:Mus musculus: 2.50: 24.4
+VPS-E---KILRAGKILRIAILSRAPHMIRDRKYHLKTYRQCCVGTELVDWMIQQTSCVHSRTQAVGMWQVLLED
+GVLNHVDQERHFQDKYLFYRFLD*

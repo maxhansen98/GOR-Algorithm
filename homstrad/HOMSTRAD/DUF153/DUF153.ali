@@ -1,0 +1,16 @@
+C; family: MTH1175-like domain (DUF153/COG1433)
+C; class: alpha beta
+C; type: subunit
+C; domain:
+C; 1eo1   a:   1eo1a
+C; 1o13   a:   1o13a
+C; end:
+C; last update 8/1/03
+>P1;1eo1a
+structureN:1eo1:   1 :A: 124 :A:hypothetical protein mth1175:Methanobacterium thermoautotrophicum: -1: -1
+MKIAIASSGTD-LGSEVSRFFGRAPYFMIVEMKKGNIESSEVIENPSA-SASGGAGIRTAQIIANNGVKAVIASS
+PGPNAFEVLNELGIKIYRATGTSVEENLKLFTEGNLEEIRSPGSGRGRRRR*
+>P1;1o13a
+structureX:1o13:   2 :A: 107 :A:hypothetical protein tm1816:Thermotoga maritima: 1.83: 20.7
+-IIAIPVSENRGKDSPISEHFGRAPYFAFVKVKNNAIADISVEENPLAQDHVHG---AVPNFVKEKGAELVIVRG
+IGRRAIAAFEA-GVKVIKGASGTVEEVVNQYLSGQ----------------*

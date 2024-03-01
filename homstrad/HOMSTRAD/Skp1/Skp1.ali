@@ -1,0 +1,16 @@
+C; family: Skp1 family
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1fs1   b:   1fs1b
+C; 1vcb   b:   1vcbb
+C; end:
+C; last update 23/8/01
+>P1;1fs1b
+structureX:1fs1:   2 :B: 140 :B:SKP1:Homo sapiens: 1.80: 21.8
+PSIKLQSSDGEIFEVDVEIAKQSVTIKTMLEDLGMDPVPLPNVNAAILKKVIQWCTHHKDDP-----VWDQEFLK
+VDQGTLFELILAANYLDIKGLLDVTCKTVANMIKGKTPEEIRKTFN*
+>P1;1vcbb
+structureX:1vcb:  17 :B: 112 :B:elonginC:Homo sapiens: 2.7: 23.8
+MYVKLISSDGHEFIVKREHALTSGTIKAMLSGP--NEVNFREIPSHVLSKVCMYFTYKVRYTNSSTEIP--EF-P
+IAPEIALELLMAANFLDC----------------------------*

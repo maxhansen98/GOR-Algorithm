@@ -1,0 +1,16 @@
+C; family: Eukaryotic glutathione synthase, insertion domain
+C; class: alpha beta
+C; type: domain
+C; domain:
+C; 1m0w   a:216-322   1m0wa
+C; 2hgs   a:202-303   2hgsa
+C; end:
+C; last update 8/1/03
+>P1;1m0wa
+structureX:1m0w: 216 :A: 322 :A:glutathione synthetase:Saccharomyces cerevisiae: 1.80: 17.2
+SDPIVAFIVQRNERNVFDQKVLELNLLEKFGTKSVRLTFDDVNDKLFIDDKTGKLFIRDTEQEIAVVYYRTGYTT
+TDYTSEKDWEARLFLEKSFAIKAPDLLTQLSG*
+>P1;2hgsa
+structureX:2hgs: 202 :A: 303 :A:glutathione synthetase:Homo sapiens: 2.10: 21.8
+PNALVLLIAQEKERNIFDQRAIENELLA-RNIHVIRRTFEDISEKGSLDQ-DRRLFVD--GQEIAVVYFRDGYMP
+RQY-SLQNWEARLLLERSHAAKCPDIATQLAG*

@@ -1,0 +1,15 @@
+C; family: DAP_epimerase
+C; class: alpha plus beta
+C; domain:
+C; 1bwz   a:260-274,a:1-116    1bwza1
+C; 1bwz   a:117-259    1bwza2
+C; end:
+C; last update 8/6/100
+>P1;1bwza1
+structureX:1bwz: 260 :A: 115 :A:diaminopimelate epimerase [domain swapped for 260-274]:Haemophilus influenzae:2.72:19.0
+MTGEATHI------------YDGFIT----LMQFSKMHGLGNDFVVVDGVTQNVFFTPETIRRLANRHCGIGFDQ
+LLIVEAPYDPELDFHYRIFNADGSEVSQCGNGARCFARFVTLKGLTNKKDISVSTQKGNMVLTVKDMNQIR*
+>P1;1bwza2
+structure:1bwz: 117 :A: 259 :A:diaminopimelate epimerase [domain swapped for 117-130]:Haemophilus influenzae:2.72:19.0
+NMGEPIWEPAKIPFTANKFEKNYILRTDIQTVLCGAVSM-GNPHCVVQVDDIQTANVEQLGPLLESHERFPERVN
+AGFMQIIN--KEHIKLRVYERGAGETQACGSGACAAVAVGIMQGLLNN-NVQVDLPGGSLMIEWNGVGHPL*

@@ -1,0 +1,13 @@
+C; family: Spectrin repeats
+C; class: all alpha
+C; reordered by kitschorder 1.0a
+>P1;2spca
+structureX:2spc:   0 :A: 106 :A:spectrin alpha chain [domain swapped for 73-106]:Drosophila melanogaster: 1.80: 20.3
+QNLDLQLYMRDCELAESWMSAREAFLNADDDANAGGN--VEALIKKHEDF
+DKAINGHEQKIAALQTVADQLIAQN/HYASNLVDEKRKQVLERWRHLKEG
+LIEKRSRLGD*
+>P1;1aj3
+structureX:1aj3:  10 : : 107 : :spectrin alpha chain:Gallus gallus: -1: -1
+-----HQFFRDMDDEESWIKEKKLLVSSEDY--GRDLTGVQNLRKKHKRL
+EAELAAHEPAIQGVLDTGKKLSDDN-TIGKEEIQQRLAQFVDHWKELKQL
+AAARGQ----*

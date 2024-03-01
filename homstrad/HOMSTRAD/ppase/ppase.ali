@@ -1,0 +1,37 @@
+C; family: inorganic pyrophospatase
+C; class: all beta
+C; reordered by kitschorder 1.0a
+C; reordered by kitschorder 1.0a
+C; last update 27/4/99
+>P1;2prd
+structureX:2prd:   1 : : 174 : :inorganic pyrophosphatase:Thermus aquaticus: 2.0: 15.3
+-------------------------ANLK-SLPVGDKAP-EVVHMVIEVP
+RGS-GNKYEYDPD--LGAIKLD------RVLPG---AQFYPGDYGFIPST
+LAE------------DGDPLDGLVLSTYPLLPGVVVEVRVVGLLLMEDEK
+GGDAKVIGVVA--EDQRLDHIQDIGDVP---EGVKQEIQHFFETYKALEA
+KKGKWVKVT----GWRDRKAALEEVRACIARYKG----------------
+--------------------------------------*
+>P1;1obwa
+structureX:1obw:   1 :A: 175 :A:inorganic pyrophosphatase:Escherichia coli: 1.9: 17.6
+--------------------------SLL-NVPAGKDLP-EDIYVVIEIP
+ANADPIKYEIDKE--SGALFVD------RFMST---AMFYPCNYGYINHT
+LSL------------DGDPVDVLVPTPYPLQPGSVTRCRPVGVLKMTDEA
+GEDAKLVAVPHSKLSKEYDHIKDVNDLP---ELLKAQIAHFFEHYKDLEK
+--GKWVKVE----GWENAEAAKAEIVASFERAKNK---------------
+--------------------------------------*
+>P1;1qeza
+structureX:1qez:1002 :A:1171 :A:inorganic pyrophosphatase:Sulfolobus acidocaldarius: 2.7: 19.7
+------------------------------KLSPGKNAP-DVVNVLVEIP
+QGS-NIKYEYDDE--EGVIKVD------RVLYT---SMNYPFNYGFIPGT
+LEE------------DGDPLDVLVITNYQLYPGSVIEVRPIGILYMKDEE
+GEDAKIVAVPKDKTDPSFSNIKDINDLP---QATKNKIVHFFEHYKELEP
+--GKYVKIS----GWGSATEAKNRIQLAIKRVS-----------------
+--------------------------------------*
+>P1;1wgja
+structureX:1wgj:   1 :A: 282 :A:inorganic pyrophosphatase:Saccharomyces cerevisiae: 2.0: 17.2
+TYTTRQIGAKNTLEYKVYIEKDGKPVSAFHDIPLYADKENNIFNMVVEIP
+RWT-NAKLEITKEETLNPIIQDTKKGKLRFVRNCFPHHGYIHNYGAFPQT
+WEDPNVSHPETKAVGDNDPIDVLEIGETIAYTGQVKQVKALGIMALLDEG
+ETDWKVIAIDI--NDPLAPKLNDIEDVEKYFPGLLRATNEWFRIYKIPD-
+--GKPENQFAFSGEAKNKKYALDIIKETHDSWKQLIAGKSSDSKGIDLTN
+VTLPDTPTYSKAASDAIPPASLKADAPIDKSIDKWFFI*

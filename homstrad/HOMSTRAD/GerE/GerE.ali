@@ -1,0 +1,14 @@
+C; family: Bacterial regulatory proteins, luxR family
+C; class: all alpha
+C; type: subunit/domain
+C; domain:
+C; 1fse   a:   1fsea
+C; 1a04   a:150-216   1a04a
+C; end:
+C; last update 28/6/02
+>P1;1fsea
+structureX:1fse:   8 :A:  74 :A:GerE:Bacillus subtilis: 2.05: 21.4
+SKP--LLTKREREVFELLVQDKTTKEIASELFISEKTVRNHISNAMQKLGVKGRSQAVVELLRMGELEL*
+>P1;1a04a
+structureX:1a04: 150 :A: 216 :A:Nitratenitrite response regulator protein NarL:Escherichia coli: 2.2: 21.1
+ERDVNQLTPRERDILKLIAQGLPNKMIARRLDITESTVKVHVKHMLKKMKLKSRVEAAVWVHQERIF--*

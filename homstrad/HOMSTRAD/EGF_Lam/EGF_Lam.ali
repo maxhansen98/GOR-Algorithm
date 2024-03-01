@@ -1,0 +1,12 @@
+C; family: Laminin-type epidermal growth factor-like domain
+C; class: small disulphide
+C; last update 16/7/99
+>P1;1klo2
+structureX:1klo:  66 : : 121 : :laminin gamma-1 chain:Mus musculus: 2.1: 19.72
+CQCNDNIDPNAVGNCN--RLT--GECLKCIYNTAGFYCDRCKEGFFGNPLAPNPAD-KCKA*
+>P1;1klo1
+structureX:1klo:  11 : :  65 : :laminin gamma-1 chain:Mus musculus: 2.1: 19.72
+CPCPG------GSSCAIVPKTKEVVCTHCPTGTAGKRCELCDDGYFGDPLGSNGPVRLCRP*
+>P1;1klo3
+structureX:1klo: 122 : : 172 : :laminin gamma-1 chain:Mus musculus: 2.1: 19.72
+CACNPYGTVQQQSSCN--PVT--GQC-QCLPHVSGRDCGTCDPGYY-NLQSG----QGCER*

@@ -1,0 +1,46 @@
+C; family: Starch binding domain
+C; class: all beta
+C; type: domain
+C; domain:
+C; 1pam   a:583-686   1pama
+C; 1d3c   a:584-686   1d3ca
+C; 1cgt   580-684   1cgt
+C; 1ciu   579-683   1ciu
+C; 1cyg   575-680   1cyg
+C; 1qhp   a:577-686   1qhpa
+C; 1kum   -   1kum
+C; 1cqy   a:   1cqya
+C; end:
+C; last update 24/5/02
+>P1;1pama
+structureX:1pam: 583 :A: 686 :A:Cyclodextrin glucanotransferase:Bacillus Sp. Strain 1011: 1.8: 16.1
+--TGDQVTVRFVINNA-TTALGQNVFLTGNVSELGNWDPN------NAIGPMYNQVVYQ--YPTWYYDVSVPAGQ
+TIEFKFLKKQGS-TVTWEGGANRTFT-TPTS---GTATVNVNWQP*
+>P1;1d3ca
+structureX:1d3c: 584 :A: 686 :A:Cyclodextrin glycosyltransferase:Bacillus circulans: 1.78: 22.0
+---GDQVSVRFVVNNA-TTALGQNVYLTGSVSELGNWDPA------KAIGPMYNQVVYQ--YPNWYYDVSVPAGK
+TIEFKFLKKQGS-TVTWEGGSNHTFT-APSS---GTATINVNWQP*
+>P1;1cgt
+structureX:1cgt: 580 : : 684 : :Cyclodextrin glycosyltransferase:Bacillus circulans, strain 8: 2.0: 16.6
+-LTGDQVTVRFVVNNA-STTLGQNLYLTGNVAELGNWSTGS-----TAIGPAFNQVIHQ--YPTWYYDVSVPAGK
+QLEFKFFKKNGS-TITWESGSNHTFT-TPAS---GTATVTVNWQ-*
+>P1;1ciu
+structureX:1ciu: 579 : : 683 : :Cyclodextrin glycosyltransferase:Thermoanaerobacterium thermosulfurigenes EM1: 2.3: -1
+-LTGNQICVRFVVNNA-STVYGENVYLTGNVAELGNWDTS------KAIGPMFNQVVYQ--YPTWYYDVSVPAGT
+TIQFKFIKKNGN-TITWEGGSNHTYT-VPSS---STGTVIVNWQQ*
+>P1;1cyg
+structureX:1cyg: 575 : : 680 : :Cyclodextrin glucanotransferase:Bacillus stearothermophilus: 2.5: 15.4
+-LTNDQVSVRFVVNNA-TTNLGQNIYIVGNVYELGNWDTS------KAIGPMFNQVVYS--YPTWYIDVSVPEGK
+TIEFKFIKKDSQGNVTWESGSNHVYT-TPTN---TTGKIIVDWQN*
+>P1;1qhpa
+structureX:1qhp: 577 :A: 686 :A:Alpha amylase:Bacillus stearothermophilus: 1.70: 15.3
+-LSGTQTSVVFTVKSAPPTNLGDKIYLTGNIPELGNWSTDTSGAVNNAQGPLLAP---N--YPDWFYVFSVPAGK
+TIQFKFFIKRADGTIQWENGSNHVAT-TPTG---ATGNITVTWQN*
+>P1;1kum
+structureN:1kum: 509 : : 616 : :Glucoamylase:Aspergillus niger: -1: -1
+CTTPTAVAVTFDLT-A-TTTYGENIYLVGSISQLGDWETS------DGI-ALSAD-KYTSSDPLWYVTVTLPAGE
+SFEYKFIRIESDDSVEWESDPNREYT-VPQACGTSTATVTDTWR-*
+>P1;1cqya
+structureX:1cqy: 418 :A: 516 :A:Beta amylase:Bacillus cereus: 1.95: 18.1
+----TPVMQTIVVKNV-PTTIGDTVYITGNRAELGSWDTK-----QYPIQLYYDSHS-----NDWRGNVVLPAER
+NIEFKAFIKSKDGTVKSWQTIQQSWNPVPL----KTTSHTSSW--*

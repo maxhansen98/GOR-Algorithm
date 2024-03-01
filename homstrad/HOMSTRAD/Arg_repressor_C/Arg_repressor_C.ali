@@ -1,0 +1,9 @@
+C; family: arginine repressor, C-terminal domain
+C; class: alpha plus beta
+C; last update 22/2/100
+>P1;1xxaa
+structureX:1xxa:  82 :A: 152 :A:arginine repressor:Escherichia coli: 2.2: -1
+LK-NLVLDIDYNDAVVVIHTSPGAAQLIARLLDSLGKAEGILGTIAGDDTIFTTPANGFTVKDLYEAILELF*
+>P1;1b4ba
+structureX:1b4b:  79 :A: 149 :A:arginine repressor:Bacillus stearothermophilus: 2.2: 21.8
+ALVDVFIKLDGTGNLLVLRTLPGNAHAIGVLLDNLDW-DEIVGTICGDDTCLIICRTPKDAKKVSNQLLSML*

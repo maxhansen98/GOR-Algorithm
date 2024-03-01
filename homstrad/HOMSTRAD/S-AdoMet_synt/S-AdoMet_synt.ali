@@ -1,0 +1,16 @@
+C; family: S-adenosylmethionine synthetase, N-terminal domain
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1mxb   1-102   1mxb
+C; 1qm4   a:17-116   1qm4a
+C; end:
+C; last update 12/7/01
+>P1;1mxb
+structureX:1mxb:   1 : : 101 : :S-adenosylmethionine synthetase:Escherichia coli: 2.8: 19.4
+AKHLFTSESVSEGHPDKIADQISDAVLDAILEQDPKARVACETYVKTGMVLVGGEITTSAWVDIEEITRNTVREI
+GYVHSDMGFDANSCAVLSAIGKQSPD*
+>P1;1qm4a
+structureX:1qm4:  17 :A: 116 :A:S-adenosylmethionine synthetase alpha and beta forms:Rattus norvegicus: 2.66: 23
+GAFMFTSESVGEGHPDKICDQISDAVLDAHLKQDPNAKVACETVCKTGMVLLCGEITSMAMIDYQRVVRDTIKHI
+GYDDSAKGFDFKTCNVLVALEQQSP-*

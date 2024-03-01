@@ -1,0 +1,19 @@
+C; family: heat-labile enterotoxin/cholera toxin, B subunit
+C; class: all beta
+C; last update 28/9/98
+C; reordered by kitschorder 1.0a
+>P1;3chbd
+structureX:3chb:   1 :D: 103 :D:cholera toxin B subunit:Vibrio cholerae: 1.25: -1
+TP-QNITDLCAEYHNTQIHTLNDKIFSYTESLAGKREMAIITFKNGATFQ
+VEVPGSQHIDSQKKAIERMKDTLRIAYLTEAKVEKLCVWNNKTPRAIAAI
+SMAN*
+>P1;1lt5d
+structureX:1lt5:   1 :D: 103 :D:heat-labile enterotoxin B subunit:Escherichia coli: 1.7: 17.2
+AP-QTITELCSEYRNTQIYTINDKILSYTESMAGKREMVIITFKSGETFQ
+VEVPGSQHIDSQKKAIERMKDTLRITYLTETKIDKLCVWNNKTPNSIAAI
+SMKN*
+>P1;1tiid
+structureX:1tii:   1 :D:  98 :D:heat-labile enterotoxin IIB, B chain:Escherichia coli: 2.25: 19.1
+GASQFFKDNCNRT-TASLVE-GVELTKYISDINNNTDGMYVVSSTGGVWR
+ISRAK---DYPDNVMTAEMRKIAMAAVLSGMRV-NMCASPASSPNVIWAI
+ELEA*

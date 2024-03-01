@@ -1,0 +1,21 @@
+C; family: DHHA2 domain
+C; class: alpha beta
+C; type: domain 
+C; domain:
+C; 1k20   a:191-311   1k20a
+C; 1i74   a:189-309   1i74a
+C; 1k23   a:189-306   1k23a
+C; end:
+C; last update 27/11/01
+>P1;1k20a
+structureX:1k20: 191 :A: 311 :A:probable manganese-dependent inorganic pyrophosphatase:Streptococcus gordonii challis: 1.50: 17.5
+TNLASKSAEELIDIDAKTFEL-NGNNVRVAQVNTVDIAEVLERQAEIEAAIEKAIADNGYSDFVLMITDIINSNS
+EILAIGSNMDKVEAAFNFVLENNHAFLAGAVSRKKQVVPQLTESFNA*
+>P1;1i74a
+structureX:1i74: 189 :A: 309 :A:probable manganese-dependent inorganic pyrophosphatase:Streptococcus mutans: 2.2: 20.9
+TNLASKTAAQLVDIDAKTFEL-NGSQVRVAQVNTVDINEVLERQNEIEEAIKASQAANGYSDFVL-ITDILNSNS
+EILALGNNTDKVEAAFNFTLKNNHAFLAGAVSRKKQVVPQLTESFNG*
+>P1;1k23a
+structureX:1k23: 189 :A: 306 :A:manganese-dependent inorganic pyrophosphatase:Bacillus subtilis: 3.00: 26
+ADLSKKTVEELISLDAKEFT-LGSKKVEIAQVNTVDIEDVKKRQAELEAVISKVVAEKNLDLFLLVITDILENDS
+LALAIGNEAAKVEKAFNVTLENNTALLKGVVSRKKQVVPVLTDA---*

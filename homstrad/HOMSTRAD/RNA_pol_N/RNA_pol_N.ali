@@ -1,0 +1,14 @@
+C; family: RNA polymerases N / 8 kDa subunit
+C; class: all alpha
+C; type: subunit
+C; domain:
+C; 1i50   j:   1i50j
+C; 1ef4   a:   1ef4a
+C; end:
+C; last update 29/8/01
+>P1;1i50j
+structureX:1i50:   1 :J:  65 :J:DNA-directed RNA polymerases II 8.3 kDa polypeptide:Saccharomyces cerevisiae: 2.80: 22.9
+MIVPVRCFSCGKVVGDKWESYLNLLQEDELDEGTALSRLGLKRYCCRRMIL-THVDLIEKFLRYNP*
+>P1;1ef4a
+structureX:1ef4:   1 :A:  55 :A:DNA-directed RNA polymerase subunit N:Methanobacterium thermoautotrophicum: -1: -1
+MI-PVRCLSCGKPVSAYFNEYQRRVAD-GEDPKDVLDDLGLKRYCCRRMLISHVETW---------*

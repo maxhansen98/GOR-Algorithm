@@ -1,0 +1,16 @@
+C; family: BRCA1 C Terminus (BRCT) domain 
+C; class: alpha beta
+C; type: domain
+C; domain:
+C; 1in1 a: 1in1a
+C; 1cdz a: 1cdza
+C; end:
+C; last update 12/6/01
+>P1;1in1a
+structureX:1in1: 835 :A: 922 :A:DNA ligase III:Homo sapiens: -1: -1
+GSADETLCQTKVLLDIFTGVRLYLPPSTP--DFSRLRRYFVAFDGDLVQEFDMTSATHVLG----------SRDK
+NPAAQQVSPEWIWACIRKRRLVAPC--------*
+>P1;1cdza
+structureX:1cdz:   1 :A:  96 :A:DNA-repair protein Xrcc1:Homo sapiens: 3.2: 22.4
+-----------ELPDFFQGKHFFLYGEFPGDERRKLIRYVTAFNGELED-YMSDRVQFVITAQEWDPSFEEALMD
+NPSLAFVRPRWIYSCNEKQKLLPHQLYGVVPQA*

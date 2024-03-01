@@ -1,0 +1,16 @@
+C; family: Peptidase family S24 
+C; class: all beta
+C; type: subunit/domain
+C; domain:
+C; 1umu   a:   1umua
+C; 1f39   a:   1f39a
+C; end:
+C; last update 19/9/01
+>P1;1umua
+structureX:1umu:  32 :A: 136 :A:UmuD' protein:Escherichia coli: 2.5: 20.7
+DYVEQRIDLNQLLIQHPSATYFVKASGDSI------DGGISDGDLLIVDSAITASHGDIVIAAVDG-EFTVKKLQ
+LRP-TVQLIP-NSAYSPITISSEDTLDVFGVVIHVVK------*
+>P1;1f39a
+structureX:1f39: 136 :A: 236 :A:repressor protein CI:Bacteriophage lambda: 1.90: 22.8
+---------------ASASAFWLEVEGNSMTAPTGSKPSFPDGMLILVDPEQAVEPGDFCIARLGGDEFTFKKLI
+RDSGQVFLQPLNPQYPMIPCNE--SCSVVGKVIASQWPEETFG*

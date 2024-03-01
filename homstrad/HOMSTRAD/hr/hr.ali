@@ -1,0 +1,23 @@
+C; family: hormone receptor (DNA-binding domain)
+C; class: small
+C; reordered by kitschorder 1.0a
+>P1;2nlla
+structureX:2nll: 135 :A: 200 :A:retinoic acid receptor RXR-alpha:Homo sapiens:1.90:20.6
+-------CAICGDRSSGKHYGVYSCEGCKGFFKRTVRKDL--TYTCRDNK
+DCLIDKRQRNRCQYCRYQKCLAMGM-------*
+>P1;1hra
+structureX:1hra:   1 : :  80 : :retinoic acid receptor beta-2:Homo sapiens:-1:-1
+MPRVYKPCFVCQDKSSGYHYGVSACEGCKGFFRRSIQKNM--IYTCHRDK
+NCVINKVTRNRCQYCRLQKCFEVGMSKESVRN*
+>P1;2nllb
+structureX:2nll: 300 :B: 377 :B:thyroid hormone receptor beta-1:Homo sapiens:1.90:20.6
+----DELCVVCGDKATGYHYRCITCEGCKGFFRRTIQKNLHPSYSCKYEG
+KCVIDKVTRNQCQECRFKKCIYVGMATDLVLD*
+>P1;1hcp
+structureX:1hcp:   1 : :  75 : :estrogen receptor:Homo sapiens:-1:-1
+-MKETRYCAVCNDYASGYHYGVWSCEGCKAFFKRSIQGHN--DYMCPATN
+QCTIDKNRRKSCQACRLRKCYEVGMMKG----*
+>P1;1lata
+structureX:1lat: 438 :A: 508 :A:glucocorticoid receptor:Rattus norvegicus:1.90:19.5
+-----RPCLVCSDEASGCHYGVLTCEGCKAFFKRAVEGQH--NYLCKYEG
+KCIIDKIRRKNCPACRYRKCLQAGMNLE----*

@@ -1,0 +1,9 @@
+C; family: Tautomerase enzyme
+C; class: alpha plus beta
+C; last update 28/10/99
+>P1;1otfa
+structureX:1otf:   2 :A:  60 :A:4-oxalocrotonate tautomerase:Pseudomonas sp: 1.9: 20.2
+PIAQLYIIEGRTDEQKETLIRQVSEAMANSLDAPLERVRVLITEMPKNHFGIGGEPASK---*
+>P1;1bjpa
+structureX:1bjp:   1 :A:  62 :A:4-oxalocrotonate tautomerase:Pseudomonas putida: 2.4: 20.6
+PIAQIHILEGRSDEQKETLIREVSEAISRSLDAPLTSVRVIITEMAKGHFGIGGELASKVRR*

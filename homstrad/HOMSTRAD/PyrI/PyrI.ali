@@ -1,0 +1,16 @@
+C; family: Aspartate carbamoyltransferase regulatory chain N-terminal domain
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1d09   b:1-100   1d09b
+C; 2atc   b:1-100   2atcb
+C; end:
+C; last update 12/7/01
+>P1;1d09b
+structureX:1d09:   1 :B: 100 :B:aspartate carbamoyltransferase regulatory chain:Escherichia coli: 2.10: 20.3
+MTHDNKLQVEAIK-----RGTVIDHIPAQIGFKLLSLFKLTETDQRITIGLNLPSGEMGRKDLIKIENTFLSEDQ
+VDQLALYAPQATVNRIDNYEVVGKSRPSLP*
+>P1;2atcb
+structureX:2atc:   1 :B: 100 :B:aspartate carbamoyltransferase catalytic chain:Escherichia coli: 3.0: -1
+MT-----HNDKLQVAEIKRGTVINHIPAEIGFKLLSLFKLTETQDRITIGLNLPSGEMGRKDLIKIENTFLSEDE
+VDELALYAPQATVNRINDYEVVGKSRPSLP*

@@ -1,0 +1,18 @@
+C; family: Oxidoreductase family, C-terminal alpha/beta domain
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1ofg   a:161-322   1ofga
+C; 1gcu   a:129-246   1gcua
+C; end:
+C; last update 21/8/01
+>P1;1ofga
+structureX:1ofg: 161 :A: 322 :A:glucose--fructose oxidoreductase:Zymomonas mobilis: 2.7: 20.3
+DPMNRAAVKLIRENQLGKLGMVTTDNSDVMDQNDPAQQWRLRRELAGGGSLMDIGIYGLNGTRYLLGEEPIEVRA
+YTYSDPNDERFVEVEDRIIWQMRFRSGALSHGASSYS--TTTTSRFSVQGDKAVLLMDPATGYYQNLISVQTPGH
+ANQSMMPQFIMPAN*
+>P1;1gcua
+structureX:1gcu: 129 :A: 246 :A:biliverdin reductase A:Rattus norvegicus: 1.40: 21.9
+MEEFEFLRREVLG---KELLKGSLRFTASPLE----------EERF-GFPAFS-GISRLTWLVSLFG-ELSLISA
+TLEERKED-----QYMKMTVQLETQNKGLLSWIEEKGPGLKRNRYVNFQFTSGSLEEVPSVGV------------
+-------------N*

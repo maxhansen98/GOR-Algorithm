@@ -1,0 +1,11 @@
+C; family: Tetramerization domain of potassium channels
+C; class: alpha plus beta
+C; last update 29/2/100
+>P1;3kvt
+structureX:3kvt:   9 : : 111 : :tetramerization domain from akv3.1 (shaw-subfamily) voltage-gated potassium channel:Aplysia californica: 2.0: 22.5
+ENRVIINVGGIRHETYKATLKKIPATRLSRLTEGMLNYDPVLNEYFFDRHPGVFAQIINYYRSG-KLHYPTDVCG
+PLFEEELEFWGLDSNQVEPCCWMTYTAHR*
+>P1;1t1da
+structureX:1t1d:  66 :A: 165 :A:tetramerization domain of the shaker potassium channel:Aplysia californica: 1.51: 22.9
+-ERVVINVSGLRFETQLKTLNQFPDTLLGNPQKRNRYYDPLRNEYFFDRNRPSFDAILYFYQSGGRLRRPVNVPL
+DVFSEEIKFYELG-ENAFERYREDEG--F*

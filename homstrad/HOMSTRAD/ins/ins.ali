@@ -1,0 +1,23 @@
+C; family: insulin
+C; class: small disulphide
+C; N.B. order in alignment is not PDB chain order for 4ins, 2ins and 6rlx
+C; reordered by kitschorder 1.0a
+C; reordered by kitschorder 1.0a
+>P1;2ins
+structureX:2ins:   2 :B:  21 :A:insulin:Bos taurus: 2.50:18.00
+----VNQHLCGSHLVEALYLVCGERGFFYTPKA/-----------GIVEQCCASVCSLYQLENYCN--------*
+>P1;4ins
+structureX:4ins:   1 :B:  21 :A:insulin:Sus scrofa: 1.50:15.30
+---FVNQHLCGSHLVEALYLVCGERGFFYTPKA/-----------GIVEQCCTSICSLYQLENYCN--------*
+>P1;2gf1
+structureN:2gf1:   1 : :  70 : :insulin-like growth factor 1:Homo sapiens:-1.00:-1.00
+----GPETLCGAELVDALQFVCGDRGFYFNKPTGYGSSSRRAPQTGIVDECCFRSCDLRRLEMYCAPLKPAKSA*
+>P1;1igl
+structureN:1igl:   1 : :  67 : :insulin-like growth factor 2:Homo sapiens:-1.00:-1.00
+-AYRPSETLCGGELVDTLQFVCGDRGFYFSRPAS--RVSRRS--RGIVEECCFRSCDLALLETYCA--TPAKSE*
+>P1;1bom
+structureN:1bom:  -1 :B:  20 :A:bombyxin-II:Bombyx mori:-1.00:-1.00
+-QPQAVHTYCGRHLARTLADLCWEAGVD/----------------GIVDECCLRPCSVDVLLSYC---------*
+>P1;6rlx
+structureX:6rlx:  -2 :B:  20 :B:relaxin:Homo sapiens: 1.50:18.70
+SWMEEVIKLCGRELVRAQIAICGMSTW/--------------LYSALANKCCHVGCTKRSLARFC---------*

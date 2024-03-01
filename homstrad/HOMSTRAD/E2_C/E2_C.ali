@@ -1,0 +1,15 @@
+C; family: E2 (early) protein, C terminal
+C; class: alpha plus beta
+C; last update 3/8/99
+>P1;1a7ge
+structureX:1a7g: 291 :E: 372 :E:regulatory protein E2:Human papillomavirus type 31: 2.40: 21.1
+ATTPIIHLKGDANILKCLRYRLSK-YKQLYEQVSSTWHWTCT--DGKHKNAIVTLTYISTSQRDDFLNTVVIPNT
+VSVSTGYMTI--*
+>P1;1by9
+structureX:1by9: 283 : : 362 : :regulatory protein E2:Human papillomavirus type 16: 2.20: 19.5
+-TTPIVHLKGDANTLKCLRYRFKK-HCTLYTAVSSTWHW----------TAIVTLTYDSEWQRDQFLSQVKIPKT
+ITVSTGFMS---*
+>P1;2bopa
+structureX:2bop: 326 :A: 410 :A:regulatory protein E2:Bovine papillomavirus type 1: 1.70: 20.07
+--SCFALISGTANQVKCYRFRVKKNHRHRYENCTTTWFTVADNGAERQGQAQILITFGSPSQRQDFLKHVPLPPG
+MNISGFTASLDF*

@@ -1,0 +1,36 @@
+C; family: cytochrome-c3
+C; class: all alpha
+C; reordered by kitschorder 1.0a
+C; reordered by kitschorder 1.0a
+C; reordered by kitschorder 1.0a
+C; last update 18/8/98
+>P1;2cdv
+structureX:2cdv:   1 : : 107 : :cytochrome c3:Desulfovibrio vulgaris Miyazaki: 1.80:17.60
+APKAPADGLKMDKTK---------------QPVVFNHSTHKAVKCGDCHH
+PVNG-KENYQKCATAGCHDNMDKK----DKSAKGYYHAMHD-KGTKFKSC
+VGCHLETAGADAAKKKELTGCKGSKCHS--*
+>P1;2cym
+structureX:2cym:   1 : : 107 : :cytochrome c3:Desulfovibrio vulgaris Hildenborough: 2.00:21.20
+APKAPADGLKMEATK---------------QPVVFNHSTHKSVKCGDCHH
+PVNG-KEDYRKCGTAGCHDSMDKK----DKSAKGYYHVMHD-KNTKFKSC
+VGCHVEVAGADAAKKKDLTGCKKSKCHE--*
+>P1;1wad
+structureX:1wad:   1 : : 111 : :cytochrome c3:Desulfovibrio gigas:1.80:14.9
+-VDVPADGAKIDFIAGG----------EKNLTVVFNHSTHKDVKCDDCHH
+DP-G-DKQYAGCTTDGCHNILDKA----DKSVNSWYKVVHDAKGGAKPTC
+ISCHKDKAGDDKELKKKLTGCKGSACHP--*
+>P1;3cyr
+structureX:3cyr:   1 : : 107 : :cytochrome c3:Desulfovibrio desulfuricans: 1.60:17.50
+APAVPNKPVEVKGSQ---------------KTVMFPHAPHEKVECVTCHH
+LVDG-KESYAKCGSSGCHDDLTAK-----KGEKSLYYVVHAKGELKHTSC
+LACHSKVVAEKPELKKDLTGCAKSKCHP--*
+>P1;2cy3
+structureX:2cy3:   1 : : 118 : :cytochrome c3:Desulfovibrio desulfuricans Norway: 1.70:19.80
+-ADAPGDDYVISAPEGMKAKPKGDKPGALQKTVPFPHTKHATVECVQCHH
+TLEADGGAVKKCTTSGCHDSLEFRDKANAKDIKLVENAFHT-------QC
+IDCHKALKKDK--KPTGPTACG--KCHTTN*
+>P1;1aqe
+structureX:1aqe:   2 : : 111 : :cytochrome c3:Desulfovibrio desulfuricans Norway 4:2.20:17.5
+TFEIPE-SVTMSPKQFE-------GYTPKKGDVTFNHASHMDIACQQCHH
+T-VPDTYTIESCMTEGCHDNIKER-----TEISSVERTFHTTK-DSEKSC
+VGCHRELKRQGPSD--APLACN--SCHVQ-*

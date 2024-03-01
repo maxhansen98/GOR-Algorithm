@@ -1,0 +1,21 @@
+C; family: Photosystem I reaction centre subunit IV  / PsaE
+C; class: all beta
+C; type: subunit
+C; domain:
+C; 1jb0   e:   1jb0e
+C; 1qp3   a:   1qp3a
+C; 1psf   -   1psf
+C; end:
+C; last update 28/8/01
+>P1;1jb0e
+structureX:1jb0:   1 :E:  69 :E:photosystem I reaction centre subunit IV:Synechococcus elongatus naegeli: 2.50: 19.9
+-VQRGSKVKILRPESYWYNEVGTVASVDQTPGVKYPVIVRFDKVNYTGYSGSASGVNTNNFALHEVQEVA-----
+---*
+>P1;1qp3a
+structureX:1qp3:   1 :A:  77 :A:photosystem I accessory protein E:Nostoc sp. strain pcc 8009: -1: -1
+MVQRGSKVRILRPESYWFQDVGTVASVDQ-SGIKYPVIVRFEKVNY-------SGINTNNFAEDELVEVEAPKAK
+PKK*
+>P1;1psf
+structureX:1psf:   1 : :  69 : :photosystem I reaction centre subunit IV:Synechococcus sp.: -1: -1
+AIERGSKVKILRKESYWYGDVGTVASIDK-SGIIYPVIVRFNKVNYNGFSGSAGGLNTNNFAEHELEVVG-----
+---*

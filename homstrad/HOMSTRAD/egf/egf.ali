@@ -1,0 +1,54 @@
+C; family: epidermal growth factor-like domain
+C; class: small disulphide
+C; reordered by kitschorder 1.0a
+C; reordered by kitschorder 1.0a
+C; reordered by kitschorder 1.0a
+C; last update 24/9/99
+>P1;1ixa
+structureN:1ixa:  46 : :  84 : :EGF-like module coagulation factor IX:Homo sapiens:-1.00:-1.00
+--VDGDQCE---SNPCLNGGSCKDDI-----NSYECWCPFGFEG----KN
+CEL------------------*
+>P1;1apo
+structureN:1apo:  45 : :  86 : :EGF-like module coagulation factor X:Bos taurus:-1.00:-1.00
+--KDGDQCE---GHPCLNQGHCKDGI-----GDYTCTCAEGFEG----KN
+CEFSTR---------------*
+>P1;1urk
+structureN:1urk:   6 : :  46 : :EGF-like module uPA:Homo sapiens:-1.00:-1.00
+--QVPSNCD------CLNGGTCVSNKYFS--NIHWCNCPKKFGG----QH
+CEIDK----------------*
+>P1;1fsb
+structureX:1fsb:   1 : :  40 : :EGF-like domain P-selectin:Homo sapiens:-1:-1
+----TASCQD---MSCSKQGECLETI-----GNYTCSCYPGFYG----PE
+CEYVRE---------------*
+>P1;1esl
+structureX:1esl: 121 : : 157 : :EGF-like domain E-selectin:Homo sapiens:2.00:16.40
+------ACTN---TSCSGHGECVETI-----NNYTCKCDPGFSG----LK
+CEQIV----------------*
+>P1;1hre
+structureN:1hre: 175 : : 241 : :EGF-like domain heregulin-alpha:Homo sapiens:-1.00:-1.00
+GTSHLVKCAEKEKTFCVNGGECFMVKDLSNPSRYLCKCQPGFTG----AR
+CTENVPMKVQNQEKAEELYQK*
+>P1;1epi
+structureN:1epi:   1 : :  53 : :epidermal growth factor:Mus musculus:-1.00:-1.00
+--NSYPGCPSSYDGYCLNGGVCMHI-ESL--DSYTCNCVIGYSG----DR
+CQTRDLRWWELR---------*
+>P1;4tgf
+structureN:4tgf:   1 : :  50 : :transforming growth factor alpha:Homo sapiens:-1.00:-1.00
+VVSHFNDCPDSHTQFCF-HGTCRFLVQ---EDKPACVCHSGYVG----AR
+CEHADLLA-------------*
+>P1;1hcgb
+structureX:1hcg:   1 :B:  51 :B:coagulation factor x:Homo sapiens: 2.2: 16.8
+-------CSLD-NGDCD--QFCHEEQ----N-SVVCSCARGYTLADNGKA
+CIPTGPYPCGKQTLER-----*
+>P1;1dan1
+structureX:1dan:  47 :L:  86 :L:coagulation factor vii:Homo sapiens: 2.0: 18.7
+----GDQCASS---PCQNGGSCKDQL-----QSYICFCLPAFEG----RN
+CETHKD---------------*
+>P1;1dan2
+structureX:1dan:  87 :L: 142 :L:coagulation factor vii:Homo sapiens: 2.0: 18.7
+---DQLICVN-ENGGCE--QYCSDHT----GTKRSCRCHEGYSLLADGVS
+CTPTVEYPCGKIPILE-----*
+>P1;1rfnb
+structureX:1rfn:  86 :B: 142 :B:coagulation factor IXa:Homo sapiens: 2.80: 21.6
+-----MTCNI-KNGRCE--QFCKNSA----DNKVVCSCTEGYRLAENQKS
+CEPAVPFPCGRVSVSQTSK--*

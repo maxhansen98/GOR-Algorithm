@@ -1,0 +1,12 @@
+C; family: immunoglobulin domain -- C2 set
+C; class: all beta
+C; reordered by kitschorder 1.0a
+C; reordered by kitschorder 1.0a
+>P1;3cd42
+structureX:3cd4:  99 : : 178 : :CD4 domain 2:Homo sapiens: 2.20:19.70
+GLTANSDTHLLQGQSLTLTLESPPGSSPSVQCRSPRG-KNIQG-GKTLSVSQLELQDSGTWTCTVLQ-
+NQKKVEFKIDIVVLA*
+>P1;1cid2
+structureX:1cid: 106 : : 177 : :CD4 domain 4:Rattus rattus: 2.80:23.30
+VMKVTQ-PD---SNTLTCEVMGPTSPKMRLILKQENQEARVSRQEKVIQVQAP---EAGVWQCLLSEG
+EEVKMDSKIQV----*

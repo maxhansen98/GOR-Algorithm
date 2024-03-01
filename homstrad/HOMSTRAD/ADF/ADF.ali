@@ -1,0 +1,27 @@
+C; family:  actin-depolymerizing proteins
+C; class:  alpha plus beta
+C; domain:
+C; 1cnu   a:     1cnua
+C; 1ak6   -     1ak6
+C; 1cof   -     1cof
+C; end:
+C; last update 11/5/100
+C; reordered by kitschorder 1.0a
+>P1;1cof
+structureX:1cof:   6 : : 140 : :cofilin:Saccharomyces cerevisiae: 2.3: 18.4
+-------------VAVADESLTAFNDLKL---------GKKYKFILFGLN
+DAKTEIVVK--ETSTDP--------SYDAFLEKLPENDCLYAIYDFEYEI
+NGNEGKRSKIVFFTWSPDTAPVRSKMVYASSKDALRRALNGVSTDVQGTD
+FSEVSYDSVLERVSR---------GA*
+>P1;1cnua
+structureX:1cnu:   2 :A: 134 :A:actophorin:Acanthamoeba castellanii: 2.25: 20.4
+------------GIAVSDDCVQKFNELKL---------GHQHRYVTFKMN
+ASNTEVVVE--HVGGPNA-------TYEDFKSQLPERDCRYAIFDYEFQV
+-DG-GQRNKITFILWAPDSAPIKSKMMYTSTKDSIKKKLVGIQVEVQATD
+AAEISEDAVSERAKK-----------*
+>P1;1ak6
+structureX:1ak6:  -8 : : 165 : :destrin:Homo sapiens and sus scrofa: -1: -1
+TMITPSSGNSASGVQVADEVCRIFYDMKVRKCSTPEEIKKRKKAVIFCLS
+ADKKCIIVEEGKEILVGDVGVTITDPFKHFVGMLPEKDCRYALYDASFET
+K--ESRKEELMFFLWAPELAPLKSKMIYASSKDAIKKKFQGIKHECQANG
+PEDLNRACIAEKLGGSLIVAFEGCPV*

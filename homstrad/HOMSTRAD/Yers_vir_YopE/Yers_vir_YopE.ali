@@ -1,0 +1,21 @@
+C; family: Yersinia virulence determinant (YopE)
+C; class: all alpha
+C; type: domain
+C; domain:
+C; 1hy5   a:   1hy5a
+C; 1g4w   r:171-290   1g4wr
+C; 1he1   a:   1he1a
+C; end:
+C; last update 17/4/02
+>P1;1hy5a
+structureX:1hy5:1100 :A:1218 :A:Yersinia pestis virulence protein, YopeE, C-terminal domain:Yersinia pestis: 2.25: -1
+--------TSFSDSIKQLAAETLPK-YQQLNSLDAE-LQKNHDQFATGSGPLRGSITQCQGL-QFCG-GELQAEA
+SAILNTPVCGIPFSQWGTIGGAASAYVASGV--DLTQAANEIKGLAQQ-QKLLSL------*
+>P1;1g4wr
+structureX:1g4w: 171 :R: 290 :R:Protein tyrosine phosphatase, SPTP:Salmonella typhimurium: 2.2: 26.0
+--------------LLDIALKGLKRTLPQLEQMDGNSLR-----------PLRSLMTNLQNLNK-----QLNDYV
+TTLTNIQVGVARFSQW-----EVERWVD-ASTHELTQAVKKIHVIAKELKNVTAELEKI--*
+>P1;1he1a
+structureX:1he1:  95 :A: 229 :A:Exoenzyme S, GAP-domain:Pseudomonas aeruginosa: 2.0: 17.5
+ASSAVVFKQMVLQQALPMTLKGLDK-ASELATLTPEGLAREHSRLASGDGALRSLSTALAGIRAGSQVEESRIQA
+GRLLERSIGGIALQQWGTTGGAASQLVLDASPELRREITDQLHQVMSEVALLRQAVESEVS*

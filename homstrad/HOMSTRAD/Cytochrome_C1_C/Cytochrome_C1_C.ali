@@ -1,0 +1,14 @@
+C; family: Cytochrome C1 family transmembrane region
+C; class: membrane bound all alpha
+C; type: domain
+C; domain:
+C; 1bgy   d:196-241   1bgyd
+C; 1ezv   d:260-306   1ezvd
+C; end:
+C; last update 30/8/01
+>P1;1bgyd
+structureX:1bgy: 196 :D: 241 :D:cytochrome bc1 complex:Bos taurus: 3.0: 32
+-PEHDHRKRMGLKMLLMMGLLLPLVYAMKRHKWSVLKSRKLAYRPPK*
+>P1;1ezvd
+structureX:1ezv: 260 :D: 306 :D:cytochrome bc1 complex co- crystallized with an antibody fv-fragment:Saccharomyces cerevisiae: 2.30: 22.2
+EPEHDERKRLGLKTVIILSSLYLLSIWVKKFKWAGIKTRKFVFNPPK*

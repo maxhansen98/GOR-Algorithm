@@ -1,0 +1,16 @@
+C; family: BAG domain
+C; class: all alpha
+C; type: domain
+C; domain:
+C; 1hx1   b:   1hx1b
+C; 1i6z   a:   1i6za
+C; end:
+C; last update 17/9/01
+>P1;1hx1b
+structureX:1hx1: 150 :B: 261 :B:BAG-family molecular chaperone regulator-1:Homo sapiens: 1.90: 23.4
+G----------NSPQEEVELKKLKHLEKSVEKIADQLEELNKELTGIQQGFLPKDLQAEALCKLDRRVKATIEQF
+MKILEEIDTLILPENFKDSRLKRKGLVKKVQAFLAECDTVEQNICQE-------------*
+>P1;1i6za
+structureX:1i6z:  85 :A: 219 :A:BAG-family molecular chaperone regulator-1:Mus musculus: -1: -1
+GSPEFMLIGEKSNPEEEVELKKLKDLEVSAEKIANHLQELNKELSGIQQGFLAKELQAEALCKLDRKVKATIEQF
+MKILEEIDTMVLPEQFKDSRLKRKNLVKKVQVFLAECDTVEQYICQETERLQSTNLALAE*

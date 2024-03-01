@@ -1,0 +1,45 @@
+C; family: Transforming growth factor-beta (TGF-beta)
+C; class: small disulphide
+C; domain:
+C; 1nyu   d:   1nyud
+C; 1nys   b:   1nysb
+C; 3bmp   a:   3bmpa
+C; 1lxi   a:   1lxia
+C; 2tgi   -   2tgi
+C; 1tgj   -   1tgj
+C; 1kld   a:   1klda
+C; 1agq   a:   1agqa
+C; end:
+C; last update 11/11/2003
+>P1;1nyud
+structureX:1nyu:  11 :D: 116 :D:inhibin beta A chain mature domain:Homo sapiens: 3.10: 26.80
+--------------CCKKF-FVS----------IIAPSGYH-NYCEGECP-------------------------
+-----CCVPTKLR-PMSMLYYDDG--IIKKDIQNMIVEECGCS*
+>P1;1nysb
+structureX:1nys:   2 :B: 116 :B:inhibin beta A chain mature domain:Homo sapiens: 3.05: 25.20
+-----LECDG--NICCKKQFFVSFK-DIGWNDWIIAPSGYHANYCEGECP------------------------S
+HILKSCCVPTKLR-PMSMLYYDDGQNIIKKDIQNMIVEECGCS*
+>P1;3bmpa
+structureX:3bmp:   9 :A: 114 :A:bone morphogenetic protein 2 (bmp-2):Homo sapiens: 2.70: 24.20
+R---------LKSSCKRHPLYVDFS-DVGWNDWIVAPPGYHAFYCHGECPFPLADHLNSTNHAIVQTLVNSVNSK
+-IPKACCVPTELS-AISMLYLDENEKVVLKNYQDMVVEGCGCR*
+>P1;1lxia
+structureX:1lxi:  36 :A: 139 :A:bone morphogenetic protein 7:Homo sapiens: 2.00: 22.80
+------------QACKKHELYVSFR-DLGWQDWIIAPEGYAAYYCEGECAFPLNSYMNATNHAIVQTLVHFINPE
+TVPKPCCAPTQLN-AISVLYFDDSSNVILKKYRNMVVRACGCH*
+>P1;2tgi
+structureX:2tgi:   1 : : 112 : :transforming growth factor-beta two:Homo sapiens: 1.80: 17.30
+ALDAAYCFRNVQDNCCLRPLYIDFKRDLGW-KWIHEPKGYNANFCAGACPYLW---SSDTQHSRVLSLYNTINPE
+ASASPCCVSQDLE-PLTILYYIG-KTPKIEQLSNMIVKSCKCS*
+>P1;1tgj
+structureX:1tgj:   1 : : 112 : :transforming growth factor-beta 3:Homo sapiens: 2.00: 17.50
+ALDTNYCFRNLEENCCVRPLYIDFRQDLGW-KWVHEPKGYYANFCSGPCPYLR---SADTTHSTVLGLYNTLNPE
+ASASPCCVPQDLE-PLTILYYVG-RTPKVEQLSNMVVKSCKCS*
+>P1;1klda
+structureX:1kld:   1 :A: 112 :A:transforming growth factor-beta 1:Homo sapiens: -1: -1
+ALDTNYCFSSTEKNCCVRQLYIDFRKDLGW-KWIHEPKGYHANFCLGPCPYIW---SLDTQYSKVLALYNQHNPG
+ASAAPCCVPQALE-PLPIVYYVG-RKPKVEQLSNMIVRSCKCS*
+>P1;1agqa
+structureX:1agq:  39 :A: 135 :A:glial cell-derived neurotrophic factor:Rattus norvegicus: 1.90: 20.30
+-----------NRGCVLTAIHLNVT-DLGLGYETKE--ELIFRYCSGSCE------AAETMYDKILKNLSRSRV-
+--GQACCRPVAFDDDLSFLDDS----LVYHILRKHSAKRCGCI*

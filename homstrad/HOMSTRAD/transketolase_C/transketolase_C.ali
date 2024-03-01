@@ -1,0 +1,24 @@
+C; family: Transketolase, C-terminal domain
+C; class: alpha beta
+C; type: domain
+C; domain:
+C; 1dtw   b:205-342   1dtwb
+C; 1qs0   b:206-339   1qs0b
+C; 1trk   a:535-680   1trka
+C; end:
+C; last update 24/8/01
+>P1;1dtwb
+structureX:1dtw: 205 :B: 342 :B:2-oxoisovalerate dehydrogenase beta subunit:Homo sapiens: 2.7: 22.4
+---PYNIPLSQAEVIQEGS--DVTLVAWGTQVHVIREVASMAKEKLGVSCEVIDLRTIIPWD---VDTICKSVIK
+TGRLLISHEAPLTGGFASEISSTVQEECFLNLEAPISRVCGYDTPFPH----IFEPFYIPDKWKCYDALRKMINY
+--------------*
+>P1;1qs0b
+structureX:1qs0: 206 :B: 339 :B:2-oxoisovalerate dehydrogenase beta subunit:Pseudomonas putida: 2.40: 21.8
+---YYTVPLDKAAITRPGN--DVSVLTYGTTVYVAQVAAEES----GVDAEVIDLRSLWPLD---LDTIVESVKK
+TGRCVVVHEATRTCGFGAELVSLVQEHCFHHLEAPIERVTGWDTPYPH----AQEWAYFPGPSRVGAALKKVE-V
+--------------*
+>P1;1trka
+structureX:1trk: 535 :A: 680 :A:transketolase 1:Saccharomyces cerevisiae: 2.0: 15.7
+EGSSIESASKGGYVLQDVANPDIILVATGSEVSLSVEAAKTLAAK-NIKARVVSLPDFFTFDKQPLEYRLSVLPD
+NVPIMSVEVLATT--CWGKYAH--------------QSFGI-DRFGASGKAPEVFKFFGFTPEGVAERAQKTIAF
+YKGDKLISPLKKAF*

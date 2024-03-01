@@ -1,0 +1,15 @@
+C; family: Caspase recruitment domain
+C; class: all alpha
+C; domain:
+C; 3crd   -    3crd
+C; 1cy5   a:    1cy5a 
+C; end:
+C; last update 8/6/100
+>P1;3crd
+structureX:3crd:   1 : : 100 : :RAIDD CARD domain:Homo sapiens: -1: -1
+MEARDKQVLRSLRLELGAEVLVEGLVLQYLYQEGILTENHIQEINAQTTGLRKTMLLLDILPSRGPKAFDTFLDS
+LQ--EFPWVREKLKKAREEAMTDLPAG*
+>P1;1cy5a
+structureX:1cy5:   1 :A:  92 :A:apoptotic protease activating factor 1 (apaf-1):Homo sapiens: 1.30: -1
+MDAKARNCLLQHREALEK-DIKTSYIMDHMISDGFLTISEEEKVRNEPTQQQRAAMLIKMILKKDNDSYVSFYNA
+LLHEGYKDLAALLHDGIP---------*

@@ -1,0 +1,18 @@
+C; family: deoxyuridine 5'-triphosphate nucleotidohydrolase
+C; class: all beta
+C; reordered by kitschorder 1.0a
+>P1;1dun
+structureX:1dun:   1 : : 120 : :deoxyuridine 5'-triphosphate nucleotidohydrolase:Equine infectious anemia virus: 1.9: 16.1
+---MLAYQG---------TQIKEKRDEDAGFDLCVPY--DIMIPVSDTKI
+IPTDVKIQV-PPNSFGWVTGKSSMAK-QGLLIN--GGIIDEGYTGEIQVI
+CTNIGKSNIKLIEGQKFAQLIILQHHSNSRQPWDENKI*
+>P1;1duta
+structureX:1dut:   1 :A: 117 :A:deoxyuridine 5'-triphosphate nucleotidohydrolase:Feline immunodeficiency virus: 1.9: 20.9
+----MIIEG---------DGILDKRSEDAGYDLLAAK--EIHLLPGEVKV
+IPTGVKLML-PKGYWGLIIGKSSIGS-KGLDVL--GGVIDEGYRGEIGVI
+MINVSRKSITLMERQKIAQLIILPCKHEVLEQG--KVV*
+>P1;1dupa
+structureX:1dup:   1 :A: 136 :A:deoxyuridine 5'-triphosphate nucleotidohydrolase:Escherichia coli: 1.9: 15
+MMKKIDVKILDPRVGKEFPLPTYATSGSAGLDLRACLNDAVELAPGDTTL
+VPTGLAIHIADPSLAAMMLPRSGLGHKHGIVLGNLVGLIDSDYQGQLMIS
+VWNRGQDSFTIQPGERIAQMIFVPVVQAEFNLVED--F*

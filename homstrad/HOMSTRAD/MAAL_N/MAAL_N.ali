@@ -1,0 +1,18 @@
+C; family: Methylaspartate ammonia-lyase, N-terminal domain
+C; class:  alpha plus beta
+C; type: domain
+C; domain:
+C; 1kko   a:2-160   1kkoa
+C; 1kd0   a:2-160   1kd0a
+C; end:
+C; last update 9/1/03
+>P1;1kkoa
+structureX:1kko:   2 :A: 160 :A:methylaspartate ammonia lyase:Citrobacter amalonaticus: 1.33: 16.2
+KIKQALFTAGYSSFYFDDQQAIKNGAGHDGFIYTGDPVTPGFTSVRQAGECVSVQLILENGAVAVGDCAAVQYSG
+AGGRDPLFLAEHFIPFLNDHIKPLLEGRDVDAFLPNARFFDKLRIDGNLLHTAVRYGLSQALLDATALASGRLKT
+EVVCDEWQL*
+>P1;1kd0a
+structureX:1kd0:   2 :A: 160 :A:methylaspartate ammonia-lyase:Clostridium tetanomorphum: 1.90: 17.8
+KIVDVLCTPGLTGFYFDDQRAIKKGAGHDGFTYTGSTVTEGFTQVRQKGESISVLLVLEDGQVAHGDCAAVQYSG
+AGGRDPLFLAKDFIPVIEKEIAPKLIGREITNFKP-AEEFDK-TVNGNRLHTAIRYGITQAILDAVAKTRKVT-A
+EVIRDEYNP*

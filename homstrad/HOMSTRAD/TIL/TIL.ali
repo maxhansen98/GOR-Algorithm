@@ -1,0 +1,19 @@
+C; family: Serine protease inhibitors
+C; class: small
+C; last update 1/3/100
+>P1;1ccva
+structureX:1ccv:   1 :A:  56 :A:chymotrypsin inhibitor (AMCI).:Apis mellifera: -1: -1
+--EEC-GPNEVFNTCGS-ACAPTCA-Q-----PKTRICTM---QCR-IGCQCQ--EGFLRNGEGACVLPENC---
+------------*
+>P1;1ate
+structureX:1ate:   1 : :  62 : :trypsin inhibitor:Ascaris suum: -1: -1
+EAEKCTKPNEQWTKCGG--CEGTCA-Q-----KIVP-CTR---ECKPPRCECIASAGFVRDAQGNCIKFEDCPK-
+------------*
+>P1;1eaic
+structureX:1eai:   1 :C:  61 :C:chymotrypsin/elastase isoinhibitor 1:Ascaris suum: 2.40: -1
+GQESC-GPNEVWTECTG--CEMKCGPD-----ENTP-CPL---MCRRPSCECSPGRGMRRTNDGKCIPASQCP--
+------------*
+>P1;1coua
+structureX:1cou:   1 :A:  85 :A:anticoagulant protein:Ancylostoma caninum: -1: -1
+KATMQCGENEKYDSCGSKECDKKCKYDGVEEEDDEEPNVPCLVRVCHQDCVCE--EGFYRNKDDKCVSAEDCELD
+NMDFIYPGTRNP*

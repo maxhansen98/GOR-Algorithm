@@ -1,0 +1,14 @@
+C; family: Bacterial regulatory proteins, tetR family, N-terminal domain
+C; class: all alpha
+C; type: domain
+C; domain:
+C; 1jt6   a:2-68   1jt6a
+C; 2tct   2-67   2tct
+C; end:
+C; last update 17/12/01
+>P1;1jt6a
+structureX:1jt6:   2 :A:  68 :A:hypothetical transcriptional regulator in QACA 5'region:Staphylococcus aureus: 2.54: 20.9
+--NLKDKILGVAKELFIKNGYNATTTGEIVKLSESSKGNLYYHFKTKENLFLEILNIEESKWQEQWKKE*
+>P1;2tct
+structureX:2tct:   2 : :  67 : :tetracycline repressor protein class D:Escherichia coli: 2.1: 18
+ARLNRESVIDAALELLNETGIDGLTTRKLAQKLGIEQPTLYWHVKNKRALLDALAVEILARHHDYS---*

@@ -1,0 +1,21 @@
+C; family: Putative tRNA binding domain
+C; class: all beta
+C; type: subunit/domain
+C; domain:
+C; 1b7y   b:39-151   1b7yb
+C; 1gd7   a:   1gd7a
+C; 1fl0   a:150-255   1fl0a
+C; end:
+C; last update 4/10/01
+>P1;1b7yb
+structureX:1b7y:  39 :B: 151 :B:phenylalanyl-tRNA synthetase beta chain:Thermus aquaticus: 2.50: 23
+-----FPIPRGVVFARVLEAHPIPGT--RLKRLVLDAG--RTVEVVSGA-ENAR----KGIGVALALPGTELPGL
+GQKVGERVIQGVRSFGMALSPRELGVGEYG-GGLLEFPEDALPPGTPLSEAWP*
+>P1;1gd7a
+structureX:1gd7:   1 :A: 109 :A:Export-related chaperone, CsaA:Thermus thermophilus: 2.00: 21.7
+MTPLEAFQILDLRVGRVLRAEPHEKARKPSYKLWVDLGPLGVKQSSAQITELYRPEDLVGRLVVCAVNL------
+----GAKRVAGFLSEVLVLG----VPDEAGRVVLLAPD-REVPLGGKVF----*
+>P1;1fl0a
+structureX:1fl0: 150 :A: 255 :A:emap2/ribonucleic acid-binding domain of the p43 protein:Homo sapiens: 1.50: 22.1
+----IDVSRLDLRIGCIITARKHPDAD-SLYVEEVDVGEIAPRTVVSGLVNHVPLEQMQNRMVILLCNL------
+----KPAKMRGVLSQAMVMC----ASSPE-KIEILAPP-NGSVPGDRITFD-A*

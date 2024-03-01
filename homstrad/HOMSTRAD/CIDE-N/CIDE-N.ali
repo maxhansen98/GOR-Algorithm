@@ -1,0 +1,15 @@
+C; family: CIDE-N domain
+C; class: alpha plus beta
+C; domain:
+C; 1c9f  a:   1c9fa
+C; 1d4b  a:   1d4ba
+C; end:
+C; last update 9/6/100
+>P1;1c9fa
+structureX:1c9f:   1 :A:  87 :A:CAD domain of caspase-activated DNase:Mus musculus: -1: -1
+M----------------------------CAVLRQPKCVKLRALHSACKFGVAARSCQELLRKGCVRFQLPMPGS
+RLCLYEDGTEVTDDCFP-GLPNDAELLLLTAGETWHGYVS--------D*
+>P1;1d4ba
+structureX:1d4b:   1 :A: 122 :A:cide-n domain of human cide-b:Homo sapiens: -1: -1
+MEYLSALNPSDLLRSVSNISSEFGRRVWTSAPP-PQRPFRVCDHKRTIRKGLTAATRQELLAKALETLLLNG-VL
+TLVLEEDGTAVDSEDFFQLLEDDTCLMVLQSGQSWSPTRSGVLHHHHHH*

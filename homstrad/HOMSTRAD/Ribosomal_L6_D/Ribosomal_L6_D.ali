@@ -1,0 +1,26 @@
+C; family: Ribosomal protein L6 domain
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1jj2   e:1-79   1jj2e1
+C; 1rl6   a:7-81   1rl6a1
+C; 1jj2   e:80-172   1jj2e2
+C; 1rl6   a:82-170   1rl6a2
+C; end:
+C; last update 18/9/01
+>P1;1jj2e1
+structureX:1jj2:   1 :E:  79 :E:50S ribosomal protein L6p:Haloarcula marismortui: 2.40: 18.9
+PRVELEIPE---DVDAEQDHLDITVEGDN---GSVTRRLWYPDIDVSVDG-DTVVIESDEDNAKTMSTIGTFQSH
+IENMFHGVTEG-----------------*
+>P1;1rl6a1
+structureX:1rl6:   7 :A:  81 :A:50S ribosomal protein L6:Bacillus stearothermophilus: 2.00: 25.7
+---PIEIPA---GVTVTVNGNTVTVKGPK---GELTRTFH-PDMTITVEG-NVITVTRPSDEKHHRALHGTTRSL
+LANMVEGVSKG-----------------*
+>P1;1jj2e2
+structureX:1jj2:  80 :E: 172 :E:50S ribosomal protein L6p:Haloarcula marismortui: 2.40: 18.9
+WEYGMEVFYSHFPMQVNVEGDEVVIENFLGEKAPRRTTIH-GDTDVEIDG-EELTVSGP-----DIEAVGQTAAD
+IEQLTRINDKDVRVFQDGVYITRKP---*
+>P1;1rl6a2
+structureX:1rl6:  82 :A: 170 :A:50S ribosomal protein L6:Bacillus stearothermophilus: 2.00: 25.7
+YEKALELVGV--GYRASKQGKKLVLSV--GYSHPVEIEPE-EGLEIEVPSQTKIIVKGA-----DKQRVGELAAN
+IRAVRPPEP----YKGKGIRYEGELVRL*

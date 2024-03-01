@@ -1,0 +1,16 @@
+C; family: Flavin containing amine oxidase, domain 2
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1h83   a:294-405   1h83a
+C; 1f8s   a:320-432   1f8sa
+C; end:
+C; last update 31/8/01
+>P1;1h83a
+structureX:1h83: 294 :A: 405 :A:polyamine oxidase:Zea mays: 1.9: 19.6
+DMAVYTKIFLKFPRKFWPEGKGREFFLYASSRRGYYGVWQEFEKQYP-DANVLLVTVTDEESRRIEQQSDEQTKA
+EIMQVLRKMFP--GKDVP-DATDILVPRWWSDRFYKGTFSN*
+>P1;1f8sa
+structureX:1f8s: 320 :A: 432 :A:L-amino acid oxidase complexed with three molecules of o- aminobenzoate:Calloselasma rhodostoma: 2.00: 20.5
+HYRSGTKIFLTCTTKFWED-DGIHGGKSTTDL--PSRFIYYPNHNFTNGVGVIIAYGIGDDANFFQALDFKDCAD
+IVFNDLSLIHQLPKKDIQSFCYPSVIQKWSLDKYAMGGITT*

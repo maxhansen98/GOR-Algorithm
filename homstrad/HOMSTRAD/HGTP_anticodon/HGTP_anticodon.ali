@@ -1,0 +1,36 @@
+C; family: Anticodon binding domain
+C; class: alpha beta
+C; type: domain
+C; domain:
+C; 1evl   a:533-642   1evla
+C; 1hc7   a:281-395   1hc7a
+C; 1ati   a:395-505   1atia
+C; 1h4v   b:325-421   1h4vb
+C; 1kmm   a:326-424   1kmma
+C; 1qe0   a:326-420   1qe0a
+C; end:
+C; last update 18/9/01
+>P1;1evla
+structureX:1evl: 533 :A: 642 :A:threonyl-tRNA synthetase:Escherichia coli: 1.55: 21.5
+FPTWLAPVQVVIMNIT-----DSQSEYVNELTQKLSNA--GIRVKADLRN-EKIGFKIREHTLRRVPYMLVCGDK
+EVES---------GKVAVRTRRGKDLGSMDVNEVIEKLQQEIRSRSLKQLEE*
+>P1;1hc7a
+structureX:1hc7: 281 :A: 395 :A:prolyl-tRNA synthetase:Thermus thermophilus: 2.43: 20.6
+LPPRLAPIQVVIVPIYKDESRERVLEAAQGLRQALLAQ--GLRVHLDDRDQHTPGYKFHEWELKGVPFRVELGPK
+DLE---------GGQAVLASRL-GGKETLPLAALPEALPGKLDAFHEELYRR*
+>P1;1atia
+structureX:1ati: 395 :A: 505 :A:glycyl-tRNA synthetase:Thermus aquaticus: 2.75: 22.7
+---QLAPIKVAVIPLVKN--RPEITEYAKRLKARLLAL-GLGRVLYED-T-GNIGKAYRRHDEVGTPFAVTVDYD
+TIGQSKDGTTRLKDTVTVRDRDTMEQIRLHVDELEGFLRERLRW--------*
+>P1;1h4vb
+structureX:1h4v: 325 :B: 421 :B:histidyl-tRNA synthetase:Thermus aquaticus: 2.4: 20.8
+---EEKGPDLYLIPLT-----EEAVAEAFYLAEALRP---RLRAEYALAP-RKPAKGLEEALKRGAAFAGFLGED
+ELR---------AGEVTLKRLATGEQVRLSREEVPGYLLQAL-G--------*
+>P1;1kmma
+structureX:1kmm: 326 :A: 424 :A:histidyl-tRNA synthetase:Escherichia coli: 2.6: 22.1
+----DPVVDIYLVASG-----ADTQSAAMALAERLRDELPGVKLMTNHGG-GNFKKQFARADKWGARVAVVLGES
+EVA---------NGTAVVKDLRSGEQTAVAQDSVAAHLRTLL-G--------*
+>P1;1qe0a
+structureX:1qe0: 326 :A: 420 :A:histidyl-tRNA synthetase:Staphylococcus aureus: 2.7: 19.7
+---IEENLDLFIVTMG-----DQADRYAVKLLNHLRHN--GIKADKDYLQ-RKIKGQMKQADRLGAKFTIVIGDQ
+ELE---------NNKIDVKNMTTGESETIELDALVEYFKK------------*

@@ -1,0 +1,25 @@
+C; family: serine proteinase inhibitor -- Bowman-Birk-type
+C; class: small disulphide
+C; reordered by kitschorder 1.0a
+C; reordered by kitschorder 1.0a
+C; last update 21/5/99
+>P1;1bbi
+structureN:1bbi:   1 : :  71 : :chymotrypsin Bowman-Birk inhibitor:Glycine max:-1.00:-1.00
+DDESSKPCCDQCACTKSNPPQCRCSDMRLNSCHSACKSCICALSYPAQCF
+CVDITDFCYEPCKPSEDDKEN--*
+>P1;1tabi
+structureX:1tab:  12 :I:  73 :I:Bowman-Birk inhibitor AB-I:Phaseolus angularis: 2.30:20.00
+-SESSKPCCDQCSCTKSMPPKCRCSDIR/---------------------
+----NDFCYEPCK----------*
+>P1;1pi2
+structureX:1pi2:   3 : :  63 : :Bowman-Birk inhibitor PI-II:Glycine max: 2.50:23.60
+---YSKPCCDLCMCTRSMPPQCSCED-RINSCHSDCKSCMCTRSQPGQCR
+CLDTNDFCYKPCKSR--------*
+>P1;1pbia
+structureX:1pbi:   5 :A:  73 :A:Bowman-Birk inhibitor:Pisum sativum: 2.7: 21.4
+----KSACCDTCLCTKSNPPTCRCVDVG-ETCHSACLSCICAYSNPPKCQ
+CFDTQKFCYKQCHNSELEEVIKN*
+>P1;1sbwi
+structureX:1sbw:  15 :I:  29 :I:Bowman-Birk type trypsin inhibitor:Phaseolus aureus: 1.80: 16.4
+----------SCRCTKSIPPQCHC--------------------------
+-----------------------*

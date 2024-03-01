@@ -1,0 +1,16 @@
+C; family: Chaperonin 10 kD subunit
+C; class: all beta
+C; type: subunit
+C; domain:
+C; 1p3h   a:   1p3ha
+C; 1aon   o:   1aono
+C; end:
+C; last update 17/9/01
+>P1;1p3ha
+structureX:1p3h:   1 :A:  99 :N:10 kda chaperonin:Mycobacterium tuberculosis:2.80:25.9
+AKVNIKPLEDKILVQANEAETTTA--SGLVIPDTAKEKPQEGTVVAVGPGRWDEDGEKRIPLDVAEGDTVIYSKY
+-GGTEIKYNGEEYLILSARDVLAVVSK*
+>P1;1aono
+structureX:1aon:   1 :O:  97 :O:10 kDa chaperonin:Escherichia coli: 3.0: 24.8
+--MNIRPLHDRVIVKRKEVETKSAGGIVLTGS--AAAKSTRGEVLAVGNGRILEN-GEVKPLDVKVGDIVIFNDG
+YGVKSEKIDNEEVLIMSESDILAIVEA*

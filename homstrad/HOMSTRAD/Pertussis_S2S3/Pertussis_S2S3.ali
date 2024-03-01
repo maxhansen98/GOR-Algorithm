@@ -1,0 +1,16 @@
+C; family: Pertussis toxin, subunit 2 and 3, C-terminal domain
+C; class: all beta
+C; type: domain
+C; domain:
+C; 1bcp   c:90-199   1bcpc
+C; 1bcp   b:90-199   1bcpb
+C; end:
+C; last update 24/8/01
+>P1;1bcpc
+structureX:1bcp:  90 :C: 199 :C:pertussis toxin subunit 3:Bordetella pertussis: 2.7: 23.2
+TIYKTGQPAADHYYSKVTATRLLASTNSRLCAVFVRDGQSVIGACASPYEGRYRDMYDALRRLLYMIYMSGLAVR
+VHVSKEEQYYDYEDATFQTYALTGISLCNPAASIC*
+>P1;1bcpb
+structureX:1bcp:  90 :B: 199 :B:pertussis toxin subunit 2:Bordetella pertussis: 2.7: 23.2
+TTRNTGQPATDHYYSNVTATRLLSSTNSRLCAVFVRSGQPVIGACTSPYDGKYWSMYSRLRKMLYLIYVAGISVR
+VHVSKEEQYYDYEDATFETYALTGISICNPGSSLC*

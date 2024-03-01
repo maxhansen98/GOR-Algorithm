@@ -1,0 +1,11 @@
+C; family: TBP-associated factors
+C; class: all alpha
+C; reordered by kitschorder 1.0a
+>P1;1tafa
+structureX:1taf:  19 :A:  86 :A:TBP associated factor TAFII-42:Drosophila melanogaster: 2.0: 19.8
+P-----KDAQVIMSILKELNVQEYEPRVVNQLLEFTFRYVTSILDDAKVY
+ANHARKKTIDLDDVRLATEVTLD*
+>P1;1tafb
+structureX:1taf:   1 :B:  70 :B:TBP associated factor TAFII-62:Drosophila melanogaster: 2.0: 19.8
+MLYGSSISAESMKVIAESIGVGSLSDDAAKELAEDVSIKLKRIVQDAAKF
+MNHAKRQKLSVRDIDMSLKV---*

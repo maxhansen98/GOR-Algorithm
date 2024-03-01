@@ -1,0 +1,15 @@
+C; family: Envelope Polyprotein GP41
+C; class: all alpha
+C; domain:
+C; 1df4   a:    1df4a
+C; 1qce   a:    1qcea 
+C; end:
+C; last update 19/6/100
+>P1;1df4a
+structureX:1df4:   3 :A:  64 :A:envelope polyprotein gp41:Human immunodeficiency virus type 1: 1.45: 20
+---------IVQQQNNLLRAIEAQQHLLQLTVWGIKQLQAG-----------------------------
+-----------GWMEWDREINNYTSLIHSLIEESQN-----------------*
+>P1;1qcea
+structureX:1qce:   1 :A: 123 :A:gp41:Simian immunodeficiency virus: -1: -1
+AQSRTLLAGIVQQQQQLLDVVKRQQELLRLTVWGTKNLQTRVTAIEKYLKDQAQLNAWGAAFRQVAHTTV
+PWPNASLTPKWNNETWQEWERKVDFLEENITALLEEAQIQQEKNMYELQKLNS*

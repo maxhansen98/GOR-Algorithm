@@ -1,0 +1,96 @@
+>P1;1gcn
+sequence
+HSQGTFTSDYSKYLDSRRAQDFVQWLMNT*
+>P1;1bh0
+sequence
+HSQGTFTSDYSKYLDSKKAQEFVQWLMNT*
+>P1;1gcn
+secondary structure and phi angle
+CCCCCCHHHHCCCHHHHHHHHHHCCCCPP*
+>P1;1bh0
+secondary structure and phi angle
+CCCCPCCCCCHHHHHHHHHHHHHHHCPPP*
+>P1;1gcn
+solvent accessibility
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTT*
+>P1;1bh0
+solvent accessibility
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTT*
+>P1;1gcn
+hydrogen bond to mainchain CO
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1bh0
+hydrogen bond to mainchain CO
+FFFFFFFFFFFTFFTTFFFFFFFFFFFFF*
+>P1;1gcn
+hydrogen bond to mainchain NH
+TFFFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1bh0
+hydrogen bond to mainchain NH
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1gcn
+hydrogen bond to other sidechain/heterogen
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1bh0
+hydrogen bond to other sidechain/heterogen
+TFTFFFFFFFFFFFFFFTFFTFFFFFFFF*
+>P1;1gcn
+cis-peptide bond
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1bh0
+cis-peptide bond
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1gcn
+hydrogen bond to heterogen
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1bh0
+hydrogen bond to heterogen
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1gcn
+covalent bond to heterogen
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1bh0
+covalent bond to heterogen
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1gcn
+disulphide
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1bh0
+disulphide
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1gcn
+mainchain to mainchain hydrogen bonds (amide)
+FFTTFTTTTTTTTTTTTFTTTTTTTTTTT*
+>P1;1bh0
+mainchain to mainchain hydrogen bonds (amide)
+FFTTTFFFTTTTTTTTTTTTTTTTTTTTF*
+>P1;1gcn
+Mainchain to mainchain hydrogen bonds (carbonyl)
+TTFTTTTFFTFTTFFTTFTTTTFTTFTFF*
+>P1;1bh0
+Mainchain to mainchain hydrogen bonds (carbonyl)
+TFTFFTTFTTFTTTTTTFTTTTTTTFFFF*
+>P1;1gcn
+DSSP
+CCCCCCHHHHCCCHHHHHHHHHHCCCCCC*
+>P1;1bh0
+DSSP
+CCCCCCCCCCHHHHHHHHHHHHHHHCCCC*
+>P1;1gcn
+positive phi angle
+FFFFFFFFFFFFFFFFFFFFFFFFFFFTT*
+>P1;1bh0
+positive phi angle
+FFFFTFFFFFFFFFFFFFFFFFFFFFTTT*
+>P1;1gcn
+percentage accessibility
+9a96999775687587686866769767b*
+>P1;1bh0
+percentage accessibility
+9884698866578567656857567576a*
+>P1;1gcn
+Ooi number
+00001111111111111111111111100*
+>P1;1bh0
+Ooi number
+00001111111111111111111111110*

@@ -1,0 +1,51 @@
+C; family: immunoglobulin domain -- V set - variable non immunoglobulin
+C; class: all beta
+C; reordered by kitschorder 1.0a
+C; last update 29/4/99
+C; reordered by kitschorder 1.0a
+C; reordered by kitschorder 1.0a
+>P1;1tvdb
+structureX:1tvd:   1 :B: 116 :B:T-cell receptor delta chain:Homo sapiens: 1.90:16.1
+-DKVTQSSPDQTVASGSEVVLLCT-YDTV-----YSNPDLFWYRIRP--D
+YSFQFVFYGD-DS-RSEG-A----DFTQGRFSVKHI---LTQKAFHLVIS
+PVRTEDSATYYCAFTLPP-PTDKLIFG-KGTRVTVEP*
+>P1;1b88a
+structureX:1b88:   1 :A: 114 :A:T-cell receptor V-alpha domain:Mus musculus: 2.50: 22.4
+MQQVRQSPQSLTVWEGETAILNCS-YENS------AFDYFPWYQQFP--G
+EGPALLISIL-SV-SNKK-E----D---GRFTIFFN---KREKKLSLHIA
+DSQPGDSATYFCAASASFGDNSKLIWG-LGTSLVVNP*
+>P1;1cd8
+structureX:1cd8:   1 : : 114 : :T-cell surface glycoprotein CD8 alpha chain:Homo sapiens: 2.6: 19.2
+-SQFRVSPLDRTWNLGETVELKCQ-VLLS-----NPTSGCSWLFQPRGAA
+ASPTFLLYLS-QN-KPKA-AE---GLDTQRFSGKRL-----GDTFVLTLS
+DFRRENEGYYFCSALSN----SIMYFS-HFVPVFLPA*
+>P1;3cd4
+structureX:3cd4:   1 : :  97 : :T-cell surface glycoprotein CD4 domain 1:Homo sapiens: 2.2: 19.7
+-------KKVVLGKKGDTVELTCT-AS--QKKS----IQFHWKNS-----
+-NQIKILGNQ-GS-FLT--K--GPSKLNDRADSR--RSLWDQGNFPLIIK
+NLKIEDSDTYICEVE--------DQKE--EVQLLV--*
+>P1;1neu
+structureX:1neu:   1 : : 119 : :myelin P0 protein:Rattus norvegicus: 1.9: 21.5
+-IVVY-TDREVYGAVGSQVTLHCS-FWSSEWVSD--DISFTWRYQPEGG-
+RDAISIFHYA-KG-QPYI-DE--VGTFKERIQWV--G-DPSWKDGSIVIH
+NLDYSDNGTFTCDVKN/-----VGKTS--QVTLYVFE*
+>P1;1hnf
+structureX:1hnf:   4 : : 104 : :T-cell surface antigen CD2:Homo sapiens: 2.5: 19.3
+----T-NALETWGALGQDINLDIPSFQMS-----DDIDDIKWEK----T-
+SDKKKIAQFR-KEKETFK-EK-------DTYKLF--K------NGTLKIK
+HLKTDDQDIYKVSIYDTKG---KNVLE-KIFDLKIQE*
+>P1;1hnga
+structureX:1hng:   2 :A:  99 :A:T-cell surface antigen CD2:Rattus norvegicus: 2.8: 21.5
+------DSGTVWGALGHGINLNIPNFQMT-----DDIDEVRWER----G-
+--STLVAEFK-RKMKPFL-KS-------GAFEIL--A------NGDLKIK
+NLTRDDSGTYNVTVYSTNG---TRILN-KALDLRILE*
+>P1;1cid1
+structureX:1cid:   1 : : 105 : :T-cell surface glycoprotein CD4 domain 3:Rattus norvegicus: 2.8: 23.3
+------TSITAYKSEGESAEFSFP-LNLG-----EESLQGELRWKAEKAP
+SSQSWITFSLK-NQKVSVQ--KSTSNP--KFQLSE------TLPLTLQIP
+QVSLQFAGSGNLTLTLDR----GILYQ--EVNLV---*
+>P1;1qfpa
+structureX:1qfp:   1 :A: 119 :A:sialoadhesin:Mus musculus: 2.80: 19.8
+TWGVS-SPKNVQGLSGSCLLIPCI-FSYPADVPVSNGITAIWYYDYS---
+GKRQVVIHS------GD--PKLVDKRFRGRAELM--G-NMDHKVCNLLLK
+DLKPEDSGTYNFRFEISDS---NRWLDVKGTTVTVTT*

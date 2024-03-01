@@ -1,0 +1,16 @@
+C; family: CoA binding domain
+C; class: alpha beta
+C; type: domain
+C; domain:
+C; 2scu   a:1-121   2scua
+C; 1eud   a:1-130   1euda
+C; end:
+C; last update 13/7/01
+>P1;2scua
+structureX:2scu:   1 :A: 121 :A:succinyl-CoA synthetase alpha chain:Escherichia coli: 2.30: 19.5
+-------SIL-IDKNTKVICQGFTGSQGTFHSEQAIAYGTKMVGGVTPGKGGTTHLGLPVFNTVREAVAATGATA
+SVIYVPAPFCKDSILEAIDAGIKLIITITEGIPTLDMLTVKVKLDEAG-VRMIGP*
+>P1;1euda
+structureX:1eud:   1 :A: 130 :A:phosphorylated GTP-specific succinyl-CoA synthetase from pig heart:Sus scrofa: 2.10: 15.6
+CSYTASRKHLYVDKNTKVICQGFTGKQGTFHSQQALEYGTNLVGGTTPGKGGKTHLGLPVFNTVKEAKEQTGATA
+SVIYVPPPFAAAAINEAIDAEVPLVVCITEGIPQQDMVRVKHRLLRQGKTRLIGP*

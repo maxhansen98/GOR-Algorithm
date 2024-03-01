@@ -1,0 +1,26 @@
+C; family: Carbamoyl-phosphate synthase L chain and Phosphoribosylglycinamide synthetase, N-terminal domain
+C; class: alpha beta
+C; type: domain
+C; domain:
+C; 1a9x   a:1-127   1a9xa1
+C; 1a9x   a:556-676   1a9xa2
+C; 1dv1   a:1-114   1dv1a
+C; 1gso   a:2-103   1gsoa
+C; end:
+C; last update 24/8/01
+>P1;1a9xa1
+structureX:1a9x:   1 :A: 127 :A:carbamoyl phosphate synthetase:Escherichia coli: 1.8: -1
+MPKRTDIKSILILGAGPIVIGQACEFDYSGAQACKALREE-GYRVINVNSNP--ATIMTDPEMADATYIE-----
+---PIHWEVVRKIIEKERPDAVLPTMGGQTALN--CALELERQGVLEEFGVTMIGATADAIDKAE---*
+>P1;1a9xa2
+structureX:1a9x: 556 :A: 676 :A:carbamoyl phosphate synthetase:Escherichia coli: 1.8: -1
+---STDREKIMVLGGGPNRIGQGIEFDYCCVHASLALRED-GYETIMVNCNP--ETVSTDYDTSDRLYFE-----
+---PVTLEDVLEIVRIEKPKGVIVQYGGQTPLK--LARALEAA------GVPVIGTSPDAIDRAEDRE*
+>P1;1dv1a
+structureX:1dv1:   2 :A: 114 :A:biotin carboxylase:Escherichia coli: 1.90: 18
+------LDKIVIANRG-----------EIALRILRACKEL-GIKTVAVHSSADRDLKHV-LLAD-ETVCIGPAPS
+VKSYLNIPAIISAAEITGAVAIHPGY-GFLSENANFAEQVERS------GFIFIGPKAETIRLMG---*
+>P1;1gsoa
+structureX:1gso:   2 :A: 103 :A:phosphoribosylamine--glycine ligase:Escherichia coli: 1.6: 20.9
+--------KVLVIGNG-----------GREHALAWKAAQSPLVETVFVAPGN---AGTA-LEPALQNVAIG----
+---VTDIPALLDFAQNEKIDLTIVGP-EAPLVK-GVVDTFRAA------GLKIFGPTAGAAQLEG---*

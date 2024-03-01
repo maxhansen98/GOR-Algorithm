@@ -1,0 +1,24 @@
+C; family:  PAS domain
+C; class:  alpha plus beta
+C; domain:
+C; 1drm   a:     1drma
+C; 3pyp   -     3pyp
+C; 1d06   a:     1d06a
+C; end:
+C; last update 18/5/100
+C; reordered by kitschorder 1.0a
+>P1;1d06a
+structureX:1d06: 122 :A: 251 :A:sensor protein fixl:Rhizobium meliloti: 1.40: 22.4
+--GSHMLETEDVVRARDAHLRSILDTVPDATVVSATDGTIVSFNAAAVRQ
+FGYAEEEVIGQNLR-ILMPEPYRHEHDGYLQRYMATGEKRIIGIDRVVSG
+QRKDGSTFPMKLAVGEMRSGGERFFTGFIRDLT-------------*
+>P1;1drma
+structureX:1drm: 152 :A: 270 :A:sensor protein fixl:Bradyrhizobium japonicum: 2.40: 19.9
+--------------------------IPDAMIVIDGHGIIQLFSTAAERL
+FGWSELEAIGQNVN-ILMPEPDRSRHDSYISRYRTTSDPHIIGIGRIVTG
+KRRDGTTFPMHLSIGEMQSGGEPYFTGFVRDLTEHQQTQARLQELQ*
+>P1;3pyp
+structureX:3pyp:   1 : : 125 : :photoactive yellow protein:Ectothiorhodospira halophila: 0.85: -1
+MEHVAFGSEDIENTLAKMD-DGQLDGLAFGAIQLDGDGNILQYNAAEGDI
+TGRDPKQVIGKNFFKDVAPCTDSPEFYGKFKEGVASGN---LNTMFEYTF
+DY-QMTPTKVKVHMKKALSG--DSYWVFVKRV--------------*

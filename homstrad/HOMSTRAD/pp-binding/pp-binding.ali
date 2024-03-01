@@ -1,0 +1,11 @@
+C; family: Phosphopantetheine attachment site
+C; class: all alpha
+C; last update 1/11/99
+>P1;2af8
+structureX:2af8:   1 : :  86 : :actinorhodin polyketide synthase acyl carrier protein:Streptomyces coelicolor: -1: -1
+MATLLTTDDLRRALVECAGETDGTDLSGDFLDLRFE-DIGYDSLALMETAARLESRYGVSIPDDVAGRVDTPREL
+LDLINGALAEAA*
+>P1;1acp
+structureX:1acp:   1 : :  77 : :acyl carrier protein (acp) (cytosolic activating factor):Escherichia coli: -1: -1
+---STIEERVKKIIGEQLGVKQEE----VTNNASFVEDLGADSLDTVELVMALEEEFDTEIPDEEAEKITTVQAA
+IDYINGHQA---*

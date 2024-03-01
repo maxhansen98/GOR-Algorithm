@@ -1,0 +1,12 @@
+C; family: Ring finger
+C; class: small
+C; last update 19/7/99
+>P1;1chc
+structureX:1chc:   1 : :  59 : :immediate early protein:Equine herpesvirus type 1: -1: -1
+MATVA--ERCPICLEDPSNYSMALPCLHAFCYVCITRWIRQNP-TCPLCKVPVE--SVVHTIES*
+>P1;1bor
+structureX:1bor:   1 : :  56 : :transcription factor pml-1:Homo sapiens: -1: -1
+EE-EFQFLRCQQCQAEAKCPKLL-PCLHTLCSGCLEAS----GMQCPICQAPW--PLGADTPAL*
+>P1;1rmd
+structureX:1rmd:  17 : :  77 : :v(D)J recombination activating protein 1:Mus musculus: 2.10: 20.9
+PAHFVKSISCQICEHILADPVET-SCKHLFCRICILRCLKVMGSYCPSCRYPCFPTDLESPV--*

@@ -1,0 +1,18 @@
+C; family: Glycosyl hydrolase family 20, domain 2  
+C; class: alpha plus beta
+C; type: domain 
+C; domain:
+C; 1qba   201-337   1qba
+C; 1hp5   a:8-150   1hp5a
+C; end:
+C; last update 13/7/01
+>P1;1qba
+structureX:1qba: 201 : : 337 : :chitobiase:Serratia marcescens: 1.85: 13.9
+SNADLQTLPAGALRG-KIVPTPMQVKVHAQDADLRKGVALDLSTLV--KPAADVVSQRFALL-GV--PVQTNG-Y
+PIKTDIQPGKFKGAMAVSGAYELKIGKKEAQVIGFDQAGVFYGLQSILSLVPSD--------GSGKIATLDASDA
+PR*
+>P1;1hp5a
+structureX:1hp5:   8 :A: 150 :A:beta-N-acetylhexosaminidase complexed with intermediate analogue NAG-thiazoline:Streptomyces plicatus: 2.10: 19.7
+----DRKAPVRPTPLDRVIPAPASVDPGGAPYRITRGTHIRVDDSREARRVGDYLADLLRPATGYRLPVTAHGHG
+GIRLRLAGGPYG-----DEGYRLDSGPAGVTITARKAAGLFHGVQTLRQLLPPAVEKDSAQPGPWLVAGGTIEDT
+PR*

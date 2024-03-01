@@ -1,0 +1,12 @@
+C; family: Heavy-metal-associated domain
+C; class: alpha plus beta
+C; last update 20/1/100
+>P1;2hqi
+structureX:2hqi:   1 : :  72 : :periplasmic mercury ion binding protein:Shigella flexneri: -1: -1
+ATQTVTLAVPGMTCAACPITVKKALSKVEGVSKVDVGFEKREAVVTFDDTKASVQKLTKATADAGYPSSVKQ*
+>P1;2aw0
+structureX:2aw0:   1 : :  72 : :copper-transporting ATPase 1:Homo sapiens: -1: -1
+LTQETVINIDGMTCNSCVQSIEGVISKKPGVKSIRVSLANSNGTVEYDPLLTSPETLRGAIEDMGFDATLSD*
+>P1;1cpza
+structureX:1cpz:   1 :A:  68 :A:activator of copyzab:Enterococcus hirae: -1: -1
+---AQEFSVKGMSCNHCVARIEEAVGRISGVKKVKVQLKKEKAVVKFDEANVQATEICQAINELGYQAEVI-*

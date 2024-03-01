@@ -1,0 +1,85 @@
+C; family: snake toxin
+C; class: small disulphide
+C; reordered by kitschorder 1.0a
+C; reordered by kitschorder 1.0a
+C; reordered by kitschorder 1.0a
+>P1;1kbt
+structureX:1kbt:   1 : :  60 : :ctx IV:Naja naja atra:-1:-1
+RKCN-KLVP--LFYKTCPAGKNLCYKMFMVSNL-T---VPVKRGCIDVCP
+KNSAL-VKYVCCNT-DRCN---------*
+>P1;2crt
+structureN:2crt:   1 : :  60 : :cardiotoxin III:Naja naja atra:-1.00:-1.00
+LKCN-KLVP--LFYKTCPAGKNLCYKMFMVATP-K---VPVKRGCIDVCP
+KSSLL-VKYVCCNT-DRCN---------*
+>P1;2cdx
+structureX:2cdx:   1 : :  60 : :cardiotoxin ctx I:Naja naja atra:-1:-1
+LKCN-KLIP--IASKTCPAGKNLCYKMFMMSDL-T---IPVKRGCIDVCP
+KNSLL-VKYVCCNT-DRCN---------*
+>P1;1cdta
+structureX:1cdt:   1 :A:  60 :A:cardiotoxin V4:Naja mossambica mossambica: 2.50:19.70
+LKCN-KLIP--IAYKTCPEGKNLCYKMMLASKK-M---VPVKRGCINVCP
+KNSAL-VKYVCCST-DRCN---------*
+>P1;1tgxa
+structureX:1tgx:   1 :A:  60 :A:gamma toxin:Naja nigricolis: 1.55:17.20
+LKCN-QLIP--PFWKTCPKGKNLCYKMTMRAAP-M---VPVKRGCIDVCP
+KSSLL-IKYMCCNT-DKCN---------*
+>P1;1kxia
+structureX:1kxi:   1 :A:  62 :A:cardiotoxin V:Naja naja atra:2.19:20.7
+LKCHNTQLP--FIYKTCPEGKNLCFKATLKKFPLK---FPVKRGCADNCP
+KNSAL-LKYVCCST-DKCN---------*
+>P1;1tfs
+structureX:1tfs:   1 : :  60 : :toxin fs2:Dendroaspis polylepis polylepis:-1:-1
+RICYSHKASLPRATKTCV--ENTCYKMFIRTH----REYISERGCG--CP
+TAMW-PYQTECCKG-DRCNK--------*
+>P1;1drs
+structureN:1drs:   1 : :  59 : :dendroaspin:Dendroaspis jamesoni kaimose:-1.00:-1.00
+RICYNHLGTKPPTTETCQ--EDSCYKNIWTFD------NIIRRGCG--CF
+TPRGDMPGPYCCES-DKCNL--------*
+>P1;1txb
+structureX:1txb:   1 : :  73 : :toxin b:Ophiophagus hannah:-1:-1
+TKCYVT--P-DATSQTCPDGQDICYTKTWCDGFCSSRGKRIDLGCAATCP
+KVKPGV-DIKCCST-DNCNPFPTWKRKH*
+>P1;2ctx
+structureX:2ctx:   1 : :  71 : :alpha-cobratoxin:Naja naja siamensis: 2.40:19.50
+IRCFIT--P-DGTSKDCPNG-HVCYTKTWCDGFCSIRGKRVDLGCAATCP
+TVKTGV-DIQCCST-DNCNPFPTGGAP-*
+>P1;1ntn
+structureX:1ntn:   1 : :  72 : :neurotoxin-I:Naja naja oxiana:1.90:19.0
+ITCYKT--P-IITSETCAPGQNLCYTKTWCDAWCGSRGKVIELGCAATCP
+TVESYQ-DIKCCST-DNCNPHPKQKR-P*
+>P1;1lsi
+structureX:1lsi:   1 : :  66 : :LSIII:Laticauda semifasciata:-1:-1
+RECYLN--P-HDT-QTCPSGQEICYVKSWCNAWCSSRGKVLEFGCAATCP
+SVNTGT-EIKCCSA-DKCNTYP------*
+>P1;2abxa
+structureX:2abx:   1 :A:  74 :A:alpha-bungarotoxin:Bungarus multicinctus: 2.50:24.00
+IVCHTTATI-PSSAVTCPPGENLCYRKMWCDAFCSSRGKVVELGCAATCP
+SKKPYE-EVTCCST-DKCNHPPKRQ-PG*
+>P1;2nbta
+structureN:2nbt:   1 :A:  66 :A:neuronal bungarotoxin:Bungarus multicinctus:-1.00:-1.00
+RTCLISPS---STPQTCPNGQDICFLKAQCDKFCSIRGPVIEQGCVATCP
+QFRSNYRSLLCCTT-DNCNH--------*
+>P1;1nean
+structureN:1nea:   1 : :  61 : :alpha-toxin:Naja nigricollis:-1.00:-1.00
+LECHNQQSSQPPTTKTCP-GETNCYKKVWRDH----RGTIIERGCG--CP
+TVKPG-IKLNCCTT-DKCNN--------*
+>P1;1nor
+structureN:1nor:   1 : :  61 : :neurotoxin II:Naja naja oxiana:-1.00:-1.00
+LECHNQQSSQPPTTKTCS-GETNCYKKWWSDH----RGTIIERGCG--CP
+KVKPG-VNLNCCRT-DRCNN--------*
+>P1;1cod
+structureN:1cod:   1 : :  62 : :cobrotoxin II:Naja naja atra:-1.00:-1.00
+LECHNQQSSQTPTTTGCSGGETNCYKKRWRDH----RGYRTERGCG--CP
+SVKNG-IEINCCTT-DRCNN--------*
+>P1;1nxb
+structureX:1nxb:   1 : :  62 : :erabutoxin:Laticauda semifasciata: 1.38:24.00
+RICFNQHSSQPQTTKTCSPGESSCYHKQWSDF----RGTIIERGCG--CP
+TVKPG-IKLSCCES-EVCNN--------*
+>P1;1ntx
+structureN:1ntx:   1 : :  62 : :alpha-neurotoxin:Dendroapsis polylepsis polylepsis:-1.00:-1.00
+RICYNHQSTTRATTKSCE--ENSCYKKYWRDH----RGTIIERGCG--CP
+KVKPG-VGIHCCQS-DKCNY--------*
+>P1;1fas
+structureX:1fas:   1 : :  61 : :fasciculin 1:Dendroaspis angusticeps: 1.80:14.90
+TMCYSHTTTSRAILTNCGE--NSCYRKSRRHPPK----MVLGRGCG--CP
+PGDDY-LEVKCCTSPDKCNY--------*

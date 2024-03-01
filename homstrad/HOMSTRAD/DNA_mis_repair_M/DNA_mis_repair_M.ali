@@ -1,0 +1,16 @@
+C; family: DNA mismatch repair protein, second domain
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1h7s   a:232-364   1h7sa
+C; 1b63   a:217-331   1b63a
+C; end:
+C; last update 10/12/01
+>P1;1h7sa
+structureX:1h7s: 232 :A: 364 :A:PMS1 protein homolog 2:Homo sapiens: 1.95: 21.8
+GQKQLQSLIPFVQLPPSDSVCEEYGLSCSDALHNLFYISGFISQCTHGVGRS-STDRQFFFINRRPCDPAKVCRL
+VNEVYH-YNR-HQYPFVVLNISVDSECVDIN------QILLQEEKLLLAVLKTSLIG-FD*
+>P1;1b63a
+structureX:1b63: 217 :A: 331 :A:DNA mismatch repair protein MutL:Escherichia coli: 1.9: 21.3
+GTAFLEQALAIEWQH------------------GDLTLRGWVADPN--HTTPALAEIQYCYVNGRMMRDRLINHA
+IRQACEDKLGADQQPAFVLYLEIDPHQVDVNVHPAKHEVRFHQSRLVHDFIYQGVLSVLQ*

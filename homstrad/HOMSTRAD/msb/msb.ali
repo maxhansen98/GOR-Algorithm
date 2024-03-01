@@ -1,0 +1,54 @@
+C; family: C-type lectin
+C; class: alpha plus beta
+C; reordered by kitschorder 1.0a
+C; reordered by kitschorder 1.0a
+C; reordered by kitschorder 1.0a
+C; last update 21/6/99
+>P1;1esl
+structureX:1esl:   1 : : 120 : :lec domain E-selectin:Homo sapiens:2.00:16.40
+-----------------------WSYNTSTEAMTYDEASAYCQQR--YTH
+LVAIQNKEEIEYLNSILS----YSPSYYWIGIRKVN----NVWVWVGTQK
+PLTEEAKNWAP---GEPNNRQKDEDCVEIYIKREKDVGMWNDERCSKKKL
+ALCYTA--*
+>P1;1rdo1
+structureX:1rdo: 115 :1: 225 :1:mannose-binding protein-c:Rattus rattus:1.70:20.1
+-----------------------KYFMSSVRRMPLNRAKALCSEL--QGT
+VATPRNAEENRAIQNVAK-------DVAFLGITDQRTE--NVFEDL-TGN
+RVR--YTNWNE---GEPNNVGSGENCVVLLT-----NGKWNDVPCSDSFL
+VVCEFS--*
+>P1;1msba
+structureX:1msb: 107 :A: 221 :A:mannose-binding protein:Rattus rattus:2.30:17.60
+--------------------SGKKFFVTNHERMPFSKVKALCSEL--RGT
+VAIPRNAEENKAIQEVAK-------TSAFLGITDEVTE--GQFMYV-TGG
+RLT--YSNWKK---DEPNDHGSGEDCVTIVD-----NGLWNDISCQASHT
+AVCEFPA-*
+>P1;1tn3
+structureX:1tn3:  45 : : 181 : :tetranectin (plasminogen-kringle 4 binding protein):Homo sapiens: 2.0: 21.5
+---------ALQTVCLKGTKVHMKCFLAFTQTKTFHEASEDCISR--GGT
+LSTPQTGSENDALYEYLRQSV-GNEAEIWLGLNDMAAE--GTWVDM-TGA
+RIA--YKNWETEITAQPDG-GKTENCAVLSGA---ANGKWFDKRCRDQLP
+YICQFGIV*
+>P1;2afp
+structureN:2afp:   1 :A: 129 :A:sea raven type ii antifreeze protein:Hemitripterus americanus:-1:-1
+-------QRAGPNCPAGWQPLGDRCIYYETTAMTWALAETNCMKL--GGH
+LASIHSQEEHSFIQTL-------NAGVVWIGGSACLQ--AGAWTWS-DGT
+PMN--FRSWC---STKPDDV-LAACCMQMTAAAD-Q--CWDDLPCPASHK
+SVCAMTF-*
+>P1;1qdda
+structureX:1qdd:   1 :A: 144 :A:lithostathine 1 alpha:Homo sapiens: 1.30: -1
+QAAATELPAAAASCPEGTNAYRSYCYYFNEDRETWVDADLYCQNMN-SGN
+LVSVLTQAEGAFVASLIKES-GTDDFNVWIGLHDP--KKNRAWHWS-SGS
+LVS--YKSWG---IGAPSSV-NPGYCVSLTSSTGFQ--KWKDVPCEDKFS
+FVCKFKN-*
+>P1;1ixxa
+structureX:1ixx:   1 :A: 129 :A:coagulation factor IX/factor X-binding protein A chain:Trimeresurus flavoviridis: 2.5: 17.8
+------------DCLSGWSSYEGHCYKAFEKYKTWEDAERVCTEQAKGAH
+LVSIESSGEADFVAQLVTQNMKRLDFYIWIGLRVQGKVKQCNSEWS-DGS
+SVS--YENWI--------EA-ESKTCLGLEKETDFR--KWVNIYCGQQNP
+FVCEA---*
+>P1;1ixxb
+structureX:1ixx:   1 :B: 123 :B:coagulation factor IX/factor X-binding protein B chain:Trimeresurus flavoviridis: 2.5: 17.8
+------------DCPSDWSSYEGHCYKPFSEPKNWADAENFCTQQHAGGH
+LVSFQSSEEADFVVKLAFQTF--GHSIFWMGLSNV--WNQCNWQWS-NAA
+MLR--YKAW----------A-EESYCVYFKST--NN--KWRSRACRMMAQ
+FVCEFQA-*

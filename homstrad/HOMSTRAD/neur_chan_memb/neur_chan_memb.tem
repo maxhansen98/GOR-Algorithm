@@ -1,0 +1,96 @@
+>P1;1eq8a
+sequence
+EKMSTAISVLLAQAVFLLLTSQR----*
+>P1;1dxza
+sequence
+EKMTLSISVLLSLTVFLLVIVELIPST*
+>P1;1eq8a
+secondary structure and phi angle
+CHHHHHHHHHHHHHHHHHHHHHC----*
+>P1;1dxza
+secondary structure and phi angle
+CHHHHHHHHHHHHHHHHHHHHHHCCCC*
+>P1;1eq8a
+solvent accessibility
+TTTTTTTTTTTTTTTTTTTTTTT----*
+>P1;1dxza
+solvent accessibility
+TTTTTTTTTTTTTTTTTTTTTTTTTTT*
+>P1;1eq8a
+hydrogen bond to mainchain CO
+FFFFTFFFFFFFFFFFFFFTTFF----*
+>P1;1dxza
+hydrogen bond to mainchain CO
+FFFFFFFTFFFTFTFFFFFFFFFFFTT*
+>P1;1eq8a
+hydrogen bond to mainchain NH
+FFFFFFFFFFFFFFFFFFFFFFF----*
+>P1;1dxza
+hydrogen bond to mainchain NH
+FFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1eq8a
+hydrogen bond to other sidechain/heterogen
+FFFFFFFFFFFFFFFFFFFFFFF----*
+>P1;1dxza
+hydrogen bond to other sidechain/heterogen
+FFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1eq8a
+cis-peptide bond
+FFFFFFFFFFFFFFFFFFFFFFF----*
+>P1;1dxza
+cis-peptide bond
+FFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1eq8a
+hydrogen bond to heterogen
+FFFFFFFFFFFFFFFFFFFFFFF----*
+>P1;1dxza
+hydrogen bond to heterogen
+FFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1eq8a
+covalent bond to heterogen
+FFFFFFFFFFFFFFFFFFFFFFF----*
+>P1;1dxza
+covalent bond to heterogen
+FFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1eq8a
+disulphide
+FFFFFFFFFFFFFFFFFFFFFFF----*
+>P1;1dxza
+disulphide
+FFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1eq8a
+mainchain to mainchain hydrogen bonds (amide)
+FFFTTTTTTTTTTTTTTTTTTTT----*
+>P1;1dxza
+mainchain to mainchain hydrogen bonds (amide)
+FFTTTTTTTTTTTTTTTTTTTTTTFTT*
+>P1;1eq8a
+Mainchain to mainchain hydrogen bonds (carbonyl)
+TTTTTTTTTTTTTFTTTTTTTFF----*
+>P1;1dxza
+Mainchain to mainchain hydrogen bonds (carbonyl)
+TTTTTTTFTTTTTTTTTTTTFFTTFFF*
+>P1;1eq8a
+DSSP
+CHHHHHHHHHHHHHHHHHHHHHC----*
+>P1;1dxza
+DSSP
+CHHHHHHHHHHHHHHHHHHHHHHCCCC*
+>P1;1eq8a
+positive phi angle
+FFFFFFFFFFFFFFFFFFFFFFF----*
+>P1;1dxza
+positive phi angle
+FFFFFFFFFFFFFFFFFFFFFFFFFFF*
+>P1;1eq8a
+percentage accessibility
+8a857668788686768646889----*
+>P1;1dxza
+percentage accessibility
+aa8874667777677766646777667*
+>P1;1eq8a
+Ooi number
+00111111111111111111100----*
+>P1;1dxza
+Ooi number
+011111111111111111111111100*

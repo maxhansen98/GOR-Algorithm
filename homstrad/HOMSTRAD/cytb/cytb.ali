@@ -1,0 +1,35 @@
+C; family: cytochrome b5
+C; class: alpha plus beta
+C; domain:
+C; 1mj4   a:   1mj4a
+C; 1sox   a:3-93   1soxa
+C; 1eue   a:   1euea
+C; 1cyo   -   1cyo
+C; 1cxy   a:   1cxya
+C; 1kbi   a:1-92   1kbia
+C; end:
+C; last update 14/11/2003
+>P1;1mj4a
+structureX:1mj4:   3 :A:  82 :A:sulfite oxidase cytochrome b5 domain, residues 22-103 of sws p51687:Homo sapiens: 1.20: 11.80
+------STHIYTK-EVSSHTSPETGIWVTLGSEVFDVTEFVDLHPGGPSKLMLAAGGPLEPFWALY--AVHNQSH
+VRELLA--QYKIGEL----------*
+>P1;1soxa
+structureX:1sox:   3 :A:  93 :A:sulfite oxidase:Gallus gallus: 1.90: 17.48
+------SYPEYTREEVGRHRSPEERVWVTHGTDVFDVTDFVELHPGGPDKILLAAGGALEPFWALY--AVHGEPH
+VLELLQ--QYKVGELSPDEAPAPDA*
+>P1;1euea
+structureX:1eue:   1 :A:  86 :A:cytochrome b5 water soluble domain:Rattus norvegicus: 1.80: 19.70
+----DPAVTYYRLEEVAKRNTAE-ETWMVIHGRVYDITRFLSEHPGGEEILLEQAGADATESFEDI----GHSPD
+AREMLK--QYYIGDVHPNDLKP---*
+>P1;1cyo
+structureX:1cyo:   1 : :  88 : :cytochrome b5:Bos taurus: 1.50: 16.00
+----SKAVKYYTLEEIQKHNNSK-STWLILHYKVYDLTKFLEEHPGGEEVLREQAGGDATENFEDV----GHSTD
+ARELSK--TFIIGELHPDDRSKIT-*
+>P1;1cxya
+structureX:1cxy:   6 :A:  86 :A:cytochrome b5:Ectothiorhodospira vacuolata: 1.65: 19.90
+------TLPVFTLEQVAEHHSPD-DCWMAIHGKVYDLTPYVPNHPGPAGMMLVWCGQESTEAWETKSYGEPHSSL
+AARLLQ--RYLIGTL----------*
+>P1;1kbia
+structureX:1kbi:   1 :A:  92 :A:cytochrome b2:Saccharomyces cerevisiae: 2.30: 17.00
+EPKLDMNKQKISPAEVAKHNKPD-DCWVVINGYVYDLTRFLPNHPGGQDVIKFNAGKDVTAIFEPL-----HAPN
+VIDKYIAPEKKLGPLQG--SMPPEL*

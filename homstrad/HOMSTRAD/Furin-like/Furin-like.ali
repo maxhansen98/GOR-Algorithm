@@ -1,0 +1,18 @@
+C; family: Furin-like cysteine rich region
+C; class: all beta
+C; type: domain
+C; domain:
+C; 1m6b   a:163-309   1m6ba
+C; 1igr   a:150-299   1igra
+C; end:
+C; last update 13/8/02
+>P1;1m6ba
+structureX:1m6b: 163 :A: 309 :A:receptor protein-tyrosine kinase erbB-3, extracellular domain:Homo sapiens: 2.60: 23.8
+SCPPCHE------VCK---------GRCWGPGSEDCQTLTKTICAPQCNGHCFGPNPNQCCHDECAGGCSG-PQD
+TDCFACRHFNDSGACVPRCPQPLVYNKLTFQLEPNPHTKYQYGGVCVA-SCPH-----------NFVVDQTSCVR
+ACPPDKMEVDKNGLKMCEPCGGLCP*
+>P1;1igra
+structureX:1igr: 150 :A: 299 :A:insulin-like growth factor I receptor:Homo sapiens: 2.60: 23.7
+--DLCPGTMEEKPMCEKTTINNEYNYRCWTT--NRCQK----MCPSTCGKRACTEN-NECCHPECLGSCSAPDND
+TACVACRHYYYAGVCVPACPP---------------NTYRFEGWRCVDRDFCANILSAESSDSEGFVIHDGECMQ
+ECPSGFIRN-GSQSMYCIPCEGPCP*

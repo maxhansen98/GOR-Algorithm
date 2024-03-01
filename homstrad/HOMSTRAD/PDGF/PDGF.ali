@@ -1,0 +1,11 @@
+C; family: Platelet-derived and vascular endothelial growth factors (PDGF, VEGF)
+C; class: all beta
+C; last update 16/11/99
+>P1;1fltv
+structureX:1flt:  13 :V: 107 :V:vascular endothelial growth factor (VEGF):Homo sapiens: 1.7: 19.8
+EVVKFMDVYQR--SYCHPIETLVDIFQEYPDEIEYIFKPSCVPLMRCGGCCNDEGLECVPTEESNITMQIMRIKP
+H---QGQHIGEMSFLQHNKCECRPK--*
+>P1;1pdga
+structureX:1pdg:   9 :A: 104 :A:platelet-derived growth factor, B chain (PDGF B-chain):Homo sapiens: 3.0: 20.9
+EPA--------MIAECKTRTEVFEIS-------RFLVWPPCVEVQRCSGCCNNRNVQCRPTQVQLRPVQVRKIEI
+VRKKPIFKKATVTLEDHLACKCETVAA*

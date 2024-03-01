@@ -1,0 +1,125 @@
+C; family: RNA recognition motif. (a.k.a. RRM, RBD, or RNP domain)
+C; class: alpha plus beta
+C; domain:
+C; 1jmt   a:   1jmta
+C; 1qm9   a:111-198   1qm9a1
+C; 1a9n   b:   1a9nb
+C; 1nu4   a:   1nu4a
+C; 2u1a   -   2u1a
+C; 1qm9   a:1-110   1qm9a2
+C; 1hd1   a:   1hd1a
+C; 1l3k   a:8-91   1l3ka1
+C; 2mst   a:   2msta
+C; 1iqt   a:   1iqta
+C; 2u2f   a:   2u2fa
+C; 1oo0   b:   1oo0b
+C; 1cvj   a:11-90   1cvja1
+C; 1h6k   x:   1h6kx
+C; 1fxl   a:37-118   1fxla2
+C; 1fxl   a:119-203   1fxla1
+C; 1cvj   a:91-179   1cvja2
+C; 1fje   b:92-175   1fjeb2
+C; 1fje   b:1-91   1fjeb1
+C; 1u2f   a:   1u2fa
+C; end:
+C; last update 12/11/2003
+>P1;1jmta
+structureX:1jmt:  43 :A: 146 :A:splicing factor U2AF 35 kDa subunit:Homo sapiens: 2.20: 22.60
+------------SQTIALLNIYRNPQDGLRSAVSDVEMQEHYDEFFEEVFTEMEEKYG----------EVEEMNV
+CDNLG--DHLVGNVYVKFRREEDAEKAVIDLNNRWFNG--QPIHAELSP--------------------------
+-------*
+>P1;1qm9a1
+structureX:1qm9: 111 :A: 198 :A:polypyrimidine tract-binding protein, RNA binding fragment:Homo sapiens: -1: -1
+---KNFQNIFPPSATLHLSNIPP---------------SVS----EEDLKVLFSSNGG----------VVKGFKF
+FQKDR------KMALIQMGSVEEAVQALIDLHN-HDLGENHHLRVSFSKSTI-----------------------
+-------*
+>P1;1a9nb
+structureX:1a9n:   6 :B:  99 :B:U2 B, N-terminal domain, residues 4-99:Homo sapiens: 2.38: 28.20
+---------IRPNHTIYINNMND---------------KIKKEELKRSLYALFSQ-FG----------HVVDIVA
+L--KTMKM--RGQAFVIFKELGSSTNALRQLQGFPFYG--KPMRIQYAKTDSDIISKMRG---------------
+-------*
+>P1;1nu4a
+structureX:1nu4:   7 :A:  97 :A:U1A RNA binding domain:Homo sapiens: 1.80: 20.30
+----------RPNHTIYINNLNE---------------KIKKDELKKSLHAIFSR-FG----------QILDILV
+S--RSLKM--RGQAFVIFKEVSSATNALRSMQGFPFYD--KPMRIQYAKTDSDIIAKM-----------------
+-------*
+>P1;2u1a
+structureX:2u1a:   1 : :  88 : :U1 small nuclear ribonucleoprotein A RNA binding domain 2, RBD2:Homo sapiens: -1: -1
+MAPAQPLSENPPNHILFLTNLPE---------------ETN----ELMLSMLFNQ-FP----------GFKEVRL
+VPG------RHDIAFVEFDNEVQAGAARDALQGFK-ITQNNAMKISFAKK-------------------------
+-------*
+>P1;1qm9a2
+structureX:1qm9:   1 :A: 110 :A:polypyrimidine tract-binding protein, RNA binding fragment:Homo sapiens: -1: -1
+----------MGNSVLLVSNLNPE--------------RVT----PQSLFILFGV-YG----------DVQRVKI
+LFNK------KENALVQMADGNQAQLAMSHLNGHKL--HGKPIRITLSKHQNVQLPREGQEDQGLTKDYGNSPLH
+RFKKPGS*
+>P1;1hd1a
+structureX:1hd1:  98 :A: 172 :A:heterogeneous nuclear ribonucleoprotein D0 RNA-binding domain:Homo sapiens: -1: -1
+--------------KMFIGGLSW---------------DTT----KKDLKDYFSK-FG----------EVVDCTL
+KLDP-ITGRSRGFGFVLFKESESVDKVMDQ-KEHKLNG--KVIDPKRA---------------------------
+-------*
+>P1;1l3ka1
+structureX:1l3k:   8 :A:  91 :A:heterogeneous nuclear ribonucleoprotein A1 RNA-recognition motif domain:Homo sapiens: 1.10: 15.60
+----KEPE--QLR-KLFIGGLSF---------------ETT----DESLRSHFEQ-WG----------TLTDCVV
+MRDP-NTKRSRGFGFVTYATVEEVDAAMN-ARPHKVDG--RVVEPKRAV-------S------------------
+-------*
+>P1;2msta
+structureX:2mst: 110 :A: 184 :A:musashi1 RNA-binding domain:Mus musculus: -1: -1
+--------------KIFVGGLSV---------------NTT----VEDVKHYFEQ-FG----------KVDDAML
+MFDK-TTNRHRGFGFVTFESEDIVEKVCE-IHFHEINN--KMVECKKA---------------------------
+-------*
+>P1;1iqta
+structureX:1iqt: 183 :A: 257 :A:heterogeneous nuclear ribonucleoprotein D0, C-terminal domain:Homo sapiens: -1: -1
+--------------KIFVGGLSP---------------DTP----EEKIREYFGG-FG----------EVESIEL
+PMD-NKTNKRRGFCFITFKEEEPVKKIMEK-KYHNVGL--SKCEIKVA---------------------------
+-------*
+>P1;2u2fa
+structureX:2u2f:   1 :A:  85 :A:splicing factor U2AF 65 kD subunit, second RNA-binding domain:Homo sapiens: -1: -1
+------------AHKLFIGGLPN---------------YLN----DDQVKELLTS-FG----------PLKAFNL
+VKDS-ATGLSKGYAFCEYVDINVTDQAIAGLNGMQL--GDKKLLVQRASVGAKNA--------------------
+-------*
+>P1;1oo0b
+structureX:1oo0:  64 :B: 155 :B:CG8781-PA middle fragment:Drosophila melanogaster: 1.85: 21.50
+----PGPQRSVEGWILFVTSIHE---------------EAQ----EDEIQEKFCD-YG----------EIKNIHL
+NLDR-RTGFSKGYALVEYETHKQALAAKEALNGAEIMG--QTIQVDWCFV------KGPK---------------
+-------*
+>P1;1cvja1
+structureX:1cvj:  11 :A:  90 :A:polydenylate binding protein 1 residues 1-190:Homo sapiens: 2.60: 23.00
+------------A-SLYVGDLHP---------------DVT----EAMLYEKFSP-AG----------PILSIRV
+CRDM-ITRRSLGYAYVNFQQPADAERALDTMNFDVIKG--KPVRIMWSQR------D------------------
+-------*
+>P1;1h6kx
+structureX:1h6k:  38 :X: 118 :X:20 kDa nuclear cap binding protein RNP domain:Homo sapiens: 2.00: 20.32
+-----------KSCTLYVGNLSF---------------YTT----EEQIYELFSK-SG----------DIKKIIM
+GLDK-M----CGFCFVEYYSRADAENAMRYINGTRLDD--RIIRTDWDA----------G---------------
+-------*
+>P1;1fxla2
+structureX:1fxl:  37 :A: 118 :A:paraneoplastic encephalomyelitis antigen HUD, N-terminal two RRM-domains:Homo sapiens: 1.80: 19.20
+----------SKT-NLIVNYLPQ---------------NMT----QEEFRSLFGS-IG----------EIESCKL
+VRDK-ITGQSLGYGFVNYIDPKDAEKAINTLNGLRLQT--KTIKVSYARP------S------------------
+-------*
+>P1;1fxla1
+structureX:1fxl: 119 :A: 203 :A:paraneoplastic encephalomyelitis antigen HUD, N-terminal two RRM-domains:Homo sapiens: 1.80: 19.20
+----SASI--RDA-NLYVSGLPK---------------TMT----QKELEQLFSQ-YG----------RIITSRI
+LVDQ-VTGVSRGVGFIRFDKRIEAEEAIKGLNGQKPSGATEPITVKFA---------------------------
+-------*
+>P1;1cvja2
+structureX:1cvj:  91 :A: 179 :A:polydenylate binding protein 1:Homo sapiens: 2.60: 23.00
+----PSLRKSGVG-NIFIKNLDK---------------SID----NKALYDTFSA-FG----------NILSCKV
+VCD--EN-GSKGYGFVHFETQEAAERAIEKMNGMLLND--RKVFVGRFKS------RKER---------------
+-------*
+>P1;1fjeb2
+structureX:1fje:  92 :B: 175 :B:nucleolin RBD12, two N-terminal RBD domains:Mesocricetus auratus: -1: -1
+----DSKKVRAAR-TLLAKNLSF---------------NIT----EDELKEVFE--------------DALEIRL
+VSQDG---KSKGIAYIEFKSEADAEKNLEEKQGAEIDG--RSVSLYYTGE--------KG---------------
+-------*
+>P1;1fjeb1
+structureX:1fje:   1 :B:  91 :B:nucleolin RBD12, two N-terminal RBD domains:Mesocricetus auratus: -1: -1
+GSHMVEGSESTTPFNLFIGNLNP---------------NKSVAELKVAISELFAKNDL----------AVVDVRT
+GT-------NRKFGYVDFESAEDLEKALELTG-LKVFG--NEIKLEKPKGR------------------------
+-------*
+>P1;1u2fa
+structureX:1u2f:   1 :A:  90 :A:splicing factor U2AF 65kD subunit, first RNA-binding domain:Homo sapiens: -1: -1
+------------ARRLYVGNIPF---------------GIT----EEAMMDFFNAQMRLGGLTQAPGNPVLAVQI
+NQD-------KNFAFLEFRSVDETTQAMA-FDGIIFQG--QSLKIRRPHDYQPLPG-------------------
+-------*

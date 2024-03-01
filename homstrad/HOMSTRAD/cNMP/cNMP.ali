@@ -1,0 +1,11 @@
+C; family: Cyclic nucleotide-monophosphate binding domain
+C; class: all beta
+C; last update 17/7/99
+>P1;1rgs
+structureX:1rgs: 258 : : 376 : :cAMP-dependent protein kinase type I-alpha regulatory subunit:Bos taurus: 2.80: 21.7
+DKWERLTVADALEPVQFEDGQKIVVQGEPGDEFFIILEGSAAVLQRRSENEEFVEVGRLGPSDYFGEIALLM-NR
+PRAATVVARGPLKCVKLDRPRFERVLGP---CSDILKRNIQQYNSFVS--------*
+>P1;1cgpa
+structureX:1cgp:   9 :A: 136 :A:catabolite gene activator:Escherichia coli: 3.00: 23.5
+--PTLEWFLSHCHIHKYPSKSTLIHQGEKAETLYYIVKGSVAVLIKD-EEGKEMILSYLNQGDFIGELGLFEEGQ
+ERSAWVRAKTACEVAEISYKKFRQLIQVNPDILMRLSAQMARRLQVTSEKVGNLAF*

@@ -1,0 +1,16 @@
+C; family: PAN domain
+C; class: small disulphide
+C; type: domain
+C; domain:
+C; 1bht   a:35-126   1bhta
+C; 1hky   a:   1hkya
+C; end:
+C; last update 28/10/02
+>P1;1bhta
+structureX:1bht:  35 :A: 126 :A:hepatocyte growth factor:Homo sapiens: 2.00: 19.6
+-------RRNTIHEFKKSAKTTLIKIDPALKIKTKKVNTADQCANRCTRNKGLPFTCKAFVFDKARKQCLWFPFN
+SMSSGVKKEFGHEFDLYENKDYIR---*
+>P1;1hkya
+structureN:1hky:   1 :A:  86 :A:microneme protein 5:Eimeria tenella: -1: -1
+DYKDDDDKVKL---TCYQNGVSFT---GGKAISEAKAASSQACQELCEKDA----KCRFFTLAS--GKCSLFAD-
+--DAALRPTKSDGAVSGN-KRCILLED*

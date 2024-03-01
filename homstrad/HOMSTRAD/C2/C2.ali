@@ -1,0 +1,18 @@
+C; family: Protein kinase C conserved region 2 (CalB)
+C; class: all beta
+C; reordered by kitschorder 1.0a
+>P1;1rsy
+structureX:1rsy: 140 : : 265 : :synaptotagmin i:Rattus norvegicus: 1.9: -1
+--EKLGKLQYSLDYDF-QN-NQLLVGIIQAAELPALDM--GGTSDPYVKV
+FLLP--DKKKKFETKVHRKTL-NPVFNEQFTFKVPYSELGGKTLVMAVYD
+FDRFSKHDIIGEFKVPMNTVDFGHVTEEWRDLQSA--------*
+>P1;1a25a
+structureX:1a25: 157 :A: 288 :A:protein kinase c, beta-i type:Rattus norvegicus: 2.7: 22.2
+--ERRGRIYIQAHIDR----EVLIVVVRDAKNLVPMDP--NGLSDPYVKL
+KLIPDPKSESKQKTKTIKCSL-NPEWNETFRFQLK-ESDKDRRLSVEIWD
+WDLTSRNDFMGSLSFGISELQ-KAGVDGWFKLLSQEEGEYFNV*
+>P1;1djxa
+structureX:1djx: 741 :A: 740 :A:1-phosphatidylinositol-4,5-bisphosphate phosphodiesterase delta 1 (phospholipase c-delta-1) [domain swapped for 741-756]:Rattus norvegicus: 2.30: 22
+DQHPSATLFVKISIQD/WRPERLRVRIISGQQLPKVNKNKNSIVDPKVIV
+EIHGVGRDTGSRQTAVITNNGFNPRWDMEFEFEVT--VPDLALVRFMVED
+YDSSSKNDFIGQSTIPWNSLKQ---GYRHVHLLSKNG------*

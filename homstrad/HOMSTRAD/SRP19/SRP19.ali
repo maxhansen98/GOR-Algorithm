@@ -1,0 +1,16 @@
+C; family: SRP19 protein
+C; class: alpha plus beta
+C; type: subunit/domain
+C; domain:
+C; 1kvv   a:   1kvva
+C; 1jid   a:   1jida
+C; end:
+C; last update 25/3/02
+>P1;1kvva
+structureN:1kvv:   1 :A: 104 :A:SRP19:Archaeoglobus fulgidus: -1: -1
+--------MKESVVWTVNLDSKKSRAEGRRIPRRFAVPNVKLHELVEASKELGLKFRAE---EKKYPKSWW-EEG
+GRVVVEKR-----------GTKTKLMIELARKIAEIREQKREQKKDKKKKKK*
+>P1;1jida
+structureX:1jid:   5 :A: 118 :A:Signal recognition particle 19 kDa protein:Homo sapiens: 1.80: 18.6
+AARSPADQDRFICIYPAYLNNKKTIAEGRRIPISKAVENPTATEIQDVCSAVGLNVFLEKNKMYSREWNRDVQYR
+GRVRVQLKQEDGSLCLVQFPSRKSVMLYAAEMIPKLK--TR-----------*

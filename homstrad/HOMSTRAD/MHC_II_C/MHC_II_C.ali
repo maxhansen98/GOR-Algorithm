@@ -1,0 +1,46 @@
+C; family: Class II histocompatibility antigen, C-terminal domain 
+C; class: all beta
+C; type: domain
+C; domain:
+C; 1fng   a:83-182   1fnga
+C; 1fv1   a:82-181   1fv1a
+C; 1iak   a:82-181   1iaka
+C; 1hdm   b:88-185   1hdmb
+C; 1fng   b:94-188   1fngb
+C; 1fv1   b:93-190   1fv1b
+C; 1iak   b:93-190   1iakb
+C; 1hdm   a:94-196   1hdma
+C; end:
+C; last update 22/8/01
+>P1;1fnga
+structureX:1fng:  83 :A: 182 :A:H-2 class II histocompatibility antigen, E-k alpha chain:Mus musculus: 1.90: 22.1
+-ANVAPEVTVLSRSPVNLGEPNILICFIDKFSPPVVNVTWLRNGRPVTEGVSETVFLPRDDHLFRKFHYLTFLPS
+TDDFYDCEVDHWGLEEPLRKHWEFEE----*
+>P1;1fv1a
+structureX:1fv1:  82 :A: 181 :A:HLA class II histocompatibility antigen, Dr alpha chain:Homo sapiens: 1.90: 23.3
+ITNVPPEVTVLTNSPVELREPNVLICFIDKFTPPVVNVTWLRNGKPVTTGVSETVFLPREDHLFRKFHYLPFLPS
+TEDVYDCRVEHWGLDEPLLKHWEFD-----*
+>P1;1iaka
+structureX:1iak:  82 :A: 181 :A:H-2 class II histocompatibility antigen, A-k alpha chain:Mus musculus: 1.90: 21.4
+ATNEAPQATVFPKSPVLLGQPNTLICFVDNIFPPVINITWLRNSKSVTDGVYETSFFVNRDYSFHKLSYLTFIPS
+DDDIYDCKVEHWGLEEPVLKHWEPE-----*
+>P1;1hdmb
+structureX:1hdm:  88 :B: 185 :B:class II histocompatibility antigen, M beta chain:Homo sapiens: 2.50: 19.7
+--TRPPSVQVAKTTPFNTREPVMLACYVWGFYPAEVTITWRKNGKLVMHSSAHKTAQPNGDWTYQTLSHLALTPS
+YGDTYTCVVEHIGAPEPILRDWTPG-----*
+>P1;1fngb
+structureX:1fng:  94 :B: 188 :B:H-2 class II histocompatibility antigen, E-k beta chain:Mus musculus: 1.90: 22.1
+--RVEPTVTVYPTKTQPLEHHNLLVCSVSDFYPGNIEVRWFRNGKEEKTGIVSTGLVRNGDWTFQTLVMLETVPQ
+SGEVYTCQVEHPSLTDPVTVEW--------*
+>P1;1fv1b
+structureX:1fv1:  93 :B: 190 :B:Major histocompatibility complex beta chain:Homo sapiens: 1.90: 23.3
+-RRVEPKVTVYPARTQTLQHHNLLVCSVNGFYPGSIEVRWFRNSQEEKAGVVSTGLIQNGDWTFQTLVMLETVPR
+SGEVYTCQVEHPSVTSPLTVEWRA------*
+>P1;1iakb
+structureX:1iak:  93 :B: 190 :B:H-2 class II histocompatibility antigen, A-k beta chain:Mus musculus: 1.90: 21.4
+-RLEQPSVVISLSRTEALNHHNTLVCSVTDFYPAKIKVRWFRNGQEETVGVSSTQLIRNGDWTFQVLVMLEMTPR
+RGEVYTCHVEHPSLTSPITVEWRA------*
+>P1;1hdma
+structureX:1hdm:  94 :A: 196 :A:class II histocompatibility antigen, M alpha chain:Homo sapiens: 2.50: 19.7
+-SRGFPIAEVFTLKPLEFGKPNTLVCFVSNLFPPMLTVNWHDHSVPVE-GFGPTFVSAVDGLSFQAFSYLNFTPE
+PSDIFSCIVTHEPDRYTAIAYWVPRNALPS*

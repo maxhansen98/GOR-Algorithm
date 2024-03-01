@@ -1,0 +1,75 @@
+C; family: fibronectin type III domain
+C; class: all beta
+C; domain:
+C; 1fnf   1236-1326    1fnf2
+C; 1fnf   1327-1415    1fnf3
+C; 1fnf   1142-1235    1fnf1
+C; 1fnf   1416-1509    1fnf4
+C; 1ten   -            1ten
+C; 1cfb   610-709      1cfb1
+C; 1cto   -            1cto
+C; 1ebp   a:119-220    1ebpa2
+C; 3hhr   b:131-234    3hhrb2
+C; 1boy   107-213      1boy2
+C; 1boy   3-106        1boy1
+C; 1cfb   710-814      1cfb2
+C; 1ebp   a:22-118     1ebpa1
+C; 3hhr   b:32-130     3hhrb1
+C; end:
+C; reordered by kitschorder 1.0a
+>P1;1fnf2
+structureX:1fnf:1236 : :1326 : :fibronectin (fn):Homo sapiens: 2.0: -1
+-----V-PPPTDLRFTNIG------P-DTMRVTWAPPP---------------SIDLTNFLVRYSPVK-NEE-DV
+AELSIS-PS------DNAVVLT-NL---LPGTEYVVSVSSVY--E--------QHES-TPL-RG-RQKTG----*
+>P1;1fnf3
+structureX:1fnf:1327 : :1415 : :fibronectin (fn):Homo sapiens: 2.0: -1
+-----L-DSPTGIDFSDIT------A-NSFTVHWIAPR----------------ATITGYRIRHHPEH-FSG-RP
+REDRVP-HS------RNSITLT-NL---TPGTEYVVSIVALN--G--------REES-PLL-IG-QQST-----*
+>P1;1fnf1
+structureX:1fnf:1142 : :1235 : :fibronectin (fn):Homo sapiens: 2.0: -1
+----PL-SPPTNLHLEANP------DTGVLTVSWERSTTP---------------DITGYRITTTPTNGQQG-NS
+LEEVVH-AD------QSSCTFD-NL---SPGLEYNVSVYTVK--D--------DKES-VPI-SD-TIIPA----*
+>P1;1fnf4
+structureX:1fnf:1416 : :1509 : :fibronectin (fn):Homo sapiens: 2.0: -1
+----VS-DVPRDLEVVAAT------P-TSLLISWDAPAV----------------TVRYYRITYGETG-GNS-PV
+QEFTVP-GS------KSTATIS-GL---KPGVDYTITVYAVTGRG------DSPASS-KPI-SI-NYRT-----*
+>P1;1ten
+structureX:1ten: 803 : : 891 : :tenascin (tn):Homo sapiens: 1.8: 19.6
+-----L-DAPSQIEVKDVT------D-TTALITWFKPLA----------------EIDGIELTYGIKD-VPG-DR
+TTIDLT-ED------ENQYSIG-NL---KPDTEYEVSLISRR--G--------DMSS-NPA-KE-TFTT-----*
+>P1;1cfb1
+structureX:1cfb: 610 : : 709 : :neuroglian:Drosophila melanogaster: 2.0: -1
+IVQDVP-NAPKLTGITCQ-------A-DKAEIHWEQQG-----------DN--RSPILHYTIQFNTSFTPASWDA
+AYEKVP-NT------DSSFVVQ--M---SPWANYTFRVIAFNK----------IGAS-PPSAHSDSCTTQ----*
+>P1;1cto
+structureX:1cto:   1 : : 109 : :granulocyte colony stimulating factor receptor (g-csf-r):Mus musculus: -1: -1
+----GSSLEPPMLQALDIGPDVVSHQPGCLWLSWKPWKPSE-------------YMEQECELRYQPQLK--GANW
+TLVFHLPSS------KDQFELC-GL---HQAPVYTLQMRCIRSS-LPG------FWS-PWSPGL-QLRPTMK--*
+>P1;1ebpa2
+structureX:1ebp: 119 :A: 220 :A:erythropoietin receptor (epo-r):Homo sapiens: 2.8: 21
+---VLL-DAPVGLVARLAD------ESGHVVLRWLPPP------------ETPMTSHIRYEVDVSAGNGA-G-SV
+QRVEIL-EG------RTECVLS-NL---RGRTRYTFAVRARMAEP---SFG--GFWS-AWSEPV-SLLT-----*
+>P1;3hhrb2
+structureX:3hhr: 131 :B: 234 :B:growth hormone receptor (gh receptor):Homo sapiens: 2.8: 22.1
+-----P-DPPIALNWTLLN-VSLTGIHADIQVRWEAPRNA---------DIQKGWMVLEYELQYKEVN-ET--KW
+KMMDPI-L-------TTSVPVY----SLKVDKEYEVRVRSKQRN--------SGNYG-EFSEVL-YVTLP----*
+>P1;1boy2
+structureX:1boy: 107 : : 213 : :tissue factor (tf):Homo sapiens: 2.2: 20.3
+-----NLGQPTIQSFEQVG--------TKVNVTVEDERTLVRRNNTFLSLRDVFGKDLIYTLYYWKSSS---SGK
+KTAKTN---------TNEFLID--V---DKGENYCFSVQAVIPSRT------VNRKS-TDSPVE-CMGQE----*
+>P1;1boy1
+structureX:1boy:   3 : : 106 : :tissue factor (tf):Homo sapiens: 2.2: 20.3
+---TTNTVAAYNLTWKST--------NFKTILEWEPKPV-----------------NQVYTVQISTKSG----DW
+KSKCFYTT-------DTECDL-TDEIVKDVKQTYLARVFSYPAGNVESTGS--AGEP-LYE-NSPEFT-PYLET*
+>P1;1cfb2
+structureX:1cfb: 710 : : 814 : :neuroglian:Drosophila melanogaster: 2.0: -1
+--PDVPFKNPDNVVGQGTE------P-NNLVISWTPMP-----------EIEHNAPNFHYYVSWKRDIP--AAAW
+ENNNIFDWR------QNNIVIA-DQ---PTFVKYLIKVVAIND----------RGESNVAAEEVVGYSGE--DR*
+>P1;1ebpa1
+structureX:1ebp:  22 :A: 118 :A:erythropoietin receptor (epo-r):Homo sapiens: 2.8: 21
+--------GPEELLCFTER-------LEDLVCFWEEAASA-----------GVGPGN--YSFSYQLE----DEPW
+KLCRLHQAPTARGAVRFWCSLPTADT--SSFVPLELRVTAAS---------------GAPRYHR-VIH-INEV-*
+>P1;3hhrb1
+structureX:3hhr:  32 :B: 130 :B:growth hormone receptor (gh receptor):Homo sapiens: 2.8: 22.1
+--------EPKFTKCRSPER-------ETFSCHWTDEVH------------------GPIQLFYTRRNEWTQ-EW
+KECPDYVSAG-----ENSCYFNSSFT--SIWIPYCIKLTSNG----------------GTVDEK-CFSVDEIVQ*

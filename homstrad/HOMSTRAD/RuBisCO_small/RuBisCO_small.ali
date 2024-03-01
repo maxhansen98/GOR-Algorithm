@@ -1,0 +1,48 @@
+C; family: Ribulose bisphosphate carboxylase, small chain
+C; class: alpha plus beta
+C; type: subunit
+C; domain:
+C; 1bxn   i:   1bxni
+C; 1bwv   s:   1bwvs
+C; 8ruc   i:1-123   8ruci
+C; 1bur   s:1-123   1burs
+C; 3rub   s:   3rubs
+C; 1gk8   i:   1gk8i
+C; 1rbl   m:   1rblm
+C; end:
+C; last update 18/3/02
+>P1;1bxni
+structureX:1bxn:   1 :I: 129 :I:ribulose bisphosphate carboxylase small chain:Alcaligenes eutrophus: 2.7: 26.6
+--------MRITQGTFSFLPELTDEQITKQLEYCLNQGWAVGLEYTD--DPHP----------------RNTYWE
+MFGLPMFDLRDAAGILMEINNARNTFPNHYIRVTAFDST--HTVESVVMSFIVNRPADEPGFRLVRQEEPGRTLR
+YSIESYA---------*
+>P1;1bwvs
+structureX:1bwv:   8 :S: 155 :S:ribulose bisphosphate carboxylase:Galdieria partita: 2.40: 16.3
+--------VRITQGTFSFLPDLTDEQIKKQIDYMISKKLAIGIEYTN--DIHP----------------RNAYWE
+IWGLPLFDVTDPAAVLFEINACRKARSNFYIKVVGFSSVRGIESTIISFIVNRPK--HEPGFNLMRQEDKSRSIK
+YTIHSYESYKPEDERY*
+>P1;8ruci
+structureX:8ruc:   1 :I: 123 :I:ribulose-1,5-bisphosphate carboxylase/oxygenase:Spinacia oleracea: 1.6: 21.1
+-MQVWPILNLKKYETLSYLPPLTTDQLARQVDYLLNNKWVPCLEFET-DHGFVYREHHN-----SPGYYDGRYWT
+MWKLPMFGCTDPAQVLNELEECKKEYPNAFIRIIGFDSN--REVQCISFIAYKPAGY------------------
+----------------*
+>P1;1burs
+structureX:1bur:   1 :S: 123 :S:ribulose-1,5-bisphosphate carboxylase small chain 2:Spinacia oleracea: -1: -1
+-MQVWPILGMKKYETLSYLPPLTTEQLLAEVNYLLVNNWIPCLEFEV-KDGFVYREHLK-----SPGYYDGRYWT
+MWKLPMFGCTDPAQVLNELEECKKAYPDAFIRIIGFDNK--RQVQCISFIAYKPAGY------------------
+----------------*
+>P1;3rubs
+structureX:3rub:   1 :S: 123 :S:ribulose-1,5-bisphosphate carboxylase/oxygenase (form III):Nicotiana tabacum, variant Turkish Samsun: 2.0: -1
+-MQVWPPINKKKYETLSYLPDLSQEQLLSEVEYLLKNGWVPCLEFET-EHGFVYRENNK-----SPGYYDGRYWT
+MWKLPMFGCTDATQVLAEVEEAKKAYPQAWIRIIGFDNV--RQVQCISFIAYKPEGY------------------
+----------------*
+>P1;1gk8i
+structureX:1gk8:   2 :I: 126 :I:ribulose-1,5 bisphosphate carboxylase/oxygenase:Chlamydomonas reinhardtii: 1.4: 14.9
+--MVWTPVNNKMFETFSYLPPLTDEQIAAQVDYIVANGWIPCLEFAEADKAYVSNESAIRFGSVSCLYYDNRYWT
+MWKLPMFGCRDPMQVLREIVACTKAFPDAYVRLVAFDNQ--KQVQIMGFLVQRP---------------------
+----------------*
+>P1;1rblm
+structureX:1rbl:   2 :M: 122 :M:ribulose 1,5 bisphosphate carboxylase/oxygenase:Synechococcus, Strain Pcc 6301: 2.2: 20.0
+SMKTLPK--ERRFETFSYLPPLSDRQIAAQIEYMIEQGFHPLIEFNE--HSNP----------------EEFYWT
+MWKLPLFACAAPQQVLDEVRECRSEYGDCYIRVAGFDNI--KECQTSSFIVHRPGR-------------------
+----------------*

@@ -1,0 +1,12 @@
+C; family: GATA zinc finger
+C; class: small
+C; last update 22/9/99
+>P1;7gata
+structureX:7gat:   1 :A:  66 :A:nitrogen regulatory protein area:Emericella nidulans: -1: -1
+MKNGEQNGPTTCTNCFTQTTPVWRRNPEGQPLCNACGLFLKLHGVVRPLSLKTDVIKKRNRNSAN-----S*
+>P1;3gata
+structureX:3gat:   1 :A:  66 :A:erythroid transcription factor (GATA-1):Gallus gallus: -1: -1
+KRA-----GTVCSNCQTSTTTLWRRSPMGDPVCNACGLYYKLHQVNRPLTMRKDGIQTRNRKVSSKGKKRR*
+>P1;1gnf
+structureX:1gnf: 198 : : 243 : :erythroid transcription factor (GATA-1):Mus musculus: -1: -1
+-----GSEARECVNCGATATPLWRRDRTGHYLCNACGLYHKMNGQNRPLIR--------------------*

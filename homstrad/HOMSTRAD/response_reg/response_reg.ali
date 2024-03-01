@@ -1,0 +1,84 @@
+C; family: Response regulator receiver domain
+C; class: alpha beta
+C; type: subunit/domain
+C; domain:
+C; 1kgs   a:2-123   1kgsa
+C; 1b00   a:   1b00a
+C; 1dz3   a:2-109   1dz3a
+C; 1nat   -   1nat
+C; 1tmy   -   1tmy
+C; 1a2o   a:1-133   1a2oa
+C; 1qkk   a:5-125   1qkka
+C; 1ntr   1-120   1ntr
+C; 1dbw   a:   1dbwa
+C; 1jbe   a:   1jbea
+C; 1a04   a:5-128   1a04a
+C; 1i3c   a:   1i3ca
+C; 1dcf   6-128   1dcf
+C; end:
+C; last update 3/7/02
+>P1;1kgsa
+structureX:1kgs:   2 :A: 123 :A:DNA binding response regulator D:Thermotoga maritima: 1.50: 17.9
+---NVRVLVVEDERDLADLITEALKKE--FTV-DVCYDGEEGY--ALN-------EPFDVVILDI-LPVHDGWEI
+LKSRES-----GVNTPVL-LTA-----LSDVEYRVKGLNGADDYLPKP-----FD----LRELIARVRALIRRKS
+E-----*
+>P1;1b00a
+structureX:1b00:   2 :A: 123 :A:Phosphate regulon transcriptional regulatory protein PhoB:Escherichia coli: 1.88: 21.0
+---ARRILVVEDEAPIREMVCFVLEQNG-FQP-VEAEDYDSAVNQLNE-------PWPDLILLDWMLPGGSGIQF
+IKHLKRESMTR--DIPVVMLTARG----EEEDRVRGLETGADDYITKP-----FS----PKELVARIKAVMRRI-
+------*
+>P1;1dz3a
+structureX:1dz3:   2 :A: 109 :A:Stage 0 sporulation protein A:Bacillus stearothermophilus: 1.65: 20.774
+---SIKVCIADDNRELVSLLDEYISSQPDMEVIGTAYNGQDCLQMLEE-------KRPDILLLDIIMPHLDGLAV
+LERIRAGFE---HQPNVIMLTAFG--QEDVTKKAVE--LGASYFILK-----PFD--------------------
+------*
+>P1;1nat
+structureX:1nat:   3 : : 121 : :Sporulation response regulatory protein:Bacillus subtilis: 2.45: 18.1
+---NEKILIVDDQYGIRILLNEVFNKEG-YQT-FQAANGLQALDIVTK-------ERPDLVLLDMKIPGMDGIEI
+LKRMKV--IDE--NIRVIIMTAYG--ELDMIQESKE--LGALTHFAKP-----FD----IDEIRDAVKKYLPL--
+------*
+>P1;1tmy
+structureX:1tmy:   2 : : 119 : :CheY protein:Thermotoga maritima: 1.9: 18.6
+---GKRVLIVDDAAFMRMMLKDIITKAG-YEVAGEATNGREAVEKYKE-------LKPDIVTMDITMPEMNGIDA
+IKEIMK--IDP--NAKIIVCSAMG--QQAMVIEAIK--AGAKDFIVKP-----FQ----PSRVVEALNKVS----
+------*
+>P1;1a2oa
+structureX:1a2o:   1 :A: 133 :A:CheB methylesterase:Salmonella typhimurium: 2.4: 22.2
+-MSKIRVLSVDDSALMRQIMTEIINSHSDMEMVATAPDPLVARDLIKK-------FNPDVLTLDVEMPRMDGLDF
+LEKLMRL---R--PMPVVMVSSLTGKGSEVTLRALE--LGAIDFVTKPQLGIREGMLAYSEMIAEKVRTAARA--
+------*
+>P1;1qkka
+structureX:1qkk:   5 :A: 125 :A:C4-dicarboxylate transport transcriptional regulatory protein, receiver domain:Sinorhizobium meliloti: 1.7: 21.8
+----PSVFLIDDDRDLRKAMQQTLELAG-FTV-SSFASATEALAGLSA-------DFAGIVISDIRMPGMDGLAL
+FRKILA--LDP--DLPMILVTGHG--DIPMAVQAIQ--DGAYDFIAKP-----FA----ADRLVQSARRAEEKRR
+L-----*
+>P1;1ntr
+structureN:1ntr:   1 : : 120 : :N-terminal receiver domain of NtrC:Salmonella typhimurium: -1: -1
+-MQRGIVWVVDDDSSIRWVLERALAGAG-LTC-TTFENGNEVLAALAS-------KTPDVLLSDIRMPGMDGLAL
+LKQIKQ--RHP--MLPVIIMTAH--SDLDAAVSAY--QQGAFDYLPKP-----FD-------IDEAVALVERAIS
+------*
+>P1;1dbwa
+structureX:1dbw:   1 :A: 123 :A:Transcriptional regulatory protein FixJ, receiver domain:Rhizobium meliloti: 1.6: 18.7
+-MQDYTVHIVDDEEPVRKSLAFMLTMNG-FAV-KMHQSAEAFLAFAPD-------VRNGVLVTDLRMPDMSGVEL
+LRNLGD--LKI--NIPSIVITGHG--DVPMAVEAMK--AGAVDFIEKP-----FE----DTVIIEAIERASEHLV
+------*
+>P1;1jbea
+structureX:1jbe:   2 :A: 129 :A:Chemotaxis protein CheY:Escherichia coli: 1.08: -1
+ADKELKFLVVDDFSTMRRIVRNLLKELG-FNNVEEAEDGVDALNKLQA-------GGYGFVISDWNMPNMDGLEL
+LKTIRA--AMS--ALPVLMVTAEA--KKENIIAAAQ--AGASGYVVKP-----FT----AATLEEKLNKIFEKLG
+M-----*
+>P1;1a04a
+structureX:1a04:   5 :A: 128 :A:Nitratenitrite response regulator protein NarL, N-terminal domain:Escherichia coli: 2.2: 21.1
+--EPATILLIDDHPMLRTGVKQLISMAPDITVVGEASNGEQGIELAES-------LDPDLILLDLNMPGMNGLET
+LDKLRE--KSL--SGRIVVFSVSN--HEEDVVTALK--RGADGYLLKD-----ME----PEDLLKALHQAAAG-E
+M-----*
+>P1;1i3ca
+structureX:1i3c:   6 :A: 149 :A:Response regulator Rcp1:Synechosystis Sp. Pcc 6803: 1.90: 18.8
+-NPPKVILLVEDSKADSRLVQEVLKTSTIDHELIILRDGLAAA-FLQQQGEYENSPRPNLILLDLNLPKKDGREV
+LAEIKQNPDLK--RIPVVVLTTSHN--EDDVIASYE--LHVNCYLTKSR------NLKDLFKVQGIESFWLETVT
+LPAAPG*
+>P1;1dcf
+structureX:1dcf:   6 :A: 128 :A:Etr1 protein, receiver domain:Arabidopsis thaliana: 2.50: 22.2
+--TGLKVLVMDENGVSRMVTKGLLVHLG-CEV-TTVSSNEECLRVVSH--------EHKVVFMDVCMPGVENYQI
+ALRIHEKFTQRHQRPLLVALSGNTD--KSTKEKCMS--FGLDGVLLKP-----VS----LDNIRDVLSDLLE---
+------*

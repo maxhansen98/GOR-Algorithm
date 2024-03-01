@@ -1,0 +1,16 @@
+C; family: Sigma 54 modulation protein / S30EA ribosomal protein
+C; class: alpha plus beta
+C; type: subunit
+C; domain:
+C; 1imu   a:   1imua
+C; 1l4s   a:   1l4sa
+C; end:
+C; last update 13/1/03
+>P1;1imua
+structureX:1imu:   1 :A: 107 :A:hypothetical protein HI0257:Haemophilus influenzae: -1: -1
+MTLNITSKQMDITPAIREHLEERLAKLGKWQTQLISPHFVLNKVPNGFSVEASIGTPLGNLLASATSDDMYKAIN
+EVEEKLERQLNKLQHKSESRRADERLKDSFEN------------------*
+>P1;1l4sa
+structureX:1l4s:   1 :A: 112 :A:protein yfiA:Escherichia coli: -1: -1
+-TMNITSKQMEITPAIRQHVADRLAKLEKWQTHLINPHIILSKEPQGFVADATINTPNGVLVASGKHEDMYTAIN
+ELINKLERQLNKLQHKGE------------ARRAATSVKDANFVEEVEEE*

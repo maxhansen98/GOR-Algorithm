@@ -1,0 +1,21 @@
+C; family: Glycosyl hydrolases family 2, immunoglobulin-like beta-sandwich domain
+C; class: all beta
+C; type: domain
+C; domain:
+C; 1dp0   a:220-333   1dp0a1
+C; 1dp0   a:626-730   1dp0a2
+C; 1bhg   a:226-328   1bhga
+C; end:
+C; last update 22/8/01
+>P1;1dp0a1
+structureX:1dp0: 220 :A: 333 :A:beta-galactosidase:Escherichia coli: 1.70: 15.7
+TQISDFHVATRFNDDFSRAVLEAEVQMCG--ELRDYLRVTVSLWQGETQVASGTAPFGGEIIDERGGYADRVTLR
+L-NVENPKLWSAEIPNLYRAVVELHTAD-------GTLIEAEACDVGFR-----*
+>P1;1dp0a2
+structureX:1dp0: 626 :A: 730 :A:beta-galactosidase:Escherichia coli: 1.70: 15.7
+--FFQFRLS----------GQTIEVTSEYLFRHSDNELLHWMVALDGKPLASGEVPLD---VAPQG----KQLIE
+LPELPQPE-----SAGQLWLTVRVVQPNATAWSEAGHISAWQQWRLAENLSVTL*
+>P1;1bhga
+structureX:1bhg: 226 :A: 328 :A:beta-glucuronidase:Homo sapiens: 2.6: 23.1
+TYIDDITVTTSVEQ----DSGLVNYQISVKGSNLFKLEVRLLDA---ENKVVANGTGT------------QGQLK
+VPGVSLWWPYLMHERPAYLYSLEVQLTAQTSLGPV-SDFYTLPVGIRT------*

@@ -1,0 +1,16 @@
+C; family: CcmE
+C; class: all beta
+C; type: domain
+C; domain:
+C; 1lm0   a:   1lm0a
+C; 1liz   a:   1liza
+C; end:
+C; last update 8/1/03
+>P1;1lm0a
+structureN:1lm0:  32 :A: 132 :A:Heme chaperone, ccmE:Shewanella putrefaciens: -1: -1
+--SNLNLFYTPSEIVNGKTDTGVKPEAGQRIRVGGMVTVGSMVRDPNSLHVQFAVHDSLGGEILVTYDDLLPDLF
+REGQGIVAQGVLGEDGKLAATEVLAKHD------------*
+>P1;1liza
+structureN:1liz:  30 :A: 143 :A:cytochrome c-type biogenesis protein, ccmE:Escherichia coli: -1: -1
+LRSNIDLFYTPGEILYGKRETQQMPEVGQRLRVGGMVMPGSVQRDPNSLKVTFTIYDAE-GSVDVSYEGILPDLF
+REGQGVVVQGELEKGNHILAKEVLAKHDENYTPPEVEKAM*

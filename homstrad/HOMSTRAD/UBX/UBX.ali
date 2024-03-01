@@ -1,0 +1,16 @@
+C; family: UBX domain
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1h8c   a:   1h8ca
+C; 1i42   a:   1i42a
+C; end:
+C; last update 17/9/01
+>P1;1h8ca
+structureX:1h8c:   1 :A:  82 :A:fas-associated factor 1:Homo sapiens: -1: -1
+N---------AEPVSKLRIRTPSGEFLERRFLASNKLQIVFDFVASK--GFPWDEYKLLSTFPRRDVTQLDPNKS
+LLEVKLF-PQETLFLEAKE*
+>P1;1i42a
+structureX:1i42: 282 :A: 370 :A:P47:Rattus norvegicus: -1: -1
+KASSSILINEAEPTTNIQIRLADGGRLVQKFNHSHRISDIRLFIVDARPAMAATSFVLMTTFPNKEL--ADENQT
+LKEANLLNAVIVQRLT---*

@@ -1,0 +1,14 @@
+C; family: Arthropod defensin
+C; class: small
+C; type: subunit
+C; domain:
+C; 1fjn   a:   1fjna
+C; 1ica   -   1ica
+C; end:
+C; last update 20/8/01
+>P1;1fjna
+structureX:1fjn:   1 :A:  39 :A:defensin MGD-1:Mytilus galloprovincialis: -1: -1
+-------GFGCPNNYQCHRHCKSIPGRCGGYCGGWHRLRCTCYRCG*
+>P1;1ica
+structureX:1ica:   1 : :  40 : :phormicin:Protophormia terraenovae: -1: -1
+ATCDLLSG-TGINHSACAAHCLLR-GNRGGYCNG--KGVCVCRN--*

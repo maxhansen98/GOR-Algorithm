@@ -1,0 +1,11 @@
+C; family: Sigma-54 transcription factors
+C; class: all alpha
+C; last update 29/10/99
+>P1;1fipa
+structureX:1fip:  26 :A:  98 :A:factor-for-inversion stimulation (FIS) protein:Escherichia coli: 1.9: 19.9
+----------------------PLRDSVKQALKNYFAQLNGQDVNDLYELVLAEVEQALLDMVMQYTRGNQTRAA
+LMMGINRGTLRKKLKKYGMN*
+>P1;1ntca
+structureX:1ntc: 379 :A: 469 :A:nitrogen regulation protein:Salmonella typhimurium: -1: -1
+MDLPGELFEASTPDSPSHLPPDSWATLLAQWADRALRS----GHQNLLSEAQPELERTLLTTALRHTQGHKQEAA
+RLLGWGAATLTAKLKELGME*

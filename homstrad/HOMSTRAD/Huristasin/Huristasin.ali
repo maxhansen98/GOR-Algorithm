@@ -1,0 +1,12 @@
+C; family: Huristasin-like
+C; class: small
+C; last update 25/2/100
+>P1;1skz2
+structureX:1skz:  59 : : 110 : :antistasin (Xa/proclotting enzyme inhibitor):Haementeria officinalis: 1.9: 21.7
+KATCDISECPEGMMCSRLTNKCDCKIDINCRKTCPNGLKRDKLGCEY-CECRP---*
+>P1;1skz1
+structureX:1skz:   7 : :  58 : :antistasin (Xa/proclotting enzyme inhibitor):Haementeria officinalis: 1.9: 21.7
+--GCEEAGCPEGSACNIITDRCTCS-GVRCRVHCPHGFQRSRYGCEF-CKCRLEPM*
+>P1;1bx7
+structureX:1bx7:   3 : :  53 : :hirustasin:Hirudo medicinalis: 1.20: -1
+GNTCGGETCSAAQVCLK--GKCVCN-EVHCRIRCKYGLKKDENGCEYPCSCAKA--*

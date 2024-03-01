@@ -1,0 +1,18 @@
+C; family: S4 domain 
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1c06   a:51-98   1c06a
+C; 1fjg   d:99-146   1fjgd
+C; 1dm9   a:9-55   1dm9a
+C; end:
+C; last update 10/7/01
+>P1;1c06a
+structureX:1c06:  51 :A:  98 :A:ribosomal protein S4 delta 41:Bacillus stearothermophilus: -1: -1
+SRLDNLVYRLGLARTRRQARQLVTHGHILVDGSRVNIPSYRVKPGQTI*
+>P1;1fjgd
+structureX:1fjg:  99 :D: 146 :D:30S ribosomal protein S4:Thermus aquaticus: 3.00: 22.1
+SRLDNVVYRLGFAVSRRQARQLVRHGHITVNGRRVDLPSYRVRPGDEI*
+>P1;1dm9a
+structureX:1dm9:   9 :A:  55 :A:heat shock protein 15:Escherichia coli: 2.00: 22.6
+VRLDKWLWAARFYKTRALAREMIEGGKVHYNGQRS-KPSKIVELNATL*

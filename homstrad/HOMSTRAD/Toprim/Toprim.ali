@@ -1,0 +1,21 @@
+C; family: Toprim domain
+C; class: alpha beta
+C; type: domain
+C; domain:
+C; 1d6m a:1-135   1d6ma
+C; 1ecl 3-140     1ecl
+C; 1dd9 a:259-341 1dd9a
+C; end:
+C; last update 29/6/01
+>P1;1d6ma
+structureX:1d6m:   1 :A: 135 :A:DNA topoisomerase III:Escherichia coli: 3.00: 23.7
+MRLFIAEKPSLARAIADVLPKPHRKGDGFIECGNGQVVTWCIGHLLEQAQ-PDAYDSRYARWNLADLPIVPEKWQ
+LQPRPSVTKQLNVIKRFLHEASEIVHAGDPDREGQLLVDEVLDYLQ--LAPEKRQQ-VQRCLIN*
+>P1;1ecl
+structureX:1ecl:   3 : : 140 : :DNA topoisomerase I (omega-protein):Escherichia coli: 1.9: 21.8
+KALVIVESPAKAKTINKYLG-------------SDYVVKSSVGHIRDLPDERGALVNRMG-VDPWHN----WEAH
+YEVLPGKEKVVSELKQLAEKADHIYLATDLDREGEAIAWHLREVIG--GD---DAR-YSRVVFN*
+>P1;1dd9a
+structureX:1dd9: 259 :A: 341 :A:DNA primase:Escherichia coli: 1.6: 23.1
+NRLLVVEGYMDVVALAQY---------------GINYAVASLG--------------------------------
+-------STTADHIQLLFRATNNVICCYDGDRAGRDAAWRALETALPYMTD---GRQLRFMFLP*

@@ -1,0 +1,18 @@
+C; family: Hsp20/alpha crystallin family 
+C; class: all beta
+C; type: subunit
+C; domain:
+C; 1shs   a:   1shsa
+C; 1gme   a:   1gmea
+C; end:
+C; last update 10/12/01
+>P1;1shsa
+structureX:1shs:  33 :A: 147 :A:small heat shock protein:Methanococcus jannaschii: 2.9: 21.6
+---------------------------TGIQISGK-----GFMPISIIEGDQHIKVIAWLPGVNKEDIILNAV-G
+DTLEIRAKRSPLMITESERIIYSEIPEEEEIYRTIKLPATVKEENASAKFENGVLSVILPKAESSIKK------G
+INIE-*
+>P1;1gmea
+structureX:1gme:   2 :A: 151 :A:heat shock protein 16.9b:Triticum aestivum: 2.7: 23.1
+SIVRRSNVFDPFADLWADPFDTFRSIVPAISGGGSETAAFANARMDWKETPEAHVFKADLPGVKKEEVKVEVEDG
+NVLVVSGERTKEKEDKNDKWHRVERS-SGKFVRRFRLLEDAKVEEVKAGLENGVLTVTVPKA----EVKKPEVKA
+IQISG*

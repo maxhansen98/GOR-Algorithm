@@ -1,0 +1,11 @@
+C; family: Ribosomal protein S1-like RNA-binding domain
+C; class: all beta
+C; last update 16/7/99
+>P1;1sro
+structureX:1sro:   1 : :  76 : :polyribonucleotide nucleotidyltransferase:Escherichia coli: -1: -1
+AEIEVGRVYTGKVTRIVDF-GAFVAIGGGKEGLVHISQIADKRVEKVTDYLQMGQEVPVKVLEVDRQGRIRLSIK
+EA--*
+>P1;1ah9
+structureX:1ah9:   1 : :  71 : :translation initiation factor IF-1:Escherichia coli: -1: -1
+A-KEDNIEMQGTVLETLPNTMFRVELENGHVVTAHIS--GKMRKNYI--RILTGDKVTVELTP---YDLSKGRIV
+FRSR*

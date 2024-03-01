@@ -1,0 +1,21 @@
+C; family: ThiS family 
+C; class: alpha plus beta
+C; type: subunit 
+C; domain:
+C; 1f0z   a:   1f0za
+C; 1fm0   d:   1fm0d
+C; 1jsb   a:   1jsba
+C; end:
+C; last update 4/3/02
+>P1;1f0za
+structureX:1f0z:   1 :A:  66 :A:ThiS protein:Escherichia coli: -1: -1
+----MQILFN----------DQAMQCAAGQTVHELLEQLD---------QRQAGAALAINQQIVPREQWAQHIVQ
+DGDQILLFQVIAGG*
+>P1;1fm0d
+structureX:1fm0:   1 :D:  81 :D:Molybdopterin Convertin Factor, Subunit 1:Escherichia coli: -1: -1
+----MIKVLFFAQVRELVGTDATEVAADFPTVEALRQHMAAQSDRWALALEDGKLLAAVNQTLVS----FDHPLT
+DGDEVAFFPPVTGG*
+>P1;1jsba
+structureX:1jsb:   4 :A:  73 :A:Hypothetical protein Mth1743:Methanobacterium thermoautotrophicum: -1: -1
+MVIGMKFTVITD------DGKKILESGAPRRIKDVLGELE---------IPIETVVVKKNGQIVI----DEEEIF
+DGDIIEVIRVIYGG*

@@ -1,0 +1,16 @@
+C; family: Transcriptional regulatory protein, C-terminal
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1opc   -   1opc
+C; 1qqi   a:   1qqia
+C; end:
+C; last update 29/8/01
+>P1;1opc
+structureX:1opc: 137 : : 235 : :transcriptional regulatory protein OmpR:Escherichia coli: 1.95: 22.8
+-----VIAFGKFKLNLGTREMFREDEPMPLTSGEFAVLKALVSHPREPLSRDKLMNLARG-REYSAMERSIDVQI
+SRLRRMVEEDPAHPRYIQTVWGLGYVFVPD-*
+>P1;1qqia
+structureX:1qqi:   1 :A: 104 :A:phosphate regulon transcriptional regulatory protein Phob:Escherichia coli: -1: -1
+MAVEEVIEMQGLSLDPTSHRVMAGEEPLEMGPTEFKLLHFFMTHPERVYSREQLLNHVWGTNVYV-EDRTVDVHI
+RRLRKALEP-GGHDRMVQTVRGTGYRFSTRF*

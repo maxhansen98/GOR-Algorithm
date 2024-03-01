@@ -1,0 +1,16 @@
+C; family: Thiamin pyrophosphokinase, vitamin B1 binding domain
+C; class: all beta
+C; type: domain
+C; domain:
+C; 1ig3   a:179-263   1ig3a
+C; 1ig0   a:224-319   1ig0a
+C; end:
+C; last update 14/1/03
+>P1;1ig3a
+structureX:1ig3: 179 :A: 263 :A:thiamin pyrophosphokinase:Mus musculus: 1.90: 21.4
+DSLIYLLQPGKHRLHVDTG---MEGSWCGLIPVGQPCNQVTTTGLKWNLTNDVLGFGT-LVSTSNTYDGSGLVTV
+ETDHPLLWTMAIKS-------*
+>P1;1ig0a
+structureX:1ig0: 224 :A: 319 :A:thiamine pyrophosphokinase:Saccharomyces cerevisiae: 1.80: 21.7
+TDLIFLIKKNGTLIEYDPQFRNTCIGNCGLLPIGEATLVKETRGLKWDVKNWPTSVVTGRVSSSNRFVGDNCCFI
+DTKDDIILNVEIFVDKLIDFL*

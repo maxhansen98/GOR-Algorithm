@@ -1,0 +1,16 @@
+C; family: SNAP-25 family
+C; class: all alpha
+C; type: domain
+C; domain:
+C; 1kil   d:   1kild
+C; 1l4a   d:   1l4ad
+C; end:
+C; last update 14/10/02
+>P1;1kild
+structureX:1kil: 139 :D: 204 :D:Snare motif:Rattus norvegicus: 2.30: 24.5
+----------GSARENEMDENLEQVSGIIGNLRHMALDMGNEIDTQNRQIDRIMEKADSNKTRIDEANQRATKML
+W*
+>P1;1l4ad
+structureX:1l4a: 136 :D: 210 :D:S-Snap25 fusion protein:Loligo pealei: 2.95: 29.7
+PSSGYVTRITNDAREDDMENNMKEVSSMIGNLRNMAIDMGNEIGSQNRQVDRIQQKAESNESRIDEANKKATKLL
+-*

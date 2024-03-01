@@ -1,0 +1,14 @@
+C; family: Penicillin binding protein, C-terminal domain 2
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1k25   a:693-750   1k25a
+C; 1qme   a:693-750   1qmea
+C; end:
+C; last update 20/11/01
+>P1;1k25a
+structureX:1k25: 693 :A: 750 :A:PBP2X from a highly penicillin-resistant clinical isolate:Streptococcus pneumoniae: 3.2: 23.5
+VEEIPDMYGWKKETAETFAKWLDIELEFEGSGSVVQKQDVRTNTAIKNIKKIKLTLGD*
+>P1;1qmea
+structureX:1qme: 693 :A: 750 :A:penicillin-binding protein 2X:Streptococcus pneumoniae: 2.4: 19.7
+AEEVPDMYGWTKETAETLAKWLNIELEFQGSGSTVQKQDVRANTAIKDIKKITLTLGD*

@@ -1,0 +1,12 @@
+C; family: Fibronectin type 1 domain
+C; class: small disulphide
+C; last update 16/7/99
+>P1;1tpn
+structureX:1tpn:   1 : :  50 : :tissue plasminogen activator:Homo sapiens: -1: -1
+SYQVICRDEKTQMIYQQHQSWLRPVLRSNRVEYCWCN---SGRAQCHSVPVKS*
+>P1;1fbr1
+structureX:1fbr:   1 : :  46 : :fibronectin (fn), fourth domain:Homo sapiens: -1: -1
+--AEKCFDHAAGTSYVVGETWEKPYQG-WMMVDCTCLGEGSGRITCTSR----*
+>P1;1fbr2
+structureX:1fbr:  47 : :  93 : :fibronectin (fn), fifth domain:Homo sapiens: -1: -1
+---NRCNDQDTRTSYRIGDTWSKKDNR-GNLLQCICTGNGRGEWKCERHT--S*

@@ -1,0 +1,11 @@
+C; family: short-chain scorpion toxin
+C; class: small disulphide
+>P1;1chl
+structureN:1chl:   1 : :  36 : :chlorotoxin:Leiurus quinquestriatus:-1.00:-1.00
+MCMPCFTTDHQMARKCDDCCGGKG-RGKCYGPQCLCR--*
+>P1;1sis
+structureN:1sis:   1 : :  35 : :insectotoxin I5A:Buthus eupeus:-1.00:-1.00
+MCMPCFTTDPNMAKKCRDCCGG---NGKCFGPQCLCNR-*
+>P1;1pnh
+structureX:1pnh:   1 : :  31 : :scorpion toxin analog:Androctonus mauretanicus mauretanicus:-1.00:-1.00
+T--------VCNLRRCQLSCRSLGLLGKCIGVKCECVKH*

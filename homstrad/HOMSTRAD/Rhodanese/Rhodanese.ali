@@ -1,0 +1,42 @@
+C; family: Rhodanese-like domain
+C; class: alpha beta 
+C; type: domain
+C; domain:
+C; 1e0c   a:1-135   1e0ca1
+C; 1rhs   1-149     1rhs1
+C; 1c25   -         1c25
+C; 1qb0   a:        1qb0a
+C; 1e0c   a:136-271 1e0ca2
+C; 1rhs   150-293   1rhs2
+C; end:
+C; last update 12/7/01
+>P1;1e0ca1
+structureX:1e0c:   1 :A: 135 :A:thiosulfate sulfurtransferase:Azotobacter vinelandii: 1.8: 18
+-----------------MDDFASLPLVIEPADLQARL----S--APELILVDLTS--------AARYAE------
+------GHIPGARFVDPKRTQLGQPPAPGLQPPREQLESLFGELGHRP-----EAVYVVYDDE--GGGWAGRFIW
+LLDVIG----------QQRYHYLNGGLTAWLAE---DRPLSRE-----------------LPAPA-*
+>P1;1rhs1
+structureX:1rhs:   1 : : 149 : :thiosulfate sulfurtransferase:Bos taurus: 1.36: -1
+----------------VHQV--LYRALVSTKWLAESVRAGKV--GPGLRVLDASWYSPGTREARKEYLE------
+------RHVPGASFFDIEECRDKASPYEVMLPSEAGFADYVGSLGISN-----DTHVVVYDGDDLGSFYAPRVWW
+MFRVFG----------HRTVSVLNGGFRNWLKE---GHPVTSE-----------------PSRPEP*
+>P1;1c25
+structureX:1c25: 335 : : 495 : :M-phase inducer phosphatase 1:Homo sapiens: 2.3: 22.7
+---MLIGDFSKGYLFHTVAGKHQDLKYISPEIMASVLNGKFANLIKEFVIIDCRY--------PYEYE-------
+-----GGHIKGAVNLHM----------------EEEVEDFLLKKPIVPT-DGKRVIVVFHCE--FSSERGPRMCR
+YVRERDRLGNEYPKLHYPELYVLKGGYKEFFMKC-QSYCEPPSYRPMHHEDFKE------------*
+>P1;1qb0a
+structureX:1qb0: 374 :A: 550 :A:M-phase inducer phosphatase 2:Homo sapiens: 1.91: -1
+DHRELIGDYSKAFLLQTVDGKHQDLKYISPETMVALLTGKFSNIVDKFVIVDCRY--------PYEYE-------
+-----GGHIKTAVNLPL----------------ERDAESFLLKSPIAPCSLDKRVILIFHCE--FSSERGPRMCR
+FIRERDRAVNDYPSLYYPEMYILKGGYKEFFPQH-PNFCEPQDYRPMNHEAFKDELKTFRLKTRSW*
+>P1;1e0ca2
+structureX:1e0c: 136 :A: 271 :A:thiosulfate sulfurtransferase:Azotobacter vinelandii: 1.8: 18
+--------------GGPVALSLHDEPTASRDYLLGRLGA------ADLAIWDARS--------PQEYRGEKVL--
+AA--KGGHIPGAVNFEWTAAMDPSRA--LRIRT--DIAGRLEELGITP-----DKEIVTHQ----THHRSGLTYL
+IAKALG----------YPRVKGYAGSWGEWGNH--PDTPVEL------------------------*
+>P1;1rhs2
+structureX:1rhs: 150 : : 293 : :thiosulfate sulfurtransferase:Bos taurus: 1.36: -1
+--------------A-IFKATLNRSLLKTYEQVLENLES------KRFQLVDSRA--------QGRYLGTQPEPD
+AVGLDSGHIRGSVNMPFMNFLTE--D--GFEKSPEELRAMFEAKKVDL-----TKPLIATR----KGVTACHIAL
+AAYLCG----------KPDVAIYDGSWFEWFHRAPPETWVSQG---------------------KG*

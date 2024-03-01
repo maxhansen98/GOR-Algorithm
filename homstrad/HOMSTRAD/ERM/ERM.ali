@@ -1,0 +1,16 @@
+C; family: Ezrin/radixin/moesin family
+C; class: all beta
+C; type: domain
+C; domain:
+C; 1ef1   a:199-297   1ef1a
+C; 1gg3   a:188-279   1gg3a
+C; end:
+C; last update 31/8/01
+>P1;1ef1a
+structureX:1ef1: 199 :A: 297 :A:moesin:Homo sapiens: 1.90: 22.7
+EYGVNYFSIKNKKGSELWLGVDALGLNIYEQNDRLTPKIGFPWSEIRNISFNDKKFVIKPIDK----KAPDFVFY
+APRLRINKRILALC-GNHELYRRRKP*
+>P1;1gg3a
+structureX:1gg3: 188 :A: 279 :A:protein 4.1R membrane binding domain:Homo sapiens: 2.80: 22.6
+--GVDLHKAKDLEGVDIILGVCSSGLLVYKD---KLRINRFPWPKVLKISYKRSSFFIKIRPGEQEQYESTIGFK
+LPSYRAAKKLWKVCVEHHTFFR----*

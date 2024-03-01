@@ -1,0 +1,71 @@
+C; family: Class II histocompatibility antigen, N-terminal domain
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1fv1   b:1-92   1fv1b
+C; 1d5z   b:1-92   1d5zb
+C; 1a6a   b:5-92   1a6ab
+C; 1fng   b:6-88   1fngb
+C; 1es0   b:5-93   1es0b
+C; 1iak   b:5-92   1iakb
+C; 2iad   b:5-93   2iadb
+C; 1hdm   b:3-87   1hdmb
+C; 2iad   a:27-82   2iada
+C; 1iak   a:1-81   1iaka
+C; 1fng   a:1-82   1fnga
+C; 1fv1   a:3-81   1fv1a
+C; 1hdm   a:13-93   1hdma
+C; end:
+C; last update 22/8/01
+>P1;1fv1b
+structureX:1fv1:   1 :B:  92 :B:Major histocompatibility complex beta chain:Homo sapiens: 1.90: 23.3
+GDTRPRFLQQD-KYECHFFNGTERVRFLHRDIYNQEEDLRFDSDVGEYRAVTELGRPDAEYWNSQKDFLEDRRAA
+VDTYCRHNYGVGE-SFTVQ--*
+>P1;1d5zb
+structureX:1d5z:   1 :B:  92 :B:HLA class II histocompatibility antigen, Dr-4 beta chain:Homo sapiens: 2.00: 23.4
+GDTRPRFLEQV-KHECHFFNGTERVRFLDRYFYHQEEYVRFDSDVGEYRAVTELGRPDAEYWNSQKDLLEQKRAA
+VDTYCRHNYGVGE-SFTVQ--*
+>P1;1a6ab
+structureX:1a6a:   5 :B:  92 :B:HLA class II histocompatibility antigen, Dr-1 beta chain:Homo sapiens: 2.75: 24.6
+----PRFLEYS-TSECHFFNGTERVRYLDRYFHNQEENVRFDSDVGEFRAVTELGRPDAEYWNSQKDLLEQKRGR
+VDNYCRHNYGVVE-SFTVQ--*
+>P1;1fngb
+structureX:1fng:   6 :B:  88 :B:H-2 class II histocompatibility antigen, E-k beta chain:Mus musculus: 1.90: 22.1
+-----WFLEYC-KSECHFYNGTQRVRLLVRYFYNLEENLRFDSDVGEFRAVTELGRPDAENWNSQPEFLEQKRAE
+VDTVCRHNYEIFDN-------*
+>P1;1es0b
+structureX:1es0:   5 :B:  93 :B:H-2 class II histocompatibility antigen, A beta chain:Mus musculus: 2.60: 21
+----RHFVHQF-KGECYFTNGTQRIRLVTRYIYNREEYLRFDSDVGEYRAVTELGRHSAEYYNKQ--YLERTRAE
+LDTACRHNYEETEVPTSLR--*
+>P1;1iakb
+structureX:1iak:   5 :B:  92 :B:H-2 class II histocompatibility antigen, A-k beta chain:Mus musculus: 1.90: 21.4
+----GSFVHQF-QPFCYFTNGTQRIRLVIRYIYNREEYVRFDSDVGEYRAVTELGRPDAEYWNKQ--YLERTRAE
+LDTVCRHNYEKTETPTSLR--*
+>P1;2iadb
+structureX:2iad:   5 :B:  93 :B:H-2 class II histocompatibility antigen, A-d beta chain:Mus musculus: 2.4: 25.3
+----RHFVVQF-KGECYYTNGTQRIRLVTRYIYNREEYVRYDSDVGEYRAVTELGRPDAEYWNSQPEILERTRAE
+VDTACRHNYEGPETSTSLR--*
+>P1;1hdmb
+structureX:1hdm:   3 :B:  87 :B:class II histocompatibility antigen, M beta chain:Homo sapiens: 2.50: 19.7
+------FVAHV-ESTCLLDDAGTPKDFTYCISFNKDLLTCWDPEENKMAPCNSLANVLSQHLNQKDTLMQRL-NG
+LQ-NCATHTQPFWGSLTNR--*
+>P1;2iada
+structureX:2iad:  27 :A:  82 :A:H-2 class II histocompatibility antigen, A-d alpha chain:Mus musculus: 2.4: 25.3
+---------------------------------DGDELFYVDLDKKKTVWRLPEFGQLILFE------PQGGLQN
+IA-AEKHNLGILTKRSNFTPA*
+>P1;1iaka
+structureX:1iak:   1 :A:  81 :A:H-2 class II histocompatibility antigen, A-k alpha chain:Mus musculus: 1.90: 21.4
+--IEADHVGSYGITVYQSP----GDIGQYTFEFDGDELFYVDLDKKETVWMLPEFAQLRRFE------PQGGLQN
+IA-TGKHNLEILTKRSNSTP-*
+>P1;1fnga
+structureX:1fng:   1 :A:  82 :A:H-2 class II histocompatibility antigen, E-k alpha chain:Mus musculus: 1.90: 22.1
+--IKEEHTIIQ-AEFYLLP----DKRGEFMFDFDGDEIFHVDIEKSETIWRLEEFAKFASFE------AQGALAN
+IA-VDKANLDVMKERSNNTPD*
+>P1;1fv1a
+structureX:1fv1:   3 :A:  81 :A:HLA class II histocompatibility antigen, Dr alpha chain:Homo sapiens: 1.90: 23.3
+----EEHVIIQ-AEFYLNP----DQSGEFMFDFDGDEIFHVDMAKKETVWRLEEFGRFASFE------AQGALAN
+IA-VDKANLEIMTKRSNYTP-*
+>P1;1hdma
+structureX:1hdm:  13 :A:  93 :A:class II histocompatibility antigen, M alpha chain:Homo sapiens: 2.50: 19.7
+---LQNHTFLH-TVYCQDG----SPSVGLSEAYDEDQLFFFDFSQNTRVPRLPEFADWAQEQ------GDAILFD
+KE-FCEWMIQQIPKLDGKIPV*

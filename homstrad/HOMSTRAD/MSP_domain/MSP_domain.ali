@@ -1,0 +1,16 @@
+C; family: MSP (Major sperm protein) domain
+C; class: all beta
+C; type: subunit
+C; domain:
+C; 1msp   a:   1mspa
+C; 1grw   a:   1grwa
+C; end:
+C; last update 24/6/02
+>P1;1mspa
+structureX:1msp:   3 :A: 126 :A:Major sperm protein, alpha isoform, pH 4.6:Ascaris suum: 2.5: -1
+SVPPGDINTQPSQKIVFNAPYDDKHTYHIKITNAGGRRIGWAIKTTNMRRLSVDPPCGVLDPKEKVLMAVSCDTF
+NAATEDLNNDRITIEWTNTPDGAAKQFRREWFQGDGMVRRKNLPIEYNL*
+>P1;1grwa
+structureX:1grw:   3 :A: 126 :A:Major Sperm Protein 31/40/142:Caenorhabditis elegans: 2.6: 22.8
+SVPPGDIQTQPGTKIVFNAPYDDKHTYHIKVINSSARRIGYGIKTTNMKRLGVDPPCGVLDPKEAVLLAVSCDAF
+AFGQEDTNNDRITVEWTNTPDGAAKQFRREWFQGDGMVRRKNLPIEYNP*

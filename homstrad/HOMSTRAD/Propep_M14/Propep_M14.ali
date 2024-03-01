@@ -1,0 +1,26 @@
+C; family: Carboxypeptidase activation peptide
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1pca   4A-99A   1pca
+C; 1pyt   a:   1pyta
+C; 1aye   4A-99A   1aye
+C; 1nsa   7A-95A   1nsa
+C; end:
+C; last update 19/9/01
+>P1;1pca
+structureX:1pca:   4A: :  99A: :carboxypeptidase A activation peptide:Sus scrofa: 2.0: -1
+KEDFVGHQVLRISVDDEAQVQKVKELEDLEHLQLDFWR--GPA--RPGFPIDVRVPFPSIQAVKVFLEAHGIRYT
+IMIEDVQLLLDEEQEQMFASQGR*
+>P1;1pyta
+structureX:1pyt:   4 :A:  99 :A:carboxypeptidase A activation peptide:Bos taurus: 2.35: 19.2
+KEDFVGHQVLRITAADEAEVQTVKELEDLEHLQLDFWR--GPG--QPGSPIDVRVPFPSLQAVKVFLEAHGIRYR
+IMIEDVQSLLDEEQEQMFASQSR*
+>P1;1aye
+structureX:1aye:   4A: :  99A: :carboxypeptidase A2 activation peptide:Homo sapiens: 1.8: 17.8
+LETFVGDQVLEIVPSNEEQIKNLLQLEAQEHLQLDFWK--SPT--TPGETAHVRVPFVNVQAVKVFLESQGIAYS
+IMIEDVQVLLDKENEEMLFNRRR*
+>P1;1nsa
+structureX:1nsa:   7A: :  95A: :carboxypeptidase B activation peptide:Sus scrofa: 2.30: 16.9
+---FEGEKVFRVNVEDENDISELHELAS--TRQIDFWKPDSVTQIKPHSTVDFRVKAEDILAVEDFLEQNELQYE
+VLINNLRSVLEAQFDS--VS--R*

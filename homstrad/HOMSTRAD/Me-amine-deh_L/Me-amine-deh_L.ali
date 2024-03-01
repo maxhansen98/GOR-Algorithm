@@ -1,0 +1,16 @@
+C; family: Methylamine dehydrogenase, L chain
+C; class: small disulphide
+C; type: subunit
+C; domain:
+C; 2bbk   l:   2bbkl
+C; 1mda   l:   1mdal
+C; end:
+C; last update 17/8/01
+>P1;2bbkl
+structureX:2bbk:   7 :L: 131 :L:methylamine dehydrogenase light chain:Paracoccus denitrificans: 1.75: 16.7
+TDPRAKWVPQDNDIQACDYWRHCSIDGNICDCSGGSLTNCPPGTKLATASWVASCYNPTDGQSYLIAYRDCCGYN
+VSGRCPCLNTEGELPVYRPEFANDIIWCFGAEDDAMTYHCTISPIVGKAS*
+>P1;1mdal
+structureX:1mda:   7 :L: 127 :L:methylamine dehydrogenase with amicyanin:Paracoccus denitrificans: 2.5: 28.5
+VDPRAKWQPQDNDIQACDYWRHCSIAGNICDCSAGSLTSCPPGTLVASGSWVGSCYNPPDPNKYITAYRDCCGYN
+VSGRCACLNTEGELPVY-NKDANDIIWCFGGE-DGMTYHCSISPVSGA--*

@@ -1,0 +1,15 @@
+C; family: Repeats in polycystic kidney disease 1 (PKD1) and other proteins
+C; class: all beta
+C; domain:
+C; 1ctn   24-132    1ctn
+C; 1b4r   a:        1b4ra
+C; end:
+C; last update 16/7/99
+>P1;1ctn
+structureX:1ctn:  24 : : 132 : :chitinase A :Serratia marcescens: 2.3: 16.2
+AAPGKPTIAWGNTKFAIVEVDQAATAYNNLVKVKNAADVSVSWNLWNGDTGTTAKILLN-GKEAWSGPSTGSSGT
+ANFKVNKGGRYQMQVALCNADGCTASDATEIVVAD*
+>P1;1b4ra
+structureX:1b4r:   8 :A:  87 :A:polycystin-1:Homo sapiens: -1: -1
+-----ATLVGPHGPLASG------------------QLAAFHIAAPL--PVTATRWDFGDGSAEVDAA--GP--A
+ASHRYVLPGRYHVTAVLALGAGSALL-GTDVQVEA*

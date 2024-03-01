@@ -1,0 +1,11 @@
+C; family: Cellulose binding domain family 2
+C; class: all beta
+C; last update 29/11/99
+>P1;1exh
+structureX:1exh:   1 : : 110 : :exoglucanase/xylanase:Cellulomonas fimi: -1: -1
+ASSGPAGCQVLWG-VNQWNTGFTANVTVKNTSSAPVDGWTLTFSFPSGQQVTQAWSSTVTQSGSAVTVRNAPWNG
+SIPAGGTAQFGFNGSHTGTNAAPTAFSLNGTPCTVG*
+>P1;2xbd
+structureX:2xbd: 247 : : 333 : :endo-1,4-beta-xylanase D (xylanase D):Cellulomonas fimi: -1: -1
+T-----GCSVTATRAEEWSDRFNVTYSVSG-----SSAWTVNLALNGSQTIQASWNANVTGSGSTRTVTPNGSG-
+-------NTFGVTVMKNGSSTTPAATCAGS------*

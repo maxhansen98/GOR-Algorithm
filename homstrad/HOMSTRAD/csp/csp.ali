@@ -1,0 +1,21 @@
+C; family:  cold-shock DNA-binding domain
+C; class:  all beta
+C; domain:
+C; 1csp   -     1csp
+C; 1mjc   -     1mjc
+C; 1c9o   a:     1c9oa
+C; end:
+C; last update 15/5/100
+C; reordered by kitschorder 1.0a
+>P1;1c9oa
+structureX:1c9o:   1 :A:  66 :A:cold shock protein cspb:Bacillus caldolyticus: 1.17:12.5
+--MQRGKVKWFNNEKGYGFIEVE-GGSDVFVHFTAIQGEGFKTLEEGQEV
+SFEIVQGNRGPQAANVVKL-*
+>P1;1csp
+structureX:1csp:   1 : :  67 : :major cold shock protein:Bacillus subtilis: 2.50:19.50
+--MLEGKVKWFNSEKGFGFIEVE-GQDDVFVHFSAIQGEGFKTLEEGQAV
+SFEIVEGNRGPQAANVTKEA*
+>P1;1mjc
+structureX:1mjc:   2 : :  70 : :major cold shock protein 7.4:Escherichia coli: 2.00:18.70
+SGKMTGIVKWFNADKGFGFITPDDGSKDVFVHFSAIQNDGYKSLDEGQKV
+SFTIESGAKGPAAGNVTSL-*

@@ -1,0 +1,23 @@
+C; family: UcrQ family
+C; class: membrane bound all alpha
+C; type: subunit
+C; domain:
+C; 1bgy   g:   1bgyg
+C; 1bcc   g:   1bccg
+C; 1ezv   g:   1ezvg
+C; end:
+C; last update 23/8/01
+>P1;1bgyg
+structureX:1bgy:   1 :G:  81 :G:ubiquinol-cytochrome C reductase complex ubiquinone-binding proteinQP-C:Bos taurus: 3.0: 32
+G--------RQFGHL--TRVRHVITYSLSPFEQRAFPHYFSKGIPNVLRRTRACILRVAPPFVAFYLVYTWGTQE
+FEKSKRKNPAAYENDR---*
+>P1;1bccg
+structureX:1bcc:   2 :G:  79 :G:ubiquinol-cytochrome C reductase complex ubiquinone-binding proteinQP-C:Gallus gallus: 3.16: 27
+---------RQFGHL--TRVRHLITYSLSPFEQRPFPHYFSKGVPNVWRRLRACILRVAPPFLAFYLLYTWGTQE
+FEKSKRKNPAAY--VN---*
+>P1;1ezvg
+structureX:1ezv:   2 :G:  94 :G:ubiquinol-cytochrome C reductase complex ubiquinone-binding proteinQP-C:Saccharomyces cerevisiae: 2.30: 22.2
+GPPSGKTYMGWWGHMGGPKQKGITSYAVSPYAQKPLQGIFHNAVFNSFRRFKSQFLYVLIPAGIYWYWWKNGNEY
+NEFLYS-KAGREELERVNV*
+
+

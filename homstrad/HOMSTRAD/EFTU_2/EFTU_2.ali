@@ -1,0 +1,19 @@
+C; family: Elongation factor Tu (EF-Tu), domain 2
+C; class: all beta
+C; last update 22/2/100
+>P1;1efca
+structureX:1efc: 205 :A: 296 :A:elongation factor Tu (EF-Tu):Escherichia coli: 2.05: 20.3
+---------------------AIDKPFLLPIEDVFSISGRGTVVTGRVERGIIKVGEEVEIVGIK-ETQKSTCTG
+VEMF----RKLLDEGRAGENVGVLLRGIKREEIERGQVLAKPG-------*
+>P1;1eft
+structureX:1eft: 213 : : 312 : :elongation factor Tu (EF-Tu):Thermus aquaticus: 2.5: 20
+P------------------VRDVDKPFLMPVEDVFTITGRGTVATGRIERGKVKVGDEVEIVGLAPETRKTVVTG
+VEMH----RKTLQEGIAGDNVGLLLRGVSREEVERGQVLAKPGSITP---*
+>P1;1d2ea
+structureX:1d2e: 251 :A: 348 :A:elongation factor Tu, mitochondrial:Bos taurus: 1.94: 23.7
+-------------------TRDLEKPFLLPVESVYSIPGRGTVVTGTLERGILKKGDECEFLGH-SKNIRTVVTG
+IEMF----HKSLDRAEAGDNLGALVRGLKREDLRRGLVMAKPGSIQP---*
+>P1;1dar
+structureX:1dar: 283 : : 400 : :elongation factor G (EF-G):Thermus aquaticus: 2.4: 22
+PLDIPPIKGTTPEGEVVEIHPDPNGPLAALAFKIMADPYVGRLTFIRVYSGTLTSGSYVYNTTK---GRKERVAR
+LLRMHANHREEVEELKAGDLGAVVGLK----ETITGDTLVGEDAPRVILE*

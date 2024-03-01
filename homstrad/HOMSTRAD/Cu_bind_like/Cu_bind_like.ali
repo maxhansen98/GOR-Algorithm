@@ -1,0 +1,21 @@
+C; family: Plastocyanin-like domain 
+C; class: all beta
+C; type: subunit
+C; domain:
+C; 2cbp -  2cbp
+C; 1f56 a: 1f56a
+C; 1jer -  1jer
+C; end:
+C; last update 5/6/01
+>P1;2cbp
+structureX:2cbp:   1 : :  96 : :basic blue protein:Cucumis sativus: 1.8: 14.1
+---AVYVVGGSGGWTF-----NTESWPKGKRFRAGDILLFNYNPSMHNVVVV-NQGGFSTCNTPAGAKVY--TSG
+RDQIKL-PKGQSYFICNFPGHCQSGMKIAVNAL---*
+>P1;1f56a
+structureX:1f56:   1 :A:  91 :A:spinach plantacyanin:Spinacia oleracea: 2.05: 16.2
+---AVYNIG----WSF-----NV-NGARGKSFRAGDVLVFKYIKGQHNVVAV-NGRGYASCSAPRGARTY--SSG
+QDRIKL-TRGQNYFICSFPGHCGGGMKIAINAK---*
+>P1;1jer
+structureX:1jer:   0 : : 109 : :cucumber peeling cupredoxin:Cucumis sativus: 1.6: -1
+MQSTVHIVGDNTGWSVPSSPNFYSQWAAGKTFRVGDSLQFNFPANAHNVHEMETKQSFDACNF-VNSDNDVERTS
+PVIERLDELGMHYFVCTVGTHCSNGQKLSINVVAAN*

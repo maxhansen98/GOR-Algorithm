@@ -1,0 +1,16 @@
+C; family: Tubulin binding cofactor A
+C; class: all alpha
+C; type: subunit
+C; domain:
+C; 1qsd   a:   1qsda
+C; 1h7c   a:   1h7ca
+C; end:
+C; last update 24/6/02
+>P1;1qsda
+structureX:1qsd:   4 :A: 105 :A:Beta-tubulin binding post-chaperonin cofactor, RBL2P:Saccharomyces cerevisiae: 2.2: 20.8
+---TQLDIKVKALKRLTKEEGYYQQELKDQEAHVAKLKEDKSVDPYDLKKQEEVLDDTKRLLPTLYEKIREFKED
+LEQFLKTYQG--TED-VSDARSAITSAQELLDS*
+>P1;1h7ca
+structureX:1h7c:   4 :A: 106 :A:Tubulin-specific chaperone A:Homo sapiens: 1.8: 21.01
+PRVRQIKIKTGVVRRLVKERV-YEKEAKQQEEKIEKRAED--GENYDIKKQAEILQESR--IPDCQRRLEAAYLD
+LQRILENEKDLEEAEEYKEARLVLDSVKL----*

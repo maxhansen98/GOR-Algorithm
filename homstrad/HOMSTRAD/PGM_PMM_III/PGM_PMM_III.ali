@@ -1,0 +1,16 @@
+C; family: Phosphoglucomutase/phosphomannomutase, alpha/beta/alpha domain III
+C; class: alpha beta
+C; type: domain
+C; domain:
+C; 3pmg   a:304-420   3pmga
+C; 1kfq   a:324-443   1kfqa
+C; end:
+C; last update 21/1/02
+>P1;3pmga
+structureX:3pmg: 304 :A: 420 :A:Phosphoglucomutase:Oryctolagus cuniculus: 2.4: -1
+NPSDSVAVIAANIFSIPYFQQTGVRGFARSMPTSGALDRVANATKIALYETPTGWKFFGNLMDASKLSLCGEESF
+GTGSDHIREKDGLWAVLAWLSILATRK------QSVEDILKDHWHKFG*
+>P1;1kfqa
+structureX:1kfq: 324 :A: 443 :A:Phosphoglucomutase. open form:Paramecium tetraurelia: 2.40: 23.3
+TPSDSLAVIAANANLIFK---NGLLGAARSMPTSGALDKVAAKNGIKLFETPTGWKFFGNLMDAGLINLCGEESF
+GTGSNHIREKDGIWAVLAWLTILAHKNKNTDHFVTVEEIVTQYWQQFG*

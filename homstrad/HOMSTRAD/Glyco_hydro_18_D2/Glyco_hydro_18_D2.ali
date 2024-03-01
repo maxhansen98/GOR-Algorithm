@@ -1,0 +1,26 @@
+C; family: Glycosyl hydrolases family 18, insertion domain
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1d2k   a:293-354   1d2ka
+C; 1edq   a:444-516   1edqa
+C; 1e9l   a:267-337   1e9la
+C; 1e15   a:292-379   1e15a
+C; end:
+C; last update 17/9/01
+>P1;1d2ka
+structureX:1d2k: 293 :A: 354 :A:chitinase 1:Coccidioides immitis: 2.2: 17
+YGRAFASTD------GIGTSFNGV-----------GG-GSW-----ENGVWDYKDMPQQ-----GAQVTELEDIA
+ASYSYDKNKRYLISY-*
+>P1;1edqa
+structureX:1edq: 444 :A: 516 :A:chitinase A:Serratia marcescens: 1.55: 18.7
+YGRGWTGVNGYQNNIPFTGTATGP-----------VK-GTW-----ENGIVDYRQIAGQFMSG-EWQYTYDATAE
+APYVFKPSTGDLITFD*
+>P1;1e9la
+structureX:1e9l: 267 :A: 337 :A:macrophage secretory protein:Mus musculus: 2.5: 19.8
+YGHTFILSDPS--KTGIGAPTIST-----------GPPGKYT---DESGLLAYYEVC-TFLNE-GATEVWDAPQE
+VPYAYQG--NEWVGYD*
+>P1;1e15a
+structureX:1e15: 292 :A: 379 :A:chitinase:Serratia marcescens: 1.9: 18.3
+YGRAFKGVSG--GNGGQYSSHSTPGEDPYPSTDYWLVGCEECVRDKDPRIASYRQLEQMLQGNYGYQRLWNDKTK
+TPYLYHAQNGLFVTY-*

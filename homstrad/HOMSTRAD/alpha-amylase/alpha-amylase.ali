@@ -1,0 +1,328 @@
+C; family:  Alpha amylase, catalytic domain
+C; class: alpha beta barrel
+C; type: domain
+C; domain:
+C; 1hx0   a:2-403   1hx0a
+C; 1smd   2-403   1smd
+C; 1jae   2-378   1jae
+C; 1g94   a:1-354   1g94a
+C; 1bag   1-347   1bag
+C; 1sma   a:124-505   1smaa
+C; 1bvz   a:121-502   1bvza
+C; 1uok   1-479   1uok
+C; 2aaa   1-381   2aaa
+C; 7taa   1-381   7taa
+C; 1cgt   1-406   1cgt
+C; 1d3c   a:1-406   1d3ca
+C; 1ciu   1-406   1ciu
+C; 1cyg   1-402   1cyg
+C; 1qhp   a:1-407   1qhpa
+C; 1hvx   a:1-393   1hvxa
+C; 1vjs   3-393   1vjs
+C; 1gcy   a:1-357   1gcya
+C; 1ava   a:1-346   1avaa
+C; 1eha   a:91-490   1ehaa
+C; 1bf2   163-637   1bf2
+C; 1g5a   a:77-554   1g5aa
+C; 1gjw   a:68-572   1gjwa
+C; end:
+C; last update 24/5/02
+>P1;1hx0a
+structureX:1hx0:   2 :A: 403 :A:Alpha amylase:Sus scrofa: 1.38: -1
+--------------------------------------------YAPQTQS----GRTSIVHLF-------EWRW
+VDIALECER-YLGPKGFGGVQVSPPNENIVVT-------NPSRPWWERYQPVSYKLCT---------R-SGN-EN
+EFRDMVTRCNNVGVRIYVDAVINHMCGS-----------------G-----AAA----G---TGTTCGSYCNPGN
+REFPA---VPYSA--WDF------NDG----------KCKTA---SGGIE--SYN-DPYQVRDCQLV--------
+-------GLLDLALE---K-------------------------------DYVRSMIADYLNKLID-IGVAGFRI
+DASKHMW----------------------------PGDIKAVLDKLHNLNTN-WFPAGSRPFIFQEVIDLG----
+------------GEAIKSSEYFG--------NGRVTEFKYGAKLGTVVRKWS-----------GEKMSYLKNWGE
+GW-G----------------FMP---SDR-ALVFVDNHDNQRGHGAGG---------------------------
+----------------------SSILTFW-----DARLYKIAVGFMLAHPYGFTRVMSSYRWARNFVN-------
+-----------------------------GED--VNDWIGPPNN-NG-VIKEVTINADTTC------GNDWV---
+CEHRWREIRNMVWFRNVVDG----------*
+>P1;1smd
+structureX:1smd:   2 : : 403 : :Amylase:Homo sapiens: 1.6: 18.4
+--------------------------------------------YSSNTQQ----GRTSIVHLF-------EWRW
+VDIALECER-YLAPKGFGGVQVSPPNENVAIH-------NPFRPWWERYQPVSYKLCT---------R-SGN-ED
+EFRNMVTRCNNVGVRIYVDAVINHMCGN-----------------A-----VSA----G---TSSTCGSYFNPGS
+RDFPA---VPYSG--WDF------NDG----------KCKTG---SGDIE--NYN-DATQVRDCRLS--------
+-------GLLDLALG---K-------------------------------DYVRSKIAEYMNHLID-IGVAGFRI
+DASKHMW----------------------------PGDIKAILDKLHNLNSN-WFPEGSKPFIYQEVIDLG----
+------------GEPIKSSDYFG--------NGRVTEFKYGAKLGTVIRKWN-----------GEKMSYLKNWGE
+GW-G----------------FMP---SDR-ALVFVDNHDNQRGHGAGG---------------------------
+----------------------ASILTFW-----DARLYKMAVGFMLAHPYGFTRVMSSYRWPRYFEN-------
+-----------------------------GKD--VNDWVGPPND-NG-VTKEVTINPDTTC------GNDWV---
+CEHRWRQIRNMVNFRNVVDG----------*
+>P1;1jae
+structureX:1jae:   2 : : 378 : :Alpha amylase:Tenebrio molitor: 1.65: 17.7
+--------------------------------------------KDANFAS----GRNSIVHLF-------EWKW
+NDIADECER-FLQPQGFGGVQISPPNEYLVAD---------GRPWWERYQPVSYIINT---------R-SGD-ES
+AFTDMTRRCNDAGVRIYVDAVINHMTGM-------------------------N----G---V-GTSGSSADHDG
+MNYPA---VPYGS--GDF------HS------------PC-------EVN--NYQ-DADNVRNCELV--------
+-------GLRDLNQG---S-------------------------------DYVRGVLIDYMNHMID-LGVAGFRV
+DAAKHMS----------------------------PGDLSVIFSGLKNLNTDYGFADGARPFIYQEVIDLG----
+------------GEAISKNEYTG--------FGCVLEFQFGVSLGNAFQG-------------GNQLKNLANWGP
+EW-G----------------LLE---GLD-AVVFVDNHDNQRT---GG---------------------------
+----------------------SQILTYK-----NPKPYKMAIAFMLAHPYGTTRIMSSFDFT------------
+-----------------------------------DNDQGPPQDGSG-NLISPGINDDNTC------SNGYV---
+CEHRWRQVYGMVGFRNAVE-----------*
+>P1;1g94a
+structureX:1g94:   1 :A: 354 :A:Alpha amylase:Pseudoalteromonas haloplanctis: 1.74: 15.6
+-------------------------------------------------------TPTTFVHLF-------EWNW
+QDVAQECEQ-YLGPKGYAAVQVSPPNEHITG-----------SQWWTRYQPVSYELQS---------R-GGN-RA
+QFIDMVNRCSAAGVDIYVDTLINHMAAG-------------------------S----G---T-GTAGNSFG--N
+KSFP-----IYSP--QDF------HE------------SC-------TINNSDYGNDRYRVQNCELV--------
+-------GLADLDTA---S-------------------------------NYVQNTIAAYINDLQA-IGVKGFRF
+DASKHVA----------------------------ASDIQSLMAKVNG-----------SPVVFQEVIDQG----
+------------GEAVGASEYLS--------TGLVTEFKYSTELGNTFRN--------------GSLAWLSNFGE
+GW-G----------------FMP---SSS-AVVFVDNHDNQRGHG-GA---------------------------
+----------------------GNVITFE-----DGRLYDLANVFMLAYPYGYPKVMSSYDFH------------
+----------------------------------GDTDAGGPN-------VPVHNNGNLECF-----ASNWK---
+CEHRWSYIAGGVDFRNNTAD----------*
+>P1;1bag
+structureX:1bag:   1 : : 347 : :Alpha amylase:Bacillus subtilis: 2.5: 19.8
+-----------------------------------------------LTAP--SIKSGTILHAW-------NWSF
+NTLKHNMK--DIHDAGYTAIQTSPINQVKEGN----QGDKSMSNWYWLYQPTSYQIGN---------RYLGT-EQ
+EFKEMCAAAEEYGIKVIVDAVINHTTFD---------------------------------------------YA
+AISNE---VKSIP--NWT-------------------HGNT------QIK--NWS-DRWDVTQNSLL--------
+-------GLYDWNTQ---N-------------------------------TQVQSYLKRFLERALN-DGADGFRF
+DAAKHIE----------------------------LPDDG---SYGSQFWPNITNT--SAEFQYGQILQD-----
+-------------SASRDAAYAN--------YMDVTASNYGHSIRSALKN-R-----------NLGVSNISHYAS
+D--------------------VS---ADK-LVTWVESHDTYAND-------------------------------
+----------------------DEESTWM-----SDDDIRLGWAVIASRSGSTPLFFSRPE---GGGN-------
+-------------------------------------GVRFPG---------------KSQI-----GDRGS---
+ALFEDQAITAVNRFHNVMAG----------*
+>P1;1smaa
+structureX:1sma: 124 :A: 505 :A:Maltogenic amylase:Thermus sp.: 2.80: 20.9
+----------DLFQAPDWVKDTVWYQIFPERFANGNP-AISPKGA--RPWGSEDPTP---TSFF-------GGDL
+QGIIDHLD--YLADLGITGIYLTPIFRAP---------------SNHKYDTADYFEID---------PHFGD-KE
+TLKTLVKRCHEKGIRVMLDAVFNHCGYE-----------------FAPFQDVLK-----------------NGAA
+SR---------YK--DWF------HIR--------------E---FPLQTE--------PRPNYDTFA-------
+----FVPHMPKLNTA---H-------------------------------PEVKRYLLDVATYWIREFDIDGWRL
+DVANEID----------------------------HQFWREFRQAVKALK--------PDVYILGEIWH------
+----------------DAMPWLRG---D--QFDAVMNYPLADAALRFFAK-E-----------DMSASEFADRLM
+HVLH----------------SYPKQVNEA-AFNLLGSHDTPRLLTVCG---------------------------
+----------------------------G-----DVRKVKLLFLFQLTF-TGSPCIY-YGDEIGMTGG-------
+------------------------------ND--PECRKCMV--WD----PEKQ---------------------
+NKELYEHVKQLIALRKQY----RALRR---*
+>P1;1bvza
+structureX:1bvz: 121 :A: 502 :A:Alpha amylase II:Thermoactinomyces vulgaris R-47: 2.60: 19.6
+-----------VFTTPEWAKEAVIYQIFPERFANGDPSNDPPGTE--QWAKDARPRH---DSFY-------GGDL
+KGVIDRLP--YLEELGVTALYFTPIFASP---------------SHHKYDTADYLAID---------PQFGD-LP
+TFRRLVDEAHRRGIKIILDAVFNHAGDQ-----------------FFAFRDVLQ-----------------KGEQ
+SR---------YK--DWF------FIE--------------D---FPVSKT--------SRTNYETFA-------
+---VQVPAMPKLRTE---N-------------------------------PEVKEYLFDVARFWM-EQGIDGWRL
+DVANEVD----------------------------HAFWREFRRLVKSLN--------PDALIVGEIWH------
+----------------DASGWLMG---D--QFDSVMNYLFRESVIRFFAT-G-----------EIHAERFDAELT
+RARM----------------LYPEQAAQG-LWNLLDSHDTERFLTSCG---------------------------
+----------------------------G-----NEAKFRLAVLFQMTY-LGTPLIY-YGDEIGMAGA-------
+------------------------------TD--PDCRRPMI--WE----EKEQ---------------------
+NRGLFEFYKELIRLRHRL----ASLTR---*
+>P1;1uok
+structureX:1uok:   1 : : 479 : :Oligo-1,6-glucosidase:Bacillus cereus: 2.0: 19.2
+-------------MEKQWWKESVVYQIYPRSFMDS-------------------------NGDG-------IGDL
+RGIISKLD--YLKELGIDVIWLSPVYESPN--------------DDNGYDISDYCKIM---------NEFGT-ME
+DWDELLHEMHERNMKLMMDLVVNHTSDE-----------------HNWFIESRK----SK---------------
+--------DNKYR--DYY------I------------WRPGK---E----GKEPNNWGAAFSGSAWQYDEMTDEY
+YLHLFSKKQPDLNWD---N-------------------------------EKVRQDVYEMMKFWLE-KGIDGFRM
+DVINFISKEEGLPTVETEEEGYVSGHKHFMNGPNIHKYLHEMNEEVLSHY---------DIMTVGEMPGVT----
+--------------TEEAKLYTGE---ERKELQMVFQFEHMDLD-----SGEGGKWDVK----PCSLLTLKENLT
+KWQK----------------ALEH---TGWNSLYWNNHDQPRVVSRFGNDG------------------------
+--------------------------------MYRIESAKMLATVLHMM-KGTPYIY-QGEEIGMTNVRFESIDE
+YRDIETLNMYKEKVMERGEDIEKVMQSIYIKG-RDNARTPMQWDDQNHAGFTTGEPWITVNPNYKEINVKQAIQN
+KDSIFYYYKKLIELRKNN----EIVVY---*
+>P1;2aaa
+structureX:2aaa:   1 : : 381 : :Acid alpha amylase:Aspergillus niger: 2.1: -1
+-------------LSAASWRTQSIYFLLTDRFGRT--------DNSTTA--TCNTGN---EIYC-------GGSW
+QGIIDHLD--YIEGMGFTAIWISPITEQLPQDTA-----DG--EAYHGYWQQKIYDVN---------SNFGT-AD
+NLKSLSDALHARGMYLMVDVVPDHMGYA-----------------GNGND---V----DYSVFD----PFDS---
+------------S--SYF------HPY-------------------CLITDW---DNLTMVEDCWEGD-------
+---T-IVSLPDLDTT---E-------------------------------TAVRTIWYDWVADLVSNYSVDGLRI
+DSVLEVQ----------------------------PDFFPGYNKAS------------G-VYCVGEIDNG-----
+-------------NPASDCPYQK-------VLDGVLNYPIYWQLLYAFES-S-----------SGSISNLYNMIK
+SVAS----------------DCS--DPTL-LGNFIENHDNPRFAKY-T---------------------------
+----------------------------S-----DYSQAKNVLSYIFLS-DGIPIVY-AGEEQHYAGG-------
+------------------------------KV--PYNREATW--LS----GYDT---------------------
+SAELYTWIATTNAIRKLAIAADSAYIT---*
+>P1;7taa
+structureX:7taa:   1 : : 381 : :Taka amylase:Aspergillus oryzae: 1.98: 15.9
+-------------ATPADWRSQSIYFLLTDRFART--------DGSTTA--TCNTAD---QKYC-------GGTW
+QGIIDKLD--YIQGMGFTAIWITPVTAQLPQTTA-----YG--DAYHGYWQQDIYSLN---------ENYGT-AD
+DLKALSSALHERGMYLMVDVVANHMGYD-----------------GAGSS---V----DYSVFK----PFSS---
+------------Q--DYF------HPF-------------------CFIQNY---EDQTQVEDCWLGD-------
+---N-TVSLPDLDTT---K-------------------------------DVVKNEWYDWVGSLVSNYSIDGLRI
+DTVKHVQ----------------------------KDFWPGYNKAA------------G-VYCIGEVLDG-----
+-------------DPAYTCPYQN-------VMDGVLNYPIYYPLLNAFKS-T-----------SGSMDDLYNMIN
+TVKS----------------DCP--DSTL-LGTFVENHDNPRFASY-T---------------------------
+----------------------------N-----DIALAKNVAAFIILN-DGIPIIY-AGQEQHYAGG-------
+------------------------------ND--PANREATW--LS----GYPT---------------------
+DSELYKLIASANAIRNYAISKDTGFVT---*
+>P1;1cgt
+structureX:1cgt:   1 : : 406 : :Cyclodextrin glycosyltransferase:Bacillus circulans, strain 8: 2.0: 16.6
+-------DPDTAVTNKQSFSTDVIYQVFTDRFLDGNPSNNPT---GAAYDATCS-NL---KLYC-------GGDW
+QGLINKINDNYFSDLGVTALWISQPVENIFATINYSG-VTN--TAYHGYWARDFKKTN---------PYFGT-MA
+DFQNLITTAHAKGIKIVIDFAPNHTSPA------------------METDTSFA----ENGRLYDNGTLVGGYTN
+DT----------N--GYF------HHN-------------------GGSD-F---SSLENGIYKNLY--------
+-------DLADFNHN---N-------------------------------ATIDKYFKDAIKLWLD-MGVDGIRV
+DAVKHMP----------------------------LGWQKSWMSSIYAHK--------P-VFTFGEWFL-GSA--
+-----------A-SDADNTDFAN----K--SGMSLLDFRFNSAVRNVFRD-N-----------TSNMYALDSMIN
+STAT----------------DYN--QVND-QVTFIDNHDMDRFKTS-A---------------------------
+----------------------------V-----NNRRLEQALAFTLTS-RGVPAIY-YGTEQYLTGN-------
+------------------------------GD--PDNRAKMP--------SFSK---------------------
+STTAFNVISKLAPLRKSN----PAIAY---*
+>P1;1d3ca
+structureX:1d3c:   1 :A: 406 :A:Cyclodextrin glycosyltransferase:Bacillus circulans: 1.78: 22.0
+-------APDTSVSNKQNFSTDVIYQIFTDRFSDGNPANNPT---GAAFDGTCT-NL---RLYC-------GGDW
+QGIINKINDGYLTGMGVTAIWISQPVENIYSIINYSG-VNN--TAYHGYWARDFKKTN---------PAYGT-IA
+DFQNLIAAAHAKNIKVIIDFAPNHTSPA------------------SSDQPSFA----ENGRLYDNGTLLGGYTN
+DT----------Q--NLF------HHN-------------------GGTD-F---STTENGIYKNLY--------
+-------DLADLNHN---N-------------------------------STVDVYLKDAIKMWLD-LGIDGIRM
+NAVKHMP----------------------------FGWQKSFMAAVNNYK--------P-VFTFGQWFL-GVN--
+-----------E-VSPENHKFAN----E--SGMSLLDFRFAQKVRQVFRD-N-----------TDNMYGLKAMLE
+GSAA----------------DYA--QVDD-QVTFIDNHDMERFHAS-N---------------------------
+----------------------------A-----NRRKLEQALAFTLTS-RGVPAIY-YGTEQYMSGG-------
+------------------------------TD--PDNRARIP--------SFST---------------------
+STTAYQVIQKLAPLRKCN----PAIAY---*
+>P1;1ciu
+structureX:1ciu:   1 : : 406 : :Cyclodextrin glycosyltransferase:Thermoanaerobacterium thermosulfurigenes EM1: 2.3: -1
+-------ASDTAVSNVVNYSTDVIYQIVTDRFVDGNTSNNPT---GDLYDPTHT-SL---KKYF-------GGDW
+QGIINKINDGYLTGMGVTAIWISQPVENIYAVLPDSTFGGS--TSYHGYWARDFKRTN---------PYFGS-FT
+DFQNLINTAHAHNIKVIIDFAPNHTSPA------------------SETDPTYA----ENGRLYDNGTLLGGYTN
+DT----------N--GYF------HHY-------------------GGTD-F---SSYEDGIYRNLF--------
+-------DLADLNQQ---N-------------------------------STIDSYLKSAIKVWLD-MGIDGIRL
+DAVKHMP----------------------------FGWQKNFMDSILSYR--------P-VFTFGEWFL-GTN--
+-----------E-IDVNNTYFAN----E--SGMSLLDFRFSQKVRQVFRD-N-----------TDTMYGLDSMIQ
+STAS----------------DYN--FIND-MVTFIDNHDMDRFYNG-G---------------------------
+----------------------------------STRPVEQALAFTLTS-RGVPAIY-YGTEQYMTGN-------
+------------------------------GD--PYNRAMMT--------SFNT---------------------
+STTAYNVIKKLAPLRKSN----PAIAY---*
+>P1;1cyg
+structureX:1cyg:   1 : : 402 : :Cyclodextrin glucanotransferase:Bacillus stearothermophilus: 2.5: 15.4
+-------AG---NLNKVNFTSDVVYQIVVDRFVDGNTSNNPS---GALFSSGCT-NL---RKYC-------GGDW
+QGIINKINDGYLTDMGVTAIWISQPVENVFSVMNDA--SGS--ASYHGYWARDFKKPN---------PFFGT-LS
+DFQRLVDAAHAKGIKVIIDFAPNHTSPA------------------SETNPSYM----ENGRLYDNGTLLGGYTN
+DA----------N--MYF------HHN-------------------GGTT-F---SSLEDGIYRNLF--------
+-------DLADLNHQ---N-------------------------------PVIDRYLKDAVKMWID-MGIDGIRM
+DAVKHMP----------------------------FGWQKSLMDEIDNYR--------P-VFTFGEWFL-SEN--
+-----------E-VDANNHYFAN----E--SGMSLLDFRFGQKLRQVLRN-N-----------SDNWYGFNQMIQ
+DTAS----------------AYD--EVLD-QVTFIDNHDMDRFMID-G---------------------------
+----------------------------G-----DPRKVDMALAVLLTS-RGVPNIY-YGTEQYMTGN-------
+------------------------------GD--PNNRKMMS--------SFNK---------------------
+NTRAYQVIQKLSSLRRNN----PALAY---*
+>P1;1qhpa
+structureX:1qhp:   1 :A: 407 :A:Alpha amylase:Bacillus stearothermophilus: 1.70: 15.3
+-------------SSSASVKGDVIYQIIIDRFYDGDTTNNNPAKSYGLYDPTKS-KW---KMYW-------GGDL
+EGVRQKLP--YLKQLGVTTIWLSPVLDNLDTLAG----TDN--TGYHGYWTRDFKQIE---------EHFGN-WT
+TFDTLVNDAHQNGIKVIVDFVPNHSTPF------------------KANDSTFA----EGGALYNNGTYMGNYFD
+DA---------TK--GYF------HHN-------------------GDISNW---DDRYEAQWKNFTD-------
+---PAGFSLADLSQE---N-------------------------------GTIAQYLTDAAVQLVA-HGADGLRI
+DAVKHFN----------------------------SGFSKSLADKLYQKK--------D-IFLVGEWYGDDPG--
+-----------TANHLEKVRYAN----N--SGVNVLDFDLNTVIRNVFGT-F-----------TQTMYDLNNMVN
+QTGN----------------EYK--YKEN-LITFIDNHDMSRFLSV-N---------------------------
+----------------------------S-----NKANLHQALAFILTS-RGTPSIY-YGTEQYMAGG-------
+------------------------------ND--PYNRGMMP--------AFDT---------------------
+TTTAFKEVSTLAGLRRNN----AAIQY---*
+>P1;1hvxa
+structureX:1hvx:   1 :A: 393 :A:Alpha amylase:Bacillus stearothermophilus: 2.00: 15.4
+--------------------------------------------------AAPFNGTMMQYFEWYLPD--DGTLW
+TKVANEAN--NLSSLGITALWLPPAYKGT-------------SRSDVGYGVYDLYDLGEFNQKGAVRTKYGT-KA
+QYLQAIQAAHAAGMQVYADVVFDHKGGA---DGTEWVD---AVEVNPS------DRNQEISGTYQIQAWTKFDFP
+GRGNTYSSFKWRW--YHFDGVDWDESR----------KLSRIYKFRG--------IGKAWDWEVDT------ENG
+NYDYLM--YADLDMD---H-------------------------------PEVVTELKSWGKWYVNTTNIDGFRL
+DAVKHIK----------------------------FSFFPDWLSYVRSQTG-------KPLFTVGEYWSY-----
+-------------DINKLHNYIMKT--N--GTMSLFDAPLHNKFYTASKSG-----------GTFDMRTLMT---
+----------NTLMK-----DQ----PTL-AVTFVDNHDTEP-----------GQALQSWVD-------------
+-----------------------------------PWFKPLAYAFILTRQEGYPCVF-YGDYYGI---PQY----
+--------------------------------------------------------------------------N
+IPSLKSKIDPLLIARRD-------------*
+>P1;1vjs
+structureX:1vjs:   3 : : 393 : :Alpha amylase:Bacillus licheniformis: 1.7: 19.9
+-----------------------------------------------------LNGTLMQYFEWYMPN--DGQHW
+KRLQNDSA--YLAEHGITAVWIPPAYKGT-------------SQADVGYGAYDLYDLGEFHQKGTVRTKYGT-KG
+ELQSAIKSLHSRDINVYGDVVINHKGGA---DATEDVT---AVEVDPA------DRNRVISGEHLIKAWTHFHFP
+GRGSTYSDFKWHW--YHFDGTDWDESR----------KLNRIYKFQG----------KA----------------
+-YDYLM--YADIDYD---H-------------------------------PDVAAEIKRWGTWYANELQLDGFRL
+DAVKHIK----------------------------FSFLRDWVNHVREKTG-------KEMFTVAEYWQN-----
+-------------DLGALENYLNKT--N--FNHSVFDVPLHYQFHAASTQG-----------GGYDMRKLLN---
+----------STVVS-----KH----PLK-AVTFVDNHDTQP-----------GQSLESTVQ-------------
+-----------------------------------TWFKPLAYAFILTRESGYPQVF-YGDMYGT---KGDSQ--
+-------------------------------------------------------------------------RE
+IPALKHKIEPILKARKQ-------------*
+>P1;1gcya
+structureX:1gcy:   1 :A: 357 :A:Glucan 1,4-alpha-maltotetrahydrolase:Pseudomonas stutzeri: 1.6: 25.9
+---------------------------------------DQAGKSPNAVRYHGGDEIILQGFHWNVVREAPNDWY
+NILRQQAA--TIAADGFSAIWMPVPWRDFSS--------WSKSGGGEGYFWHDF-NKN---------GRYGS-DA
+QLRQAASALGGAGVKVLYDVVPNHMN-R---GYP-----------------------------------------
+-----DKEINLPAGQGFW------RND----------CA---DPGNY---------PNDCDDGDRF------I--
+----GG--DADLNTG---H-------------------------------PQVYGMFRDEFTNLRSQYGAGGFRF
+DFVRGYA----------------------------PERVNSWMTDSAD-----------NSFCVGELWK----GP
+SEYPNWDWRNTASWQQIIKDWSDRA--K----CPVFDFALKERMQNGS------------------IADWK----
+----------HGLNGNP-DPRW----REV-AVTFVDNHDTGY------SPGQNGGQHHWALQ-------------
+-----------------------------------DGLIRQAYAYILTS-PGTPVVY-WDHMYDW----------
+---------------------------------------------------------------------------
+--GYGDFIRQLIQVRRAAGV----------*
+>P1;1avaa
+structureX:1ava:   1 :A: 346 :A:Alpha amylase 2:Hordeum vulgare: 1.9: 20.8
+-------------------------------------------------------QVLFQGFNWESWK-HNGGWY
+NFLMGKVD--DIAAAGITHVWLPPASQSV---------------AEQGYMPGRLYDLD--------ASKYGN-KA
+QLKSLIGALHGKGVKAIADIVINHRT-A---EHKDG-----------------------------RGIYCIFEGG
+TP---DARLDWGP--HMI------CRD----------DR---PYADG---------TGNPDTGADF---------
+----GA--APDIDHL---N-------------------------------LRVQKELVEWLNWLKADIGFDGWRF
+DFAKGYS----------------------------ADVAKIYIDRSEP-----------S-FAVAEIWTSLAYGG
+DGKPN---LNQDQHRQELVNWVDKV--GGKGPATTFDFTTKGILNVAVEG---------------ELWRLRG---
+-----TDGKAPGMIG-----WW----PAK-AVTFVDNHDTGS------T------QHMWPFP-------------
+-----------------------------------SDRVMQGYAYILTH-PGTPCIF-YDHFFDW----------
+---------------------------------------------------------------------------
+--GLKEEIDRLVSVRTRHGI----------*
+>P1;1ehaa
+structureX:1eha:  91 :A: 490 :A:Glycosyltrehalose trehalohydrolase:Sulfolobus solfataricus KM1: 3.00: -1
+----------FNNETFLKKEDLIIYEIHVGTFTP-------------------------------------EGTF
+EGVIRKLD--YLKDLGITAIEIMPIAQFPG-------------KRDWGYDGVYLYAVQ---------NSYGG-PE
+GFRKLVDEAHKKGLGVILDVVYNHVGPE-----------------GNYMVK------------------------
+-----------LG--PYF------SQ------------------------------------KYKTPW-------
+--------GLTFNFDDAES-------------------------------DEVRKFILENVEYWIKEYNVDGFRL
+DAVHAIIDTSP------------------------KHILEEIADVVHKY----------NRIVIAESD-------
+---------------LNDPRVVNPKEKVGYNIDAQWVDDFHHSIHAYLT-----GERQGYYTDFGNLDDIVKSYK
+DVFVYDGKYSN-FRRKTHGEPVGELDGCN-FVVYIQNHDQVGNRGKGERIIKLVD--------------------
+-----------------------------------RESYKIAAALYLLS-PYIPMIF-MGEEYGEENPFYFFSDF
+SDSKLIQGVREGRKKENGQDTDPQDESTFN-----ASKLSWK--------------------------------I
+DEEIFSFYKILIKMRKEL-----SIA----*
+>P1;1bf2
+structureX:1bf2: 163 : : 637 : :Isoamylase:Pseudomonas amyloderamosa: 2.0: 16.1
+-----PSTQSTGTKPTRAQKDDVIYEVHVRGFTEQDT----------------------------SIPAQYRGTY
+YGAGLKAS--YLASLGVTAVEFLPVQETQNDAND-VVPNSDANQNYWGYMTENYFSPDRRYAYNKAAGGP---TA
+EFQAMVQAFHNAGIKVYMDVVYNHTAEG---GTWTS---------------------------------------
+------------------------------------------SDPTTATIYSWRGLDNATYYELTS------GNQ
+YFYDNTGIGANFNTY---N-------------------------------TVAQNLIVDSLAYWANTMGVDGFRF
+DLASVLGNSCLNGAYTASAPNCP-NGGYNFDAADSNVAINRILREFTVRPAAGG----SGLDLFAEPWAIG----
+------------GNSYQLGGFPQ--------GWSEWNGLFRDSLRQAQNEL---------GSMTIYVTQDANDFS
+GSSNLF----QSS----------GRSPWN-SINFIDVHDGMTLKDVYSCNGANNSQAWPYGPSDGGTSTNYSWDQ
+GMSAG-----------------------TGAAVDQRRAARTGMAFEMLS-AGTPLMQ-GGDEYLRTLQCNNNAYN
+LDSSANWLTYSWT------------------------------------------------------------TD
+QSNFYTFAQRLIAFRKAH----PALRPSSW*
+>P1;1g5aa
+structureX:1g5a:  77 :A: 554 :A:Amylosucrase:Neisseria polysaccharea: 1.40: 18.9
+SSLKDIDIARENNPDWILSNKQVGGVCYVDLFAG---------------------------------------DL
+KGLKDKIP--YFQELGLTYLHLMPLFKCPE------------GKSDGGYAVSSYRDVN---------PALGT-IG
+DLREVIAALHEAGISAVVDFIFNHTSNE-----------------HEWAQRCAA---------------------
+----G---DPLFD--NFY------Y------------IFPDR---RMPDQYDRTLREIFPDQHPGGFSQLEDGRW
+VWTTFNSFQWDLNYS---N-------------------------------PWVFRAMAGEMLFLAN-LGVDILRM
+DAVAFIWKQMG---------------TSCENLPQAHALIRAFNAVMRI--------AAPAVFFKSEAIV------
+-------------HPDQVVQYIGQ---D--ECQIGYNPLQMALLWNTLATR--------------EVNLLHQALT
+YRHN-----------------LPE---HTAWVNYVRSHDDIGWTFADEDAAYLGISGYDHRQFLNRFFVNRFDGS
+FARGVPFQYNPSTGDCRVSGTAAALVGLAQDDPHAVDRIKLLYSIALST-GGLPLIY-LGDEVGTLNDD------
+---------------------DWSQDSNKSDDSRWAHRPRYN--EALYA----------QRN-----DPSTA---
+AGQIYQDLRHMIAVRQSN----PRFDGG--*
+>P1;1gjwa
+structureX:1gjw:  68 :A: 572 :A:Maltodextrin glycosyltransferase:Thermotoga maritima: 2.1: 19.7
+-----PLSFLKGEKTPDWIKRSVVYGSLPRTTAAYNHKGS------------------GYYEENDVLGFREAGTF
+FKMMLLLP--FVKSLGADAIYLLPVSRMSDLFKKG--------DAPSPYSVKNPMELDERYHDPLLE--PFKVDE
+EFKAFVEACHILGIRVILDFIPRTAARDSDLIR---EHPDWFYWIKVEELA------DYTPPRAEELPFKVPDED
+ELEIIYNKENVKRHLKKFT---LPPNLIDPQKWEKIKREE-----------GNILELIVKEFGIITPPGFSDLIN
+DPQPTWDDVTFLRLYLDHPEASKRFLDPNQPPYVLYDVIKASKFPGKEPNRELWEYLAGVIPHYQKKYGIDGARL
+DMGHALP----------------------------KELLDLIIKNVKEYD--------PAFVMIAEEL-------
+-------------DMEKDKASKE------AGYDVILGS-SWYFAGRV-----------------EEIGKLPDIAE
+-------------------------ELVLPFLASVETPDTPRIATRK----------------------------
+---------------------------------YASKMKKLAPFVTYFLPNSIPYVN-TGQEIGEKQPMNLGLDT
+DPNLRKVLSPTDEFFGKLAFFDHYVLHWD--------------------------------------------SP
+DRGVLNFIKKLIKVRHEFLDFVLN------*

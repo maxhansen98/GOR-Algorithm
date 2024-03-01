@@ -1,0 +1,18 @@
+C; family: Dehydroquinase class II 
+C; class: alpha beta
+C; type: subunit 
+C; domain:
+C; 1d0i   a:   1d0ia
+C; 2dhq   a:   2dhqa
+C; end:
+C; last update 16/8/01
+>P1;1d0ia
+structureX:1d0i:   1 :A: 150 :A:type II dehydroquinase complexed with phosphate ions:Streptomyces coelicolor: 1.80: 17.1
+PRSLANAPIMILNGPNLNLLGQRQPEIYGSDTLADVEALCVKAAAAHGGTVDFRQSNHEGELVDWIHEARLNHCG
+IVINPAAYSHTSVAILDALNTCDGLPVVEVHISNIHQREPFRHHSYVSQRADGVVAGCGVQGYVFGVERIAALAG
+*
+>P1;2dhqa
+structureX:2dhq:   3 :A: 143 :A:Type II 3-dehydroquinate dehydratase:Mycobacterium tuberculosis: 2.00: 14.7
+------LIVNVINGPNLGRLGRR-----GGTTHDELVALIEREAAELGLKAVVRQSDSEAQLLDWIHQAADAAEP
+VILNAGGLTHTSVALRDACAELS-APLIEVHISNVHAREEFRRHSYLSPIATGVIVGLGIQGYLLALRYLAEH--
+*

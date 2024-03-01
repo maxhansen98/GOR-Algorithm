@@ -1,0 +1,21 @@
+C; family: Cytidine and deoxycytidylate deaminase zinc-binding region
+C; class: alpha beta
+C; type: domain
+C; domain:
+C; 1jtk   a:1-131   1jtka
+C; 1ctt   48-171   1ctt1
+C; 1ctt   189-294   1ctt2
+C; end:
+C; last update 18/4/02
+>P1;1jtka
+structureX:1jtk:   1 :A: 131 :A:Cytidine deaminase:Bacillus subtilis: 2.04: 20.7
+MNRQELITEALKARDMAYAPYSKFQVGAALLTKDGKVYRGCNIENA--AYSMCNCAERTALFKAVSEGDT--EFQ
+MLAVAADTPGPVSPCGACRQVISEL-CTKDVIVVLTNLQGQIKEMTVEELLPGAFSSEDLH*
+>P1;1ctt1
+structureX:1ctt:  48 : : 171 : :Cytidine deaminase:Escherichia coli: 2.2: 19
+DEDALAFALLPLAAACARTPLSNFNVGAIARGVSGTWYFGANMEFIGATMQQTVHAEQSAISHAWLSGEK--ALA
+AITVN------YTPCGHCRQFMNELNSGLDLRIHLP---G-REAHALRDYLPDAFGPKDLE*
+>P1;1ctt2
+structureX:1ctt: 189 : : 294 : :Cytidine deaminase:Escherichia coli: 2.2: 19
+---DALSQAAIAAANRSHMPYSKSPSGVALECKDGRIFSGSYAENA--AFNPTLPPLQGALILLNLKGYDYPDIQ
+RAVLAEKADAPLIQWDATSATLKALGCH---SIDRVLLA----------------------*

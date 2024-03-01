@@ -1,0 +1,16 @@
+C; family: Bacterial regulatory helix-turn-helix proteins, araC family, the two structural repeats
+C; class: all alpha
+C; type: subunit/domain
+C; domain:
+C; 1d5y   a:3-121   1d5ya
+C; 1bl0   a:9-124   1bl0a
+C; end:
+C; last update 12/2/02
+>P1;1d5ya
+structureX:1d5y:   3 :A: 121 :A:right origin-binding protein:Escherichia coli: 2.7: 25.4
+QAGIIRDLLIWLEGHLDQPLSLDNVAAKAGYSKWHLQRMFKDVTGHAIGAYIRARRLSKSAVALRLTARPILDIA
+LQYRFDSQQTFTRAFKKQFAQTPALYRRSPEWSAFGIRPPLRLG*
+>P1;1bl0a
+structureX:1bl0:   9 :A: 124 :A:multiple antibiotic resistance protein marA:Escherichia coli: 2.30: 22.5
+DAITIHSILDWIEDNLESPLSLEKVSERSGYSKWHLQRMFKKETGHSLGQYIRSRKMTEIAQKLKESNEPILYLA
+ERYGFESQQTLTRTFKNYFDVPPHKYRMTNMQGESRFLHPL---*

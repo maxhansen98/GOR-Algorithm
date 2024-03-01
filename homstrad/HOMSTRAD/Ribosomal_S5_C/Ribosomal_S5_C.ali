@@ -1,0 +1,16 @@
+C; family: Ribosomal protein S5, C-terminal domain
+C; class: alpha plus beta 
+C; type: domain
+C; domain:
+C; 1fjg   e:73-154   1fjge
+C; 1pkp   78-148   1pkp
+C; end:
+C; last update 12/7/01
+>P1;1fjge
+structureX:1fjg:  73 :E: 154 :E:30s ribosomal protein S5:Thermus aquaticus: 3.00: 22.1
+NGTIPHEIEVEFGASKIVLKPAAPGTGVIAGAVPRAILELAGVTDILTKELGSRNPINIAYATMEALRQLRTKAD
+VERLRKG*
+>P1;1pkp
+structureX:1pkp:  78 : : 148 : :30s ribosomal protein S5:Bacillus stearothermophilus: 2.8: 22
+GTTIPHEVIGHFGAGEIILKPASEGTGVIAGGPARAVLELAGISDILSKSIGSNTPINMVRATFDGLKQLK----
+-------*

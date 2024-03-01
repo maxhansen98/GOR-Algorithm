@@ -1,0 +1,15 @@
+C; family: Translation initiation factor IF-3
+C; class: alpha plus beta
+C; domain:
+C; 1tig   -    1tig
+C; 2ife   a:   2ifea
+C; end:
+C; last update 24/9/99
+>P1;1tig
+structureX:1tig:  83 : : 170 : :translation initiation factor if-3:Bacillus stearothermophilus: 2.0: -1
+-INVKEVRLSPTIEEHDFNTKLRNARKFLEKGDKVKATIRFKGRAITHKEIGQRVLDRLSEACADIAVVETAP-K
+MDGRNMFLVLAPKN-D*
+>P1;2ifea
+structureX:2ife:  90 :A: 180 :A:translation initiation factor if-3:Escherichia coli: -1: -1
+VIQVKEIKFRPGTDEGDYQVKLRSLIRFLEEGDKAKITLRFRGREMAHQQIGMEVLNRVKDDLQELAVVESFPTK
+IEGRQMIMVLAPKKKQ*

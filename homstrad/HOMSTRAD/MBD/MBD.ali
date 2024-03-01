@@ -1,0 +1,16 @@
+C; family: Methyl-CpG binding domain 
+C; class: alpha plus beta
+C; type: domain 
+C; domain:
+C; 1ig4   a:   1ig4a
+C; 1qk9   a:   1qk9a
+C; end:
+C; last update 17/8/01
+>P1;1ig4a
+structureX:1ig4:   1 :A:  75 :A:methyl-CpG-binding domain of mbd1 in complex with methylated DNA:Homo sapiens: -1: -1
+-------------------MAEDWLDCPALGPGWKRREVFRKSGATCGRSDTYYQSPTGDRIRSKVELTRYLGPA
+----CDLTLFDFKQGILCYPAPK---*
+>P1;1qk9a
+structureX:1qk9:   1 :A:  92 :A:methyl-CpG-binding protein 2:Homo sapiens: -1: -1
+ASASPKQRRSIIRDRGPMY------DDPTLPEGWTRKLKQRKSGRSAGKYDVYLINPQGKAFRSKVELIAYFEKV
+GDTSLDPNDFDFTVTGR---GSGSGC*

@@ -1,0 +1,16 @@
+C; family: MutS family, N-terminal domain
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1ewq   a:2-120   1ewqa
+C; 1e3m   a:2-116   1e3ma
+C; end:
+C; last update 30/8/01
+>P1;1ewqa
+structureX:1ewq:   2 :A: 120 :A:DNA mismatch repair protein MutS:Thermus aquaticus: 2.2: 22.7
+EGLKGEGPG---PLPPLLQQYVELRDQYPDYLLLFQVGDFYECFGEDAERLARALGLVLTHKTSK-DFTTPAGIP
+LRAFEAYAERLLK-GFRLAVADQVEPAEEAEGLVRREVTQLLTPGT*
+>P1;1e3ma
+structureX:1e3m:   2 :A: 116 :A:DNA mismatch repair protein MutS:Escherichia coli: 2.2: 22.814
+-----SAIENFDAHTP--QQYLRLKAQHPEILLFYR-GDFYELFYDDAKRASQLLDISLTKRGASAGEPIPAGIP
+YHAVENYLAKLVNQGESVAICEQIGDPATSKGPVERKVVRIVTP--*

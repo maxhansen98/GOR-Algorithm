@@ -1,0 +1,16 @@
+C; family: VAT-N domain, C-terminal region
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1cz5 a:96-185  1cz5a
+C; 1e32 a:112-197 1e32a
+C; end:
+C; last update 21/6/01
+>P1;1cz5a
+structureX:1cz5:  96 :A: 185 :A:VAT-N the N-terminal domain of VAT:Thermoplasma acidophilum: -1: -1
+KKVTLAPIIRKDQRLKFGEGIEE-YVQRALI--RRPMLEQDNISVP-GLTLAGQ-TGLLFKVVKTLPSKVPVEIG
+EETKIEIREEPAS-----EVLEEGG*
+>P1;1e32a
+structureX:1e32: 112 :A: 197 :A:transitional endoplasmic reticulum ATPase:Mus musculus: 2.9: 22.4
+KRIHVLPI--DDTVEGITGNLFEVYLKPYFLEAYRPIRKGDIFLVRGG------MRAVEFKVVETDPSP-YCIVA
+PDTVIHCEGEPIKREDEEES-----*

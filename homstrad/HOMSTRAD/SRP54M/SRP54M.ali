@@ -1,0 +1,11 @@
+C; family: Signal peptide-binding domain
+C; class: all alpha
+C; last update 29/2/100
+>P1;2ffha
+structureX:2ffh: 319 :A: 418 :A:signal sequence binding protein Ffh:Thermus aquaticus: 3.2: 25.7
+ELSLEDFLKQMQNLKRLGPFSEILGLLP---------GVPQGLKVDEKAIKRLEAIVLSMTPEERK--DPRILN-
+--GSRRKRIAKGSGTSVQEVNRFIKAFEEMKALMKSLEK*
+>P1;1qb2a
+structureX:1qb2: 326 :A: 431 :A:signal recognition particle 54 kd protein:Homo sapiens: 2.10: 24.5
+QFTLRDMYEQFQNIMKMGPFSQILGMIPGFGTDFMSK---GNEQESMARLKKLMTIMDSMNDQELDSTDGAKVFS
+KQPGRIQRVARGSGVSTRDVQELLTQYTKFAQMV-----*

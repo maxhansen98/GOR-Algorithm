@@ -1,0 +1,16 @@
+C; family: Paired amphipathic helix repeat
+C; class: all alpha
+C; type: domain
+C; domain:
+C; 1e91   a:   1e91a
+C; 1g1e   b:   1g1eb
+C; end:
+C; last update 17/8/01
+>P1;1e91a
+structureX:1e91:   1 :A:  85 :A:paired amphipathic helix protein sin3b:Mus musculus: -1: -1
+---ESDSVEFNNAISYVNKIKTRFLDHPEIYRSFLEILHTYQKEQLHTK---GRPFRGMSEEEVFTEVANLFRGQ
+EDLLSEFGQFLPEAKR*
+>P1;1g1eb
+structureX:1g1e: 295 :B: 383 :B:xsin3a PAH2 domain (complexed with human mad1 transrepression domain sid):Mus musculus: -1: -1
+SLQNNQPVEFNHAINYVNKIKNRFQGQPDIYKAFLEILHTYQKEQRNAKEAGGNYTPALTEQEVYAQVARLFKNQ
+EDLLSEFGQFLPDA--*

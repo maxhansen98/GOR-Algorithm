@@ -1,0 +1,23 @@
+C; family: Helix-loop-helix DNA-binding domain
+C; class: all alpha
+C; last update 22/9/99
+>P1;1mdya
+structureX:1mdy:   1 :A: 166 :A:myoblast determination protein 1:Mus musculus: 2.80: 25.3
+MELKRKTTNADRRKAATMRERRRLSKVNEAFETLKRSTSSNP----NQRL-PKVEILRNAIRYIEGLQALLRD--
+-----------------*
+>P1;1an4a
+structureX:1an4: 196 :A: 260 :A:upstream stimulatory factor 1:Homo sapiens: 2.90: 23.6
+-------MDEKRRAQHNEVERRRRDKINNWIVQLSKIIPDSSMESTKSGQ-SKGGILSKASDYIQELRQSNHR--
+-----------------*
+>P1;1hloa
+structureX:1hlo:   3 :A:  82 :A:transcription factor max:Homo sapiens: 2.80: 21.3
+NDDIEVESDADKRAHHNALERKRRDHIKDSFHSLRDSVPSLQ----GEKA-SRAQILDKATEYIQYMRRKNHTHQ
+QDIDDLKRQN-------*
+>P1;1am9a
+structureX:1am9: 319 :A: 398 :A:sterol regulatory element binding protein 1:Homo sapiens: 2.30: 21.9
+------QSRGEKRTAHNAIEKRYRSSINDKIIELKDLV-VGT----EAKL-NKSAVLRKAIDYIRFLQHSNQKLK
+QENLSLRTAVHKSKSLK*
+>P1;1a0aa
+structureX:1a0a:   0 :A:  62 :A:phosphate system positive regulatory protein pho4:Saccharomyces cerevisiae: 2.80: 23.0
+----------MKRESHKHAEQARRNRLAVALHELASLIPAEWKQQNVSAAPSKATTVEAACRYIRHLQQNGST--
+-----------------*

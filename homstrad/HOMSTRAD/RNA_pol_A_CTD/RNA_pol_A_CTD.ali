@@ -1,0 +1,16 @@
+C; family: Bacterial RNA polymerase, alpha chain C-terminal domain
+C; class: all alpha
+C; type : domain
+C; domain:
+C; 1doq   a:   1doqa
+C; 1coo   -   1coo
+C; end:
+C; last update 19/9/01
+>P1;1doqa
+structureX:1doq: 247 :A: 315 :A:RNA polymerase alpha subunit:Thermus thermophilus: -1: -1
+EQEEELDLPLEELGLSTRVLHSLKEEGIESVRALLALNLKDLKNIPGIGERSLEEIKEALEKKGFTLKE------
+-------*
+>P1;1coo
+structureX:1coo: 249 : : 329 : :DNA-directed RNA polymerase alpha chain:Escherichia coli and salmonella typhimurium: -1: -1
+-FDPILLRPVDDLELTVRSANCLKAEAIHYIGDLVQRTEVELLKTPNLGKKSLTEIKDVLASRGLSLGMRLENWP
+PASIADE*

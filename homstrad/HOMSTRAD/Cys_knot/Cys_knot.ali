@@ -1,0 +1,16 @@
+C; family: Cystine-knot domain
+C; class: small disulphide
+C; type: subunit/domain
+C; domain:
+C; 1hcn   b:   1hcnb
+C; 1fl7   b:   1fl7b
+C; end:
+C; last update 20/5/02
+>P1;1hcnb
+structureX:1hcn:   2 :B: 111 :B:Chorionic gonadotropin:Homo sapiens: 2.6: 19.9
+KEPLRPRCRPINATLAVEKEGCPVCITVNTTICAGYCPTMTRVLQGVLPALPQVVCNYRDVRFESIRLPGCPRGV
+NPVVSYAVALSCQCALCRRSTTDCGGPKDHPLTCD----*
+>P1;1fl7b
+structureX:1fl7:   3 :B: 109 :B:Follicle stimulating protein beta chain:Homo sapiens: 3.00: 25.9
+-------CELTNITIAIEKEECRFCISINTAWCAGYCYTRDLVYKDPARPKIQKTCTFKELVYETVRVPGCAHHA
+DSLYTYPVATQCHCGKCDSDSTDCTVRGLGPSYCSFGEM*

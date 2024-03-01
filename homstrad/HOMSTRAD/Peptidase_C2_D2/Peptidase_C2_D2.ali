@@ -1,0 +1,16 @@
+C; family: Calpain family cysteine protease, catalytic domain, subdomain 2
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1kxr   a:221-352   1kxra
+C; 1kfu   l:211-355   1kful
+C; end:
+C; last update 26/3/02
+>P1;1kxra
+structureX:1kxr: 221 :A: 352 :A:Calpain 1 large subunit (Thiol protease domains I and II):Rattus norvegicus: 2.07: 21.3
+VTEWYDLQKAPSDLYQIILKALERGSLLGCSINISDIRDLEAITFKNLVRGHAYSVTDAKQVTYQGQRVNLIRMR
+NPWGEVEWKGPWSDNSYEWNK-VDPYEREQLRVKMEDGEFWMSFRDFIREFTKLEICN--------------*
+>P1;1kful
+structureX:1kfu: 211 :L: 355 :L:M-Calpain (Calpain 2) large subunit:Homo sapiens: 2.50: 22.1
+IAEWYELKKPPPNLFKIIQKALQKGSLLGCSIDITSAADSEAITFQKLVKGHAYSVTGAEEVESNGSLQKLIRIR
+NPWGEVEWTGRWNDNCPSWNTIDPEERERLTRR-HEDGEFWMSFSD-FLRHYSRLEICNLTPDTLTSDTYKK*

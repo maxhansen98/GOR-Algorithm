@@ -1,0 +1,21 @@
+C; family: Ubiquinol cytochrome reductase transmembrane region
+C; class: membrane bound all alpha
+C; type: domain
+C; domain:
+C; 1bcc   e:1-69   1bcce
+C; 1bgy   e:   1bgye
+C; 1ezv   e:31-95   1ezve
+C; end:
+C; last update 29/8/01
+>P1;1bcce
+structureX:1bcc:   1 :E:  69 :E:ubiquinol-cytochrome C reductase iron-sulfur subunit:Bos taurus: 3.16: 27
+SHTDIKVPNFSDYRRPPDDY-STKSSRESDPSRKGFSYLVTAVTTLGVAYAAKNVVTQFVSSMSASADVL-----
+-*
+>P1;1bgye
+structureX:1bgy:   1 :E:  75 :E:ubiquinol-cytochrome c reductase iron-sulfur subunit:Bos taurus: 3.0: 32
+SHTDIKVPDFS-DYRRPEVLDSTKSSKESSEARKGFSYLVTATTTVGVAYAAKNVVSQFVSSMSASADVLAMSKI
+E*
+>P1;1ezve
+structureX:1ezv:  31 :E:  95 :E:ubiquinol-cytochrome C reductase iron-sulfur subunit:Saccharomyces cerevisiae: 2.30: 22.2
+KSTY-RTPNFD-DVLKE---------NNDADKGRSYAYFMVGAMGLLSSAGAKSTVETFISSMTATADVLAMAKV
+E*

@@ -1,0 +1,16 @@
+C; family: Copper resistance protein CopC
+C; class: all beta
+C; type: subunit
+C; domain:
+C; 1lyq   a:   1lyqa
+C; 1m42   a:   1m42a
+C; end:
+C; last update 8/1/03
+>P1;1lyqa
+structureX:1lyq:   1 :A: 104 :A:copper resistance protein C:Escherichia coli: 1.50: 21.6
+AHPELKSSVPQADSAVAAPEKIQLNFSENLTVKFSGAKLTMTGMKS--HSPMPVAAKVAPGADPKSMVIIPREPL
+PAGTYRVDWRAVSSDTHPITGNYTFTVK*
+>P1;1m42a
+structureN:1m42:   1 :A: 102 :A:copper resistance protein C:Pseudomonas syringae: -1: -1
+-HPKLVSSTPAEGSEGAAPAKIELHFSENLVTQFSGAKLVMTAMPGMEHSPMAVKAAVSGGGDPKTMVITPASPL
+TAGTYKVDWRAVSSDTHPITGSVTFKVK*

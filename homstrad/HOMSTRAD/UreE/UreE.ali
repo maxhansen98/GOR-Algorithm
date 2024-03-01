@@ -1,0 +1,16 @@
+C; family: UreE urease accessory protein
+C; class: multi domain
+C; type: subunit
+C; domain:
+C; 1gmw   a:   1gmwa
+C; 1eb0   a:   1eb0a
+C; end:
+C; last update 14/1/02
+>P1;1gmwa
+structureX:1gmw:   2 :A: 138 :A:urease accessory protein ureE:Klebsiella aerogenes: 1.5: 22.3
+LYLTQRL------EIPAAATASVTLPIDVRVKSRVKVTLNDGRDAGLLLPRGLLLRGGDVLSNEEGTEFVQVIAA
+DEEVSVVRCDDP-FLAKACYALGNRHVPLQI-PGELRYHHDHVLDDL-RQFGLTVTFGQLPF-EPEAGA*
+>P1;1eb0a
+structureX:1eb0:   1 :A: 143 :A:urease accessory protein ureE:Bacillus pasteurii: 1.85: 22.03
+MVITKIVGHIDDLSHQIKKVDWLEVEWEDLNKRILRKETENGTDIAIKLENSGTLRYGDVLYESD-DTLIAIRTK
+LEKVYVIKPQTMQEMGKMAFEIGNRHTMCIIEDDEILVRYDKTLEKLIDEVGVSYEQSERRFKEPFKYR*

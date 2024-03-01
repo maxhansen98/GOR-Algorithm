@@ -1,0 +1,59 @@
+C; family: Src homology 2 domains
+C; class: alpha plus beta
+C; reordered by kitschorder 1.0a
+C; last update 7/4/99
+>P1;3hck
+structureX:3hck:   1 : : 107 : :hck SH2:Homo sapiens:-1:-1
+---------METEEWFFKGISRKDAERQLLAPGNMLGSFMIRDSETTK-G
+SYSLSVRDYDPRQGDTVKHYKIRTLDNGGFYISPR-STFSTLQELVDHYK
+KGND------GLCQKLSVPCMSSK----*
+>P1;1lkka
+structureX:1lkk: 122 :A: 226 :A:p56 tyrosine kinase:Homo sapiens:1.00:13.3
+---------LEPEPWFFKNLSRKDAERQLLAPGNTHGSFLIRESESTA-G
+SFSLSVRDFDQNQGEVVKHYKIRNLDNGGFYISPR-ITFPGLHELVRHYT
+NASD------GLCTRLSRPCQT------*
+>P1;1aouf
+structureX:1aou:   1 :F: 106 :F:fyn protein-tyrosine kinase:Homo sapiens:-1:-1
+--------SIQAEEWYFGKLGRKDAERQLLSFGNPRGTFLIRESETTK-G
+AYSLSIRDWDDMKGDHVKHYKIRKLDNGGYYITTR-AQFETLQQLVQHYS
+ERAA------GLSSRLVVPSHK------*
+>P1;1shba
+structureX:1shb:   2 :A: 104 :A:V-src tyrosine kinase (SH2 domain):Rous sarcoma virus: 2.00:19.0
+-----------AEEWYFGKITRRESERLLLNPENPRGTFLVRESETTK-G
+AYCLSVSDFDNAKGLNVKHYKIRKLDSGGFYITSR-TQFSSLQQLVAYYS
+KHAD------GLCHRLTNVCPT------*
+>P1;1csza
+structureX:1csz:   1 :A: 112 :A:syk protein tyrosine kinase:Homo sapiens:-1:-1
+GSRRASVGSHEKMPWFHGKISREESEQIVLIGSKTNGKFLIRARDN-N-G
+SYALCLLHE-----GKVLHYRIDKDKTGKLSIPEG-KKFDTLWQLVEHYS
+YKAD------GLLRVLTVPCQKI--GTQ*
+>P1;1ab2
+structureN:1ab2:   1 : : 109 : :proto-oncogene Abelson (SH2 domain):Homo sapiens: -1.00:-1.00
+----GSGNSLEKHSWYHGPVSRNAAEYLLSSGI--NGSFLVRESESSP-G
+QRSISLRYE-----GRVYHYRINTASDGKLYVSSE-SRFNTLAELVHHHS
+TVAD------GLITTLHYPAPKRGIHRD*
+>P1;1ayd
+structureX:1ayd:   3 : : 103 : :tyrosine phosphatase SYP (SH2 domain):Mus musculus:2.20:20.0
+-----------MRRWFHPNITGVEAENLLLT-RGVDGSFLARPSKSNP-G
+DFTLSVRRN-----GAVTHIKIQNTG-DYYDLYGG-EKFATLAELVQYYM
+EHHGQLKEKNGDVIELKYPLN-------*
+>P1;2pnb
+structureN:2pnb:  17 : : 120 : :phosphatidylinositol 3-kinase regulatory alpha subunit (N-terminal SH2 domain):Bos taurus: -1.00:-1.00
+---------LQDAEWYWGDISREEVNEKLR--DTADGTFLVRDASTKMHG
+DYTLTLRKG-----GNNKLIKIFHRD-GKYGFSDPL-TFNSVVELINHYR
+NESLAQYNP-KLDVKLLYPVSKY-----*
+>P1;1bfj
+structureX:1bfj:   1 : : 111 : :phosphatidylinositol 3-kinase regulatory alpha subunit (C-terminal SH2 domain):Bos taurus: -1: -1
+----EDLPHHDEKTWNVGSSNRNKAENLLR--GKRDGTFLVRESSKQ--G
+CYACSVVVD-----GEVKHCVINKTA-TGYGFAEPYNLYSSLKELVLHYQ
+HTSLVQHND-SLNVTLAYPVYAQQRR--*
+>P1;2plda
+structureN:2pld:   1 :A: 105 :A:phospholipase C-gamma-1 (C-terminal SH2 domain):Bos primigenius:-1.00:-1.00
+----GSPGIHESKEWYHASLTRAQAEHMLMRV-PRDGAFLVRKRN--EPN
+SYAISFRAE-----GKIKHCRVQQEG-QTVMLGN--SEFDSLVDLISYYE
+KHPLYR------KMKLRYPI--NEENSS*
+>P1;1zfpe
+structureX:1zfp:  56 :E: 153 :E:growth factor receptor-bound protein 2 (SH2 domain):Homo sapiens: 1.80: -1
+----------KPHPWFFGKIPRAKAEEMLSK-QRHDGAFLIRESESAP-G
+DFSLSVKFG-----NDVQHFKVLRDGAGKYFLWV--VKFNSLNELVDYHR
+ST--SVS--RNQQIFLRDIEQ-------*

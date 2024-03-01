@@ -1,0 +1,16 @@
+C; family: Uncharacterised protein family UPF0044
+C; class: alpha plus beta
+C; type: subunit
+C; domain:
+C; 1jo0   a:   1jo0a
+C; 1ln4   a:   1ln4a
+C; end:
+C; last update 14/1/03
+>P1;1jo0a
+structureX:1jo0:   2 :A:  98 :A:hypothetical protein HI1333:Haemophilus influenzae: 1.37: 13.8
+TTLSTKQKQFLKGLAHHLNPVVMLGGNGLTEGVLAEIENALNHHELIKVKVAGADRETKQLIINAIVRETKAAQV
+QTIGHILVLYRPSEEAKIQLPR-*
+>P1;1ln4a
+structureX:1ln4:   1 :A:  98 :A:hypothetical protein yhbY:Escherichia coli: 1.50: 19.3
+MDLSTKQKQHLKGLAHPLKPVVLLGSNGLTEGVLAEIEQALEHHELIKVKIATEDRETKTLIVEAIVRETGACNV
+QVIGKTLVLYRPTKERKISLPLE*

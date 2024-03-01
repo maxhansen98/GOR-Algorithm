@@ -1,0 +1,26 @@
+C; family: DNA polymerase processivity factor
+C; class: alpha plus beta
+C; type: domain
+C; domain:
+C; 1czd   a:1001-1110   1czda1
+C; 1b77   a:1-110   1b77a1
+C; 1czd   a:1111-1228   1czda2
+C; 1b77   a:111-228   1b77a2
+C; end:
+C; last update 30/8/01
+>P1;1czda1
+structureX:1czd:1001 :A:1110 :A:processivity clamp gp45:Bacteriophage t4: 2.45: 23.2
+-----MKLSKDTTALLKNFAT--INSGIMLKS---GQFIMTRAV----NGTTYAEANISDVID----FDVAIYDL
+NGFLGILSLVNDDAEISQS--ED-GNIKIADARSTIFWPAADPSTVVAPNKPIPFP*
+>P1;1b77a1
+structureX:1b77:   1 :A: 110 :A:A sliding clamp complexed with an interaction peptide from DNA polymerase:Bacteriophage rb69: 2.10: 22.5
+-----MKLSKDTIAILKNFAS--INSGILLSQ---GKFIMTRAV----NGTTYAEANISDEID----FDVALYDL
+NSFLSILSLVSDDAEISMH--TD-GNIKIADTRSTVYWPAADKSTIVFPNKPIQFP*
+>P1;1czda2
+structureX:1czd:1111 :A:1228 :A:processivity clamp gp45:Bacteriophage t4: 2.45: 23.2
+VASAVTEIKAEDLQQLLRVSRGLQIDTIAITVKEGKIVINGFNKVEDSALTRVKYSLTLGDYDGENTFNFIIN--
+MANMKMQ---PGNYKLLLWAKGKQGAAKFEGEHANYVVALEA--DSTHDF------*
+>P1;1b77a2
+structureX:1b77: 111 :A: 228 :A:A sliding clamp complexed with an interaction peptide from DNA polymerase:Bacteriophage rb69: 2.10: 22.5
+VASVITEIKAEDLQQLLRVSRGLQIDTIAITNKDGKIVINGYNKVEDSGLTRPKYSLTLTDYDGSNNFNFVIN--
+MANMKIQ---PGNYKVMLWGAGDKVAAKFESSQVSYVIAMEA--DSTHDF------*

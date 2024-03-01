@@ -1,0 +1,15 @@
+C; family: Transglutaminase family
+C; class: all beta
+C; domain:
+C; 1f13  a:516-627     1f13a1
+C; 1f13  a:628-728     1f13a2
+C; end:
+C; last update 9/6/100
+>P1;1f13a1
+structureX:1f13: 516 :A: 627 :A:coagulation factor xiii a chain:Homo sapiens: 2.1: 18.3
+SNVDMDFEVEN-AVLGKDFKLSITFRNNSHNRY-TITAYLSANITFYTGVPKAEFKKETFDV-TLEPLSFKKEAV
+LIQAGEYMGQLLEQASLHFFVTARINETRDVLAKQKSTVL---*
+>P1;1f13a2
+structureX:1f13: 628 :A: 728 :A:coagulation factor xiii a chain:Homo sapiens: 2.1: 18.3
+TIPEIIIKVRGTQVVGSDMTVTVEFTNPLKETLRNVWVHLDGP---------GVTRPMKKMFREIRPNSTVQWEE
+VCRPW----VS---GHRKLIASMSSDSLR-HVYGELDVQIQRR*

@@ -1,0 +1,16 @@
+C; family: NusB family
+C; class: all alpha
+C; type: subunit
+C; domain:
+C; 1eyv   a:   1eyva
+C; 1ey1   a:   1ey1a
+C; end:
+C; last update 17/8/01
+>P1;1eyva
+structureX:1eyv:   9 :A: 139 :A:N utilization substance protein B homolog:Mycobacterium tuberculosis: 1.6: 19
+----GRHQARKRAVALLFEAEVRGISAAEVVDTRAALAEAKPDI-ARLHPYTAAVARGVSEHAAHIDDLITAHLR
+GWTLDRLPAVDRAILRVSVWELLHAADVPEPVVVDEAVQLAKELSTDDSPGFVNGVLGQVM--------*
+>P1;1ey1a
+structureX:1ey1:   1 :A: 139 :A:N utilization substance protein B:Escherichia coli: -1: -1
+MKPAARRRARECAVQALYSWQLSQNDIADVEYQFLAEQ----DVKDVDVLYFRELLAGVATNTAYLDGLMKPYLS
+R-LLEELGQVEKAVLRIALYELSKRSDVPYKVAINEAIELAKSFGAEDSHKFVNGVLDKAAPVIRPNKK*
