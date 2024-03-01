@@ -53,7 +53,7 @@ def get_db(path_to_homstrad):
 
             # extract pbd
             if line[0] == ">":
-                current_pbd_id = line.split(";")[1][:-1]  
+                current_pbd_id = line.split(";")[1] #[:-1]  
                 # store subfam for curr id
                 id_to_sup_fams[current_pbd_id].add(curr_sup_fam)
 
@@ -70,7 +70,7 @@ def get_db(path_to_homstrad):
                         j+=1
                 # store sec_seq
                 formatted_sec_seq = sec_seq.strip("\n")
-                sec_seq_dict[current_pbd_id] = formatted_sec_seq
+                sec_seq_dict[(curr_sup_fam, current_pbd_id)] = formatted_sec_seq
             
             # get sequence
             elif line.startswith("sequence"):
@@ -84,22 +84,18 @@ def get_db(path_to_homstrad):
                         seq+=content_tem[i+j].strip("\n")
                         j+=1
                 formatted_ali_seq = seq.strip("\n")
-                ali_seq_dict[current_pbd_id] = formatted_ali_seq
+                ali_seq_dict[(curr_sup_fam, current_pbd_id)] = formatted_ali_seq
     
         # append all relevant vals to sup_fam_dict
-        for id in id_to_sup_fams.keys():
-            sup_fam_entry = (id, ali_seq_dict[id], sec_seq_dict[id])
-            sup_fams[curr_sup_fam].add(sup_fam_entry)
-
-
-    for sup, entry in sup_fams.items():
-        print(sup, ":", entry)
-        print(len(entry))
-        break
+        for sup_fam_pbd_id_tup in ali_seq_dict.keys():
+            sup_fam_entry = (sup_fam_pbd_id_tup[1], ali_seq_dict[sup_fam_pbd_id_tup], sec_seq_dict[sup_fam_pbd_id_tup])
+            sup_fams[sup_fam_pbd_id_tup[0]].add(sup_fam_entry)
     
-    # for id, fams in id_to_sup_fams.items():
-    #     print(id, fams)
+    # print(sup_fams)
+    # print(id_to_sup_fams)
 
+def insert_into_db():
+    pass
 
 if __name__ == "__main__":
    get_db("./HOMSTRAD/")
