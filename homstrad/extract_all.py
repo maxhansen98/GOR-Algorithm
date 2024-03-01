@@ -6,7 +6,12 @@
 import os
 from collections import defaultdict
 
+
 def get_db(path_to_homstrad):
+    """
+    reads in entire HOMSTRAD directory and creates two dicts
+    :path_to_homstrad: path pointing to HOMSTRAD
+    """
 
     items = os.listdir(path_to_homstrad)
     subfamily_dirs = [item for item in items if os.path.isdir(os.path.join(path_to_homstrad, item))]
@@ -26,9 +31,11 @@ def get_db(path_to_homstrad):
     for curr_sup_fam in subfamily_dirs:
         path_to_dir = os.path.join(path_to_homstrad, curr_sup_fam)
         files = os.listdir(path_to_dir)
-
+        
+        tem_file = [file for file in files if file[-1] == "m"]
         # get alignments
-        tem_file = os.path.join(path_to_dir, files[1])
+        tem_file = os.path.join(path_to_dir, tem_file[0])
+        print(tem_file)
         
         content_tem=[]
 
@@ -40,8 +47,6 @@ def get_db(path_to_homstrad):
         current_pbd_id = None
         formatted_sec_seq = None
         formatted_ali_seq = None
-        
-
 
         # deals with .tem file
         for i in range(len(content_tem)):
@@ -91,10 +96,20 @@ def get_db(path_to_homstrad):
             sup_fam_entry = (sup_fam_pbd_id_tup[1], ali_seq_dict[sup_fam_pbd_id_tup], sec_seq_dict[sup_fam_pbd_id_tup])
             sup_fams[sup_fam_pbd_id_tup[0]].add(sup_fam_entry)
     
+
+    print()
+    for key, val in sup_fams.items():
+        print("########################################################################################################################################################################################################################################################################################")
+        print(key)
+        for v in val:
+            print(v)
+        print("############################################################################################################################################")
+        print()
     # print(sup_fams)
     # print(id_to_sup_fams)
 
-def insert_into_db():
+def insert_into_db(sup_fams: dict, id_to_sup_fams: dict):
+
     pass
 
 if __name__ == "__main__":
