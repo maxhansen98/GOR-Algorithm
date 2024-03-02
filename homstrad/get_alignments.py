@@ -38,10 +38,8 @@ def get_alignment(pdb):
     if len(alignment_ids.keys()) == 1 and len(proteins) == len(pdb):
         res_alignments.append({a_id:{}})
         for protein in proteins:
-            print(protein)
             cursor.execute("select sequence from Sequences where source_id = %s and source = %s and type = %s;", (protein,'homstrad','seq_ali'))
             sequence = cursor.fetchall()
-            print(sequence)
             res_alignments[-1][a_id][protein] = sequence[0][0]
     
         return res_alignments
