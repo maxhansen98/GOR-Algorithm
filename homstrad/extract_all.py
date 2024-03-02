@@ -3,6 +3,55 @@
 # Uebungsblatt 2, Aufgabe 14 (HOMSTRAD)
 # Malte A. Weyrich
 
+# DATABASE SCHEMA:
+
+# MariaDB [bioprakt3]> DESCRIBE Homstrad;
+# +-----------+--------------+------+-----+---------+----------------+
+# | Field     | Type         | Null | Key | Default | Extra          |
+# +-----------+--------------+------+-----+---------+----------------+
+# | id        | int(11)      | NO   | PRI | NULL    | auto_increment |
+# | family    | varchar(250) | YES  |     | NULL    |                |
+# +-----------+--------------+------+-----+---------+----------------+
+
+# MariaDB [bioprakt3]> DESCRIBE Sequences;
+# +-----------+--------------+------+-----+---------+----------------+
+# | Field     | Type         | Null | Key | Default | Extra          |
+# +-----------+--------------+------+-----+---------+----------------+
+# | id        | int(11)      | NO   | PRI | NULL    | auto_increment |
+# | type      | varchar(250) | YES  |     | NULL    |                |
+# | sequence  | longtext     | NO   |     | NULL    |                |
+# | source    | varchar(250) | YES  |     | NULL    |                |
+# | source_id | varchar(250) | YES  |     | NULL    |                |
+# | os_id     | int(11)      | YES  | MUL | NULL    |                |
+# +-----------+--------------+------+-----+---------+----------------+
+
+# MariaDB [bioprakt3]> DESCRIBE Alignments;
+# +-----------+--------------+------+-----+---------+----------------+
+# | Field     | Type         | Null | Key | Default | Extra          |
+# +-----------+--------------+------+-----+---------+----------------+
+# | id        | int(11)      | NO   | PRI | NULL    | auto_increment |
+# | almnt_id  | int(11)      | NO   | MUL | NULL    |                |
+# | prot_head | varchar(250) | NO   | MUL | NULL    |                |
+# +-----------+--------------+------+-----+---------+----------------+
+
+# MariaDB [bioprakt3]> show tables;
+# +---------------------+
+# | Tables_in_bioprakt3 |
+# +---------------------+
+# | Alignments          |
+# | Homstrad            |
+# | Keywords            |
+# | Organisms           |
+# | Sequences           |
+# +---------------------+
+
+# MariaDB [bioprakt3]> describe Organisms;
+# +-------+--------------+------+-----+---------+----------------+
+# | Field | Type         | Null | Key | Default | Extra          |
+# +-------+--------------+------+-----+---------+----------------+
+# | id    | int(11)      | NO   | PRI | NULL    | auto_increment |
+# | name  | varchar(250) | YES  |     | NULL    |                |
+# +-------+--------------+------+-----+---------+----------------+
 import os
 from collections import defaultdict
 import mysql.connector
@@ -140,9 +189,13 @@ def get_db(path_to_homstrad):
 def insert_os(organism_dict: dict):
     """Inserts organisms into db os table
     """
-
     organisms_to_insert = set(organism_dict.values())
     for organism in organisms_to_insert:
+        # check if organism is already in db
+        cursor.execute("SELECT * FROM Organisms WHERE name = %s", (organism,))
+        if cursor.fetchone():
+            print(f"{organism} already in db")
+            continue
         # insert organism
         add_organism = ("INSERT INTO Organisms "
                         "(name) "
@@ -150,26 +203,42 @@ def insert_os(organism_dict: dict):
         data_organism = (organism,)
         cursor.execute(add_organism, data_organism)
 
-    cursor.close()
-
 
 def get_os_id_dict(os_dict: dict):
+    pdb_id_to_os_id = {}
+
+    # iterate over pdb_id and organism in os_dict
+    for pdb_id, organism in os_dict.items():
+        # get os_id
+        cursor.execute("SELECT id FROM Organisms WHERE name = %s", (organism,))
+        os_id = cursor.fetchone()
+
+        # Check if os_id is fetched correctly
+        if os_id is not None:
+            # Extracting the ID value from the result
+            os_id = os_id[0]
+            pdb_id_to_os_id[pdb_id] = os_id
+        else:
+            # Handle case where organism name is not found in the database
+            # You can raise an exception or handle it according to your requirement
+            print(f"Organism '{organism}' not found in the database for PDB ID '{pdb_id}'")
+
+    return pdb_id_to_os_id
     """Returns a dict with os_id as key and organism as value
-    :os_dict: pdb_id to organism 
+    :os_dict: '1ftra1': 'Methanopyrus kandleri', ....
     """
-    pdb_to_os_id = {}  # pdb_id to os_id
 
-    cursor.execute("SELECT * FROM Organisms")
-    organism_rows = cursor.fetchall()
+    pdb_id_to_os_id = {}
 
-    for os_id, organism in organism_rows:
-        for pdb_id, os in os_dict.items():
-            if os == organism:
-                if len(pdb_id) == 5:
-                    pdb_id = pdb_id[:-1]
-                pdb_to_os_id[pdb_id] = os_id
+    # iterate ofer pdb_id and organism in os_dict
+    for pdb_id, organism in os_dict.items():
+        # get os_id
+        cursor.execute("SELECT id FROM Organisms WHERE name = %s", (organism,))
+        os_id = cursor.fetchone()
 
-    return pdb_to_os_id
+        pdb_id_to_os_id[pdb_id] = os_id
+
+    return os_dict
 
     # check
     # for key, val in sup_fam_to_os_id.items():
@@ -237,8 +306,34 @@ def get_os_id_dict(os_dict: dict):
 #         # increment this counter for each sup_fam
 #         ali_id_counter += 1
 
+def insert_ids_into_alignments(sup_fams: dict):
+    """Matches the pdb_id to the ali_id and inserts them into the alignments table,
+    meaning: 
+        pdb_id_1, pbd_id_2, ... -> are in same sup_fam => ali_id_1
+        pdb_id_3, pbd_id_4, ... -> are in same sup_fam => ali_id_2
+        etc.
+    In the sup_fams dict the pdb_ids are already grouped by sup_fam:
+    sup_fams:= {sup_fam: [(pbd_id, ali_seq, sec_seq)*]}
+    """
+
+    ali_id_counter = 1
+    for _, entries in sup_fams.items():
+        for entry in entries:
+            pbd_id, ali_seq, sec_seq = entry
+            # insert pbd_id and ali_id into alignments
+            # id (auto_increment), ali_id, prot_head
+            add_alignment = ("INSERT INTO Alignments "
+                            "(almnt_id, prot_head) "
+                            "VALUES (%s, %s)")
+            data_alignment = (ali_id_counter, pbd_id)
+            cursor.execute(add_alignment, data_alignment)
+        ali_id_counter += 1
+
 def insert_alignments_into_sequences(sup_fams: dict, pdb_id_to_os_id: dict):
-    
+    """Inserts all alignments of type (sec_ali, seq_ali) into Sequences and checks if they are already in the db.
+    Also matches the pdb_id to the os_id
+    """
+
     for _, entries in sup_fams.items():
         for entry in entries:
 
@@ -246,7 +341,7 @@ def insert_alignments_into_sequences(sup_fams: dict, pdb_id_to_os_id: dict):
             pbd_id, ali_seq, sec_seq = entry
 
             # check if ali_seq is alrady in sequences
-            cursor.execute("SELECT source_id, type FROM Sequences WHERE source_id=%s AND type=%s", (pbd_id, "seq_ali"))
+            cursor.execute("SELECT source_id, type, sequence FROM Sequences WHERE source_id=%s AND type=%s AND sequence=%s", (pbd_id, "seq_ali", ali_seq))
             if cursor.fetchone():
                 print(f"{pbd_id}: ali_seq already in sequences")
             else:
@@ -263,7 +358,7 @@ def insert_alignments_into_sequences(sup_fams: dict, pdb_id_to_os_id: dict):
                 cursor.execute(add_ali_seq, data_seq)
            
             # check if sec_seq is alrady in sequences
-            cursor.execute("SELECT source_id, type FROM Sequences WHERE source_id=%s AND type=%s", (pbd_id, "sec_ali"))
+            cursor.execute("SELECT source_id, type FROM Sequences WHERE source_id=%s AND type=%s AND sequence=%s", (pbd_id, "sec_ali", sec_seq))
             if cursor.fetchone():
                 print(f"{pbd_id}: sec_ali already in sequences")
             else:
@@ -286,66 +381,18 @@ def insert_alignments_into_sequences(sup_fams: dict, pdb_id_to_os_id: dict):
 
 if __name__ == "__main__":
     sup_fams, id_to_sup_fams, organism_dict = get_db("./HOMSTRAD/")
-    pbd_id_to_os_id = get_os_id_dict(organism_dict)
-
-    print(organism_dict)
-
-
     # insert organisms
-    # insert_os(pbd_id_to_os_id)
+    #  WARN: only run once
+    # insert_os(organism_dict)
+    
+    pdb_id_to_os_id = get_os_id_dict(organism_dict)
 
     # insert alignments into Sequences
-    # insert_alignments_into_sequences(sup_fams, pbd_id_to_os_id)
+    #  WARN: only run once
+    # insert_alignments_into_sequences(sup_fams, pdb_id_to_os_id)
 
 
 
 
-# DATABASE SCHEMA:
 
-# MariaDB [bioprakt3]> DESCRIBE Homstrad;
-# +-----------+--------------+------+-----+---------+----------------+
-# | Field     | Type         | Null | Key | Default | Extra          |
-# +-----------+--------------+------+-----+---------+----------------+
-# | id        | int(11)      | NO   | PRI | NULL    | auto_increment |
-# | family    | varchar(250) | YES  |     | NULL    |                |
-# +-----------+--------------+------+-----+---------+----------------+
 
-# MariaDB [bioprakt3]> DESCRIBE Sequences;
-# +-----------+--------------+------+-----+---------+----------------+
-# | Field     | Type         | Null | Key | Default | Extra          |
-# +-----------+--------------+------+-----+---------+----------------+
-# | id        | int(11)      | NO   | PRI | NULL    | auto_increment |
-# | type      | varchar(250) | YES  |     | NULL    |                |
-# | sequence  | longtext     | NO   |     | NULL    |                |
-# | source    | varchar(250) | YES  |     | NULL    |                |
-# | source_id | varchar(250) | YES  |     | NULL    |                |
-# | os_id     | int(11)      | YES  | MUL | NULL    |                |
-# +-----------+--------------+------+-----+---------+----------------+
-
-# MariaDB [bioprakt3]> DESCRIBE Alignments;
-# +-----------+--------------+------+-----+---------+----------------+
-# | Field     | Type         | Null | Key | Default | Extra          |
-# +-----------+--------------+------+-----+---------+----------------+
-# | id        | int(11)      | NO   | PRI | NULL    | auto_increment |
-# | almnt_id  | int(11)      | NO   | MUL | NULL    |                |
-# | prot_head | varchar(250) | NO   | MUL | NULL    |                |
-# +-----------+--------------+------+-----+---------+----------------+
-
-# MariaDB [bioprakt3]> show tables;
-# +---------------------+
-# | Tables_in_bioprakt3 |
-# +---------------------+
-# | Alignments          |
-# | Homstrad            |
-# | Keywords            |
-# | Organisms           |
-# | Sequences           |
-# +---------------------+
-
-# MariaDB [bioprakt3]> describe Organisms;
-# +-------+--------------+------+-----+---------+----------------+
-# | Field | Type         | Null | Key | Default | Extra          |
-# +-------+--------------+------+-----+---------+----------------+
-# | id    | int(11)      | NO   | PRI | NULL    | auto_increment |
-# | name  | varchar(250) | YES  |     | NULL    |                |
-# +-------+--------------+------+-----+---------+----------------+
