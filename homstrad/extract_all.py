@@ -224,87 +224,7 @@ def get_os_id_dict(os_dict: dict):
             print(f"Organism '{organism}' not found in the database for PDB ID '{pdb_id}'")
 
     return pdb_id_to_os_id
-    """Returns a dict with os_id as key and organism as value
-    :os_dict: '1ftra1': 'Methanopyrus kandleri', ....
-    """
 
-    pdb_id_to_os_id = {}
-
-    # iterate ofer pdb_id and organism in os_dict
-    for pdb_id, organism in os_dict.items():
-        # get os_id
-        cursor.execute("SELECT id FROM Organisms WHERE name = %s", (organism,))
-        os_id = cursor.fetchone()
-
-        pdb_id_to_os_id[pdb_id] = os_id
-
-    return os_dict
-
-    # check
-    # for key, val in sup_fam_to_os_id.items():
-    #     print(key, val)
-
-
-# def insert_alignments(sup_fams: dict, pdb_id_to_os_id: dict):
-#     """Inserts all alignments into db and checks if they are already in the db
-#     :sup_fams: dict with super families and their entries
-#     :pdb_id_to_os_id: dict with pdb_id to os_id
-#     """
-#     
-#     ali_id_counter = 1
-#     for sup_fam, entries in sup_fams.items():
-#         for entry in entries:
-#             pbd_id, ali_seq, sec_seq = entry
-#
-#             # check if family is alrady in homstrad
-#             cursor.execute("SELECT * FROM Homstrad WHERE family = %s", (sup_fam,))
-#             if cursor.fetchone():
-#                 print(f"{sup_fam} already in homstrad")
-#             
-#             else:
-#                 # insert into homstrad:
-#                 # id (auto_increment), super_family, alignment_id
-#                 add_homstrad = ("INSERT INTO Homstrad "
-#                                 "(family) "
-#                                 "VALUES (%s)")
-#                 data_homstrad = (sup_fam)
-#                 cursor.execute(add_homstrad, data_homstrad)
-#             
-#             # check if ali_seq is alrady in sequences
-#             cursor.execute("SELECT * FROM Sequences WHERE sequence = %s", (ali_seq,))
-#             if cursor.fetchone():
-#                 print(f"{ali_seq} already in sequences")
-#             else:
-#                 # insert ali into sequences:
-#                 # id (auto_increment), type=homstrad_alignment, sequence=ali_seq, source=HOMSTRAD, source_id=pdb_id, os_id
-#                 add_ali_seq = ("INSERT INTO Sequences "
-#                            "(type, sequence, source, source_id, os_id) "
-#                            "VALUES (%s, %s, %s, %s, %s)")
-#                 data_seq = ("seq_ali", ali_seq, "HOMSTRAD", pbd_id, pdb_id_to_os_id[pbd_id])
-#                 cursor.execute(add_ali_seq, data_seq)
-#             
-#             # check if sec_seq is alrady in sequences
-#             cursor.execute("SELECT * FROM Sequences WHERE sequence = %s", (sec_seq,))
-#             if cursor.fetchone():
-#                 print(f"{sec_seq} already in sequences")
-#             else:
-#                 # insert sec into sequences
-#                 add_sec_seq = ("INSERT INTO Sequences "
-#                            "(type, sequence, source, source_id, os_id) "
-#                            "VALUES (%s, %s, %s, %s, %s)")
-#                 data_seq = ("sec_ali", sec_seq, "HOMSTRAD", pbd_id, 1)
-#                 cursor.execute(add_sec_seq, data_seq)
-#
-#             # insert pbd_id and ali_id into alignments
-#             # id (auto_increment), ali_id, prot_head
-#             add_alignment = ("INSERT INTO Alignments "
-#                             "(almnt_id, prot_head) "
-#                             "VALUES (%s, %s)")
-#             data_alignment = (ali_id_counter, pbd_id)
-#             cursor.execute(add_alignment, data_alignment)
-#         
-#         # increment this counter for each sup_fam
-#         ali_id_counter += 1
 
 def insert_ids_into_alignments(sup_fams: dict):
     """Matches the pdb_id to the ali_id and inserts them into the alignments table,
@@ -316,18 +236,26 @@ def insert_ids_into_alignments(sup_fams: dict):
     sup_fams:= {sup_fam: [(pbd_id, ali_seq, sec_seq)*]}
     """
 
-    ali_id_counter = 1
+    ali_counter = 1
     for _, entries in sup_fams.items():
         for entry in entries:
-            pbd_id, ali_seq, sec_seq = entry
+            pbd_id, _, _ = entry
+
+            # check if pbd_id is alrady in alignments
+            cursor.execute("SELECT * FROM Alignments WHERE prot_head = %s and almnt_id = %s", (pbd_id, ali_counter))
+            if cursor.fetchone():
+                print(f"{pbd_id} already in alignments")
+                continue
             # insert pbd_id and ali_id into alignments
             # id (auto_increment), ali_id, prot_head
             add_alignment = ("INSERT INTO Alignments "
                             "(almnt_id, prot_head) "
                             "VALUES (%s, %s)")
-            data_alignment = (ali_id_counter, pbd_id)
+            data_alignment = (ali_counter, pbd_id)
             cursor.execute(add_alignment, data_alignment)
-        ali_id_counter += 1
+        # increment ali_counter for each sup_fam
+        ali_counter += 1
+
 
 def insert_alignments_into_sequences(sup_fams: dict, pdb_id_to_os_id: dict):
     """Inserts all alignments of type (sec_ali, seq_ali) into Sequences and checks if they are already in the db.
@@ -373,10 +301,43 @@ def insert_alignments_into_sequences(sup_fams: dict, pdb_id_to_os_id: dict):
                 data_seq = ("sec_ali", sec_seq, "homstrad", pbd_id, pdb_id_to_os_id[no_chain_pbd_id])
                 cursor.execute(add_sec_seq, data_seq)
             
-            # now check if entry got inserted
-            # cursor.execute("SELECT * FROM Sequences WHERE source_id=%s", (pbd_id,))
-            # if cursor.fetchone():
-            #     print(f"{pbd_id}: entry got inserted")
+
+def insert_sup_fams_into_homstrad(sup_fams: dict):
+    """Inserts all super families matched with the alignment ids into homstrad.
+    :sup_fams: {sup_fam: [(pbd_id, ali_seq, sec_seq)*]}
+
+    For all super families in sup_fams:
+        - insert super family into homstrad
+        - get alignment id for that super family (pbd_ids inside that super family have the same ali_id)
+    """
+
+    # MariaDB [bioprakt3]> select * from Alignments limit 10;
+    # +----+----------+-----------+
+    # | id | almnt_id | prot_head |
+    # +----+----------+-----------+
+    # |  1 |        1 | 1cf9a     |   <-- ali_id for sup_fam that contains 1cf9a, 8cata, 1m85a, the sup_fam in homstrad now needs the alignment_id 1
+    # |  2 |        1 | 8cata     |
+    # |  3 |        1 | 1m85a     |
+    # |  4 |        2 | 2cro      |  <-- ali_id for sup_fam that contains 2cro, 1r69, 1adr, 1lmb3, the sup_fam in homstrad now needs the alignment_id 2
+    # |  5 |        2 | 1r69      |
+    # |  6 |        2 | 1adr      | 
+    # |  7 |        2 | 1lmb3     |
+    # |  8 |        3 | 1que      | ....
+    # |  9 |        3 | 1a8p      |
+    # | 10 |        3 | 1fdr      |
+    # +----+----------+-----------+
+
+    ali_id = 1
+
+    for sup_fam, entries in sup_fams.items():
+        # insert sup_fam into homstrad
+        add_sup_fam = ("INSERT INTO Homstrad "
+                       "(family) "
+                       "VALUES (%s)")
+        data_sup_fam = (sup_fam,)
+        cursor.execute(add_sup_fam, data_sup_fam)
+        
+
 
 
 if __name__ == "__main__":
@@ -390,6 +351,12 @@ if __name__ == "__main__":
     # insert alignments into Sequences
     #  WARN: only run once
     # insert_alignments_into_sequences(sup_fams, pdb_id_to_os_id)
+
+    # insert ids into alignments
+    #  WARN: only run once
+    # insert_ids_into_alignments(sup_fams)
+
+    # insert_sup_fams_into_homstrad(sup_fams)
 
 
 
