@@ -1,0 +1,1 @@
+SELECT * FROM Sequences  JOIN Alignments ON prot_head = source_id join Homstrad h on h.id = almnt_id WHERE source = 'homstrad' AND type = 'seq_ali' and source_id = '2cro';
