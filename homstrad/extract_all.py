@@ -129,8 +129,7 @@ def get_db(path_to_homstrad):
             elif line.startswith("secondary structure"):
                 in_sec_struct = True
                 sec_seq = ""
-                j = 1
-                while in_sec_struct:
+                j = 1 while in_sec_struct:
                     if content_tem[i+j].startswith(">"):
                         in_sec_struct = False
                     else:
@@ -345,8 +344,8 @@ if __name__ == "__main__":
     # insert organisms
     #  WARN: only run once
     # insert_os(organism_dict)
-    
-    pdb_id_to_os_id = get_os_id_dict(organism_dict)
+
+    # pdb_id_to_os_id = get_os_id_dict(organism_dict)
 
     # insert alignments into Sequences
     #  WARN: only run once
@@ -356,6 +355,8 @@ if __name__ == "__main__":
     #  WARN: only run once
     # insert_ids_into_alignments(sup_fams)
 
+    # insert superfams into Homstrad
+    #  WARN: only run once
     # insert_sup_fams_into_homstrad(sup_fams)
 
 
