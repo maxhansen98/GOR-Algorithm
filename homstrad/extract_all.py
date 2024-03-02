@@ -5,8 +5,9 @@
 
 import os
 from collections import defaultdict
+import mysql.connector
 
-
+#  TODO: maybe also collect meta data like species or sequence length
 def get_db(path_to_homstrad):
     """
     reads in entire HOMSTRAD directory and creates two dicts
@@ -114,3 +115,4 @@ def insert_into_db(sup_fams: dict, id_to_sup_fams: dict):
 
 if __name__ == "__main__":
    get_db("./HOMSTRAD/")
+
