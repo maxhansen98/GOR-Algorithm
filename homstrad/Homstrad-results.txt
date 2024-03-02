@@ -1,0 +1,101 @@
+# DATABASE SCHEMA:
+
+# MariaDB [bioprakt3]> DESCRIBE Homstrad;
+# +-----------+--------------+------+-----+---------+----------------+
+# | Field     | Type         | Null | Key | Default | Extra          |
+# +-----------+--------------+------+-----+---------+----------------+
+# | id        | int(11)      | NO   | PRI | NULL    | auto_increment |
+# | family    | varchar(250) | YES  |     | NULL    |                |
+# +-----------+--------------+------+-----+---------+----------------+
+
+# MariaDB [bioprakt3]> DESCRIBE Sequences;
+# +-----------+--------------+------+-----+---------+----------------+
+# | Field     | Type         | Null | Key | Default | Extra          |
+# +-----------+--------------+------+-----+---------+----------------+
+# | id        | int(11)      | NO   | PRI | NULL    | auto_increment |
+# | type      | varchar(250) | YES  |     | NULL    |                |
+# | sequence  | longtext     | NO   |     | NULL    |                |
+# | source    | varchar(250) | YES  |     | NULL    |                |
+# | source_id | varchar(250) | YES  |     | NULL    |                |
+# | os_id     | int(11)      | YES  | MUL | NULL    |                |
+# +-----------+--------------+------+-----+---------+----------------+
+
+# MariaDB [bioprakt3]> DESCRIBE Alignments;
+# +-----------+--------------+------+-----+---------+----------------+
+# | Field     | Type         | Null | Key | Default | Extra          |
+# +-----------+--------------+------+-----+---------+----------------+
+# | id        | int(11)      | NO   | PRI | NULL    | auto_increment |
+# | almnt_id  | int(11)      | NO   | MUL | NULL    |                |
+# | prot_head | varchar(250) | NO   | MUL | NULL    |                |
+# +-----------+--------------+------+-----+---------+----------------+
+
+# MariaDB [bioprakt3]> show tables;
+# +---------------------+
+# | Tables_in_bioprakt3 |
+# +---------------------+
+# | Alignments          |
+# | Homstrad            |
+# | Keywords            |
+# | Organisms           |
+# | Sequences           |
+# +---------------------+
+
+# MariaDB [bioprakt3]> describe Organisms;
+# +-------+--------------+------+-----+---------+----------------+
+# | Field | Type         | Null | Key | Default | Extra          |
+# +-------+--------------+------+-----+---------+----------------+
+# | id    | int(11)      | NO   | PRI | NULL    | auto_increment |
+# | name  | varchar(250) | YES  |     | NULL    |                |
+# +-------+--------------+------+-----+---------+----------------+
+
+
+###############################################################################
+Frage 1:
+###############################################################################
+
+MySQL 1: SELECT COUNT(*) FROM Homstrad;
+# MariaDB [bioprakt3]> SELECT COUNT(*) FROM Homstrad;
+# +----------+
+# | count(*) |
+# +----------+
+# |     1031 |
+# +----------+
+# 1 row in set (0,000 sec)
+Answer 1:   1031
+
+###############################################################################
+Frage 2:
+###############################################################################
+
+# Ich glaube weil wir auch die chain mit in der pdb_id haben (für machnche Sequenzen gibt es mehrere pdb_ids als in der Lösung)
+# Wahrscheinlich könnte man mit einem regex die chain entfernen und dann die Anzahl der pdb_ids zählen
+# dazu müsste man einfach immer die ersten 4 Zeichen der pdb_id nehmen. Aber anscheinend ist das nicht gefragt
+
+MySQL 2: SELECT COUNT(*) AS total_sequences FROM Sequences WHERE source = 'homstrad' AND type = 'seq_ali';
+# MariaDB [bioprakt3]> SELECT COUNT(*) AS total_sequences FROM Sequences WHERE source = 'homstrad' AND type = 'seq_ali';
+# +-----------------+
+# | total_sequences |
+# +-----------------+
+# |            3456 |
+# +-----------------+
+# 1 row in set (0,076 sec)
+# MariaDB [bioprakt3]> SELECT COUNT(DISTINCT source_id) AS distinct_sequences FROM Sequences WHERE source = 'homstrad' AND type = 'seq_ali';
+# +--------------------+
+# | distinct_sequences |
+# +--------------------+
+# |               3078 |
+# +--------------------+
+# 1 row in set (0,079 sec)
+
+Answer 2:   3456    3078
+
+###############################################################################
+Frage 3:
+# Answer 2:\t<m>\t<k>
+# 3. Wieviele Proteine kommen wie oft vor? Berechnen Sie einen Vektor von Häufig-
+# keiten (bis zur letzten Häufigkeit > 0). (3P)
+# Answer 3:\t( 1: <1x> )\t( 2: <2x> )\t( 3: <3x> )\t...
+###############################################################################
+
+MySQL 3: SELECT protein, COUNT(*) AS frequency FROM ( SELECT source_id AS protein FROM Sequences WHERE source = 'homstrad' AND type = 'seq_ali') AS unique_proteins GROUP BY protein ORDER BY frequency ASC;
+
