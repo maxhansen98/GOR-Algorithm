@@ -6,7 +6,7 @@ import argparse
 def get_alignments(pdb):
     # get alignmentif for a given pdb
     res_alignments = []
-    cursor.execute("select almnt_id from Alignments where prot_head = '2cro';")
+    cursor.execute("select almnt_id from Alignments where prot_head = %s;", (pdb[0],))
     alignments = cursor.fetchall()
     for alignment in alignments:
         res_alignments.append({alignment[0]:{}})
