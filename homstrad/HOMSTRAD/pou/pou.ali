@@ -1,9 +1,0 @@
-C; family: Pou domain - N-terminal to homeobox domain
-C; class: all alpha
-C; last update 1/11/99
->P1;1octc
-structureX:1oct:   5 :C:  75 :C:octamer-binding transcription factor 1 (otf-1):Homo sapiens: 3.0: 23.7
-DLEELEQFAKTFKQRRIKLGFTQGDVGLAMGKLYGNDFSQTTISRFEALNLSFKNMCKLKPLLEKWLNDAE*
->P1;1au7a
-structureX:1au7:   5 :A:  75 :A:pituitary-specific positive transcription factor 1 (pit-1):Mus musculus: 2.3: 23
-GMRALEQFANEFKVRRIKLGYTQTNVGEALAAVHGSEFSQTTICRFENLQLSFKNACKLKAILSKWLEEAE*

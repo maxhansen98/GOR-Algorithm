@@ -1,9 +1,0 @@
-C; family: Sterile alpha motif.
-C; class: all alpha
-C; last update 16/7/99
->P1;1b4fa
-structureX:1b4f:   6 :A:  79 :A:EPHB2 receptor SAM domain:Homo sapiens: 1.95: 22.8
-PDYTSFNTVDEWLEAIKMGQYKESFANAGFTSFDVVSQMMMEDILRVGVTLAGHQKKILNSIQVMRAQMNQIQS*
->P1;1b0xa
-structureX:1b0x: 910 :A: 981 :A:EPH receptor SAM domain:Escherichia coli: 2.00: 22.9
-FSAVV--SVGDWLQAIKMDRYKDNFTAAGYTTLEAVVHMSQDDLARIGITAITHQNKILSSVQAMRTQMQQMHG*
