@@ -14,13 +14,8 @@ public class TrainerMain {
         System.out.println(method);
         System.out.println(model);
         Trainer trainer = new Trainer(db);
-        System.out.println(trainer.getSearchWindow());
-        for (int i = 0; i < trainer.getTrainingSequences().size(); i++) {
-            String[] entry = trainer.getTrainingSequences().get(i);
-            for (int j = 0; j < entry.length; j++) {
-                System.out.println(entry[j]);
-            }
-        }
+        trainer.train();
+
         // "/home/malte/projects/blockgruppe3/GOR/CB513DSSP.db"
     }
 }
