@@ -62,6 +62,7 @@ public class Trainer {
             String pdbId = entry.getPdbId();
             String aaSequence = entry.getAaSequence();
             String ssSequence = entry.getSsSequence();
+            System.out.println("-------------------------------------------------------------");
             fillCount(aaSequence, ssSequence, this.searchWindow, pdbId);
         }
         System.out.println(searchWindow);
@@ -79,15 +80,15 @@ public class Trainer {
 
 
         // enter main loop
-        while (windowMid <= end) {
-            String aaSubSeq = aaSequence.substring(windowMid - searchWindow.getWINDOWSIZE() / 2, windowMid + searchWindow.getWINDOWSIZE() / 2);
-            String ssSubSeq = ssSequence.substring(windowMid - searchWindow.getWINDOWSIZE() / 2, windowMid + searchWindow.getWINDOWSIZE() / 2);
+        while (windowMid < end) {
+            String aaSubSeq = aaSequence.substring(windowMid - searchWindow.getWINDOWSIZE() / 2, windowMid + 1 + searchWindow.getWINDOWSIZE() / 2);
+            String ssSubSeq = ssSequence.substring(windowMid - searchWindow.getWINDOWSIZE() / 2, windowMid + 1 + searchWindow.getWINDOWSIZE() / 2);
+            System.out.println(aaSubSeq);
 
             // in the subSeqs get the corresponding vals
             // TODO: This is currently not working
-            for (int index = 0; index <= aaSubSeq.length(); index++) {
+            for (int index = 0; index < aaSubSeq.length(); index++) {
                 char currSS = ssSubSeq.charAt(searchWindow.getWINDOWSIZE() / 2) ; // this is the sec struct of the mid AA
-                System.out.println(index);
                 char currAA = aaSubSeq.charAt(index);
                 if (!(currAA == 'X' || currAA == 'B' || currAA == 'Z')) {
                     int indexOfAAinMatrix = this.AA_TO_INDEX.get(currAA);
@@ -95,7 +96,6 @@ public class Trainer {
                 }
             }
             windowMid++;
-            System.out.println(ssSubSeq);
         }
     }
 
