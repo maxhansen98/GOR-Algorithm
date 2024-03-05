@@ -185,6 +185,9 @@ public class SearchWindow {
         }
     }
 
+    /*
+    Filling the matrices using training file (Easily counting up the scores for each window)
+     */
     public void slideWindowAndCount(String aaSequence, String ssSequence, String pdbId){
         if (aaSequence.length() >= this.getWINDOWSIZE()) {
             int start = 0; // init start index
@@ -210,6 +213,9 @@ public class SearchWindow {
         }
     }
 
+    /*
+    Get all params ready and call addSecondaryCounts and extendSecondarySequence
+     */
     public void slideWindowAndPredict(String aaSequence, HashMap<Character, Integer> totalOcc, Sequence sequence){
         if (aaSequence.length() >= this.getWINDOWSIZE()) {
             int start = 0; // init start index
@@ -220,30 +226,26 @@ public class SearchWindow {
             // enter main loop
             while (windowMid < windowEndPosition) {
                 String aaSubSeq = aaSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + 1 + this.getWINDOWSIZE() / 2);
-                HashMap<Character, Double> AAsecondaryCounts = new HashMap<>();
-                AAsecondaryCounts.put('H', 0.0);
-                AAsecondaryCounts.put('C', 0.0);
-                AAsecondaryCounts.put('E', 0.0);
+                HashMap<Character, Double> AASecondaryCounts = new HashMap<>();
+                // Init AASecondaryCounts as 0 for each window-Loop
+                AASecondaryCounts.put('H', 0.0);
+                AASecondaryCounts.put('C', 0.0);
+                AASecondaryCounts.put('E', 0.0);
 
-                addSecondaryCounts(aaSubSeq, totalOcc, AAsecondaryCounts);
+                addSecondaryCounts(aaSubSeq, totalOcc, AASecondaryCounts);
+                extendSecondarySequence(AASecondaryCounts, sequence);
 
-                double scoreH = AAsecondaryCounts.get('H');
-                double scoreC = AAsecondaryCounts.get('C');
-                double scoreE = AAsecondaryCounts.get('E');
-
-                if(scoreH >= scoreC && scoreH >= scoreE) {
-                    sequence.extendSecStruct('H');
-                } else if (scoreC >= scoreH && scoreC >= scoreE) {
-                    sequence.extendSecStruct('C');
-                } else {
-                    sequence.extendSecStruct('E');
-                }
                 windowMid++;
             }
         }
     }
 
-    public void addSecondaryCounts(String aaSubSeq, HashMap<Character,Integer> totalOcc, HashMap<Character, Double> AAsecondaryCounts){
+    /*
+    Loop over all 3 matrices; for each amino acid in search window:
+    Get all values needed for Value calculation (f_sec, f_!sec, f_secType and f_!secType)
+    Then calc the logs for each Amino Acid, sum them up and add them to the SecondaryCounts-HashMap
+     */
+    public void addSecondaryCounts(String aaSubSeq, HashMap<Character,Integer> totalOcc, HashMap<Character, Double> AASecondaryCounts){
         for (Character secType : this.secStructMatrices.keySet()) {
             for (int index = 0; index < aaSubSeq.length(); index++) {
                 char currAA = aaSubSeq.charAt(index);
@@ -262,9 +264,26 @@ public class SearchWindow {
                     }
                     // now we got everything we need
                     double normalizedValue = Math.log(1.0 * sec / notSec) + Math.log(1.0 * totalNotSec/ totalSec);
-                    AAsecondaryCounts.put(secType, AAsecondaryCounts.get(secType) + normalizedValue);
+                    AASecondaryCounts.put(secType, AASecondaryCounts.get(secType) + normalizedValue);
                 }
             }
+        }
+    }
+
+    /*
+    Extend Secondary-Structure Sequence by the Score of addSecondaryCounts-Method
+     */
+    public void extendSecondarySequence(HashMap<Character, Double> AASecondaryCounts, Sequence sequence){
+        double scoreH = AASecondaryCounts.get('H');
+        double scoreC = AASecondaryCounts.get('C');
+        double scoreE = AASecondaryCounts.get('E');
+
+        if(scoreH >= scoreC && scoreH >= scoreE) {
+            sequence.extendSecStruct('H');
+        } else if (scoreC >= scoreH && scoreC >= scoreE) {
+            sequence.extendSecStruct('C');
+        } else {
+            sequence.extendSecStruct('E');
         }
     }
 }
