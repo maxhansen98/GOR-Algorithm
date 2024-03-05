@@ -18,4 +18,8 @@ public class Sequence {
     public String getId() {
         return id;
     }
+
+    public void extendSecStruct(char secStructType){
+        this.ssSequence += secStructType;
+    }
 }

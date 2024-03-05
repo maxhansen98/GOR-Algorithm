@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SearchWindow {
-    private final HashMap<Character, Integer[][]> secStructMatrices = new HashMap<>();
+    private final HashMap<Character, int[][]> secStructMatrices = new HashMap<>();
     private HashMap<Integer, Character> INDEX_TO_AA = new HashMap<>();
     private HashMap<Character, Integer> AA_TO_INDEX = new HashMap<>();
     private char[] secStructTypes = {'H', 'E', 'C'};
@@ -52,10 +52,6 @@ public class SearchWindow {
         this.initMatrices(secStructTypes);
     }
 
-    public Integer[][] getMatrix(String secStruct){
-        return this.secStructMatrices.get(secStruct);
-    }
-
     public int getWINDOWSIZE() {
         return Constants.WINDOW_SIZE.getValue();
     }
@@ -68,7 +64,7 @@ public class SearchWindow {
 
         for (char key : this.secStructMatrices.keySet()){
             out.append("=").append(key).append("=\n");
-            Integer[][] currSecMatrix = secStructMatrices.get(key);
+            int[][] currSecMatrix = secStructMatrices.get(key);
 
             for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
                 out.append(this.INDEX_TO_AA.get(i) + "\t");
@@ -87,7 +83,7 @@ public class SearchWindow {
     public void initMatrices(char[] secStructTypes){
         // init a matrix for each secStructType
         for (char secStruct : secStructTypes){
-            this.secStructMatrices.put(secStruct, new Integer[20][17]);
+            this.secStructMatrices.put(secStruct, new int[20][17]);
 
             // put default value into matrices
             for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
@@ -98,7 +94,7 @@ public class SearchWindow {
         }
     }
 
-    public HashMap<Character, Integer[][]> getSecStructMatrices() {
+    public HashMap<Character, int[][]> getSecStructMatrices() {
         return this.secStructMatrices;
     }
 
@@ -208,6 +204,59 @@ public class SearchWindow {
                         int indexOfAAinMatrix = this.AA_TO_INDEX.get(currAA);
                         this.getSecStructMatrices().get(currSS)[indexOfAAinMatrix][index]++;
                     }
+                }
+                windowMid++;
+            }
+        }
+    }
+
+    public void slideWindowAndPredict(String aaSequence, HashMap<Character, Integer> totalOcc, Sequence sequence){
+        if (aaSequence.length() >= this.getWINDOWSIZE()) {
+            int start = 0; // init start index
+            int windowMid = this.getWINDOWSIZE() / 2; // define mid index
+            int windowEndPosition  = aaSequence.length() - windowMid ; // define end index of seq (this is the max val of windowMid)
+
+
+            // enter main loop
+            while (windowMid < windowEndPosition) {
+                String aaSubSeq = aaSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + 1 + this.getWINDOWSIZE() / 2);
+                HashMap<Character, Double> AAsecondaryCounts = new HashMap<>();
+                AAsecondaryCounts.put('H', 0.0);
+                AAsecondaryCounts.put('C', 0.0);
+                AAsecondaryCounts.put('E', 0.0);
+
+                for (Character secType : this.secStructMatrices.keySet()) {
+                    for (int index = 0; index < aaSubSeq.length(); index++) {
+                        char currAA = aaSubSeq.charAt(index);
+                        if (this.AA_TO_INDEX.containsKey(currAA)) {
+                            int aaIndex = AA_TO_INDEX.get(currAA);
+                            int[][] secStructMatrix = secStructMatrices.get(secType);
+                            int sec = secStructMatrix[aaIndex][index]; // f secType|a
+                            int notSec = 0; // f_!secType|a
+                            int totalSec = totalOcc.get(secType); // f_secType
+                            int totalNotSec = 0; // f_!s
+                            for (Character notSecType : secStructMatrices.keySet()) {
+                                if (!notSecType.equals(secType)) {
+                                   notSec += secStructMatrices.get(notSecType)[aaIndex][index];
+                                   totalNotSec += totalOcc.get(notSecType);
+                                }
+                            }
+                            // now we got everything we need
+                            double normalizedValue = Math.log(1.0 * sec / notSec) + Math.log(1.0 * totalNotSec/ totalSec);
+                            AAsecondaryCounts.put(secType, AAsecondaryCounts.get(secType) + normalizedValue);
+                        }
+                    }
+                }
+                double scoreH = AAsecondaryCounts.get('H');
+                double scoreC = AAsecondaryCounts.get('C');
+                double scoreE = AAsecondaryCounts.get('E');
+
+                if(scoreH >= scoreC && scoreH >= scoreE) {
+                    sequence.extendSecStruct('H');
+                } else if (scoreC >= scoreH && scoreC >= scoreE) {
+                    sequence.extendSecStruct('C');
+                } else {
+                    sequence.extendSecStruct('E');
                 }
                 windowMid++;
             }
