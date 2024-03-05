@@ -193,10 +193,10 @@ public class SearchWindow {
         if (aaSequence.length() >= this.getWINDOWSIZE()) {
             int start = 0; // init start index
             int windowMid = this.getWINDOWSIZE() / 2; // define mid index
-            int end  = aaSequence.length() - windowMid ; // define end index of seq (this is the max val of windowMid)
+            int windowEndPosition  = aaSequence.length() - windowMid ; // define end index of seq (this is the max val of windowMid)
 
             // enter main loop
-            while (windowMid < end) {
+            while (windowMid < windowEndPosition) {
                 String aaSubSeq = aaSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + 1 + this.getWINDOWSIZE() / 2);
                 String ssSubSeq = ssSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + 1 + this.getWINDOWSIZE() / 2);
 

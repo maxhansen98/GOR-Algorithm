@@ -18,7 +18,7 @@ public class CalcGOR_I {
     public HashMap<Character, Integer> calcStructureOccurrencies() {
         HashMap<Character, Integer> secSums = new HashMap<>();
         for (Character secStructType: this.window.getSecStructMatrices().keySet()){
-            Integer[][] secMatrix = this.window.getSecStructMatrices().get(secStructType);
+            int[][] secMatrix = this.window.getSecStructMatrices().get(secStructType);
             int sum = calculateMatrixSum(secMatrix);
             secSums.put(secStructType, sum);
         }
@@ -55,7 +55,7 @@ public class CalcGOR_I {
 
         // Add the last sequence (if any)
         if (!currentId.isEmpty()) {
-            sequencesToPredict.add(new Sequence(currentId, sequence.toString(), ""));
+            sequencesToPredict.add(new Sequence(currentId, sequence.toString(), "--------"));
         }
 
         buff.close(); // Close the BufferedReader
