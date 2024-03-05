@@ -10,9 +10,9 @@ import java.util.HashMap;
 
 public class SearchWindow {
     private final HashMap<Character, int[][]> secStructMatrices = new HashMap<>();
-    private HashMap<Integer, Character> INDEX_TO_AA = new HashMap<>();
-    private HashMap<Character, Integer> AA_TO_INDEX = new HashMap<>();
-    private char[] secStructTypes = {'H', 'E', 'C'};
+    private final HashMap<Integer, Character> INDEX_TO_AA = new HashMap<>();
+    private final HashMap<Character, Integer> AA_TO_INDEX = new HashMap<>();
+    private final char[] secStructTypes = {'H', 'E', 'C'};
 
     public SearchWindow() {
         this.initMatrices(this.secStructTypes);

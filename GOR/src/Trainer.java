@@ -3,8 +3,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Trainer {
-    private SearchWindow searchWindow;
-    private ArrayList<Sequence> trainingSequences;
+    private final SearchWindow searchWindow;
+    private final ArrayList<Sequence> trainingSequences;
     public Trainer(String pathToDBfile) throws IOException {
         searchWindow = new SearchWindow();
         this.trainingSequences = SecLibFileReader.readSecLibFile(pathToDBfile);

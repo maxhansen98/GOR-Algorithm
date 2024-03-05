@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CalcGOR_I {
-    private SearchWindow window;
-    private ArrayList<Sequence> sequencesToPredict;
-    // count of sec structs of model file
-    private HashMap<Character, Integer> totalSecOcc;
+    private final SearchWindow window;
+    private final ArrayList<Sequence> sequencesToPredict;
+    private final HashMap<Character, Integer> totalSecOcc;    // count of sec structs of model file
+
 
     public CalcGOR_I(String pathToModelFile, String fastaFile) throws IOException {
         // temp init with the three sec types
@@ -91,8 +91,20 @@ public class CalcGOR_I {
         }
     }
 
-    public HashMap<Character, Double> sumAAsecStructFrequencies(char secType){
-        HashMap<Character, Double> frequencies = new HashMap<>();
-        return frequencies;
-    }
+//    public HashMap<Character, Double> sumAAsecStructFrequencies(char secType){
+//        HashMap<Character, Double> frequencies = new HashMap<>();
+//        return frequencies;
+//    }
+
+//   TODO: To File
+//    public void writeResultsToPrd(String outputName) {
+//        String fileName = outputName + "_gor1_" + outputName + ".prd";
+//        try {
+//            FileWriter writer = new FileWriter(fileName);
+//            writer.write("> " + id + "\nAS "+ aaSeq + "\nSS "+ ssSeq);
+//            writer.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }

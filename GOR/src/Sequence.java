@@ -1,6 +1,6 @@
 public class Sequence {
-    private String id;
-    private String aaSequence;
+    private final String id;
+    private final String aaSequence;
     private String ssSequence;
 
     public Sequence(String id, String aaSequence, String ssSequence) {
