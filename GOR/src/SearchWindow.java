@@ -1,10 +1,10 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 
 public class SearchWindow {
-    private final int WINDOWSIZE = 17; // could be changed later in constructor
-    private final int AA_SIZE = 20; // fix value of aa dict size
     private final HashMap<Character, Integer[][]> secStructMatrices = new HashMap<>();
-
     private HashMap<Integer, Character> INDEX_TO_AA = new HashMap<>();
     private char[] secStructTypes = {'H', 'E', 'C'};
 
@@ -12,7 +12,6 @@ public class SearchWindow {
         this.initMatrices(this.secStructTypes);
         initINDEX_TO_AA();
     }
-
 
     public SearchWindow(int windowSize){
         if (windowSize % 2 == 0){
@@ -43,22 +42,29 @@ public class SearchWindow {
     public Integer[][] getMatrix(String secStruct){
         return this.secStructMatrices.get(secStruct);
     }
+
     public int getWINDOWSIZE() {
-        return WINDOWSIZE;
+        return Constants.WINDOW_SIZE.getValue();
     }
+
     @Override
     public String toString(){
         // std out all matrices :)
         StringBuilder out = new StringBuilder();
+        out.append("// Matrix3D\n");
+
         for (char key : this.secStructMatrices.keySet()){
             out.append("=").append(key).append("=\n");
             Integer[][] currSecMatrix = secStructMatrices.get(key);
-            for (int i = 0; i < AA_SIZE; i++) {
+
+            for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
                 out.append(this.INDEX_TO_AA.get(i) + "\t");
-                for (int j = 0; j < WINDOWSIZE; j++) {
+
+                for (int j = 0; j < Constants.WINDOW_SIZE.getValue(); j++) {
                     out.append(currSecMatrix[i][j]).append("\t");
                 }
                 out.append("\n");
+
             }
             out.append("\n");
         }
@@ -71,8 +77,8 @@ public class SearchWindow {
             this.secStructMatrices.put(secStruct, new Integer[20][17]);
 
             // put default value into matrices
-            for (int i = 0; i < AA_SIZE; i++) {
-                for (int j = 0; j < WINDOWSIZE; j++) {
+            for (int i = 0; i <Constants.AA_SIZE.getValue(); i++) {
+                for (int j = 0; j <Constants.WINDOW_SIZE.getValue(); j++) {
                     this.secStructMatrices.get(secStruct)[i][j] = 0;
                 }
             }
@@ -109,5 +115,16 @@ public class SearchWindow {
 
     public HashMap<Integer, Character> getINDEX_TO_AA() {
         return INDEX_TO_AA;
+    }
+
+    public void writeToFile(String modelFilePath) throws IOException {
+        try (BufferedWriter buf = new BufferedWriter(new FileWriter(modelFilePath))) {
+            // Get the string representation of your object
+            String output = this.toString();
+            // Write the output to the file
+            buf.write(output);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

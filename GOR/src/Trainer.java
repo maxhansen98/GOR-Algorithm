@@ -12,23 +12,6 @@ public class Trainer {
         this.trainingSequences = SecLibFileReader.readSecLibFile(pathToDBfile);
     }
 
-    public Trainer(String pathToDBfile, int windowSize) throws IOException {
-        searchWindow = new SearchWindow(windowSize);
-        initAAPosMap();
-        this.trainingSequences = SecLibFileReader.readSecLibFile(pathToDBfile);
-    }
-
-    public Trainer(String pathToDBfile, char[] secStructTypes) throws IOException {
-        searchWindow = new SearchWindow(secStructTypes);
-        initAAPosMap();
-        this.trainingSequences = SecLibFileReader.readSecLibFile(pathToDBfile);
-    }
-
-    public Trainer(String pathToDBfile, int windowSize, char[] secStructTypes) throws IOException {
-        searchWindow = new SearchWindow(windowSize, secStructTypes);
-        initAAPosMap();
-        this.trainingSequences = SecLibFileReader.readSecLibFile(pathToDBfile);
-    }
     public void initAAPosMap(){
         // maps AA to the row of the 2d matrix
         this.AA_TO_INDEX.put('A', 0);
@@ -54,7 +37,7 @@ public class Trainer {
     }
 
 
-    public void train(){
+    public void train(String pathToModelFile) throws IOException {
         // define main loop that goes over the sequences in training sequences
         // for each entry, init
         for (DBEntry entry : this.trainingSequences) {
@@ -62,40 +45,40 @@ public class Trainer {
             String pdbId = entry.getPdbId();
             String aaSequence = entry.getAaSequence();
             String ssSequence = entry.getSsSequence();
-            System.out.println("-------------------------------------------------------------");
             fillCount(aaSequence, ssSequence, this.searchWindow, pdbId);
         }
-        System.out.println(searchWindow);
+        searchWindow.writeToFile(pathToModelFile);
     }
 
     public void fillCount(String aaSequence, String ssSequence, SearchWindow window, String pdbId){
         // check if seq is <= searchWindowSize
-        if (aaSequence.length() < window.getWINDOWSIZE()){
-            throw new IllegalArgumentException("Sequence " + pdbId + " shorter than search window size");
-        }
+        // if (aaSequence.length() < window.getWINDOWSIZE()){
+        //     throw new IllegalArgumentException("Sequence " + pdbId + " shorter than search window size");
+        // }
+        if (aaSequence.length() >= searchWindow.getWINDOWSIZE()) {
 
-        int start = 0; // init start index
-        int windowMid = searchWindow.getWINDOWSIZE() / 2; // define mid index
-        int end  = aaSequence.length() - windowMid ; // define end index of seq (this is the max val of windowMid)
+            int start = 0; // init start index
+            int windowMid = searchWindow.getWINDOWSIZE() / 2; // define mid index
+            int end  = aaSequence.length() - windowMid ; // define end index of seq (this is the max val of windowMid)
 
 
-        // enter main loop
-        while (windowMid < end) {
-            String aaSubSeq = aaSequence.substring(windowMid - searchWindow.getWINDOWSIZE() / 2, windowMid + 1 + searchWindow.getWINDOWSIZE() / 2);
-            String ssSubSeq = ssSequence.substring(windowMid - searchWindow.getWINDOWSIZE() / 2, windowMid + 1 + searchWindow.getWINDOWSIZE() / 2);
-            System.out.println(aaSubSeq);
+            // enter main loop
+            while (windowMid < end) {
+                String aaSubSeq = aaSequence.substring(windowMid - searchWindow.getWINDOWSIZE() / 2, windowMid + 1 + searchWindow.getWINDOWSIZE() / 2);
+                String ssSubSeq = ssSequence.substring(windowMid - searchWindow.getWINDOWSIZE() / 2, windowMid + 1 + searchWindow.getWINDOWSIZE() / 2);
 
-            // in the subSeqs get the corresponding vals
-            // TODO: This is currently not working
-            for (int index = 0; index < aaSubSeq.length(); index++) {
-                char currSS = ssSubSeq.charAt(searchWindow.getWINDOWSIZE() / 2) ; // this is the sec struct of the mid AA
-                char currAA = aaSubSeq.charAt(index);
-                if (!(currAA == 'X' || currAA == 'B' || currAA == 'Z')) {
-                    int indexOfAAinMatrix = this.AA_TO_INDEX.get(currAA);
-                    window.getSecStructMatrices().get(currSS)[indexOfAAinMatrix][index]++;
+                // in the subSeqs get the corresponding vals
+                for (int index = 0; index < aaSubSeq.length(); index++) {
+                    char currSS = ssSubSeq.charAt(searchWindow.getWINDOWSIZE() / 2) ; // this is the sec struct of the mid AA
+                    char currAA = aaSubSeq.charAt(index);
+                    //if (!(currAA == 'X' || currAA == 'B' || currAA == 'Z')) {
+                    if (AA_TO_INDEX.containsKey(currAA)){
+                        int indexOfAAinMatrix = this.AA_TO_INDEX.get(currAA);
+                        window.getSecStructMatrices().get(currSS)[indexOfAAinMatrix][index]++;
+                    }
                 }
+                windowMid++;
             }
-            windowMid++;
         }
     }
 

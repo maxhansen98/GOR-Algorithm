@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="train:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/train_jar</output-path>
+    <root id="archive" name="train.jar">
+      <element id="module-output" name="GOR" />
+      <element id="module-source" name="GOR" />
+    </root>
+  </artifact>
+</component>
