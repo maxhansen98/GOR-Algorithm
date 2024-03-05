@@ -1,10 +1,10 @@
-public class DBEntry {
-    private String pdbId;
+public class Sequence {
+    private String id;
     private String aaSequence;
     private String ssSequence;
 
-    public DBEntry(String pdbId,String aaSequence,String ssSequence) {
-        this.pdbId = pdbId;
+    public Sequence(String id, String aaSequence, String ssSequence) {
+        this.id = id;
         this.aaSequence = aaSequence;
         this.ssSequence = ssSequence;
     }
@@ -15,7 +15,7 @@ public class DBEntry {
     public String getSsSequence() {
         return ssSequence;
     }
-    public String getPdbId() {
-        return pdbId;
+    public String getId() {
+        return id;
     }
 }

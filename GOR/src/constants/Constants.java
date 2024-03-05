@@ -1,3 +1,5 @@
+package constants;
+
 public enum Constants {
     AA_SIZE(20),
     WINDOW_SIZE(17);

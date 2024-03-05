@@ -1,16 +1,29 @@
+import constants.Constants;
+import utils.FileUtils;
+
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class SearchWindow {
     private final HashMap<Character, Integer[][]> secStructMatrices = new HashMap<>();
     private HashMap<Integer, Character> INDEX_TO_AA = new HashMap<>();
+    private HashMap<Character, Integer> AA_TO_INDEX = new HashMap<>();
     private char[] secStructTypes = {'H', 'E', 'C'};
 
     public SearchWindow() {
         this.initMatrices(this.secStructTypes);
-        initINDEX_TO_AA();
+        initAAHashMaps();
+    }
+
+    public SearchWindow(String pathToModelFile) throws IOException {
+        initAAHashMaps();
+        this.initMatrices(this.secStructTypes);
+        // read model file to init matrices
+        this.readModFile(pathToModelFile);
     }
 
     public SearchWindow(int windowSize){
@@ -18,14 +31,14 @@ public class SearchWindow {
             // search window needs to be odd
             throw new IllegalArgumentException("Search window size needs to be an odd number!");
         }
-        initINDEX_TO_AA();
+        initAAHashMaps();
         // this.WINDOWSIZE = windowSize;
         this.initMatrices(this.secStructTypes);
     }
 
     public SearchWindow(char[] secStructTypes) {
         // this.WINDOWSIZE = 17; // default
-        initINDEX_TO_AA();
+        initAAHashMaps();
         this.initMatrices(secStructTypes);
     }
 
@@ -35,7 +48,7 @@ public class SearchWindow {
             throw new IllegalArgumentException("Search window size needs to be an odd number!");
         }
         // this.WINDOWSIZE = windowSize;
-        initINDEX_TO_AA();
+        initAAHashMaps();
         this.initMatrices(secStructTypes);
     }
 
@@ -77,7 +90,7 @@ public class SearchWindow {
             this.secStructMatrices.put(secStruct, new Integer[20][17]);
 
             // put default value into matrices
-            for (int i = 0; i <Constants.AA_SIZE.getValue(); i++) {
+            for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
                 for (int j = 0; j <Constants.WINDOW_SIZE.getValue(); j++) {
                     this.secStructMatrices.get(secStruct)[i][j] = 0;
                 }
@@ -89,7 +102,7 @@ public class SearchWindow {
         return this.secStructMatrices;
     }
 
-    public void initINDEX_TO_AA(){
+    public void initAAHashMaps(){
         // maps AA to the row of the 2d matrix
         this.INDEX_TO_AA.put(0, 'A');
         this.INDEX_TO_AA.put(1, 'C');
@@ -111,6 +124,27 @@ public class SearchWindow {
         this.INDEX_TO_AA.put(17,'V');
         this.INDEX_TO_AA.put(18,'W');
         this.INDEX_TO_AA.put(19,'Y');
+        // maps AA to the row of the 2d matrix
+        this.AA_TO_INDEX.put('A', 0);
+        this.AA_TO_INDEX.put('C', 1);
+        this.AA_TO_INDEX.put('D', 2);
+        this.AA_TO_INDEX.put('E', 3);
+        this.AA_TO_INDEX.put('F', 4);
+        this.AA_TO_INDEX.put('G', 5);
+        this.AA_TO_INDEX.put('H', 6);
+        this.AA_TO_INDEX.put('I', 7);
+        this.AA_TO_INDEX.put('K', 8);
+        this.AA_TO_INDEX.put('L', 9);
+        this.AA_TO_INDEX.put('M', 10);
+        this.AA_TO_INDEX.put('N', 11);
+        this.AA_TO_INDEX.put('P', 12);
+        this.AA_TO_INDEX.put('Q', 13);
+        this.AA_TO_INDEX.put('R', 14);
+        this.AA_TO_INDEX.put('S', 15);
+        this.AA_TO_INDEX.put('T', 16);
+        this.AA_TO_INDEX.put('V', 17);
+        this.AA_TO_INDEX.put('W', 18);
+        this.AA_TO_INDEX.put('Y', 19);
     }
 
     public HashMap<Integer, Character> getINDEX_TO_AA() {
@@ -125,6 +159,58 @@ public class SearchWindow {
             buf.write(output);
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    public void readModFile(String pathToModFile) throws IOException {
+        File seqLibFile = new File(pathToModFile);
+        ArrayList<String> lines = FileUtils.readLines(seqLibFile);
+
+        for (int i = 0; i < lines.size(); i++) {
+            if (lines.get(i).startsWith("=C=")){
+                copyLineIntoArray(i, lines, 'C');
+            }
+            else if (lines.get(i).startsWith("=H=")){
+                copyLineIntoArray(i, lines, 'H');
+            }
+            else if (lines.get(i).startsWith("=E=")){
+                copyLineIntoArray(i, lines, 'E');
+            }
+        }
+    }
+    public void copyLineIntoArray(int i, ArrayList<String> lines, char secType){
+        int relativeMatrixIndex = 0;
+        for (int j = i + 1; j <= i + 20; j++) {
+            String[] line = lines.get(j).split("\t");
+            for (int k = 0; k < line.length - 1; k++) {
+                this.secStructMatrices.get(secType)[relativeMatrixIndex][k] = Integer.parseInt(line[k+1]);
+            }
+            relativeMatrixIndex++;
+        }
+    }
+
+    public void slideWindowAndCount(String aaSequence, String ssSequence, String pdbId){
+        if (aaSequence.length() >= this.getWINDOWSIZE()) {
+            int start = 0; // init start index
+            int windowMid = this.getWINDOWSIZE() / 2; // define mid index
+            int end  = aaSequence.length() - windowMid ; // define end index of seq (this is the max val of windowMid)
+
+            // enter main loop
+            while (windowMid < end) {
+                String aaSubSeq = aaSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + 1 + this.getWINDOWSIZE() / 2);
+                String ssSubSeq = ssSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + 1 + this.getWINDOWSIZE() / 2);
+
+                // in the subSeqs get the corresponding vals
+                for (int index = 0; index < aaSubSeq.length(); index++) {
+                    char currSS = ssSubSeq.charAt(this.getWINDOWSIZE() / 2) ; // this is the sec struct of the mid AA
+                    char currAA = aaSubSeq.charAt(index);
+                    if (AA_TO_INDEX.containsKey(currAA)){
+                        int indexOfAAinMatrix = this.AA_TO_INDEX.get(currAA);
+                        this.getSecStructMatrices().get(currSS)[indexOfAAinMatrix][index]++;
+                    }
+                }
+                windowMid++;
+            }
         }
     }
 }

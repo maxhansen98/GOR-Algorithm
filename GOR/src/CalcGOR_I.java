@@ -1,49 +1,70 @@
+import constants.Constants;
 import utils.FileUtils;
-import java.io.File;
-import java.io.IOException;
+
+import java.io.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class CalcGOR_I {
-    private final HashMap<Character, Integer[][]> secStructMatrices = new HashMap<>();
-    public CalcGOR_I(){
+    private SearchWindow window;
+
+    public CalcGOR_I(String pathToModelFile) throws IOException {
         // temp init with the three sec types
         char[] secStructTypes = {'H', 'E', 'C'};
-        initMatrices(secStructTypes);
+        this.window = new SearchWindow(pathToModelFile);
     }
 
-    public void initMatrices(char[] secStructTypes){
-        // init a matrix for each secStructType
-        for (char secStruct : secStructTypes){
-            this.secStructMatrices.put(secStruct, new Integer[20][17]);
+    public HashMap<Character, Integer> calcStructureOccurrencies() {
+        HashMap<Character, Integer> secSums = new HashMap<>();
+        for (Character secStructType: this.window.getSecStructMatrices().keySet()){
+            Integer[][] secMatrix = this.window.getSecStructMatrices().get(secStructType);
+            int sum = calculateMatrixSum(secMatrix);
+            secSums.put(secStructType, sum);
+        }
+        return secSums;
+    }
 
-            // put default value into matrices
-            for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
-                for (int j = 0; j < Constants.WINDOW_SIZE.getValue(); j++) {
-                    this.secStructMatrices.get(secStruct)[i][j] = 0;
-                }
+    public int calculateMatrixSum(Integer[][] matrix) {
+        int sum = 0;
+        for (Integer[] row : matrix) {
+            for (Integer value : row) {
+                sum += value;
             }
         }
+        return sum;
     }
+    public ArrayList<Sequence> readFasta(String fasta) throws IOException {
+        BufferedReader buff = new BufferedReader(new FileReader(fasta));
+        String line;
+        StringBuilder sequence = new StringBuilder();
+        ArrayList<Sequence> sequencesToPredict = new ArrayList<>();
+        String currentId = "";
 
-    public void readModFile(String pathToModFile) throws IOException {
-        File seqLibFile = new File(pathToModFile);
-        ArrayList<String> lines = FileUtils.readLines(seqLibFile);
-        for (int i = 0; i < lines.size(); i++) {
-           if (lines.get(i).startsWith("=C=")){
-               String[] line = lines.get(i).split("\t");
-               for (int j = 0; j < line.length; j++) {
-
-               }
-
-           }
-           else if (lines.get(i).startsWith("=H=")){
-
-           }
-           else if (lines.get(i).startsWith("=E=")){
-
-           }
+        while ((line = buff.readLine()) != null) {
+            if (line.startsWith(">")) {
+                if (!currentId.isEmpty()) {
+                    sequencesToPredict.add(new Sequence(currentId, sequence.toString(), ""));
+                    sequence.setLength(0); // Clear sequence StringBuilder
+                }
+                currentId = line;
+            } else {
+                sequence.append(line);
+            }
         }
 
+        // Add the last sequence (if any)
+        if (!currentId.isEmpty()) {
+            sequencesToPredict.add(new Sequence(currentId, sequence.toString(), ""));
+        }
+
+        buff.close(); // Close the BufferedReader
+        return sequencesToPredict;
+    }
+
+
+    public HashMap<Character, Double> sumAAsecStructFrequencies(char secType){
+        HashMap<Character, Double> frequencies = new HashMap<>();
+        return frequencies;
     }
 }
