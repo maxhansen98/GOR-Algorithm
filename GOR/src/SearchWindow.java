@@ -225,28 +225,8 @@ public class SearchWindow {
                 AAsecondaryCounts.put('C', 0.0);
                 AAsecondaryCounts.put('E', 0.0);
 
-                for (Character secType : this.secStructMatrices.keySet()) {
-                    for (int index = 0; index < aaSubSeq.length(); index++) {
-                        char currAA = aaSubSeq.charAt(index);
-                        if (this.AA_TO_INDEX.containsKey(currAA)) {
-                            int aaIndex = AA_TO_INDEX.get(currAA);
-                            int[][] secStructMatrix = secStructMatrices.get(secType);
-                            int sec = secStructMatrix[aaIndex][index]; // f secType|a
-                            int notSec = 0; // f_!secType|a
-                            int totalSec = totalOcc.get(secType); // f_secType
-                            int totalNotSec = 0; // f_!s
-                            for (Character notSecType : secStructMatrices.keySet()) {
-                                if (!notSecType.equals(secType)) {
-                                   notSec += secStructMatrices.get(notSecType)[aaIndex][index];
-                                   totalNotSec += totalOcc.get(notSecType);
-                                }
-                            }
-                            // now we got everything we need
-                            double normalizedValue = Math.log(1.0 * sec / notSec) + Math.log(1.0 * totalNotSec/ totalSec);
-                            AAsecondaryCounts.put(secType, AAsecondaryCounts.get(secType) + normalizedValue);
-                        }
-                    }
-                }
+                addSecondaryCounts(aaSubSeq, totalOcc, AAsecondaryCounts);
+
                 double scoreH = AAsecondaryCounts.get('H');
                 double scoreC = AAsecondaryCounts.get('C');
                 double scoreE = AAsecondaryCounts.get('E');
@@ -259,6 +239,31 @@ public class SearchWindow {
                     sequence.extendSecStruct('E');
                 }
                 windowMid++;
+            }
+        }
+    }
+
+    public void addSecondaryCounts(String aaSubSeq, HashMap<Character,Integer> totalOcc, HashMap<Character, Double> AAsecondaryCounts){
+        for (Character secType : this.secStructMatrices.keySet()) {
+            for (int index = 0; index < aaSubSeq.length(); index++) {
+                char currAA = aaSubSeq.charAt(index);
+                if (this.AA_TO_INDEX.containsKey(currAA)) {
+                    int aaIndex = AA_TO_INDEX.get(currAA);
+                    int[][] secStructMatrix = secStructMatrices.get(secType);
+                    int sec = secStructMatrix[aaIndex][index]; // f secType|a
+                    int notSec = 0; // f_!secType|a
+                    int totalSec = totalOcc.get(secType); // f_secType
+                    int totalNotSec = 0; // f_!s
+                    for (Character notSecType : secStructMatrices.keySet()) {
+                        if (!notSecType.equals(secType)) {
+                            notSec += secStructMatrices.get(notSecType)[aaIndex][index];
+                            totalNotSec += totalOcc.get(notSecType);
+                        }
+                    }
+                    // now we got everything we need
+                    double normalizedValue = Math.log(1.0 * sec / notSec) + Math.log(1.0 * totalNotSec/ totalSec);
+                    AAsecondaryCounts.put(secType, AAsecondaryCounts.get(secType) + normalizedValue);
+                }
             }
         }
     }
