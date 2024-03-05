@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="predict:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/predict_jar</output-path>
+    <root id="archive" name="predict.jar">
+      <element id="module-output" name="GOR" />
+      <element id="module-source" name="GOR" />
+    </root>
+  </artifact>
+</component>
