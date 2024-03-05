@@ -243,30 +243,31 @@ public class SearchWindow {
     /*
     Loop over all 3 matrices; for each amino acid in search window:
     Get all values needed for Value calculation (f_sec, f_!sec, f_secType and f_!secType)
-    Then calc the logs for each Amino Acid, sum them up and add them to the SecondaryCounts-HashMap
+    Then sum up the value for each Amino Acid in a search window, then normalize them to the SecondaryCounts-HashMap
      */
     public void addSecondaryCounts(String aaSubSeq, HashMap<Character,Integer> totalOcc, HashMap<Character, Double> AASecondaryCounts){
         for (Character secType : this.secStructMatrices.keySet()) {
+            int sec = 0; // f secType|a
+            int notSec = 0; // f_!secType|a
+            int totalSec = totalOcc.get(secType); // f_s
+            int totalNotSec = 0; // f_!s
             for (int index = 0; index < aaSubSeq.length(); index++) {
                 char currAA = aaSubSeq.charAt(index);
                 if (this.AA_TO_INDEX.containsKey(currAA)) {
                     int aaIndex = AA_TO_INDEX.get(currAA);
                     int[][] secStructMatrix = secStructMatrices.get(secType);
-                    int sec = secStructMatrix[aaIndex][index]; // f secType|a
-                    int notSec = 0; // f_!secType|a
-                    int totalSec = totalOcc.get(secType); // f_secType
-                    int totalNotSec = 0; // f_!s
+                    sec += secStructMatrix[aaIndex][index];
                     for (Character notSecType : secStructMatrices.keySet()) {
                         if (!notSecType.equals(secType)) {
                             notSec += secStructMatrices.get(notSecType)[aaIndex][index];
                             totalNotSec += totalOcc.get(notSecType);
                         }
                     }
-                    // now we got everything we need
-                    double normalizedValue = Math.log(1.0 * sec / notSec) + Math.log(1.0 * totalNotSec/ totalSec);
-                    AASecondaryCounts.put(secType, AASecondaryCounts.get(secType) + normalizedValue);
                 }
             }
+            //Calculation of normalization
+            double normalizedValue = Math.log(1.0 * sec / notSec) + Math.log(1.0 * totalNotSec/ totalSec);
+            AASecondaryCounts.put(secType, normalizedValue);
         }
     }
 
