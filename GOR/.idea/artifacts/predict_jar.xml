@@ -3,6 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/predict_jar</output-path>
     <root id="archive" name="predict.jar">
       <element id="module-output" name="GOR" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/sourceforge/argparse4j/argparse4j/0.9.0/argparse4j-0.9.0.jar" path-in-jar="/" />
       <element id="module-source" name="GOR" />
     </root>
   </artifact>

@@ -86,15 +86,11 @@ public class CalcGOR_I {
     public void printPredictions(){
         ArrayList<Sequence> predictions = this.getSequencesToPredict();
         for (Sequence s : predictions) {
-            System.out.println(s.getAaSequence());
-            System.out.println(s.getSsSequence() + "--------");
+            System.out.println(s.getId());
+            System.out.println("AS " + s.getAaSequence());
+            System.out.println("PS "+ s.getSsSequence() + "--------");
         }
     }
-
-//    public HashMap<Character, Double> sumAAsecStructFrequencies(char secType){
-//        HashMap<Character, Double> frequencies = new HashMap<>();
-//        return frequencies;
-//    }
 
 //   TODO: To File
 //    public void writeResultsToPrd(String outputName) {

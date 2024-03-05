@@ -6,12 +6,14 @@ import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
 import net.sourceforge.argparse4j.inf.Namespace;
 
+import static net.sourceforge.argparse4j.impl.Arguments.storeTrue;
+
 public class GORMain {
     public static void main(String[] args) throws IOException, ArgumentParserException {
         ArgumentParser parser = ArgumentParsers.newFor("GOR").build().defaultHelp(true).description("Predict Secondary Structure");
         parser.addArgument("--format", "--type").choices("txt", "html").setDefault("txt");
         parser.addArgument("--model").help("File to calculate checksum");
-        parser.addArgument("--probabilities").setDefault(false);
+        parser.addArgument("--probabilities").action(storeTrue());
         parser.addArgument("--seq").setDefault("");
         parser.addArgument("--maf").setDefault("");
 
@@ -26,13 +28,8 @@ public class GORMain {
         CalcGOR_I gorI = new CalcGOR_I(pathToModel, fastaPath);
         HashMap<Character, Integer> test = gorI.calcStructureOccurrencies();
         gorI.predict();
-        gorI.printPredictions();
         if (format.equals("txt")){
-            gorI.writeToTxt();
-        }
-        else {
-            // TODO: to HTML
-            gorI.writeToTxt();
+            gorI.printPredictions();
         }
     }
 }
