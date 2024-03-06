@@ -220,6 +220,7 @@ public class SearchWindow {
                    sequence.extendSecStruct('C');
                 }
 
+
                 windowMid++;
             }
         }
@@ -240,27 +241,28 @@ public class SearchWindow {
     public void addSecondaryCounts(String aaSubSeq, HashMap<Character,Integer> totalOcc, HashMap<Character, Double> AASecondaryCounts){
         for (Character secType : this.secStructMatrices.keySet()) {
             int sec = 0; // f secType|a
+            double normalizedValue = 0;
             int notSec = 0; // f_!secType|a
-            int totalSec = totalOcc.get(secType); // f_s
-            int totalNotSec = 0; // f_!s
             for (int index = 0; index < aaSubSeq.length(); index++) {
-
                 // check if we have counts for the curr AA in the window
                 char currAA = aaSubSeq.charAt(index);
+                int totalSec = totalOcc.get(secType); // f_s
+                int totalNotSec = 0; // f_!s
+
                 if (this.AA_TO_INDEX.containsKey(currAA)) {
                     int aaIndex = AA_TO_INDEX.get(currAA);
                     int[][] secStructMatrix = secStructMatrices.get(secType);
-                    sec += secStructMatrix[aaIndex][index];
+                    sec = secStructMatrix[aaIndex][index];
+
                     for (Character notSecType : secStructMatrices.keySet()) {
                         if (!notSecType.equals(secType)) {
                             notSec += secStructMatrices.get(notSecType)[aaIndex][index];
                             totalNotSec += totalOcc.get(notSecType);
                         }
                     }
+                    normalizedValue += Math.log(1.0 * sec / notSec) + (Math.log(1.0 * totalNotSec/ totalSec));
                 }
             }
-            //Calculation of normalization
-            double normalizedValue = Math.log(1.0 * sec / notSec) + Math.log(1.0 * totalNotSec/ totalSec);
             AASecondaryCounts.put(secType, normalizedValue);
         }
     }
@@ -272,11 +274,6 @@ public class SearchWindow {
         double scoreH = AASecondaryCounts.get('H');
         double scoreC = AASecondaryCounts.get('C');
         double scoreE = AASecondaryCounts.get('E');
-        System.out.println(sequence.getId());
-        System.out.println(sequence.getAaSequence());
-        System.out.println("-> H " + AASecondaryCounts.containsKey('H'));
-        System.out.println("-> C " + AASecondaryCounts.containsKey('C'));
-        System.out.println("-> E " + AASecondaryCounts.containsKey('E'));
 
         if(scoreH >= scoreC && scoreH >= scoreE) {
             sequence.extendSecStruct('H');
