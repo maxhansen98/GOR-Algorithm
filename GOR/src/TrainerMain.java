@@ -14,7 +14,7 @@ public class TrainerMain {
         // System.out.println(method);
         // System.out.println(model);
         if (method.equals("gor1")) {
-            Trainer1 trainer = new Trainer1(db, 1);
+            TrainerGOR1 trainer = new TrainerGOR1(db, 1);
             trainer.train(model);
         } else if (method.equals("gor3")) {
             TrainerGOR3 trainerGOR3 = new TrainerGOR3(db);

@@ -39,7 +39,11 @@ public class GORMain {
                 System.out.println(gorI);
             }
         } else if (gorType == 3) {
-           CalcGOR_III gorIII = new CalcGOR_III(pathToModel, fastaPath, gorType);
+            CalcGOR_III gorIII = new CalcGOR_III(pathToModel, fastaPath, gorType);
+            gorIII.predict();
+            if (format.equals("txt")){
+                System.out.println(gorIII);
+            }
         }
     }
 

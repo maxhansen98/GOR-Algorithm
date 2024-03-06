@@ -1,10 +1,9 @@
 import java.io.IOException;
 
-public class TrainerGOR3 extends TrainerGOR1 {
+public class TrainerGOR4 extends TrainerGOR1 {
 
-    // call super constructor
-    public TrainerGOR3(String pathToDB) throws IOException {
-        super(pathToDB, 3);
+    public TrainerGOR4(String pathToDBfile, int gorType) throws IOException {
+        super(pathToDBfile, gorType);
     }
 
     @Override

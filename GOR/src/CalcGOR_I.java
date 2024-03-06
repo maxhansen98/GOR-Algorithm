@@ -25,7 +25,7 @@ public class CalcGOR_I {
             String aaSequence = sequence.getAaSequence();
             String ssSequence = sequence.getSsSequence();
 
-            window.predictSeqGor1(this.totalSecOcc, sequence, 1);
+            window.predictSeqGor(this.totalSecOcc, sequence, 1);
         }
     }
 
@@ -86,15 +86,15 @@ public class CalcGOR_I {
         for (Sequence s : this.sequencesToPredict) {
             // Sequences that were predicted end in eiter [E|C|H] and still need the "-" tail
             if (!(s.getSsSequence().endsWith("-"))) {
-                sb.append(s.getId() + "\n");
-                sb.append("AS " + s.getAaSequence() + "\n");
-                sb.append("PS " + s.getSsSequence() + "--------\n"); // add tail
+                sb.append(s.getId()).append("\n");
+                sb.append("AS ").append(s.getAaSequence()).append("\n");
+                sb.append("PS ").append(s.getSsSequence()).append("--------\n"); // add tail
             }
             else {
                 // here are sequences that were too short and already have a ss struct like "----"
-                sb.append(s.getId() + "\n");
-                sb.append("AS " + s.getAaSequence() + "\n");
-                sb.append("PS " + s.getSsSequence() + "\n"); // don't add tail
+                sb.append(s.getId()).append("\n");
+                sb.append("AS ").append(s.getAaSequence()).append("\n");
+                sb.append("PS ").append(s.getSsSequence()).append("\n"); // don't add tail
             }
         }
         return sb.toString();

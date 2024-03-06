@@ -1,11 +1,11 @@
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class Trainer1 {
+public class TrainerGOR1 {
     private final SearchWindow searchWindow;
     private final ArrayList<Sequence> trainingSequences;
 
-    public Trainer1(String pathToDBfile, int gorType) throws IOException {
+    public TrainerGOR1(String pathToDBfile, int gorType) throws IOException {
         searchWindow = new SearchWindow(gorType);
         this.trainingSequences = SecLibFileReader.readSecLibFile(pathToDBfile);
     }
