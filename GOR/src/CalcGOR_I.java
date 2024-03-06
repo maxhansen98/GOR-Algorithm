@@ -37,14 +37,14 @@ public class CalcGOR_I {
         }
         return secSums;
     }
-
     public int calculateMatrixColumn(int[][] matrix) {
         int sum = 0;
-        for (int i = 0; i < matrix[0].length; i++) {
-           sum+=matrix[i][0];
+        for (int i = 0; i < matrix.length; i++) {
+            sum += matrix[i][0];
         }
         return sum;
     }
+
     public ArrayList<Sequence> readFasta(String fasta) throws IOException {
         BufferedReader buff = new BufferedReader(new FileReader(fasta));
         String line;

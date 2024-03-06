@@ -26,32 +26,6 @@ public class SearchWindow {
         this.readModFile(pathToModelFile);
     }
 
-    public SearchWindow(int windowSize){
-        if (windowSize % 2 == 0){
-            // search window needs to be odd
-            throw new IllegalArgumentException("Search window size needs to be an odd number!");
-        }
-        initAAHashMaps();
-        // this.WINDOWSIZE = windowSize;
-        this.initMatrices(this.secStructTypes);
-    }
-
-    public SearchWindow(char[] secStructTypes) {
-        // this.WINDOWSIZE = 17; // default
-        initAAHashMaps();
-        this.initMatrices(secStructTypes);
-    }
-
-    public SearchWindow(int windowSize, char[] secStructTypes) {
-        if (windowSize % 2 == 0){
-            // search window needs to be odd
-            throw new IllegalArgumentException("Search window size needs to be an odd number!");
-        }
-        // this.WINDOWSIZE = windowSize;
-        initAAHashMaps();
-        this.initMatrices(secStructTypes);
-    }
-
     public int getWINDOWSIZE() {
         return Constants.WINDOW_SIZE.getValue();
     }
@@ -228,7 +202,7 @@ public class SearchWindow {
                 // get AA at windowMid
                 char aaToPredict = aaSequence.charAt(windowMid);
 
-                // if the
+                // if the AA at window mid exists in our hashmap → predict ss
                 if (AA_TO_INDEX.containsKey(aaToPredict)) {
                     String aaSubSeq = aaSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + 1 + this.getWINDOWSIZE() / 2);
                     HashMap<Character, Double> AASecondaryCounts = new HashMap<>();
@@ -298,6 +272,11 @@ public class SearchWindow {
         double scoreH = AASecondaryCounts.get('H');
         double scoreC = AASecondaryCounts.get('C');
         double scoreE = AASecondaryCounts.get('E');
+        System.out.println(sequence.getId());
+        System.out.println(sequence.getAaSequence());
+        System.out.println("-> H " + AASecondaryCounts.containsKey('H'));
+        System.out.println("-> C " + AASecondaryCounts.containsKey('C'));
+        System.out.println("-> E " + AASecondaryCounts.containsKey('E'));
 
         if(scoreH >= scoreC && scoreH >= scoreE) {
             sequence.extendSecStruct('H');
