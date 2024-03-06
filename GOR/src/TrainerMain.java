@@ -13,8 +13,13 @@ public class TrainerMain {
         // System.out.println(db);
         // System.out.println(method);
         // System.out.println(model);
-        Trainer trainer = new Trainer(db);
-        trainer.train(model);
+        if (method.equals("gor1")) {
+            Trainer1 trainer = new Trainer1(db, 1);
+            trainer.train(model);
+        } else if (method.equals("gor3")) {
+            TrainerGOR3 trainerGOR3 = new TrainerGOR3(db);
+            trainerGOR3.train(model);
+        }
 
         // "/home/malte/projects/blockgruppe3/GOR/CB513DSSP.db"
     }

@@ -11,7 +11,7 @@ public class CalcGOR_I {
     public CalcGOR_I(String pathToModelFile, String fastaFile) throws IOException {
         // temp init with the three sec types
         char[] secStructTypes = {'H', 'E', 'C'};
-        this.window = new SearchWindow(pathToModelFile);
+        this.window = new SearchWindow(pathToModelFile, 1);
         this.totalSecOcc = calcStructureOccurrencies();
         this.sequencesToPredict = readFasta(fastaFile);
     }
@@ -24,7 +24,7 @@ public class CalcGOR_I {
             String aaSequence = sequence.getAaSequence();
             String ssSequence = sequence.getSsSequence();
 
-            window.predictSeq(this.totalSecOcc, sequence, 1);
+            window.predictSeqGor1(this.totalSecOcc, sequence, 1);
         }
     }
 
@@ -39,8 +39,8 @@ public class CalcGOR_I {
     }
     public int calculateMatrixColumn(int[][] matrix) {
         int sum = 0;
-        for (int i = 0; i < matrix.length; i++) {
-            sum += matrix[i][0];
+        for (int[] ints : matrix) {
+            sum += ints[0];
         }
         return sum;
     }
