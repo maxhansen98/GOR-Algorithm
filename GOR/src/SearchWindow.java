@@ -244,8 +244,7 @@ public class SearchWindow {
                     int valueInMatrix = this.getSecStructMatrices().get(secType)[row][column];
 
                     int totalSec = totalOcc.get(secType); // f a|s
-                    // get the !s and !a|s freqs
-                    int totalNotSec = 0;
+                    int totalNotSec = 0; // get the !s and !a|s freqs
                     int notSec = 0;
 
                     for (char antiSecStruct : getSecStructMatrices().keySet()){
@@ -255,7 +254,7 @@ public class SearchWindow {
                        }
                     }
                     // sum values into scoresPerSeq
-                    double scoreToPutIntoSum = Math.log((1.0 * valueInMatrix / notSec) + Math.log(1.0 * totalNotSec / totalSec));
+                    double scoreToPutIntoSum = Math.log((1.0 * valueInMatrix / notSec * 1.0 * totalNotSec / totalSec));
                     scoresPerSeq.put(secType, scoresPerSeq.get(secType) + scoreToPutIntoSum);
                 }
             }
@@ -271,8 +270,7 @@ public class SearchWindow {
 
     }
     public String cutSubsequence(String aaSequence, int windowMid) {
-        String windowSequence = aaSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + 1 + this.getWINDOWSIZE() / 2);
-        return windowSequence;
+        return aaSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + 1 + this.getWINDOWSIZE() / 2);
     }
     /*
     Loop over all 3 matrices; for each amino acid in search window:
