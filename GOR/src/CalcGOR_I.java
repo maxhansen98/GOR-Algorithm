@@ -4,14 +4,15 @@ import java.util.HashMap;
 
 public class CalcGOR_I {
     private final SearchWindow window;
+    private int gorType;
     private final ArrayList<Sequence> sequencesToPredict;
     private final HashMap<Character, Integer> totalSecOcc;    // count of sec structs of model file
 
 
-    public CalcGOR_I(String pathToModelFile, String fastaFile) throws IOException {
+    public CalcGOR_I(String pathToModelFile, String fastaFile, int gorType) throws IOException {
         // temp init with the three sec types
         char[] secStructTypes = {'H', 'E', 'C'};
-        this.window = new SearchWindow(pathToModelFile, 1);
+        this.window = new SearchWindow(pathToModelFile, gorType);
         this.totalSecOcc = calcStructureOccurrencies();
         this.sequencesToPredict = readFasta(fastaFile);
     }
@@ -37,6 +38,7 @@ public class CalcGOR_I {
         }
         return secSums;
     }
+
     public int calculateMatrixColumn(int[][] matrix) {
         int sum = 0;
         for (int[] ints : matrix) {

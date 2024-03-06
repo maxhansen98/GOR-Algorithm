@@ -36,8 +36,23 @@ public class SearchWindow {
         }
         // for GOR III we need to init our matrices differently
         else if (gorType == 3) {
-           // this.initGor3Matrices();
-           this.readModFile(pathToModelFile);
+           this.initGor3Matrices(secStructTypes);
+           this.readGor3(pathToModelFile);
+        }
+    }
+
+    public void readGor3(String pathToModFile) throws IOException {
+
+        File seqLibFile = new File(pathToModFile);
+        ArrayList<String> lines = FileUtils.readLines(seqLibFile);
+
+        for (int i = 0; i < lines.size(); i++) {
+            if (lines.get(i).startsWith("=")) {
+                // get keys
+                char aaKey = lines.get(i).charAt(1);
+                char ssKey = lines.get(i).charAt(3);
+                copy4dMatrix(i, lines, aaKey, ssKey);
+            }
         }
     }
 
@@ -236,6 +251,17 @@ public class SearchWindow {
             String[] line = lines.get(j).split("\t");
             for (int k = 0; k < line.length - 1; k++) {
                 this.gor1Matrices.get(secType)[relativeMatrixIndex][k] = Integer.parseInt(line[k+1]);
+            }
+            relativeMatrixIndex++;
+        }
+    }
+
+    public void copy4dMatrix (int i, ArrayList<String> lines, char aaType, char secType){
+        int relativeMatrixIndex = 0;
+        for (int j = i + 2; j <= i + 21; j++) {
+            String[] line = lines.get(j).split("\t");
+            for (int k = 0; k < line.length - 1; k++) {
+            this.gor3Matrices.get(aaType).get(secType)[relativeMatrixIndex][k] = Integer.parseInt(line[k+1]);
             }
             relativeMatrixIndex++;
         }
