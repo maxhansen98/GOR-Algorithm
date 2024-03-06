@@ -1,9 +1,4 @@
-import constants.Constants;
-import utils.FileUtils;
-
-import javax.imageio.plugins.tiff.FaxTIFFTagSet;
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -29,7 +24,7 @@ public class CalcGOR_I {
             String aaSequence = sequence.getAaSequence();
             String ssSequence = sequence.getSsSequence();
 
-            window.slideWindowAndPredict(aaSequence, this.totalSecOcc, sequence);
+            window.predictGorI(aaSequence, this.totalSecOcc, sequence);
         }
     }
 
@@ -83,24 +78,23 @@ public class CalcGOR_I {
         return sequencesToPredict;
     }
 
-    public void printPredictions(){
-        ArrayList<Sequence> predictions = this.getSequencesToPredict();
-        for (Sequence s : predictions) {
-            System.out.println(s.getId());
-            System.out.println("AS " + s.getAaSequence());
-            System.out.println("PS "+ s.getSsSequence() + "--------");
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (Sequence s : this.sequencesToPredict) {
+            // Sequences that were predicted end in eiter [E|C|H] and still need the "-" tail
+            if (!(s.getSsSequence().endsWith("-"))) {
+                sb.append(s.getId() + "\n");
+                sb.append("AS " + s.getAaSequence() + "\n");
+                sb.append("PS " + s.getSsSequence() + "--------\n"); // add tail
+            }
+            else {
+                // here are sequences that were too short and already have a ss struct like "----"
+                sb.append(s.getId() + "\n");
+                sb.append("AS " + s.getAaSequence() + "\n");
+                sb.append("PS " + s.getSsSequence() + "\n"); // don't add tail
+            }
         }
+        return sb.toString();
     }
-
-//   TODO: To File
-//    public void writeResultsToPrd(String outputName) {
-//        String fileName = outputName + "_gor1_" + outputName + ".prd";
-//        try {
-//            FileWriter writer = new FileWriter(fileName);
-//            writer.write("> " + id + "\nAS "+ aaSeq + "\nSS "+ ssSeq);
-//            writer.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
 }

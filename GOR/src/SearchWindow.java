@@ -216,7 +216,7 @@ public class SearchWindow {
     /*
     Get all params ready and call addSecondaryCounts and extendSecondarySequence
      */
-    public void slideWindowAndPredict(String aaSequence, HashMap<Character, Integer> totalOcc, Sequence sequence){
+    public void predictGorI(String aaSequence, HashMap<Character, Integer> totalOcc, Sequence sequence){
         if (aaSequence.length() >= this.getWINDOWSIZE()) {
             int start = 0; // init start index
             int windowMid = this.getWINDOWSIZE() / 2; // define mid index
@@ -225,17 +225,35 @@ public class SearchWindow {
 
             // enter main loop
             while (windowMid < windowEndPosition) {
-                String aaSubSeq = aaSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + 1 + this.getWINDOWSIZE() / 2);
-                HashMap<Character, Double> AASecondaryCounts = new HashMap<>();
-                // Init AASecondaryCounts as 0 for each window-Loop
-                AASecondaryCounts.put('H', 0.0);
-                AASecondaryCounts.put('C', 0.0);
-                AASecondaryCounts.put('E', 0.0);
+                // get AA at windowMid
+                char aaToPredict = aaSequence.charAt(windowMid);
 
-                addSecondaryCounts(aaSubSeq, totalOcc, AASecondaryCounts);
-                extendSecondarySequence(AASecondaryCounts, sequence);
+                // if the
+                if (AA_TO_INDEX.containsKey(aaToPredict)) {
+                    String aaSubSeq = aaSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + 1 + this.getWINDOWSIZE() / 2);
+                    HashMap<Character, Double> AASecondaryCounts = new HashMap<>();
+                    // Init AASecondaryCounts as 0 for each window-Loop
+                    AASecondaryCounts.put('H', 0.0);
+                    AASecondaryCounts.put('C', 0.0);
+                    AASecondaryCounts.put('E', 0.0);
+
+                    addSecondaryCounts(aaSubSeq, totalOcc, AASecondaryCounts);
+                    extendSecondarySequence(AASecondaryCounts, sequence);
+                }
+
+                // if the AA at windowMid is not a "regular" AA → default prediction C and move on
+                else {
+                   sequence.extendSecStruct('C');
+                }
 
                 windowMid++;
+            }
+        }
+        // if the sequence is too short, just give it "-"
+        else {
+            sequence.setSsSequence(""); // reset "--------" prefix which is in seq per default
+            for (int i = 0; i < sequence.getAaSequence().length(); i++) {
+                sequence.extendSecStruct('-');
             }
         }
     }
@@ -252,6 +270,8 @@ public class SearchWindow {
             int totalSec = totalOcc.get(secType); // f_s
             int totalNotSec = 0; // f_!s
             for (int index = 0; index < aaSubSeq.length(); index++) {
+
+                // check if we have counts for the curr AA in the window
                 char currAA = aaSubSeq.charAt(index);
                 if (this.AA_TO_INDEX.containsKey(currAA)) {
                     int aaIndex = AA_TO_INDEX.get(currAA);

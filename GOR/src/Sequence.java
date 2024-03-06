@@ -19,6 +19,10 @@ public class Sequence {
         return id;
     }
 
+    public void setSsSequence(String ssSequence) {
+        this.ssSequence = ssSequence;
+    }
+
     public void extendSecStruct(char secStructType){
         this.ssSequence += secStructType;
     }

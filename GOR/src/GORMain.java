@@ -29,7 +29,7 @@ public class GORMain {
         HashMap<Character, Integer> test = gorI.calcStructureOccurrencies();
         gorI.predict();
         if (format.equals("txt")){
-            gorI.printPredictions();
+            System.out.println(gorI);
         }
     }
 }
