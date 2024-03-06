@@ -24,7 +24,7 @@ public class CalcGOR_I {
             String aaSequence = sequence.getAaSequence();
             String ssSequence = sequence.getSsSequence();
 
-            window.predictGorI(aaSequence, this.totalSecOcc, sequence);
+            window.predictSeq(this.totalSecOcc, sequence, 1);
         }
     }
 

@@ -190,37 +190,28 @@ public class SearchWindow {
     /*
     Get all params ready and call addSecondaryCounts and extendSecondarySequence
      */
-    public void predictGorI(String aaSequence, HashMap<Character, Integer> totalOcc, Sequence sequence){
+    public void predictSeq(HashMap<Character, Integer> totalOcc, Sequence sequence, int gor){
+        String aaSequence = sequence.getAaSequence();
         if (aaSequence.length() >= this.getWINDOWSIZE()) {
             int start = 0; // init start index
             int windowMid = this.getWINDOWSIZE() / 2; // define mid index
-            int windowEndPosition  = aaSequence.length() - windowMid ; // define end index of seq (this is the max val of windowMid)
-
+            int windowStop  = aaSequence.length() - windowMid ; // define end index of seq (this is the max val of windowMid)
 
             // enter main loop
-            while (windowMid < windowEndPosition) {
+            while (windowMid <  windowStop) {
                 // get AA at windowMid
-                char aaToPredict = aaSequence.charAt(windowMid);
+                char aaAtWindoMid = aaSequence.charAt(windowMid);
 
-                // if the AA at window mid exists in our hashmap → predict ss
-                if (AA_TO_INDEX.containsKey(aaToPredict)) {
-                    String aaSubSeq = aaSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + 1 + this.getWINDOWSIZE() / 2);
-                    HashMap<Character, Double> AASecondaryCounts = new HashMap<>();
-                    // Init AASecondaryCounts as 0 for each window-Loop
-                    AASecondaryCounts.put('H', 0.0);
-                    AASecondaryCounts.put('C', 0.0);
-                    AASecondaryCounts.put('E', 0.0);
-
-                    addSecondaryCounts(aaSubSeq, totalOcc, AASecondaryCounts);
-                    extendSecondarySequence(AASecondaryCounts, sequence);
+                // now cut out a subsequence of size window
+                String windowSequence = cutSubsequence(aaSequence, windowMid);
+                char predSecStruct = 'C'; // default
+                if (AA_TO_INDEX.containsKey(aaAtWindoMid)){
+                    if (gor == 1){
+                         predSecStruct = predictGorI(windowSequence, totalOcc);
+                    }
                 }
 
-                // if the AA at windowMid is not a "regular" AA → default prediction C and move on
-                else {
-                   sequence.extendSecStruct('C');
-                }
-
-
+                sequence.extendSecStruct(predSecStruct);
                 windowMid++;
             }
         }
@@ -233,6 +224,56 @@ public class SearchWindow {
         }
     }
 
+    public char predictGorI(String windowSequence, HashMap<Character, Integer> totalOcc){
+        // for every secType, loop over sequence and calculate values
+        // these are our scores
+        HashMap<Character, Double> scoresPerSeq = new HashMap<>();
+        // these are our global final values we will use to determine the max value
+        scoresPerSeq.put('H', 0.0);
+        scoresPerSeq.put('E', 0.0);
+        scoresPerSeq.put('C', 0.0);
+
+        for (char secType: this.getSecStructMatrices().keySet())  {
+            // loop over sequence
+            for (int column = 0; column < windowSequence.length(); column++) {
+                char currAAinWindow = windowSequence.charAt(column);
+
+                if (AA_TO_INDEX.containsKey(currAAinWindow)) {
+                    // get row and look up value in matrix of curr secType
+                    int row = AA_TO_INDEX.get(currAAinWindow);
+                    int valueInMatrix = this.getSecStructMatrices().get(secType)[row][column];
+
+                    int totalSec = totalOcc.get(secType); // f a|s
+                    // get the !s and !a|s freqs
+                    int totalNotSec = 0;
+                    int notSec = 0;
+
+                    for (char antiSecStruct : getSecStructMatrices().keySet()){
+                       if (secType != antiSecStruct){
+                            totalNotSec += totalOcc.get(antiSecStruct); // f !s
+                            notSec += this.getSecStructMatrices().get(antiSecStruct)[row][column];// f a|!s
+                       }
+                    }
+                    // sum values into scoresPerSeq
+                    double scoreToPutIntoSum = Math.log((1.0 * valueInMatrix / notSec) + Math.log(1.0 * totalNotSec / totalSec));
+                    scoresPerSeq.put(secType, scoresPerSeq.get(secType) + scoreToPutIntoSum);
+                }
+            }
+        }
+
+        if (scoresPerSeq.get('H') >= scoresPerSeq.get('E') && scoresPerSeq.get('H') >= scoresPerSeq.get('C')) {
+            return 'H';
+        } else if (scoresPerSeq.get('E') >= scoresPerSeq.get('H') && scoresPerSeq.get('E')  >= scoresPerSeq.get('C')) {
+            return 'E';
+        } else {
+            return 'C';
+        }
+
+    }
+    public String cutSubsequence(String aaSequence, int windowMid) {
+        String windowSequence = aaSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + 1 + this.getWINDOWSIZE() / 2);
+        return windowSequence;
+    }
     /*
     Loop over all 3 matrices; for each amino acid in search window:
     Get all values needed for Value calculation (f_sec, f_!sec, f_secType and f_!secType)
