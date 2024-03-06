@@ -19,6 +19,10 @@ public class TrainerMain {
         } else if (method.equals("gor3")) {
             TrainerGOR3 trainerGOR3 = new TrainerGOR3(db);
             trainerGOR3.train(model);
+            trainerGOR3.getSearchWindow().writeToFile(model);
+        } else if (method.equals("gor4")) {
+            TrainerGOR4 trainerGOR4 = new TrainerGOR4(db, 4);
+            trainerGOR4.train(model);
         }
 
         // "/home/malte/projects/blockgruppe3/GOR/CB513DSSP.db"

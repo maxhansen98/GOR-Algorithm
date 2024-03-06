@@ -18,6 +18,6 @@ public class TrainerGOR3 extends TrainerGOR1 {
             String ssSequence = sequence.getSsSequence();
             this.getSearchWindow().trainGor3(aaSequence, ssSequence, pdbId);
         }
-        this.getSearchWindow().writeToFile(pathToModelFile);
+        // this.getSearchWindow().writeToFile(pathToModelFile);
     }
 }

@@ -6,6 +6,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class SearchWindow {
@@ -16,176 +18,6 @@ public class SearchWindow {
     private final HashMap<Character, Integer> AA_TO_INDEX = new HashMap<>();
     private final char[] secStructTypes = {'H', 'E', 'C'};
     private int gorType;
-
-    public SearchWindow(int gorType) {
-        this.gorType = gorType;
-        initAAHashMaps();
-        if (gorType == 1) {
-            this.initGor1Matrices(this.secStructTypes);
-        } else if (gorType == 3) {
-            this.initGor3Matrices(this.secStructTypes);
-        } else if (gorType == 4)
-            this.initMatricesGOR4(this.secStructTypes);
-    }
-
-    public SearchWindow(String pathToModelFile, int gorType) throws IOException {
-        initAAHashMaps();
-        if (gorType == 1) {
-            this.initGor1Matrices(this.secStructTypes);
-            // read model file to init matrices
-            this.readModFile(pathToModelFile);
-        }
-        // for GOR III we need to init our matrices differently
-        else if (gorType == 3) {
-           this.initGor3Matrices(secStructTypes);
-           this.readGor3(pathToModelFile);
-        }
-    }
-
-    public void readGor3(String pathToModFile) throws IOException {
-
-        File seqLibFile = new File(pathToModFile);
-        ArrayList<String> lines = FileUtils.readLines(seqLibFile);
-
-        for (int i = 0; i < lines.size(); i++) {
-            if (lines.get(i).startsWith("=")) {
-                // get keys
-                char aaKey = lines.get(i).charAt(1);
-                char ssKey = lines.get(i).charAt(3);
-                copy4dMatrix(i, lines, aaKey, ssKey);
-            }
-        }
-    }
-
-    public int getWINDOWSIZE() {
-        return Constants.WINDOW_SIZE.getValue();
-    }
-
-    public String gor3ToString(){
-        StringBuilder out = new StringBuilder();
-        out.append("// Matrix4D\n");
-
-        for (char aa : this.gor3Matrices.keySet()){
-            for (char secType : this.gor3Matrices.get(aa).keySet()) {
-                out.append("=" + aa + "," + secType).append("=\n\n");
-                int[][] currSecMatrix = gor3Matrices.get(aa).get(secType);
-
-                for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
-                    out.append(this.INDEX_TO_AA.get(i) + "\t");
-
-                    for (int j = 0; j < Constants.WINDOW_SIZE.getValue(); j++) {
-                        out.append(currSecMatrix[i][j]).append("\t");
-                    }
-                    out.append("\n");
-                }
-                out.append("\n");
-            }
-        }
-        return out.toString();
-
-    }
-    public String gor1ToString(){
-        // std out all matrices :)
-        StringBuilder out = new StringBuilder();
-        out.append("// Matrix3D\n");
-
-        for (char key : this.gor1Matrices.keySet()){
-            out.append("=").append(key).append("=\n\n");
-            int[][] currSecMatrix = gor1Matrices.get(key);
-
-            for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
-                out.append(this.INDEX_TO_AA.get(i)).append("\t");
-
-                for (int j = 0; j < Constants.WINDOW_SIZE.getValue(); j++) {
-                    out.append(currSecMatrix[i][j]).append("\t");
-                }
-                out.append("\n");
-
-            }
-            out.append("\n");
-        }
-        return out.toString();
-    }
-
-    public void initGor1Matrices(char[] secStructTypes){
-        // init a matrix for each secStructType
-        for (char secStruct : secStructTypes){
-            this.gor1Matrices.put(secStruct, new int[20][Constants.WINDOW_SIZE.getValue()]);
-
-            // put default value into matrices
-            for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
-                for (int j = 0; j <Constants.WINDOW_SIZE.getValue(); j++) {
-                    this.gor1Matrices.get(secStruct)[i][j] = 0;
-                }
-            }
-        }
-    }
-
-    public void initGor3Matrices(char[] secStructTypes) {
-        for (char aa : AA_TO_INDEX.keySet()) {
-            // TODO: duplicate code for now >:(
-            HashMap<Character, int[][]> secStructHashMapForAA = new HashMap<>();
-            for (char secStruct : secStructTypes){
-                secStructHashMapForAA.put(secStruct, new int[20][17]);
-                this.gor3Matrices.put(aa, secStructHashMapForAA);
-                // put default value into matrices
-                for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
-                    for (int j = 0; j <Constants.WINDOW_SIZE.getValue(); j++) {
-                        this.gor3Matrices.get(aa).get(secStruct)[i][j] = 0;
-                    }
-                }
-            }
-        }
-    }
-
-    public void initMatricesGOR4(char[] secStructTypes) {
-        // keys:CAA-8 → -8 + 8 = 0 → add 8 to every last key instance
-        // 3 x 20 x 20 x 17
-        StringBuilder keyBuilder = new StringBuilder();
-        for(char secStruct : secStructTypes) {
-            for (char aa1 : AA_TO_INDEX.keySet()){
-                for (char aa2 : AA_TO_INDEX.keySet()){
-                    for (int i = 0; i < getWINDOWSIZE(); i++) {
-                        String key = keyBuilder.append(secStruct).append(aa1).append(aa2).append(i).toString();
-                        System.out.println(key);
-                        gor4Matrices.put(key, init2DMatrix());
-                    }
-                }
-            }
-        }
-    }
-
-    public void readGor4(String pathToModFile) throws IOException {
-
-        File seqLibFile = new File(pathToModFile);
-        ArrayList<String> lines = FileUtils.readLines(seqLibFile);
-
-        for (int i = 0; i < lines.size(); i++) {
-            if (lines.get(i).startsWith("=")) {
-                // get key
-                String[] headerLine = lines.get(i).split(",");
-                System.out.println(headerLine);
-                char keyPartSecStruct = headerLine[0].charAt(1);
-                String keyPartaa1 = headerLine[1];
-                String keyPartaa2= headerLine[2];
-                int keyPartcolumn = headerLine[1];
-            }
-        }
-    }
-    public int[][] init2DMatrix(){
-        int[][] matrix = new int[getWINDOWSIZE()][AA_TO_INDEX.size()];
-        for (int i = 0; i < AA_TO_INDEX.size(); i++) {
-            for (int j = 0; j < getWINDOWSIZE(); j++) {
-               matrix[j][i] = 0;
-            }
-        }
-        return matrix;
-    }
-
-
-    public HashMap<Character, int[][]> getSecStructMatrices() {
-        return this.gor1Matrices;
-    }
 
     public void initAAHashMaps(){
         // maps AA to the row of the 2d matrix
@@ -230,6 +62,215 @@ public class SearchWindow {
         this.AA_TO_INDEX.put('V', 17);
         this.AA_TO_INDEX.put('W', 18);
         this.AA_TO_INDEX.put('Y', 19);
+    }
+
+    public SearchWindow(int gorType) {
+        this.gorType = gorType;
+        initAAHashMaps();
+        if (gorType == 1) {
+            this.initGor1Matrices(this.secStructTypes);
+        } else if (gorType == 3) {
+            this.initGor3Matrices(this.secStructTypes);
+        } else if (gorType == 4) {
+            this.initGor4Matrices(this.secStructTypes);
+        }
+    }
+
+    public SearchWindow(String pathToModelFile, int gorType) throws IOException {
+        initAAHashMaps();
+        if (gorType == 1) {
+            this.initGor1Matrices(this.secStructTypes);
+            // read model file to init matrices
+            this.readModFile(pathToModelFile);
+        }
+        // for GOR III we need to init our matrices differently
+        else if (gorType == 3) {
+           this.initGor3Matrices(secStructTypes);
+           this.readGor3(pathToModelFile);
+        }
+    }
+
+    public void initGor3Matrices(char[] secStructTypes) {
+        for (char aa : AA_TO_INDEX.keySet()) {
+            HashMap<Character, int[][]> secStructHashMapForAA = new HashMap<>();
+            for (char secStruct : secStructTypes){
+                secStructHashMapForAA.put(secStruct, new int[20][17]);
+                this.gor3Matrices.put(aa, secStructHashMapForAA);
+                // put default value into matrices
+                for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
+                    for (int j = 0; j <Constants.WINDOW_SIZE.getValue(); j++) {
+                        this.gor3Matrices.get(aa).get(secStruct)[i][j] = 0;
+                    }
+                }
+            }
+        }
+    }
+
+    public void readGor3(String pathToModFile) throws IOException {
+
+        File seqLibFile = new File(pathToModFile);
+        ArrayList<String> lines = FileUtils.readLines(seqLibFile);
+
+        for (int i = 0; i < lines.size(); i++) {
+            if (lines.get(i).startsWith("=")) {
+                // get keys
+                char aaKey = lines.get(i).charAt(1);
+                char ssKey = lines.get(i).charAt(3);
+                copy4dMatrix(i, lines, aaKey, ssKey);
+            }
+        }
+    }
+
+    public int getWINDOWSIZE() {
+        return Constants.WINDOW_SIZE.getValue();
+    }
+
+    public String gor3ToString(){
+        StringBuilder out = new StringBuilder();
+        out.append("// Matrix4D\n");
+
+        for (char aa : this.gor3Matrices.keySet()){
+            for (char secType : this.gor3Matrices.get(aa).keySet()) {
+                out.append("=" + aa + "," + secType).append("=\n\n");
+                int[][] currSecMatrix = gor3Matrices.get(aa).get(secType);
+
+                for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
+                    out.append(this.INDEX_TO_AA.get(i) + "\t");
+
+                    for (int j = 0; j < Constants.WINDOW_SIZE.getValue(); j++) {
+                        out.append(currSecMatrix[i][j]).append("\t");
+                    }
+                    out.append("\n");
+                }
+                out.append("\n");
+            }
+        }
+        return out.toString();
+    }
+
+    public String gor4ToString(){
+        ArrayList<String> orderedKeys = new ArrayList<>();
+        StringBuilder keyBuilder = new StringBuilder();
+        char[] hardCodedOrder = {'C', 'E', 'H'}; //C E H
+        for(char secStruct : hardCodedOrder) {
+            for (char aa1 : AA_TO_INDEX.keySet()){
+                for (char aa2 : AA_TO_INDEX.keySet()){
+                    for (int i = 0; i < getWINDOWSIZE(); i++) {
+                        String key = keyBuilder.append(secStruct).append(aa1).append(aa2).append(i).toString();
+                        orderedKeys.add(key);
+                        keyBuilder.setLength(0);
+                    }
+                }
+            }
+        }
+
+        StringBuilder out = new StringBuilder();
+        out.append("// Matrix6D\n\n");
+
+        for (String key : orderedKeys) {
+            int[][] currMatrix = gor4Matrices.get(key);
+            String[] splitKey = key.split("");
+            String lastKey = splitKey[3];
+            if (splitKey.length == 5) {
+                lastKey += splitKey[4];
+            }
+            int actualHeaderVal = Integer.parseInt(lastKey) - 8;
+            String header = "=" + splitKey[0] + "," + splitKey[1] + "," + splitKey[2] + "," + actualHeaderVal + "=";
+
+            out.append(header).append("\n\n");
+            for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
+                out.append(this.INDEX_TO_AA.get(i) + "\t");
+                for (int j = 0; j < Constants.WINDOW_SIZE.getValue(); j++) {
+                    out.append(currMatrix[i][j]).append("\t");
+                }
+                out.append("\n");
+            }
+            out.append("\n");
+            }
+        return out.toString();
+    }
+
+    public String gor1ToString(){
+        // std out all matrices :)
+        StringBuilder out = new StringBuilder();
+        out.append("// Matrix3D\n");
+
+        for (char key : this.gor1Matrices.keySet()){
+            out.append("=").append(key).append("=\n\n");
+            int[][] currSecMatrix = gor1Matrices.get(key);
+
+            for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
+                out.append(this.INDEX_TO_AA.get(i)).append("\t");
+
+                for (int j = 0; j < Constants.WINDOW_SIZE.getValue(); j++) {
+                    out.append(currSecMatrix[i][j]).append("\t");
+                }
+                out.append("\n");
+
+            }
+            out.append("\n");
+        }
+        return out.toString();
+    }
+
+    public void initGor1Matrices(char[] secStructTypes){
+        // init a matrix for each secStructType
+        for (char secStruct : secStructTypes){
+            this.gor1Matrices.put(secStruct, new int[20][Constants.WINDOW_SIZE.getValue()]);
+
+            // put default value into matrices
+            for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
+                for (int j = 0; j <Constants.WINDOW_SIZE.getValue(); j++) {
+                    this.gor1Matrices.get(secStruct)[i][j] = 0;
+                }
+            }
+        }
+    }
+
+    public void initGor4Matrices(char[] secStructTypes) {
+        // keys:CAA-8 → -8 + 8 = 0 → add 8 to every last key instance
+        // 3 x 20 x 20 x 17
+        StringBuilder keyBuilder = new StringBuilder();
+        char[] hardCodedOrder = {'C', 'E', 'H'}; //C E H
+        for(char secStruct : hardCodedOrder) {
+            for (char aa1 : AA_TO_INDEX.keySet()){
+                for (char aa2 : AA_TO_INDEX.keySet()){
+                    for (int i = 0; i < getWINDOWSIZE(); i++) {
+                        String key = keyBuilder.append(secStruct).append(aa1).append(aa2).append(i).toString();
+                        // System.out.println(key);
+                        int[][] newDefaultMatrix = init2DMatrix();
+                        this.gor4Matrices.put(key, newDefaultMatrix);
+                        keyBuilder.setLength(0);
+                    }
+                }
+            }
+        }
+    }
+
+    public void readGor4(String pathToModFile) throws IOException {
+
+        File seqLibFile = new File(pathToModFile);
+        ArrayList<String> lines = FileUtils.readLines(seqLibFile);
+
+        for (int i = 0; i < lines.size(); i++) {
+            if (lines.get(i).startsWith("=")) {
+                // get key
+                String[] headerLine = lines.get(i).split(",");
+                System.out.println(headerLine);
+                char keyPartSecStruct = headerLine[0].charAt(1);
+                String keyPartaa1 = headerLine[1];
+                String keyPartaa2= headerLine[2];
+                int keyPartcolumn = Integer.parseInt(String.valueOf(headerLine[3].charAt(1))) + getWINDOWSIZE() / 2;
+            }
+        }
+    }
+    public int[][] init2DMatrix(){
+        return new int[AA_TO_INDEX.size()][getWINDOWSIZE()];
+    }
+
+
+    public HashMap<Character, int[][]> getSecStructMatrices() {
+        return this.gor1Matrices;
     }
 
     public HashMap<Integer, Character> getINDEX_TO_AA() {
@@ -340,6 +381,45 @@ public class SearchWindow {
                         if (AA_TO_INDEX.containsKey(currAA)){
                             int row = AA_TO_INDEX.get(currAA);
                             this.getGor3Matrices().get(midAA).get(currSS)[row][index] += 1;
+                        }
+                    }
+                }
+                windowMid++;
+            }
+        }
+    }
+
+    public void trainGor4(String aaSequence, String ssSequence, String pdbId){
+        if (aaSequence.length() >= this.getWINDOWSIZE()) {
+            int windowMid = this.getWINDOWSIZE() / 2; // define mid index
+            int windowEndPosition  = aaSequence.length() - windowMid ; // define end index of seq (this is the max val of windowMid)
+
+            // enter main loop
+            while (windowMid < windowEndPosition) {
+                String aaSubSeq = cutSubsequence(aaSequence, windowMid);
+                String ssSubSeq = cutSubsequence(ssSequence, windowMid);
+                char midAA = aaSubSeq.charAt(this.getWINDOWSIZE() / 2); //  key2
+                if (AA_TO_INDEX.containsKey(midAA)) {
+                    char currSS = ssSubSeq.charAt(this.getWINDOWSIZE() / 2) ;  // key1
+
+                    // outer loop begins at -8 → 8
+                    // i
+                    for (int outer = 0; outer < aaSubSeq.length(); outer++) {
+                        // inner loop beings at -7 → 8
+                        // j = i + 1
+                        for (int inner = outer + 1; inner < aaSubSeq.length(); inner++) {
+                            char key3 = aaSubSeq.charAt(outer);
+                            if(AA_TO_INDEX.containsKey(key3)) {
+                                char innerAA = aaSubSeq.charAt(inner); // V
+                                if (AA_TO_INDEX.containsKey(innerAA)) {
+                                    int indexInnerAA = AA_TO_INDEX.get(innerAA); // V → row
+                                    StringBuilder keyBuilder = new StringBuilder();
+                                    String key = keyBuilder.append(currSS).append(midAA).append(key3).append(outer).toString();
+                                    int[][] currentMatrix = gor4Matrices.get(key);
+                                    currentMatrix[indexInnerAA][inner] += 1;
+                                    keyBuilder.setLength(0);
+                                }
+                            }
                         }
                     }
                 }
@@ -484,6 +564,10 @@ public class SearchWindow {
 
     public String cutSubsequence(String aaSequence, int windowMid) {
         return aaSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + this.getWINDOWSIZE() / 2 + 1);
+    }
+
+    public HashMap<String, int[][]> getGor4Matrices(){
+        return this.gor4Matrices;
     }
 
     public int calculateMatrixColumn(int[][] matrix) {
