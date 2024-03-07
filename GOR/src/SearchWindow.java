@@ -599,15 +599,13 @@ public class SearchWindow {
                 double outerSum = 0;
                 double gor3Sum = 0;
                 for (int outer = 0; outer < getWINDOWSIZE(); outer++) { // k sum
+                    char key3 = windowSequence.charAt(outer);
                     double innerSum = 0;
                     char innerAA = windowSequence.charAt(outer);
+                    // Gor4 inner loop
                     for (int inner = outer + 1; inner < getWINDOWSIZE(); inner++) { // l sum
-                        char key3 = windowSequence.charAt(outer);
-
                         if (AA_TO_INDEX.containsKey(key3)) {
-                            char key1 = secType; // currSS
-                            int key4 = inner;
-                            String completeKey = key1 + "" + key2 + "" + key3 + "" + key4;
+                            String completeKey = secType + "" + key2 + "" + key3 + "" + outer;
 
                             if (AA_TO_INDEX.containsKey(innerAA)) {
                                 int row = AA_TO_INDEX.get(innerAA);
@@ -616,7 +614,7 @@ public class SearchWindow {
                                 for (char antiSecType: secStructTypes) {
                                     // lower part of division
                                     if (antiSecType!=secType) {
-                                        String alternativeKey = antiSecType + "" + key2 + "" + key3 + "" + key4;
+                                        String alternativeKey = antiSecType + "" + key2 + "" + key3 + "" + outer;
                                         notSec += gor4Matrices.get(alternativeKey)[row][inner];
                                     }
                                 }
@@ -625,6 +623,8 @@ public class SearchWindow {
                         }
                     }
                     outerSum += innerSum;
+                    // System.out.println("I " + innerSum);
+                    // System.out.println("O " + outerSum);
 
                     // right part of the equation (GORIII)
                     char aaOuter = windowSequence.charAt(outer);
@@ -632,13 +632,11 @@ public class SearchWindow {
                         int row = AA_TO_INDEX.get(aaOuter);
                         int gor3sec = gor3Matrices.get(key2).get(secType)[row][outer];
                         int gor3NotSec = 0;
-
                         for (char antiSecType: secStructTypes) {
                             if (antiSecType != secType) {
                                 gor3NotSec += gor3Matrices.get(key2).get(antiSecType)[row][outer];
                             }
                         }
-
                         gor3Sum += gor4Log(gor3sec, gor3NotSec);
                     }
                 }
@@ -650,9 +648,6 @@ public class SearchWindow {
             }
 
         }
-
-
-
         return getMaxCount(scoresPerSeq);
     }
 
@@ -675,7 +670,8 @@ public class SearchWindow {
     }
 
     private double gor4Log(double P_s_j, double P_s_not_j){
-        return Math.log(P_s_j / P_s_not_j);
+        double res = Math.log((P_s_j + 1e-10) / (P_s_not_j + 1e-10));
+        return res;
     }
 
 
