@@ -17,7 +17,7 @@ public class TrainerMain {
             TrainerGOR1 trainer = new TrainerGOR1(db, 1);
             trainer.train(model);
         } else if (method.equals("gor3")) {
-            TrainerGOR3 trainerGOR3 = new TrainerGOR3(db);
+            TrainerGOR3 trainerGOR3 = new TrainerGOR3(db, 3);
             trainerGOR3.train(model);
             trainerGOR3.getSearchWindow().writeToFile(model);
         } else if (method.equals("gor4")) {

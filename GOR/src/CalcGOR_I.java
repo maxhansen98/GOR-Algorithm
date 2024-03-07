@@ -22,11 +22,6 @@ public class CalcGOR_I {
     public void predict() throws IOException {
         // for each sequence → predict sec struct
         for (Sequence sequence: this.sequencesToPredict) {
-            // get entry content in readable vars
-            String pdbId = sequence.getId();
-            String aaSequence = sequence.getAaSequence();
-            String ssSequence = sequence.getSsSequence();
-
             window.predictSeqGor(this.totalSecOcc, sequence, 1, probabilities);
         }
     }

@@ -56,11 +56,6 @@ public class CalcGOR_IV {
     public void predict() throws IOException {
         // for each sequence → predict sec struct
         for (Sequence sequence: this.sequencesToPredict) {
-            // get entry content in readable vars
-            String pdbId = sequence.getId();
-            String aaSequence = sequence.getAaSequence();
-            String ssSequence = sequence.getSsSequence();
-
             window.predictSeqGor(new HashMap<>(), sequence, 4, this.probabilities);
         }
     }

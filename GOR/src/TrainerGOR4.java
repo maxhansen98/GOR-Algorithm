@@ -8,7 +8,7 @@ public class TrainerGOR4 extends TrainerGOR1 {
     TrainerGOR3 trainerGOR3;
     public TrainerGOR4(String pathToDBfile, int gorType) throws IOException {
         super(pathToDBfile, gorType);
-        trainerGOR3 = new TrainerGOR3(pathToDBfile); // also create a Gor3Trainer
+        trainerGOR3 = new TrainerGOR3(pathToDBfile, gorType); // also create a Gor3Trainer
     }
 
     @Override
