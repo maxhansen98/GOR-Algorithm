@@ -482,12 +482,13 @@ public class SearchWindow {
                 String windowSequence = cutSubsequence(aaSequence, windowMid);
                 char predSecStruct = 'C'; // default
                 if (AA_TO_INDEX.containsKey(aaAtWindoMid)){
-                    if (gor == 1){
+                    if (gor == 1) {
                         predSecStruct = predictGorI(windowSequence, totalOcc);
                     }
                     else if (gor == 3) {
                         predSecStruct = predictGorIII(windowSequence);
-                    } else if (gor == 4) {
+                    }
+                    else if (gor == 4) {
                         predSecStruct = predictGorIV(windowSequence);
                     }
                 }
@@ -601,11 +602,11 @@ public class SearchWindow {
                 for (int outer = 0; outer < getWINDOWSIZE(); outer++) { // k sum
                     char key3 = windowSequence.charAt(outer);
                     double innerSum = 0;
-                    char innerAA = windowSequence.charAt(outer);
                     // Gor4 inner loop
                     for (int inner = outer + 1; inner < getWINDOWSIZE(); inner++) { // l sum
                         if (AA_TO_INDEX.containsKey(key3)) {
-                            String completeKey = secType + "" + key2 + "" + key3 + "" + outer;
+                            String completeKey = secType + "" + key2 + "" + key3 + "" + (outer+1);
+                            char innerAA = windowSequence.charAt(inner);
 
                             if (AA_TO_INDEX.containsKey(innerAA)) {
                                 int row = AA_TO_INDEX.get(innerAA);
@@ -614,7 +615,7 @@ public class SearchWindow {
                                 for (char antiSecType: secStructTypes) {
                                     // lower part of division
                                     if (antiSecType!=secType) {
-                                        String alternativeKey = antiSecType + "" + key2 + "" + key3 + "" + outer;
+                                        String alternativeKey = antiSecType + "" + key2 + "" + key3 + "" + (outer+1);
                                         notSec += gor4Matrices.get(alternativeKey)[row][inner];
                                     }
                                 }
@@ -643,7 +644,7 @@ public class SearchWindow {
                 // factor sums
                 outerSum *= (2.0 / (( 2 * m ) + 1));
                 gor3Sum *= (2.0 * m - 1) / (2.0 * m + 1);
-                double result = outerSum;
+                double result = outerSum - gor3Sum;
                 scoresPerSeq.put(secType, result);
             }
 
