@@ -44,6 +44,10 @@ public class GORMain {
             if (format.equals("txt")){
                 System.out.println(gorIII);
             }
+        } else if (gorType == 4) {
+            CalcGOR_IV gorIV = new CalcGOR_IV(pathToModel, fastaPath, gorType);
+            gorIV.predict();
+            System.out.println(gorIV);
         }
     }
 

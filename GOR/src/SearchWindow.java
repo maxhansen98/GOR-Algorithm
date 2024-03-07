@@ -1,3 +1,4 @@
+import com.sun.security.jgss.GSSUtil;
 import constants.Constants;
 import utils.FileUtils;
 
@@ -85,8 +86,13 @@ public class SearchWindow {
         }
         // for GOR III we need to init our matrices differently
         else if (gorType == 3) {
-           this.initGor3Matrices(secStructTypes);
-           this.readGor3(pathToModelFile);
+            this.initGor3Matrices(secStructTypes);
+            this.readGor3(pathToModelFile);
+        } else if (gorType == 4) {
+            // also init gor3matrices
+            this.initGor3Matrices(secStructTypes);
+            this.initGor4Matrices(secStructTypes);
+            this.readGor4(pathToModelFile);
         }
     }
 
@@ -94,7 +100,7 @@ public class SearchWindow {
         for (char aa : AA_TO_INDEX.keySet()) {
             HashMap<Character, int[][]> secStructHashMapForAA = new HashMap<>();
             for (char secStruct : secStructTypes){
-                secStructHashMapForAA.put(secStruct, new int[20][17]);
+                secStructHashMapForAA.put(secStruct, new int[Constants.AA_SIZE.getValue()][getWINDOWSIZE()]);
                 this.gor3Matrices.put(aa, secStructHashMapForAA);
                 // put default value into matrices
                 for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
@@ -127,7 +133,7 @@ public class SearchWindow {
 
     public String gor3ToString(){
         StringBuilder out = new StringBuilder();
-        out.append("// Matrix4D\n");
+        out.append("// Matrix4D\n\n");
 
         for (char aa : this.gor3Matrices.keySet()){
             for (char secType : this.gor3Matrices.get(aa).keySet()) {
@@ -174,7 +180,7 @@ public class SearchWindow {
             if (splitKey.length == 5) {
                 lastKey += splitKey[4];
             }
-            int actualHeaderVal = Integer.parseInt(lastKey) - 8;
+            int actualHeaderVal = Integer.parseInt(lastKey) - (getWINDOWSIZE()/2);
             String header = "=" + splitKey[0] + "," + splitKey[1] + "," + splitKey[2] + "," + actualHeaderVal + "=";
 
             out.append(header).append("\n\n");
@@ -216,7 +222,7 @@ public class SearchWindow {
     public void initGor1Matrices(char[] secStructTypes){
         // init a matrix for each secStructType
         for (char secStruct : secStructTypes){
-            this.gor1Matrices.put(secStruct, new int[20][Constants.WINDOW_SIZE.getValue()]);
+            this.gor1Matrices.put(secStruct, new int[Constants.AA_SIZE.getValue()][Constants.WINDOW_SIZE.getValue()]);
 
             // put default value into matrices
             for (int i = 0; i < Constants.AA_SIZE.getValue(); i++) {
@@ -251,18 +257,37 @@ public class SearchWindow {
 
         File seqLibFile = new File(pathToModFile);
         ArrayList<String> lines = FileUtils.readLines(seqLibFile);
-
+        StringBuilder keyBuilder = new StringBuilder();
         for (int i = 0; i < lines.size(); i++) {
             if (lines.get(i).startsWith("=")) {
                 // get key
                 String[] headerLine = lines.get(i).split(",");
-                System.out.println(headerLine);
-                char keyPartSecStruct = headerLine[0].charAt(1);
-                String keyPartaa1 = headerLine[1];
-                String keyPartaa2= headerLine[2];
-                int keyPartcolumn = Integer.parseInt(String.valueOf(headerLine[3].charAt(1))) + getWINDOWSIZE() / 2;
+                // here we get the 6dMatrix headers
+                if (headerLine.length == 4) {
+                    // extract the important key parts
+                    char key1 = headerLine[0].charAt(1); // sec key
+                    char key2 = headerLine[1].charAt(0); // aa1 key
+                    char key3 = headerLine[2].charAt(0); // aa2 key
+                    String key4String = headerLine[3].replace("=","");
+                    int key4 = Integer.parseInt(key4String) + getWINDOWSIZE() / 2;
+                    keyBuilder.append(key1).append(key2).append(key3).append(key4);
+                    String finishedKey = keyBuilder.toString();
+
+                    // use the finished key
+                    copyGor4Matrix(i, lines, finishedKey);
+
+                    // reset keyBuilder
+                    keyBuilder.setLength(0);
+                }
+                else if (headerLine.length == 2) {
+                    char aaKey = lines.get(i).charAt(1);
+                    char ssKey = lines.get(i).charAt(3);
+                    copy4dMatrix(i, lines, aaKey, ssKey);
+                }
             }
         }
+        // System.out.println(gor4ToString());
+        // System.out.println(gor3ToString());
     }
     public int[][] init2DMatrix(){
         return new int[AA_TO_INDEX.size()][getWINDOWSIZE()];
@@ -331,6 +356,17 @@ public class SearchWindow {
             String[] line = lines.get(j).split("\t");
             for (int k = 0; k < line.length - 1; k++) {
             this.gor3Matrices.get(aaType).get(secType)[relativeMatrixIndex][k] = Integer.parseInt(line[k+1]);
+            }
+            relativeMatrixIndex++;
+        }
+    }
+
+    public void copyGor4Matrix (int i, ArrayList<String> lines, String key){
+        int relativeMatrixIndex = 0;
+        for (int j = i + 2; j <= i + 21; j++) {
+            String[] line = lines.get(j).split("\t");
+            for (int k = 0; k < line.length - 1; k++) {
+                this.gor4Matrices.get(key)[relativeMatrixIndex][k] = Integer.parseInt(line[k+1]);
             }
             relativeMatrixIndex++;
         }
@@ -451,6 +487,8 @@ public class SearchWindow {
                     }
                     else if (gor == 3) {
                         predSecStruct = predictGorIII(windowSequence);
+                    } else if (gor == 4) {
+                        predSecStruct = predictGorIV(windowSequence);
                     }
                 }
 
@@ -543,6 +581,81 @@ public class SearchWindow {
         return getMaxCount(scoresPerSeq);
     }
 
+    public char predictGorIV(String windowSequence) {
+        HashMap<Character, Double> scoresPerSeq = new HashMap<>();
+        // these are our global final values we will use to determine the max value
+        scoresPerSeq.put('H', 0.0);
+        scoresPerSeq.put('E', 0.0);
+        scoresPerSeq.put('C', 0.0);
+        int m = getWINDOWSIZE() / 2;
+
+        // get the mid amino acid
+        char key2 = windowSequence.charAt(m);
+
+        // CALCULATION FOR GOR IV
+        for (char secType : secStructTypes) {
+            if(AA_TO_INDEX.containsKey(key2)){
+                // left part of the equation
+                double outerSum = 0;
+                double gor3Sum = 0;
+                for (int outer = 0; outer < getWINDOWSIZE(); outer++) { // k sum
+                    double innerSum = 0;
+                    char innerAA = windowSequence.charAt(outer);
+                    for (int inner = outer + 1; inner < getWINDOWSIZE(); inner++) { // l sum
+                        char key3 = windowSequence.charAt(outer);
+
+                        if (AA_TO_INDEX.containsKey(key3)) {
+                            char key1 = secType; // currSS
+                            int key4 = inner;
+                            String completeKey = key1 + "" + key2 + "" + key3 + "" + key4;
+
+                            if (AA_TO_INDEX.containsKey(innerAA)) {
+                                int row = AA_TO_INDEX.get(innerAA);
+                                int sec = gor4Matrices.get(completeKey)[row][inner]; // upper part of division
+                                int notSec = 0;
+                                for (char antiSecType: secStructTypes) {
+                                    // lower part of division
+                                    if (antiSecType!=secType) {
+                                        String alternativeKey = antiSecType + "" + key2 + "" + key3 + "" + key4;
+                                        notSec += gor4Matrices.get(alternativeKey)[row][inner];
+                                    }
+                                }
+                                innerSum += gor4Log(sec, notSec);
+                            }
+                        }
+                    }
+                    outerSum += innerSum;
+
+                    // right part of the equation (GORIII)
+                    char aaOuter = windowSequence.charAt(outer);
+                    if (AA_TO_INDEX.containsKey(aaOuter)) {
+                        int row = AA_TO_INDEX.get(aaOuter);
+                        int gor3sec = gor3Matrices.get(key2).get(secType)[row][outer];
+                        int gor3NotSec = 0;
+
+                        for (char antiSecType: secStructTypes) {
+                            if (antiSecType != secType) {
+                                gor3NotSec += gor3Matrices.get(key2).get(antiSecType)[row][outer];
+                            }
+                        }
+
+                        gor3Sum += gor4Log(gor3sec, gor3NotSec);
+                    }
+                }
+                // factor sums
+                outerSum *= (2.0 / (( 2 * m ) + 1));
+                gor3Sum *= (2.0 * m - 1) / (2.0 * m + 1);
+                double result = outerSum;
+                scoresPerSeq.put(secType, result);
+            }
+
+        }
+
+
+
+        return getMaxCount(scoresPerSeq);
+    }
+
     private char getMaxCount(HashMap<Character, Double> scoresPerSeq) {
         double max = Math.max(scoresPerSeq.get('H'), Math.max(scoresPerSeq.get('C'), scoresPerSeq.get('E')));
 
@@ -559,6 +672,10 @@ public class SearchWindow {
         double dynamic_value = 1.0 * sec / notSec;
         double static_value = 1.0 * totalNotSec / totalSec;
         return Math.log(dynamic_value * static_value);
+    }
+
+    private double gor4Log(double P_s_j, double P_s_not_j){
+        return Math.log(P_s_j / P_s_not_j);
     }
 
 

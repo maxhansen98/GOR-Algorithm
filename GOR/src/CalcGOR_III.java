@@ -27,10 +27,14 @@ public class CalcGOR_III {
         ArrayList<Sequence> sequencesToPredict = new ArrayList<>();
         String currentId = "";
 
+        // init secondary seq with '--------'
+        // TODO:
+        // StringBuilder sb = new StringBuilder();
+        // sb.append("-".repeat(Math.max(0, window.getWINDOWSIZE() / 2)));
+        // sb.append("\n");
         while ((line = buff.readLine()) != null) {
             if (line.startsWith(">")) {
                 if (!currentId.isEmpty()) {
-                    // init secondary seq with default '--------'
                     sequencesToPredict.add(new Sequence(currentId, sequence.toString(), "--------"));
                     sequence.setLength(0); // Clear sequence StringBuilder
                 }
