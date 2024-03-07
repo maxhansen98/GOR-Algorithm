@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+
 public class Sequence {
     private final String id;
     private final String aaSequence;
     private String ssSequence;
+    private ArrayList<Double> probabilities = new ArrayList<>();
 
     public Sequence(String id, String aaSequence, String ssSequence) {
         this.id = id;
@@ -25,5 +28,9 @@ public class Sequence {
 
     public void extendSecStruct(char secStructType){
         this.ssSequence += secStructType;
+    }
+
+    public ArrayList<Double> getProbabilities() {
+        return probabilities;
     }
 }

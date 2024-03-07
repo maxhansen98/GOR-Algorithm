@@ -21,48 +21,17 @@ public class SearchWindow {
     private int gorType;
 
     public void initAAHashMaps(){
-        // maps AA to the row of the 2d matrix
-        this.INDEX_TO_AA.put(0, 'A');
-        this.INDEX_TO_AA.put(1, 'C');
-        this.INDEX_TO_AA.put(2, 'D');
-        this.INDEX_TO_AA.put(3, 'E');
-        this.INDEX_TO_AA.put(4, 'F');
-        this.INDEX_TO_AA.put(5, 'G');
-        this.INDEX_TO_AA.put(6, 'H');
-        this.INDEX_TO_AA.put(7, 'I');
-        this.INDEX_TO_AA.put(8, 'K');
-        this.INDEX_TO_AA.put(9, 'L');
-        this.INDEX_TO_AA.put(10,'M');
-        this.INDEX_TO_AA.put(11,'N');
-        this.INDEX_TO_AA.put(12,'P');
-        this.INDEX_TO_AA.put(13,'Q');
-        this.INDEX_TO_AA.put(14,'R');
-        this.INDEX_TO_AA.put(15,'S');
-        this.INDEX_TO_AA.put(16,'T');
-        this.INDEX_TO_AA.put(17,'V');
-        this.INDEX_TO_AA.put(18,'W');
-        this.INDEX_TO_AA.put(19,'Y');
-        // maps AA to the row of the 2d matrix
-        this.AA_TO_INDEX.put('A', 0);
-        this.AA_TO_INDEX.put('C', 1);
-        this.AA_TO_INDEX.put('D', 2);
-        this.AA_TO_INDEX.put('E', 3);
-        this.AA_TO_INDEX.put('F', 4);
-        this.AA_TO_INDEX.put('G', 5);
-        this.AA_TO_INDEX.put('H', 6);
-        this.AA_TO_INDEX.put('I', 7);
-        this.AA_TO_INDEX.put('K', 8);
-        this.AA_TO_INDEX.put('L', 9);
-        this.AA_TO_INDEX.put('M', 10);
-        this.AA_TO_INDEX.put('N', 11);
-        this.AA_TO_INDEX.put('P', 12);
-        this.AA_TO_INDEX.put('Q', 13);
-        this.AA_TO_INDEX.put('R', 14);
-        this.AA_TO_INDEX.put('S', 15);
-        this.AA_TO_INDEX.put('T', 16);
-        this.AA_TO_INDEX.put('V', 17);
-        this.AA_TO_INDEX.put('W', 18);
-        this.AA_TO_INDEX.put('Y', 19);
+        char[] aminoAcids = {'A','C','D','E','F','G','H','I','K','L','M','N','P','Q','R','S','T','V','W','Y'};
+
+        // Mapping from index to amino acid
+        for (int i = 0; i < aminoAcids.length; i++) {
+            INDEX_TO_AA.put(i, aminoAcids[i]);
+        }
+
+        // Mapping from amino acid to index
+        for (int i = 0; i < aminoAcids.length; i++) {
+            AA_TO_INDEX.put(aminoAcids[i], i);
+        }
     }
 
     public SearchWindow(int gorType) {
@@ -79,16 +48,21 @@ public class SearchWindow {
 
     public SearchWindow(String pathToModelFile, int gorType) throws IOException {
         initAAHashMaps();
+        this.gorType = gorType;
+        // init gor1 matrices for GOR I
         if (gorType == 1) {
             this.initGor1Matrices(this.secStructTypes);
-            // read model file to init matrices
             this.readModFile(pathToModelFile);
         }
-        // for GOR III we need to init our matrices differently
+
+        // init gor3 matrices for GOR III
         else if (gorType == 3) {
             this.initGor3Matrices(secStructTypes);
             this.readGor3(pathToModelFile);
-        } else if (gorType == 4) {
+        }
+
+        // init gor3 & gor4 matrices for GOR IV
+        else if (gorType == 4) {
             // also init gor3matrices
             this.initGor3Matrices(secStructTypes);
             this.initGor4Matrices(secStructTypes);
@@ -467,7 +441,7 @@ public class SearchWindow {
     /*
     Get all params ready and call addSecondaryCounts and extendSecondarySequence
      */
-    public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequence, int gor){
+    public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequence, int gor, boolean probabilities){
         String aaSequence = sequence.getAaSequence();
         if (aaSequence.length() >= this.getWINDOWSIZE()) {
             int windowMid = this.getWINDOWSIZE() / 2; // define mid index
@@ -483,13 +457,13 @@ public class SearchWindow {
                 char predSecStruct = 'C'; // default
                 if (AA_TO_INDEX.containsKey(aaAtWindoMid)){
                     if (gor == 1) {
-                        predSecStruct = predictGorI(windowSequence, totalOcc);
+                        predSecStruct = predictGorI(windowSequence, totalOcc, sequence);
                     }
                     else if (gor == 3) {
-                        predSecStruct = predictGorIII(windowSequence);
+                        predSecStruct = predictGorIII(windowSequence, sequence);
                     }
                     else if (gor == 4) {
-                        predSecStruct = predictGorIV(windowSequence);
+                        predSecStruct = predictGorIV(windowSequence, sequence);
                     }
                 }
 
@@ -506,7 +480,7 @@ public class SearchWindow {
         }
     }
 
-    public char predictGorI(String windowSequence, HashMap<Character, Integer> totalOcc){
+    public char predictGorI(String windowSequence, HashMap<Character, Integer> totalOcc, Sequence sequence){
         // for every secType, loop over sequence and calculate values
         // these are our scores
         HashMap<Character, Double> scoresPerSeq = new HashMap<>();
@@ -540,10 +514,10 @@ public class SearchWindow {
             }
         }
 
-        return getMaxCount(scoresPerSeq);
+        return getMaxCount(scoresPerSeq, sequence);
     }
 
-    public char predictGorIII(String windowSequence){
+    public char predictGorIII(String windowSequence, Sequence sequence){
         HashMap<Character, Double> scoresPerSeq = new HashMap<>();
         // these are our global final values we will use to determine the max value
         scoresPerSeq.put('H', 0.0);
@@ -579,10 +553,10 @@ public class SearchWindow {
             }
         }
 
-        return getMaxCount(scoresPerSeq);
+        return getMaxCount(scoresPerSeq, sequence);
     }
 
-    public char predictGorIV(String windowSequence) {
+    public char predictGorIV(String windowSequence, Sequence sequence) {
         HashMap<Character, Double> scoresPerSeq = new HashMap<>();
         // these are our global final values we will use to determine the max value
         scoresPerSeq.put('H', 0.0);
@@ -646,11 +620,12 @@ public class SearchWindow {
             }
 
         }
-        return getMaxCount(scoresPerSeq);
+        return getMaxCount(scoresPerSeq, sequence);
     }
 
-    private char getMaxCount(HashMap<Character, Double> scoresPerSeq) {
+    private char getMaxCount(HashMap<Character, Double> scoresPerSeq, Sequence sequence) {
         double max = Math.max(scoresPerSeq.get('H'), Math.max(scoresPerSeq.get('C'), scoresPerSeq.get('E')));
+        sequence.getProbabilities().add(max);
 
         if (max == scoresPerSeq.get('H')) {
             return 'H';

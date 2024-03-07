@@ -28,26 +28,38 @@ public class GORMain {
         String fastaPath = ns.getString("seq");
         String mafPath = ns.getString("maf");
 
-        int gorType = getGorType(pathToModel);
+        // either gor1|3|4 or gor5 !!!
+        if(mafPath.equals("") && fastaPath.equals("")) {
+           return;
+        }
 
+        // for gor1 gor3 gor4 we need a fasta path
+        if (!(fastaPath.equals(""))) {
+            int gorType = getGorType(pathToModel);
+            if (gorType == 1){
+                CalcGOR_I gorI = new CalcGOR_I(pathToModel, fastaPath, gorType, probabilities);
+                HashMap<Character, Integer> test = gorI.calcStructureOccurrencies();
+                gorI.predict();
+                if (format.equals("txt")){
+                    System.out.println(gorI);
+                }
+            } else if (gorType == 3) {
+                CalcGOR_III gorIII = new CalcGOR_III(pathToModel, fastaPath, probabilities);
+                gorIII.predict();
+                if (format.equals("txt")){
+                    System.out.println(gorIII);
+                }
+            } else if (gorType == 4) {
+                CalcGOR_IV gorIV = new CalcGOR_IV(pathToModel, fastaPath, probabilities);
+                gorIV.predict();
+                System.out.println(gorIV);
+            }
+        }
+        // GOR V
+        else {
+            int gorType = getGorType(pathToModel);
+            CalcGOR_V gor_v = new CalcGOR_V(pathToModel, mafPath, gorType);
 
-        if (gorType == 1){
-            CalcGOR_I gorI = new CalcGOR_I(pathToModel, fastaPath, gorType);
-            HashMap<Character, Integer> test = gorI.calcStructureOccurrencies();
-            gorI.predict();
-            if (format.equals("txt")){
-                System.out.println(gorI);
-            }
-        } else if (gorType == 3) {
-            CalcGOR_III gorIII = new CalcGOR_III(pathToModel, fastaPath, gorType);
-            gorIII.predict();
-            if (format.equals("txt")){
-                System.out.println(gorIII);
-            }
-        } else if (gorType == 4) {
-            CalcGOR_IV gorIV = new CalcGOR_IV(pathToModel, fastaPath, gorType);
-            gorIV.predict();
-            System.out.println(gorIV);
         }
     }
 

@@ -7,11 +7,13 @@ public class CalcGOR_I {
     private int gorType;
     private final ArrayList<Sequence> sequencesToPredict;
     private final HashMap<Character, Integer> totalSecOcc;    // count of sec structs of model file
+    private boolean probabilities;
 
 
-    public CalcGOR_I(String pathToModelFile, String fastaFile, int gorType) throws IOException {
+    public CalcGOR_I(String pathToModelFile, String fastaFile, int gorType, boolean probabilities) throws IOException {
         // temp init with the three sec types
         char[] secStructTypes = {'H', 'E', 'C'};
+        this.probabilities = probabilities;
         this.window = new SearchWindow(pathToModelFile, gorType);
         this.totalSecOcc = calcStructureOccurrencies();
         this.sequencesToPredict = readFasta(fastaFile);
@@ -25,7 +27,7 @@ public class CalcGOR_I {
             String aaSequence = sequence.getAaSequence();
             String ssSequence = sequence.getSsSequence();
 
-            window.predictSeqGor(this.totalSecOcc, sequence, 1);
+            window.predictSeqGor(this.totalSecOcc, sequence, 1, probabilities);
         }
     }
 

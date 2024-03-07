@@ -8,13 +8,15 @@ import java.util.HashMap;
 public class CalcGOR_III {
 
     private final SearchWindow window;
-    private int gorType;
+    private int gorType = 3;
     private final ArrayList<Sequence> sequencesToPredict;
+    private boolean probabilities;
 
-    public CalcGOR_III(String pathToModelFile, String fastaFile, int gorType) throws IOException {
+    public CalcGOR_III(String pathToModelFile, String fastaFile, boolean probabilities) throws IOException {
         // temp init with the three sec types
         char[] secStructTypes = {'H', 'E', 'C'};
-        this.window = new SearchWindow(pathToModelFile, gorType);
+        this.probabilities = probabilities;
+        this.window = new SearchWindow(pathToModelFile, this.gorType);
         this.sequencesToPredict = readFasta(fastaFile);
         // System.out.println(window.gor3ToString());
     }
@@ -61,7 +63,7 @@ public class CalcGOR_III {
             String aaSequence = sequence.getAaSequence();
             String ssSequence = sequence.getSsSequence();
 
-            window.predictSeqGor(new HashMap<>(), sequence, 3);
+            window.predictSeqGor(new HashMap<>(), sequence, 3, this.probabilities);
         }
     }
 
