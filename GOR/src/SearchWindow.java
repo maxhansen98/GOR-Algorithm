@@ -691,10 +691,10 @@ public class SearchWindow {
             scoresPerSeq = predictGorV_I(windowSequence, secSums, sequence);
         }
         else if (gorType == 3) {
-
+            scoresPerSeq = predictGorV_III(windowSequence, sequence);
         }
         else if (gorType == 4) {
-
+            scoresPerSeq = predictGorV_IV(windowSequence, sequence);
         }
         return scoresPerSeq;
     }
@@ -722,6 +722,7 @@ public class SearchWindow {
             // loop over sequence
             for (int column = 0; column < windowSequence.length(); column++) {
                 char currAAinWindow = windowSequence.charAt(column);
+                // only make predictions for aas in AA dict
                 if (AA_TO_INDEX.containsKey(currAAinWindow)) {
                     // get row and look up value in matrix of curr secType
                     int row = AA_TO_INDEX.get(currAAinWindow);
@@ -740,9 +741,130 @@ public class SearchWindow {
                     // sum values into scoresPerSeq
                     scoresPerSeq.put(secType, scoresPerSeq.get(secType) + calcLog(sec, notSec, totalSec, totalNotSec));
                 }
+
+                // we hit "-" in ali seq
+                else if (currAAinWindow == '-') { // add 0.0 prob and make no prediction that way
+                    scoresPerSeq.put(secType, 0.0);
+                    sequence.updateProbabilities(secType, 0.0);
+                }
             }
         }
 
+        return scoresPerSeq;
+    }
+
+    public HashMap<Character, Double> predictGorV_III(String windowSequence, Sequence sequence){
+        HashMap<Character, Double> scoresPerSeq = new HashMap<>();
+        // these are our global final values we will use to determine the max value
+        scoresPerSeq.put('H', 0.0);
+        scoresPerSeq.put('E', 0.0);
+        scoresPerSeq.put('C', 0.0);
+
+        // first we get the mid amino acid
+        char aaMid = windowSequence.charAt(getWINDOWSIZE() / 2);
+
+            for (char secType : scoresPerSeq.keySet()) { // iterate over secStructs
+                int totalSec = 0;
+                int totalNotSec = 0;
+                int sec = 0;
+                int notSec = 0;
+                if (AA_TO_INDEX.containsKey(aaMid)) {
+                    totalSec = calculateMatrixColumn(getGor3Matrices().get(aaMid).get(secType));
+                    // now we iterate a total of three times over the window sequence
+                    for (int column = 0; column < windowSequence.length(); column++) {
+                        char currAAinWindow = windowSequence.charAt(column);
+                        if (AA_TO_INDEX.containsKey(currAAinWindow)) {
+                            int row = AA_TO_INDEX.get(currAAinWindow);
+                            sec = gor3Matrices.get(aaMid).get(secType)[row][column];
+
+                            for (char antiSecStruct: scoresPerSeq.keySet()) {
+                                // get the negative frequencies
+                                if (secType != antiSecStruct) {
+                                    totalNotSec += calculateMatrixColumn(getGor3Matrices().get(aaMid).get(antiSecStruct));
+                                    notSec += getGor3Matrices().get(aaMid).get(antiSecStruct)[row][column];
+                                }
+                            }
+                            scoresPerSeq.put(secType, scoresPerSeq.get(secType) + calcLog(sec, notSec, totalSec, totalNotSec));
+                        }
+                    }
+                }
+                // we hit "-" in ali seq
+                else if (aaMid== '-') { // add 0.0 prob and make no prediction that way
+                    scoresPerSeq.put(secType, 0.0);
+                    sequence.updateProbabilities(secType, 0.0);
+                }
+            }
+        return scoresPerSeq;
+    }
+
+    public HashMap<Character, Double> predictGorV_IV(String windowSequence, Sequence sequence){
+        HashMap<Character, Double> scoresPerSeq = new HashMap<>();
+        // these are our global final values we will use to determine the max value
+        scoresPerSeq.put('H', 0.0);
+        scoresPerSeq.put('E', 0.0);
+        scoresPerSeq.put('C', 0.0);
+        int m = getWINDOWSIZE() / 2;
+
+        // get the mid amino acid
+        char centerAA = windowSequence.charAt(m);
+
+        // CALCULATION FOR GOR IV
+        for (char secType : secStructTypes) {
+            if(AA_TO_INDEX.containsKey(centerAA)) {
+                // left part of the equation
+                double outerSum = 0;
+                double gor3Sum = 0;
+                for (int outer = 0; outer < getWINDOWSIZE(); outer++) { // k sum
+                    char outerLoopAA = windowSequence.charAt(outer);
+                    double innerSum = 0;
+                    // Gor4 inner loop
+                    for (int inner = outer + 1; inner < getWINDOWSIZE(); inner++) { // l sum
+                        if (AA_TO_INDEX.containsKey(outerLoopAA)) {
+                            String completeKey = secType + "" + centerAA + "" + outerLoopAA + "" + (outer);
+                            char innerAA = windowSequence.charAt(inner);
+
+                            if (AA_TO_INDEX.containsKey(innerAA)) {
+                                int row = AA_TO_INDEX.get(innerAA);
+                                int sec = gor4Matrices.get(completeKey)[row][inner]; // upper part of division
+                                int notSec = 0;
+                                for (char antiSecType: secStructTypes) {
+                                    // lower part of division
+                                    if (antiSecType!=secType) {
+                                        String alternativeKey = antiSecType + "" + centerAA + "" + outerLoopAA + "" + (outer);
+                                        notSec += gor4Matrices.get(alternativeKey)[row][inner];
+                                    }
+                                }
+                                innerSum += gor4Log(sec, notSec);
+                            }
+                        }
+                    }
+                    outerSum += innerSum;
+
+                    // right part of the equation (GORIII)
+                    char aaOuter = windowSequence.charAt(outer);
+                    if (AA_TO_INDEX.containsKey(aaOuter)) {
+                        int row = AA_TO_INDEX.get(aaOuter);
+                        int gor3sec = gor3Matrices.get(centerAA).get(secType)[row][outer];
+                        int gor3NotSec = 0;
+                        for (char antiSecType: secStructTypes) {
+                            if (antiSecType != secType) {
+                                gor3NotSec += gor3Matrices.get(centerAA).get(antiSecType)[row][outer];
+                            }
+                        }
+                        gor3Sum += gor4Log(gor3sec, gor3NotSec);
+                    }
+                }
+                // factor sums
+                outerSum *= (2.0 / (( 2 * m ) + 1));
+                gor3Sum *= (2.0 * m - 1) / (2.0 * m + 1);
+                scoresPerSeq.put(secType, outerSum - gor3Sum);
+            }
+            // we hit "-" in ali seq
+            else if (centerAA == '-') { // add 0.0 prob and make no prediction that way
+                scoresPerSeq.put(secType, 0.0);
+                sequence.updateProbabilities(secType, 0.0);
+            }
+        }
         return scoresPerSeq;
     }
     private char getMaxCount(HashMap<Character, Double> scoresPerSeq, Sequence sequence) {
@@ -751,7 +873,6 @@ public class SearchWindow {
         for (char secType : scoresPerSeq.keySet()) {
             sequence.updateProbabilities(secType, scoresPerSeq.get(secType));
         }
-
         if (max == scoresPerSeq.get('H')) {
             return 'H';
         } else if (max == scoresPerSeq.get('E')) {
@@ -790,7 +911,6 @@ public class SearchWindow {
     private double gor4Log(double P_s_j, double P_s_not_j){
         double res = Math.log((P_s_j + 1e-10) / (P_s_not_j + 1e-10));
         return res;
-//        return Math.log(P_s_j / P_s_not_j);
     }
 
 

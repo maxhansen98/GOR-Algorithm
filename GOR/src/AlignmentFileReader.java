@@ -36,14 +36,18 @@ public class AlignmentFileReader {
         for (int i = 0; i < lines.size(); i++) {
             String currLine = lines.get(i);
             if (currLine.startsWith(">")){
+                StringBuilder sb = new StringBuilder();
                 String pdbId = lines.get(i).substring(2); // get pdb id (maybe useful later
                 String aaSequence  = lines.get(i+1).substring(3); // get AS seq
-                String ssSequence = lines.get(i+2).substring(3); // get SS seq
-                Sequence currSeq = new Sequence(pdbId, aaSequence,ssSequence);
+                String validationSequenceSecondaryStruct = lines.get(i+2).substring(3); // get actual sec struct
+                sb.append("-".repeat(Math.max(0,  8)));
+                Sequence currSeq = new Sequence(pdbId, aaSequence,sb.toString());
                 for (int j = 3; j < lines.size(); j++) {
                    String aliSeq = lines.get(j).substring(2);
                    currSeq.addAliSeq(aliSeq);
                 }
+                currSeq.setValidationSequenceSecondaryStructure(validationSequenceSecondaryStruct);
+                sb.setLength(0); // reset just in case
                 return currSeq;
             }
         }

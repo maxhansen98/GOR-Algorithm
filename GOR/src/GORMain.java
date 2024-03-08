@@ -58,7 +58,7 @@ public class GORMain {
         // GOR V
         else {
             int gorType = getGorType(pathToModel);
-            CalcGOR_V gor_v = new CalcGOR_V(pathToModel, mafPath, gorType);
+            CalcGOR_V gor_v = new CalcGOR_V(pathToModel, mafPath, gorType, probabilities);
             gor_v.predict();
 
         }

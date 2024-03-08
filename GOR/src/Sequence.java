@@ -5,6 +5,7 @@ public class Sequence {
     private final String id;
     private final String aaSequence;
     private String ssSequence;
+    private String validationSequenceSecondaryStructure;
     private HashMap<Character, ArrayList<Integer>> normalizedProbabilities = new HashMap<>();
     private HashMap<Character, ArrayList<Double>> probabilities = new HashMap<>();
 
@@ -58,5 +59,9 @@ public class Sequence {
 
     public void addAliSeq(String alignment){
         this.aliSequences.add(alignment);
+    }
+
+    public void setValidationSequenceSecondaryStructure(String validationSequenceSecondaryStructure) {
+        this.validationSequenceSecondaryStructure = validationSequenceSecondaryStructure;
     }
 }
