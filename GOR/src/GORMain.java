@@ -18,8 +18,8 @@ public class GORMain {
         parser.addArgument("--format", "--type").choices("txt", "html").setDefault("txt");
         parser.addArgument("--model").help("File to calculate checksum");
         parser.addArgument("--probabilities").action(storeTrue());
-        parser.addArgument("--seq").setDefault("");
-        parser.addArgument("--maf").setDefault("");
+        parser.addArgument("--seq").setDefault("-1");
+        parser.addArgument("--maf").setDefault("-1");
 
         Namespace ns = parser.parseArgs(args);
         String pathToModel = ns.getString("model");
@@ -29,12 +29,12 @@ public class GORMain {
         String mafPath = ns.getString("maf");
 
         // either gor1|3|4 or gor5 !!!
-        if(mafPath.equals("") && fastaPath.equals("")) {
+        if(mafPath.equals("-1") && fastaPath.equals("-1")) {
            return;
         }
 
         // for gor1 gor3 gor4 we need a fasta path
-        if (!(fastaPath.equals(""))) {
+        if (!(fastaPath.equals("-1"))) {
             int gorType = getGorType(pathToModel);
             if (gorType == 1){
                 CalcGOR_I gorI = new CalcGOR_I(pathToModel, fastaPath, gorType, probabilities);

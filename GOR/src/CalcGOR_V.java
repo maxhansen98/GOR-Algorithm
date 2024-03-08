@@ -34,14 +34,14 @@ public class CalcGOR_V {
                 sb.append("AS ").append(s.getAaSequence()).append("\n");
                 sb.append("PS ").append(s.getSsSequence());
                 sb.append("-".repeat(Math.max(0, gorX.getWINDOWSIZE() / 2)));
-                sb.append('\n');
+                sb.append("\n\n");
 
             }
             else {
                 // here are sequences that were too short and already have a ss struct like "----"
                 sb.append("> ").append(s.getId()).append("\n");
                 sb.append("AS ").append(s.getAaSequence()).append("\n");
-                sb.append("PS ").append(s.getSsSequence()).append("\n"); // don't add tail
+                sb.append("PS ").append(s.getSsSequence()).append("\n\n"); // don't add tail
             }
 
             if (probabilities) {

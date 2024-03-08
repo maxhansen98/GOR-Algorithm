@@ -3,7 +3,6 @@ import utils.FileUtils;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.io.File;
 
 public class AlignmentFileReader {
 
@@ -46,7 +45,7 @@ public class AlignmentFileReader {
                    String aliSeq = lines.get(j).substring(2);
                    currSeq.addAliSeq(aliSeq);
                 }
-                currSeq.setValidationSequenceSecondaryStructure(validationSequenceSecondaryStruct);
+                currSeq.setValiSeq(validationSequenceSecondaryStruct);
                 sb.setLength(0); // reset just in case
                 return currSeq;
             }
