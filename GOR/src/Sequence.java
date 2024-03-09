@@ -125,4 +125,8 @@ public class Sequence {
 
         return jsonBuilder.toString();
     }
+
+    public int getLength() {
+       return this.aaSequence.length();
+    }
 }

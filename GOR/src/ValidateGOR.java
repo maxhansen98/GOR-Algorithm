@@ -12,6 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.util.stream.Stream;
 
 public class ValidateGOR {
 
@@ -28,7 +29,7 @@ public class ValidateGOR {
     private final DecimalFormat format;
 
 
-    public ValidateGOR(String pathToSecLib, String pathToPredictions, String pathToSummaryFile, boolean toTxt, String pathToDetailedFile) throws IOException {
+    public ValidateGOR(String pathToSecLib, String pathToPredictions, String pathToSummaryFile, boolean toTxt, String pathToDetailedFile, boolean plot) throws IOException {
         initGlobalScores();
         symb.setDecimalSeparator('.');
         this.format = new DecimalFormat("0.0", symb);
@@ -45,23 +46,18 @@ public class ValidateGOR {
         }
         calculateQ3();
         calculateSOV();
-        String detailedSummary = generateDetailedSummary();
-        System.out.println(detailedSummary);
-        writeToFile(detailedSummary, pathToDetailedFile);
-        writeToFile("", pathToSummaryFile); // TODO:
+        writeToFile(generateDetailedSummary(), pathToDetailedFile);
+        writeToFile(generateSummary(), pathToSummaryFile);
         writeToFile(generatePlottingFile(), pathToSecLib+"_toPlot.txt");
-        generateSummary();
-        try {
-            String command = "python3 plotBoxplots.py " + pathToSecLib+"_toPlot.txt";
-            //String command = "python3 For debugging";
 
-            // Create ProcessBuilder
-            ProcessBuilder pb = new ProcessBuilder(command.split(" "));
-
-            // Start the process
-            Process process = pb.start();
-        } catch (IOException e) {
-            e.printStackTrace();
+        if (plot) {
+            try {
+                String command = "python3 plotBoxplots.py " + pathToSecLib+"_toPlot.txt";
+                // Create ProcessBuilder
+                ProcessBuilder pb = new ProcessBuilder(command.split(" "));
+                // Start the process
+                Process process = pb.start();
+            } catch (IOException e) { e.printStackTrace(); }
         }
     }
 
@@ -171,17 +167,13 @@ public class ValidateGOR {
                 totalNi += ni;
                 double sovPerSecType = 100.0 * (1.0 / ni) * rightSum;
                 sequence.getStatValues().put("SOV_" + secType, sovPerSecType);
-                if (Double.isNaN(sovPerSecType)) {
-                    this.summaryScores.get("SOV_" + secType).add(0.0);
-                } else {
+                if (!(Double.isNaN(sovPerSecType))) {
                     this.summaryScores.get("SOV_" + secType).add(sovPerSecType);
                 }
             }
             double sovTotal = 100.0 * (1.0 / totalNi) * totalSov;
             sequence.getStatValues().put("SOV", sovTotal);
-            if (Double.isNaN(sovTotal)) {
-                this.summaryScores.get("SOV").add(0.0);
-            } else {
+            if (!(Double.isNaN(sovTotal))) {
                 this.summaryScores.get("SOV").add(sovTotal);
             }
 
@@ -252,9 +244,7 @@ public class ValidateGOR {
             double q3 = 100.0 * countMatch / seqLength;
             String keyToValue = "Q3"; // build key :)
             sequence.getStatValues().put(keyToValue, q3);
-            if (Double.isNaN(q3)) {
-                this.summaryScores.get("q3").add(0.0);
-            } else {
+            if (!(Double.isNaN(q3))) {
                 this.summaryScores.get("q3").add(q3);
             }
         }
@@ -304,16 +294,13 @@ public class ValidateGOR {
     public String generateSummary() {
         StringBuilder sb = new StringBuilder();
         int numOfProteins = this.sequenceHashMap.size();
-        //int sumOfProtLength = sequenceHashMap.values().stream().mapToInt(Sequence.getLength).sum();
-        int sumOfProtLength = 1;
+        int sumOfProtLength = this.sequenceHashMap.values().stream().mapToInt(Sequence::getLength).sum();
         double meanOfProtLength = 1.0 * sumOfProtLength / numOfProteins;
-
-        int sumOfPredPos = 0;
-        for (Sequence s : sequenceHashMap.values()) {
-            if (s.getSsSequence().length() >= Constants.WINDOW_SIZE.getValue()) {
-                sumOfPredPos += s.getAaSequence().length() - Constants.WINDOW_SIZE.getValue() - 1;
-            }
-        }
+        double sumOfPredPos = sequenceHashMap.values()
+                .stream()
+                .flatMap(seq -> seq.getSsSequence().chars().mapToObj(c -> (char) c))
+                .filter(c -> c != '-')
+                .count();
 
         sb.append("\n");
         sb.append("Statistic for protein validation \n\n");
@@ -328,7 +315,7 @@ public class ValidateGOR {
             }
         }
 
-        System.out.println(sb.toString());
+        // System.out.println(sb.toString());
         // sb.append("Sum of Predicted Positions:   "+  + "\n");
         return sb.toString();
     }
