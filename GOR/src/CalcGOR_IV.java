@@ -81,4 +81,8 @@ public class CalcGOR_IV {
         }
         return sb.toString();
     }
+
+    public ArrayList<Sequence> getSequencesToPredict() {
+        return sequencesToPredict;
+    }
 }

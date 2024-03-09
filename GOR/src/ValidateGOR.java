@@ -37,16 +37,17 @@ public class ValidateGOR {
         for (char ss : secStructs) {
             calculateQ0(ss);
         }
+
         calculateQ3();
         calculateSOV();
-        Sequence t = sequenceHashMap.get("TEST");
-        System.out.println(t.getId());
-        System.out.println(t.getValiSeq());
-        System.out.println(t.getSsSequence());
-        System.out.println(t.getStatValues().get("QH"));
-        System.out.println(t.getStatValues().get("QC"));
-        System.out.println(t.getStatValues().get("QE"));
-        System.out.println(t.getStatValues().get("Q3"));
+        // Sequence t = sequenceHashMap.get("TEST");
+        // System.out.println(t.getId());
+        // System.out.println(t.getValiSeq());
+        // System.out.println(t.getSsSequence());
+        // System.out.println(t.getStatValues().get("QH"));
+        // System.out.println(t.getStatValues().get("QC"));
+        // System.out.println(t.getStatValues().get("QE"));
+        // System.out.println(t.getStatValues().get("Q3"));
     }
 
     public void readPredictions(String pathToPredictions) throws IOException {
@@ -55,6 +56,22 @@ public class ValidateGOR {
         ArrayList<String> lines = FileUtils.readLines(seqLibFile);
 
         // we read the predictions and store the predicted ss struct in a hashmap >:)
+        HashMap<String, String> idToPrediction = getStringStringHashMap(lines);
+
+        // now add the predictions to the Sequences of validation
+        for (String id : idToPrediction.keySet()) {
+            if (sequenceHashMap.containsKey(id)) {
+                Sequence currSeq = sequenceHashMap.get(id);
+                currSeq.setSsSequence(idToPrediction.get(id));
+            }
+            // error handling
+            else {
+                System.out.println("Predictions contain sequences which are not present in ");
+            }
+        }
+    }
+
+    private HashMap<String, String> getStringStringHashMap(ArrayList<String> lines) {
         HashMap<String, String> idToPrediction = new HashMap<>();
         for (int i = 0; i < lines.size(); i++) {
             String currLine = lines.get(i);
@@ -64,16 +81,7 @@ public class ValidateGOR {
                 idToPrediction.put(pdbId, predSecStruct);
             }
         }
-
-        for (String id : idToPrediction.keySet()) {
-            if (sequenceHashMap.containsKey(id)) {
-                Sequence currSeq = sequenceHashMap.get(id);
-                currSeq.setSsSequence(idToPrediction.get(id));
-            } else {
-                System.out.println("Predictions contain sequences which are not present in ");
-            }
-
-        }
+        return idToPrediction;
     }
 
     public HashMap<String, Sequence> readSecLibFile(String pathToFile) throws IOException {
@@ -99,16 +107,20 @@ public class ValidateGOR {
     public void calculateSOV() {
         ArrayList<SequenceSegment> segsOfVali = new ArrayList<>();
         ArrayList<SequenceSegment> segsOfPred = new ArrayList<>();
+
         for (Sequence sequence : this.sequenceHashMap.values()) {
             segsOfVali = getSegments(sequence.getValiSeq());
             segsOfPred = getSegments(sequence.getSsSequence());
         }
+
+        // generate overlaps for validationSegments
         generateOverlaps(segsOfVali, segsOfPred);
+
         for (SequenceSegment segment: segsOfVali) {
-            System.out.println("SEGMENT " + segment.getStartIndex() + " " + segment.getEndIndex());
+            // System.out.println("SEGMENT " + segment.getStartIndex() + " " + segment.getEndIndex());
             for (SequenceSegment oSeq: segment.getOverLaps()) {
-                // System.out.println("MAX OV " + segment.getMaxOverlaps(oSeq));
-                // System.out.println("MIN OV " + segment.getMinOverlaps(oSeq));
+                System.out.println("MAX OV " + segment.getMaxOverlaps(oSeq));
+                System.out.println("MIN OV " + segment.getMinOverlaps(oSeq));
                 System.out.println(calculateDelta(segment, oSeq));
             }
         }

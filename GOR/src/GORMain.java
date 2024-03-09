@@ -60,6 +60,12 @@ public class GORMain {
             int gorType = getGorType(pathToModel);
             CalcGOR_V gor_v = new CalcGOR_V(pathToModel, mafPath, gorType, probabilities);
             gor_v.predict();
+            if (format.equals("txt")) {
+                System.out.println(gor_v.predictionsToString(probabilities));
+            }
+            else if (format.equals("html")) {
+
+            }
 
         }
     }

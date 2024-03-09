@@ -22,7 +22,6 @@ public class CalcGOR_V {
         for(Sequence aliSeq: sequencesToPredict) {
            gorX.predictGorV(aliSeq);
         }
-        System.out.println(this.predictionsToString(this.probabilities));
     }
 
     public String predictionsToString(boolean probabilities) {
@@ -59,5 +58,9 @@ public class CalcGOR_V {
         }
 
         return sb.toString();
+    }
+
+    public ArrayList<Sequence> getSequencesToPredict() {
+        return sequencesToPredict;
     }
 }
