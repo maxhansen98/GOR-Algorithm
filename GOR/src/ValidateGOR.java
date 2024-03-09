@@ -117,26 +117,35 @@ public class ValidateGOR {
 
         // generate overlaps for validationSegments
         generateOverlaps(segsOfVali, segsOfPred);
-
+        double totalSov = 0;
+        int totalNi = 0;
         for (char secType : secStructs) {
             int ni = 0;
             for (SequenceSegment segment: segsOfVali) {
 
                 if (segment.getSecStruct() == secType) {
                     double rightSum = 0.0;
-                    ni += segment.getAbsLength();
+                    if (segment.getOverLaps().size() == 0) {
+                        ni += segment.getAbsLength();
+                    } else {
+                        ni += segment.getAbsLength() * segment.getOverLaps().size();
+                    }
 
                     for (SequenceSegment oSeq: segment.getOverLaps()) {
                         double minOv = Math.min(segment.getMaxOverlaps(oSeq), segment.getMinOverlaps(oSeq));
                         double delta = calculateDelta(segment, oSeq);
                         double maxOv = Math.max(segment.getMaxOverlaps(oSeq), segment.getMinOverlaps(oSeq));
-                        rightSum += (minOv + delta) / maxOv;
+                        rightSum += ((minOv + delta) / maxOv) * segment.getAbsLength();
                     }
-                    System.out.println("rightSum " + rightSum);
-                    double sovC = 100.0 * (1.0 / ni) * rightSum * segment.getAbsLength();
+                    totalSov += rightSum;
+                    totalNi += ni;
                 }
             }
+            double sovPerSec = 100.0 * (1.0 / ni) * rightSum;
+            System.out.println("SOV "+ secType + " " + sovPerSec);
         }
+        double sovTotal = 100.0 * (1.0 / totalNi) * totalSov;
+        System.out.println(sovTotal);
     }
 
     public void generateOverlaps (ArrayList<SequenceSegment> segsOfVali, ArrayList<SequenceSegment> segsOfPred) {
