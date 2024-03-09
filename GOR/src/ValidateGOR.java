@@ -4,6 +4,7 @@ import utils.FileUtils;
 import javax.swing.text.Segment;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.regex.Matcher;
@@ -108,6 +109,7 @@ public class ValidateGOR {
         ArrayList<SequenceSegment> segsOfVali = new ArrayList<>();
         ArrayList<SequenceSegment> segsOfPred = new ArrayList<>();
 
+        // acquire segments of each sequences
         for (Sequence sequence : this.sequenceHashMap.values()) {
             segsOfVali = getSegments(sequence.getValiSeq());
             segsOfPred = getSegments(sequence.getSsSequence());
@@ -116,12 +118,23 @@ public class ValidateGOR {
         // generate overlaps for validationSegments
         generateOverlaps(segsOfVali, segsOfPred);
 
-        for (SequenceSegment segment: segsOfVali) {
-            // System.out.println("SEGMENT " + segment.getStartIndex() + " " + segment.getEndIndex());
-            for (SequenceSegment oSeq: segment.getOverLaps()) {
-                System.out.println("MAX OV " + segment.getMaxOverlaps(oSeq));
-                System.out.println("MIN OV " + segment.getMinOverlaps(oSeq));
-                System.out.println(calculateDelta(segment, oSeq));
+        for (char secType : secStructs) {
+            int ni = 0;
+            for (SequenceSegment segment: segsOfVali) {
+
+                if (segment.getSecStruct() == secType) {
+                    double rightSum = 0.0;
+                    ni += segment.getAbsLength();
+
+                    for (SequenceSegment oSeq: segment.getOverLaps()) {
+                        double minOv = Math.min(segment.getMaxOverlaps(oSeq), segment.getMinOverlaps(oSeq));
+                        double delta = calculateDelta(segment, oSeq);
+                        double maxOv = Math.max(segment.getMaxOverlaps(oSeq), segment.getMinOverlaps(oSeq));
+                        rightSum += (minOv + delta) / maxOv;
+                    }
+                    System.out.println("rightSum " + rightSum);
+                    double sovC = 100.0 * (1.0 / ni) * rightSum * segment.getAbsLength();
+                }
             }
         }
     }
@@ -190,12 +203,11 @@ public class ValidateGOR {
     }
 
      public int calculateDelta(SequenceSegment s1Vali, SequenceSegment s2Pred) {
-         int maxOv = s1Vali.getMaxOverlaps(s2Pred);
-         int minOv = s1Vali.getMinOverlaps(s2Pred); //alpha2
+         int maxOv = Math.max(s1Vali.getMaxOverlaps(s2Pred), s1Vali.getMinOverlaps(s2Pred)) ;
+         int minOv = Math.min(s1Vali.getMaxOverlaps(s2Pred), s1Vali.getMinOverlaps(s2Pred)) ;
          int alpha1 = maxOv - minOv;
-         int alpha3 = s1Vali.getAbsLength() / 2;
-         int alpha4 = s2Pred.getAbsLength() / 2;
-         int test = Math.min(alpha1, Math.min(minOv, Math.min(alpha3, alpha4)));
+         int alpha3 = (int) Math.floor(1.0 * (s1Vali.getAbsLength() / 2));
+         int alpha4 = (int) Math.floor(1.0 * (s2Pred.getAbsLength() / 2));
          return Math.min(alpha1, Math.min(minOv, Math.min(alpha3, alpha4)));
      }
 

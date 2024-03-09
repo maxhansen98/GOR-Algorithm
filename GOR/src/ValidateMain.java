@@ -19,11 +19,8 @@ public class ValidateMain {
         String pathToSummaryFile = ns.getString("s");
         String pathToDetailedFile = ns.getString("d");
         String format = ns.getString("f");
-
         boolean toTxt = format.equals("txt");
 
         ValidateGOR validateGor = new ValidateGOR(pathToSeclibFile, pathToPredictionFile, pathToSummaryFile, toTxt, pathToDetailedFile);
-
-
     }
 }
