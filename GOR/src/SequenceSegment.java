@@ -31,15 +31,15 @@ public class SequenceSegment {
     }
 
     public int getMinOverlaps(SequenceSegment s2) {
-        int maxOverlapEnd = Integer.MIN_VALUE;
-        maxOverlapEnd = Math.max(maxOverlapEnd, s2.getEndIndex());
-        return maxOverlapEnd - startIndex + 1;
+        int start = Math.max(this.startIndex, s2.getStartIndex());
+        int end = Math.min(this.endIndex, s2.getEndIndex());
+        return end - start + 1;
     }
 
     public int getMaxOverlaps(SequenceSegment s2) {
-        int minOverlapStart = Integer.MAX_VALUE;
-        minOverlapStart = Math.min(minOverlapStart, s2.getStartIndex());
-        return endIndex - minOverlapStart + 1;
+        int start = Math.min(this.startIndex, s2.getStartIndex());
+        int end = Math.max(this.endIndex, s2.getEndIndex());
+        return end - start + 1;
     }
 
     public int getAbsLength() {
