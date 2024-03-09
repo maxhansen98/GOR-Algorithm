@@ -42,12 +42,16 @@ public class GORMain {
                 gorI.predict();
                 if (format.equals("txt")){
                     System.out.println(gorI);
+                } else if (format.equals("html")) {
+                    toJson(gorI.getSequencesToPredict());
                 }
             } else if (gorType == 3) {
                 CalcGOR_III gorIII = new CalcGOR_III(pathToModel, fastaPath, probabilities);
                 gorIII.predict();
                 if (format.equals("txt")){
                     System.out.println(gorIII);
+                } else if (format.equals("html")) {
+                    toJson(gorIII.getSequencesToPredict());
                 }
             } else if (gorType == 4) {
                 CalcGOR_IV gorIV = new CalcGOR_IV(pathToModel, fastaPath, probabilities);
@@ -64,7 +68,7 @@ public class GORMain {
                 System.out.println(gor_v.predictionsToString(probabilities));
             }
             else if (format.equals("html")) {
-
+               toJson(gor_v.getSequencesToPredict());
             }
 
         }
@@ -85,6 +89,14 @@ public class GORMain {
         }
         else {
             return -1; // input file is wrong
+        }
+    }
+
+
+    // to html (actually json) method
+    static void toJson(ArrayList<Sequence> sequences) {
+        for (Sequence s : sequences) {
+            System.out.println(s.toJson());
         }
     }
 }

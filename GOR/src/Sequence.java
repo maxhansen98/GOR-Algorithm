@@ -1,3 +1,5 @@
+import constants.Constants;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -88,5 +90,39 @@ public class Sequence {
 
     public HashMap<String, Double> getStatValues() {
         return statValues;
+    }
+    public String toJson() {
+        StringBuilder jsonBuilder = new StringBuilder();
+        StringBuilder tailBuilder = new StringBuilder();
+        jsonBuilder.append("{");
+        jsonBuilder.append("\"id\": \"" + id + "\", ");
+        String ssSeqWithTail = ssSequence;
+        String tail = tailBuilder.append("-".repeat(Math.max(0, Constants.WINDOW_SIZE.getValue()) / 2)).toString();
+        if (!(ssSeqWithTail.endsWith("-"))) {
+            ssSeqWithTail += tail;
+        }
+        jsonBuilder.append("\"aaSequence\": \"" + aaSequence + "\", ");
+        jsonBuilder.append("\"ssSequence\": \"" + ssSeqWithTail + "\", ");
+        jsonBuilder.append("\"valiSeq\": \"" + valiSeq + "\", ");
+
+        jsonBuilder.append("\"normalizedProbabilities\": {");
+        for (char key : normalizedProbabilities.keySet()) {
+            jsonBuilder.append("\"" + key + "\": [");
+            ArrayList<Integer> probs = normalizedProbabilities.get(key);
+            for (int i = 0; i < probs.size(); i++) {
+                jsonBuilder.append(probs.get(i));
+                if (i < probs.size() - 1) {
+                    jsonBuilder.append(", ");
+                }
+            }
+            jsonBuilder.append("], ");
+        }
+        jsonBuilder.deleteCharAt(jsonBuilder.length() - 2);
+        jsonBuilder.append("}, ");
+
+        jsonBuilder.delete(jsonBuilder.length() - 2, jsonBuilder.length());
+        jsonBuilder.append("}");
+
+        return jsonBuilder.toString();
     }
 }
