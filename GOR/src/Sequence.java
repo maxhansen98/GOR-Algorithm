@@ -118,10 +118,8 @@ public class Sequence {
             jsonBuilder.append("], ");
         }
         jsonBuilder.deleteCharAt(jsonBuilder.length() - 2);
-        jsonBuilder.append("}, ");
+        jsonBuilder.append("},\n");
 
-        jsonBuilder.delete(jsonBuilder.length() - 2, jsonBuilder.length());
-        jsonBuilder.append("}");
 
         return jsonBuilder.toString();
     }

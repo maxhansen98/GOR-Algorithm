@@ -46,18 +46,25 @@ public class ValidateGOR {
         }
         calculateQ3();
         calculateSOV();
-        writeToFile(generateDetailedSummary(), pathToDetailedFile);
-        writeToFile(generateSummary(), pathToSummaryFile);
-        writeToFile(generatePlottingFile(), pathToSecLib+"_toPlot.txt");
 
         if (plot) {
             try {
+                // write results to plotting file
+                writeToFile(generatePlottingFile(), pathToSecLib+"_toPlot.txt");
                 String command = "python3 plotBoxplots.py " + pathToSecLib+"_toPlot.txt";
                 // Create ProcessBuilder
                 ProcessBuilder pb = new ProcessBuilder(command.split(" "));
                 // Start the process
                 Process process = pb.start();
             } catch (IOException e) { e.printStackTrace(); }
+        }
+
+        if (toTxt) {
+            writeToFile(generateDetailedSummary(), pathToDetailedFile);
+            writeToFile(generateSummary(), pathToSummaryFile);
+        }
+        else {
+
         }
     }
 
@@ -145,10 +152,12 @@ public class ValidateGOR {
                 int ni = 0;
 
                 for (SequenceSegment segment : segmentsOvserved) {
+
                     if (segment.getSecStruct() == secType) {
                         if (segment.getOverLaps().size() == 0) {
                             ni += segment.getAbsLength();
-                        } else {
+                        }
+                        else {
                             ni += segment.getAbsLength() * segment.getOverLaps().size();
                         }
 
@@ -160,7 +169,6 @@ public class ValidateGOR {
                         }
                     }
                 }
-
                 if (!Double.isNaN((rightSum))) {
                     totalSov += rightSum;
                 }
@@ -176,7 +184,6 @@ public class ValidateGOR {
             if (!(Double.isNaN(sovTotal))) {
                 this.summaryScores.get("SOV").add(sovTotal);
             }
-
         }
     }
 

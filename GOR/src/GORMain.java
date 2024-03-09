@@ -95,8 +95,13 @@ public class GORMain {
 
     // to html (actually json) method
     static void toJson(ArrayList<Sequence> sequences) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
         for (Sequence s : sequences) {
-            System.out.println(s.toJson());
+            sb.append(s.toJson());
         }
+        sb.deleteCharAt(sb.length() - 2); // deletes the last comma in the last entry "} ," ← this comma :)
+        sb.append("]");
+        System.out.println(sb.toString());
     }
 }
