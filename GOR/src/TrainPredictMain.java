@@ -58,6 +58,7 @@ public class TrainPredictMain {
             trainerGOR4.train(model);
         }
 
+        // test
 
         // PREDICTION
         // either gor1|3|4 or gor5 !!!
