@@ -288,6 +288,10 @@ public class SearchWindow {
                 String output = this.gor3ToString();
                 buf.write(output);
             }
+            else if (this.gorType == 4) {
+                String output = this.gor4ToString();
+                buf.write(output);
+            }
             // Write the output to the file
         } catch (IOException e) {
             e.printStackTrace();
@@ -870,7 +874,9 @@ public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequenc
         double max = Math.max(scoresPerSeq.get('H'), Math.max(scoresPerSeq.get('C'), scoresPerSeq.get('E')));
         // update all probabilities for current sequence
         for (char secType : scoresPerSeq.keySet()) {
+            double score = scoresPerSeq.get(secType);
             sequence.updateProbabilities(secType, scoresPerSeq.get(secType));
+
         }
         if (max == scoresPerSeq.get('H')) {
             return 'H';
@@ -883,21 +889,27 @@ public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequenc
 
     public static void normalizeProbabilities(Sequence sequence) {
         for (char secType : sequence.getProbabilities().keySet()) {
-            ArrayList<Double> probabilities = sequence.getProbabilities().get(secType);
+            if (sequence.getProbabilities().get(secType).size() == 0) {
+                ArrayList<Integer> norm = new ArrayList<>();
+                norm.add(0);
+                sequence.getNormalizedProbabilities().put(secType, norm);
+            } else {
+                ArrayList<Double> probabilities = sequence.getProbabilities().get(secType);
 
-            // probabilities [-2.6, 6.98, -3.1, -21.1, 6.5, ... ]
-            // convert to values between 0 and 9 (normalized probabilities)
-            double maxProb = Collections.max(probabilities);
-            double minProb = Collections.min(probabilities);
-            double diffOfMaxMin = maxProb - minProb;
+                // probabilities [-2.6, 6.98, -3.1, -21.1, 6.5, ... ]
+                // convert to values between 0 and 9 (normalized probabilities)
+                double maxProb = Collections.max(probabilities);
+                double minProb = Collections.min(probabilities);
+                double diffOfMaxMin = maxProb - minProb;
 
-            ArrayList<Integer> normalizedProbabilities = new ArrayList<>();
+                ArrayList<Integer> normalizedProbabilities = new ArrayList<>();
 
-            for (double prob : probabilities) {
-                int normalizedProb = (int) Math.floor((prob - minProb) * (9.0 / diffOfMaxMin));
-                normalizedProbabilities.add(normalizedProb);
+                for (double prob : probabilities) {
+                    int normalizedProb = (int) Math.floor((prob - minProb) * (9.0 / diffOfMaxMin));
+                    normalizedProbabilities.add(normalizedProb);
+                }
+                sequence.getNormalizedProbabilities().put(secType, normalizedProbabilities);
             }
-            sequence.getNormalizedProbabilities().put(secType, normalizedProbabilities);
         }
     }
 

@@ -49,9 +49,12 @@ public class ValidateGOR {
 
         if (plot) {
             try {
+                // path to Summay File= /home/malte/temp/GOR_JARS/vali/validation/gor1_fold1_SUMMARY.txt
+                //String plotPath = pathToSummaryFile.split("\\.")[0] + "_plot.png";
+                String plotData = pathToSummaryFile.split("\\.")[0] + "_plot.scores";
                 // write results to plotting file
-                writeToFile(generatePlottingFile(), pathToSecLib+"_toPlot.txt");
-                String command = "python3 plotBoxplots.py " + pathToSecLib+"_toPlot.txt";
+                writeToFile(generatePlottingFile(), plotData);
+                String command = "python3 plotBoxplots.py " + plotData;
                 // Create ProcessBuilder
                 ProcessBuilder pb = new ProcessBuilder(command.split(" "));
                 // Start the process

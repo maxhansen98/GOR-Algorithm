@@ -20,7 +20,6 @@ public class TrainerGOR1 {
             String ssSequence = sequence.getSsSequence();
             searchWindow.trainGor1(aaSequence, ssSequence, pdbId);
         }
-        searchWindow.writeToFile(pathToModelFile);
     }
 
     // getters and setters

@@ -35,7 +35,7 @@ public class TrainPredict {
         String mafPath = ns.getString("maf");
         String db = ns.getString("db");
         String method = ns.getString("method");
-        String model = ns.getString("model");
+        String model = ns.getString("modelT");
         String pathOut = ns.getString("out");
 
 
@@ -43,6 +43,7 @@ public class TrainPredict {
         if (method.equals("gor1")) {
             TrainerGOR1 trainer = new TrainerGOR1(db, 1);
             trainer.train(model);
+            trainer.getSearchWindow().writeToFile(model);
         } else if (method.equals("gor3")) {
             TrainerGOR3 trainerGOR3 = new TrainerGOR3(db, 3);
             trainerGOR3.train(model);
@@ -50,6 +51,7 @@ public class TrainPredict {
         } else if (method.equals("gor4")) {
             TrainerGOR4 trainerGOR4 = new TrainerGOR4(db, 4);
             trainerGOR4.train(model);
+            trainerGOR4.getSearchWindow().writeToFile(model);
         }
 
         // PREDICTION

@@ -90,7 +90,7 @@ public class CalcGOR_I {
         for (Sequence s : this.sequencesToPredict) {
             // Sequences that were predicted end in eiter [E|C|H] and still need the "-" tail
             if (!(s.getSsSequence().endsWith("-"))) {
-                sb.append("> ").append(s.getId()).append("\n");
+                sb.append(s.getId()).append("\n");
                 sb.append("AS ").append(s.getAaSequence()).append("\n");
                 sb.append("PS ").append(s.getSsSequence());
                 sb.append("-".repeat(Math.max(0, Constants.WINDOW_SIZE.getValue()) / 2));
@@ -99,7 +99,7 @@ public class CalcGOR_I {
             }
             else {
                 // here are sequences that were too short and already have a ss struct like "----"
-                sb.append("> ").append(s.getId()).append("\n");
+                sb.append(s.getId()).append("\n");
                 sb.append("AS ").append(s.getAaSequence()).append("\n");
                 sb.append("PS ").append(s.getSsSequence()).append("\n"); // don't add tail
             }
