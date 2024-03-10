@@ -58,8 +58,6 @@ public class TrainPredictMain {
             trainerGOR4.train(model);
         }
 
-        // test
-
         // PREDICTION
         // either gor1|3|4 or gor5 !!!
         if(mafPath.equals("-1") && fastaPath.equals("-1")) {

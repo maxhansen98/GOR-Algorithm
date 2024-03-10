@@ -1,4 +1,7 @@
 import utils.CmdParser;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -103,5 +106,13 @@ public class GORMain {
         sb.deleteCharAt(sb.length() - 2); // deletes the last comma in the last entry "} ," ← this comma :)
         sb.append("]");
         System.out.println(sb.toString());
+    }
+
+    public static void writeToFile(String content, String pathOfFile) throws IOException {
+        try (BufferedWriter buf = new BufferedWriter(new FileWriter(pathOfFile))) {
+            buf.write(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
