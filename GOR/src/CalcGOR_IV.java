@@ -60,25 +60,39 @@ public class CalcGOR_IV {
         }
     }
 
-    @Override
-    public String toString() {
+    public String predictionsToString(boolean probabilities) {
         StringBuilder sb = new StringBuilder();
         for (Sequence s : this.sequencesToPredict) {
             // Sequences that were predicted end in eiter [E|C|H] and still need the "-" tail
             if (!(s.getSsSequence().endsWith("-"))) {
-                sb.append(s.getId()).append("\n");
+                sb.append("> ").append(s.getId()).append("\n");
                 sb.append("AS ").append(s.getAaSequence()).append("\n");
                 sb.append("PS ").append(s.getSsSequence());
-                sb.append("-".repeat(Math.max(0, window.getWINDOWSIZE() / 2)));
-                sb.append('\n');
+                sb.append("-".repeat(Math.max(0, Constants.WINDOW_SIZE.getValue()) / 2));
+                sb.append("\n");
+
             }
             else {
                 // here are sequences that were too short and already have a ss struct like "----"
-                sb.append(s.getId()).append("\n");
+                sb.append("> ").append(s.getId()).append("\n");
                 sb.append("AS ").append(s.getAaSequence()).append("\n");
                 sb.append("PS ").append(s.getSsSequence()).append("\n"); // don't add tail
             }
+
+            if (probabilities) {
+                char[] orderedSecTypes = {'H', 'E', 'C'};
+                for (char secType: orderedSecTypes) {
+                    sb.append(secType).append("P ");
+                    sb.append("0".repeat(Math.max(0, Constants.WINDOW_SIZE.getValue() / 2)));
+                    for (int i = 0; i < s.getNormalizedProbabilities().get(secType).size(); i++) {
+                        sb.append(s.getNormalizedProbabilities().get(secType).get(i));
+                    }
+                    sb.append("0".repeat(Math.max(0, Constants.WINDOW_SIZE.getValue() / 2)));
+                    sb.append("\n");
+                }
+            }
         }
+
         return sb.toString();
     }
 

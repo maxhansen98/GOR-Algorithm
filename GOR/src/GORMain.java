@@ -44,7 +44,7 @@ public class GORMain {
                 HashMap<Character, Integer> test = gorI.calcStructureOccurrencies();
                 gorI.predict();
                 if (format.equals("txt")){
-                    System.out.println(gorI);
+                    System.out.println(gorI.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
                     toJson(gorI.getSequencesToPredict());
                 }
@@ -52,14 +52,18 @@ public class GORMain {
                 CalcGOR_III gorIII = new CalcGOR_III(pathToModel, fastaPath, probabilities);
                 gorIII.predict();
                 if (format.equals("txt")){
-                    System.out.println(gorIII);
+                    System.out.println(gorIII.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
                     toJson(gorIII.getSequencesToPredict());
                 }
             } else if (gorType == 4) {
                 CalcGOR_IV gorIV = new CalcGOR_IV(pathToModel, fastaPath, probabilities);
                 gorIV.predict();
-                System.out.println(gorIV);
+                if (format.equals("txt")){
+                    System.out.println(gorIV.predictionsToString(probabilities));
+                } else if (format.equals("html")) {
+                    toJson(gorIV.getSequencesToPredict());
+                }
             }
         }
         // GOR V
@@ -73,7 +77,6 @@ public class GORMain {
             else if (format.equals("html")) {
                toJson(gor_v.getSequencesToPredict());
             }
-
         }
     }
 

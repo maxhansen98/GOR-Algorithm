@@ -66,36 +66,35 @@ public class TrainPredict {
                 HashMap<Character, Integer> test = gorI.calcStructureOccurrencies();
                 gorI.predict();
                 if (format.equals("txt")){
-                    System.out.println(gorI);
+                    System.out.println(gorI.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
                     GORMain.toJson(gorI.getSequencesToPredict());
                 }
 
                 if (!(pathOut.equals("-1"))) {
-                    writeToFile(gorI.toString(), pathOut);
+                    writeToFile(gorI.predictionsToString(probabilities), pathOut);
                 }
             } else if (gorType == 3) {
                 CalcGOR_III gorIII = new CalcGOR_III(pathToModel, fastaPath, probabilities);
                 gorIII.predict();
                 if (format.equals("txt")){
-                    System.out.println(gorIII);
+                    System.out.println(gorIII.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
                     GORMain.toJson(gorIII.getSequencesToPredict());
                 }
                 if (!(pathOut.equals("-1"))) {
-                    writeToFile(gorIII.toString(), pathOut);
+                    writeToFile(gorIII.predictionsToString(probabilities), pathOut);
                 }
             } else if (gorType == 4) {
                 CalcGOR_IV gorIV = new CalcGOR_IV(pathToModel, fastaPath, probabilities);
                 gorIV.predict();
                 if (format.equals("txt")){
-                    System.out.println(gorIV);
+                    System.out.println(gorIV.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
                     GORMain.toJson(gorIV.getSequencesToPredict());
                 }
-                System.out.println(gorIV);
                 if (!(pathOut.equals("-1"))) {
-                    writeToFile(gorIV.toString(), pathOut);
+                    writeToFile(gorIV.predictionsToString(probabilities), pathOut);
                 }
             }
         }

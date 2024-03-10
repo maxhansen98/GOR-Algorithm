@@ -42,6 +42,7 @@ public class SearchWindow {
         } else if (gorType == 3) {
             this.initGor3Matrices(this.secStructTypes);
         } else if (gorType == 4) {
+            this.initGor3Matrices(this.secStructTypes);
             this.initGor4Matrices(this.secStructTypes);
         }
     }
@@ -441,8 +442,8 @@ public class SearchWindow {
     /*
     Get all params ready and call addSecondaryCounts and extendSecondarySequence
      */
-    public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequence, int gor, boolean probabilities){
-        String aaSequence = sequence.getAaSequence();
+public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequence, int gor, boolean probabilities){
+    String aaSequence = sequence.getAaSequence();
         if (aaSequence.length() >= this.getWINDOWSIZE()) {
             int windowMid = this.getWINDOWSIZE() / 2; // define mid index
             int windowStop  = aaSequence.length() - windowMid ; // define end index of seq (this is the max val of windowMid)
@@ -457,15 +458,12 @@ public class SearchWindow {
                 char predSecStruct = 'C'; // default
                 if (AA_TO_INDEX.containsKey(aaAtWindoMid)){
                     if (gor == 1) {
-                        // TODO: --probabilities >:)
                         predSecStruct = predictGorI(windowSequence, totalOcc, sequence);
                     }
                     else if (gor == 3) {
-                        // TODO: --probabilities >:)
                         predSecStruct = predictGorIII(windowSequence, sequence);
                     }
                     else if (gor == 4) {
-                        // TODO: --probabilities >:)
                         predSecStruct = predictGorIV(windowSequence, sequence);
                     }
                 }
@@ -473,6 +471,7 @@ public class SearchWindow {
                 sequence.extendSecStruct(predSecStruct);
                 windowMid++;
             }
+            normalizeProbabilities(sequence);
         }
         // if the sequence is too short, just give it "-"
         else {

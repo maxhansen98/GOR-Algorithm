@@ -66,7 +66,6 @@ public class TrainPredictValidateMain {
             return;
         }
 
-        // for gor1 gor3 gor4 we need a fasta path
         if (!(fastaPath.equals("-1"))) {
             int gorType = GORMain.getGorType(pathToModel);
             if (gorType == 1){
@@ -74,7 +73,7 @@ public class TrainPredictValidateMain {
                 HashMap<Character, Integer> test = gorI.calcStructureOccurrencies();
                 gorI.predict();
                 if (format.equals("txt")){
-                    System.out.println(gorI);
+                    System.out.println(gorI.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
                     GORMain.toJson(gorI.getSequencesToPredict());
                 }
@@ -82,14 +81,18 @@ public class TrainPredictValidateMain {
                 CalcGOR_III gorIII = new CalcGOR_III(pathToModel, fastaPath, probabilities);
                 gorIII.predict();
                 if (format.equals("txt")){
-                    System.out.println(gorIII);
+                    System.out.println(gorIII.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
                     GORMain.toJson(gorIII.getSequencesToPredict());
                 }
             } else if (gorType == 4) {
                 CalcGOR_IV gorIV = new CalcGOR_IV(pathToModel, fastaPath, probabilities);
                 gorIV.predict();
-                System.out.println(gorIV);
+                if (format.equals("txt")){
+                    System.out.println(gorIV.predictionsToString(probabilities));
+                } else if (format.equals("html")) {
+                    GORMain.toJson(gorIV.getSequencesToPredict());
+                }
             }
         }
         // GOR V
@@ -103,9 +106,7 @@ public class TrainPredictValidateMain {
             else if (format.equals("html")) {
                 GORMain.toJson(gor_v.getSequencesToPredict());
             }
-
         }
-
 
         boolean toTxt = format.equals("txt");
         boolean plot = ns.getBoolean("b");
