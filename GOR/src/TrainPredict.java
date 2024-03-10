@@ -3,12 +3,15 @@ import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
 import net.sourceforge.argparse4j.inf.Namespace;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 
 import static net.sourceforge.argparse4j.impl.Arguments.storeTrue;
 
-public class TrainPredictMain {
+public class TrainPredict {
+
     public static void main(String[] args) throws ArgumentParserException, IOException {
         ArgumentParser parser = ArgumentParsers.newFor("GOR").build().defaultHelp(true).description("Predict Secondary Structure");
         // GOR TRAIN ARGS
@@ -22,13 +25,7 @@ public class TrainPredictMain {
         parser.addArgument("--probabilities").action(storeTrue());
         parser.addArgument("--seq").setDefault("-1");
         parser.addArgument("--maf").setDefault("-1");
-
-        // VALIDATE GOR
-        parser.addArgument("-p").help("Prediction File");
-        parser.addArgument("-r").help("seclib-file");
-        parser.addArgument("-s").help("summary file");
-        parser.addArgument("-d").help("detailed file");
-        parser.addArgument("-b").action(storeTrue()); // b for boxplot
+        parser.addArgument("--out").setDefault("-1");
 
         Namespace ns = parser.parseArgs(args);
         String pathToModel = ns.getString("model");
@@ -39,11 +36,8 @@ public class TrainPredictMain {
         String db = ns.getString("db");
         String method = ns.getString("method");
         String model = ns.getString("model");
+        String pathOut = ns.getString("out");
 
-        String pathToPredictionFile = ns.getString("p");
-        String pathToSeclibFile = ns.getString("r");
-        String pathToSummaryFile = ns.getString("s");
-        String pathToDetailedFile = ns.getString("d");
 
         // training
         if (method.equals("gor1")) {
@@ -76,6 +70,10 @@ public class TrainPredictMain {
                 } else if (format.equals("html")) {
                     GORMain.toJson(gorI.getSequencesToPredict());
                 }
+
+                if (!(pathOut.equals("-1"))) {
+                    writeToFile(gorI.toString(), pathOut);
+                }
             } else if (gorType == 3) {
                 CalcGOR_III gorIII = new CalcGOR_III(pathToModel, fastaPath, probabilities);
                 gorIII.predict();
@@ -84,10 +82,21 @@ public class TrainPredictMain {
                 } else if (format.equals("html")) {
                     GORMain.toJson(gorIII.getSequencesToPredict());
                 }
+                if (!(pathOut.equals("-1"))) {
+                    writeToFile(gorIII.toString(), pathOut);
+                }
             } else if (gorType == 4) {
                 CalcGOR_IV gorIV = new CalcGOR_IV(pathToModel, fastaPath, probabilities);
                 gorIV.predict();
+                if (format.equals("txt")){
+                    System.out.println(gorIV);
+                } else if (format.equals("html")) {
+                    GORMain.toJson(gorIV.getSequencesToPredict());
+                }
                 System.out.println(gorIV);
+                if (!(pathOut.equals("-1"))) {
+                    writeToFile(gorIV.toString(), pathOut);
+                }
             }
         }
         // GOR V
@@ -101,13 +110,17 @@ public class TrainPredictMain {
             else if (format.equals("html")) {
                 GORMain.toJson(gor_v.getSequencesToPredict());
             }
-
+            if (!(pathOut.equals("-1"))) {
+                writeToFile(gor_v.predictionsToString(probabilities), pathOut);
+            }
         }
+    }
 
-
-        boolean toTxt = format.equals("txt");
-        boolean plot = ns.getBoolean("b");
-
-        ValidateGOR validateGor = new ValidateGOR(pathToSeclibFile, pathToPredictionFile, pathToSummaryFile, toTxt, pathToDetailedFile, plot);
+    public static void writeToFile(String content, String pathOfFile) throws IOException {
+        try (BufferedWriter buf = new BufferedWriter(new FileWriter(pathOfFile))) {
+            buf.write(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
