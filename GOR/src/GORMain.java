@@ -21,6 +21,7 @@ public class GORMain {
         parser.addArgument("--format", "--type").choices("txt", "html").setDefault("txt");
         parser.addArgument("--model").help("File to calculate checksum");
         parser.addArgument("--probabilities").action(storeTrue());
+        parser.addArgument("--post").action(storeTrue());
         parser.addArgument("--seq").setDefault("-1");
         parser.addArgument("--maf").setDefault("-1");
 
@@ -30,19 +31,23 @@ public class GORMain {
         boolean probabilities = ns.get("probabilities");
         String fastaPath = ns.getString("seq");
         String mafPath = ns.getString("maf");
+        boolean postProc = ns.get("post");
 
         // either gor1|3|4 or gor5 !!!
         if(mafPath.equals("-1") && fastaPath.equals("-1")) {
            return;
         }
 
-        // for gor1 gor3 gor4 we need a fasta path
+
+        // store predictions
+        ArrayList<Sequence> predictions = new ArrayList<>();
         if (!(fastaPath.equals("-1"))) {
             int gorType = getGorType(pathToModel);
             if (gorType == 1){
                 CalcGOR_I gorI = new CalcGOR_I(pathToModel, fastaPath, gorType, probabilities);
                 HashMap<Character, Integer> test = gorI.calcStructureOccurrencies();
                 gorI.predict();
+                predictions = gorI.getSequencesToPredict();
                 if (format.equals("txt")){
                     System.out.println(gorI.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
@@ -51,6 +56,7 @@ public class GORMain {
             } else if (gorType == 3) {
                 CalcGOR_III gorIII = new CalcGOR_III(pathToModel, fastaPath, probabilities);
                 gorIII.predict();
+                predictions = gorIII.getSequencesToPredict();
                 if (format.equals("txt")){
                     System.out.println(gorIII.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
@@ -59,6 +65,7 @@ public class GORMain {
             } else if (gorType == 4) {
                 CalcGOR_IV gorIV = new CalcGOR_IV(pathToModel, fastaPath, probabilities);
                 gorIV.predict();
+                predictions = gorIV.getSequencesToPredict();
                 if (format.equals("txt")){
                     System.out.println(gorIV.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
@@ -71,6 +78,7 @@ public class GORMain {
             int gorType = getGorType(pathToModel);
             CalcGOR_V gor_v = new CalcGOR_V(pathToModel, mafPath, gorType, probabilities);
             gor_v.predict();
+            predictions = gor_v.getSequencesToPredict();
             if (format.equals("txt")) {
                 System.out.println(gor_v.predictionsToString(probabilities));
             }

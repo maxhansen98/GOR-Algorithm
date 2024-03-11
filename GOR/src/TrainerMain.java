@@ -10,9 +10,6 @@ public class TrainerMain {
         String db = cmd.getOptionValue("--db");
         String method = cmd.getOptionValue("--method");
         String model = cmd.getOptionValue("--model");
-        // System.out.println(db);
-        // System.out.println(method);
-        // System.out.println(model);
         if (method.equals("gor1")) {
             TrainerGOR1 trainer = new TrainerGOR1(db, 1);
             trainer.train(model);

@@ -20,7 +20,7 @@ public class CalcGOR_V {
 
     public void predict(){
         for(Sequence aliSeq: sequencesToPredict) {
-           gorX.predictGorV(aliSeq);
+           gorX.predictGorV(aliSeq, probabilities);
         }
     }
 
@@ -33,7 +33,7 @@ public class CalcGOR_V {
                 sb.append("AS ").append(s.getAaSequence()).append("\n");
                 sb.append("PS ").append(s.getSsSequence());
                 sb.append("-".repeat(Math.max(0, gorX.getWINDOWSIZE() / 2)));
-                sb.append("\n\n");
+                sb.append("\n");
 
             }
             else {

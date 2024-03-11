@@ -460,22 +460,21 @@ public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequenc
                 // now cut out a subsequence of size window
                 String windowSequence = cutSubsequence(aaSequence, windowMid);
                 char predSecStruct = 'C'; // default
-                if (AA_TO_INDEX.containsKey(aaAtWindoMid)){
-                    if (gor == 1) {
-                        predSecStruct = predictGorI(windowSequence, totalOcc, sequence);
-                    }
-                    else if (gor == 3) {
-                        predSecStruct = predictGorIII(windowSequence, sequence);
-                    }
-                    else if (gor == 4) {
-                        predSecStruct = predictGorIV(windowSequence, sequence);
-                    }
+                if (gor == 1) {
+                    predSecStruct = predictGorI(windowSequence, totalOcc, sequence);
                 }
-
+                else if (gor == 3) {
+                    predSecStruct = predictGorIII(windowSequence, sequence);
+                }
+                else if (gor == 4) {
+                    predSecStruct = predictGorIV(windowSequence, sequence);
+                }
                 sequence.extendSecStruct(predSecStruct);
                 windowMid++;
             }
-            normalizeProbabilities(sequence);
+            if (probabilities) {
+                normProbs(sequence);
+            }
         }
         // if the sequence is too short, just give it "-"
         else {
@@ -520,6 +519,10 @@ public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequenc
                     // sum values into scoresPerSeq
                     scoresPerSeq.put(secType, scoresPerSeq.get(secType) + calcLog(sec, notSec, totalSec, totalNotSec));
                 }
+                else { // add 0.0 prob and make no prediction that way
+                    scoresPerSeq.put(secType, 0.0);
+                    sequence.updateProbabilities(secType, 0.0);
+                }
             }
         }
 
@@ -541,24 +544,34 @@ public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequenc
             int totalNotSec = 0;
             int sec = 0;
             int notSec = 0;
+            if (AA_TO_INDEX.containsKey(aaMid)) {
 
-            totalSec = calculateMatrixColumn(getGor3Matrices().get(aaMid).get(secType));
-            // now we iterate a total of three times ofer the window sequence
-            for (int column = 0; column < windowSequence.length(); column++) {
-                char currAAinWindow = windowSequence.charAt(column);
-                if (AA_TO_INDEX.containsKey(currAAinWindow)) {
-                    int row = AA_TO_INDEX.get(currAAinWindow);
-                    sec = gor3Matrices.get(aaMid).get(secType)[row][column];
+                totalSec = calculateMatrixColumn(getGor3Matrices().get(aaMid).get(secType));
+                // now we iterate a total of three times ofer the window sequence
+                for (int column = 0; column < windowSequence.length(); column++) {
+                    char currAAinWindow = windowSequence.charAt(column);
+                    if (AA_TO_INDEX.containsKey(currAAinWindow)) {
+                        int row = AA_TO_INDEX.get(currAAinWindow);
+                        sec = gor3Matrices.get(aaMid).get(secType)[row][column];
 
-                    for (char antiSecStruct: scoresPerSeq.keySet()) {
-                        // get the negative frequencies
-                        if (secType != antiSecStruct) {
-                            totalNotSec += calculateMatrixColumn(getGor3Matrices().get(aaMid).get(antiSecStruct));
-                            notSec += getGor3Matrices().get(aaMid).get(antiSecStruct)[row][column];
+                        for (char antiSecStruct: scoresPerSeq.keySet()) {
+                            // get the negative frequencies
+                            if (secType != antiSecStruct) {
+                                totalNotSec += calculateMatrixColumn(getGor3Matrices().get(aaMid).get(antiSecStruct));
+                                notSec += getGor3Matrices().get(aaMid).get(antiSecStruct)[row][column];
+                            }
                         }
+                        scoresPerSeq.put(secType, scoresPerSeq.get(secType) + calcLog(sec, notSec, totalSec, totalNotSec));
                     }
-                    scoresPerSeq.put(secType, scoresPerSeq.get(secType) + calcLog(sec, notSec, totalSec, totalNotSec));
+                    else { // add 0.0 prob and make no prediction that way
+                        scoresPerSeq.put(secType, 0.0);
+                        sequence.updateProbabilities(secType, 0.0);
+                    }
                 }
+            }
+            else { // add 0.0 prob and make no prediction that way
+                scoresPerSeq.put(secType, 0.0);
+                sequence.updateProbabilities(secType, 0.0);
             }
         }
 
@@ -627,12 +640,15 @@ public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequenc
                 gor3Sum *= (2.0 * m - 1) / (2.0 * m + 1);
                 scoresPerSeq.put(secType, outerSum - gor3Sum);
             }
-
+            else { // add 0.0 prob and make no prediction that way
+                scoresPerSeq.put(secType, 0.0);
+                sequence.updateProbabilities(secType, 0.0);
+            }
         }
         return getMaxCount(scoresPerSeq, sequence);
     }
 
-    public void predictGorV(Sequence sequence) {
+    public void predictGorV(Sequence sequence, boolean probabilities) {
         String aaSequence =  sequence.getAaSequence();
         ArrayList<String> aliSeqs =  sequence.getAlignmennts();
         if (aaSequence.length() >= this.getWINDOWSIZE()) {
@@ -672,13 +688,10 @@ public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequenc
                 sequence.extendSecStruct(predSecStruct);
                 windowMid++;
             }
-            normalizeProbabilities(sequence);
+            if (probabilities) {
+                normProbs(sequence);
+            }
         }
-        // TODO: edge case handling
-        // if the sequence is too short, just give it "-" and prob 0 etc...
-        else {
-        }
-
     }
     public HashMap<Character, Double> predictForGorType(int gorType, String windowSequence, Sequence sequence) {
         HashMap<Character, Double> scoresPerSeq = new HashMap<>();
@@ -745,8 +758,7 @@ public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequenc
                     scoresPerSeq.put(secType, scoresPerSeq.get(secType) + calcLog(sec, notSec, totalSec, totalNotSec));
                 }
 
-                // we hit "-" in ali seq
-                else if (currAAinWindow == '-') { // add 0.0 prob and make no prediction that way
+                else { // add 0.0 prob and make no prediction that way
                     scoresPerSeq.put(secType, 0.0);
                     sequence.updateProbabilities(secType, 0.0);
                 }
@@ -791,8 +803,7 @@ public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequenc
                         }
                     }
                 }
-                // we hit "-" in ali seq
-                else if (aaMid== '-') { // add 0.0 prob and make no prediction that way
+                else { // add 0.0 prob and make no prediction that way
                     scoresPerSeq.put(secType, 0.0);
                     sequence.updateProbabilities(secType, 0.0);
                 }
@@ -862,11 +873,12 @@ public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequenc
                 gor3Sum *= (2.0 * m - 1) / (2.0 * m + 1);
                 scoresPerSeq.put(secType, outerSum - gor3Sum);
             }
-            // we hit "-" in ali seq
-            else if (centerAA == '-') { // add 0.0 prob and make no prediction that way
+
+            else { // add 0.0 prob and make no prediction that way
                 scoresPerSeq.put(secType, 0.0);
                 sequence.updateProbabilities(secType, 0.0);
             }
+
         }
         return scoresPerSeq;
     }
@@ -887,30 +899,40 @@ public void predictSeqGor(HashMap<Character, Integer> totalOcc, Sequence sequenc
         }
     }
 
-    public static void normalizeProbabilities(Sequence sequence) {
-        for (char secType : sequence.getProbabilities().keySet()) {
-            if (sequence.getProbabilities().get(secType).size() == 0) {
-                ArrayList<Integer> norm = new ArrayList<>();
-                norm.add(0);
-                sequence.getNormalizedProbabilities().put(secType, norm);
-            } else {
-                ArrayList<Double> probabilities = sequence.getProbabilities().get(secType);
+    public void normProbs(Sequence sequence) {
+        // iterate over each pos in seq and grab probabilities
+        if (sequence.getProbabilities().get(secStructTypes[0]).size() != 0) {
+            for (int i = Constants.WINDOW_SIZE.getValue() / 2; i < sequence.getAaSequence().length() - Constants.WINDOW_SIZE.getValue() / 2; i++) {
+                int len = sequence.getAaSequence().length() - Constants.WINDOW_SIZE.getValue() / 2;
 
-                // probabilities [-2.6, 6.98, -3.1, -21.1, 6.5, ... ]
-                // convert to values between 0 and 9 (normalized probabilities)
-                double maxProb = Collections.max(probabilities);
-                double minProb = Collections.min(probabilities);
-                double diffOfMaxMin = maxProb - minProb;
-
-                ArrayList<Integer> normalizedProbabilities = new ArrayList<>();
-
-                for (double prob : probabilities) {
-                    int normalizedProb = (int) Math.floor((prob - minProb) * (9.0 / diffOfMaxMin));
-                    normalizedProbabilities.add(normalizedProb);
+                HashMap<Character, Double> probsPerPos = new HashMap<>();
+                double max = Double.NEGATIVE_INFINITY;
+                double min = Double.POSITIVE_INFINITY;
+                for (char secType : secStructTypes) {
+                    double currVal = sequence.getProbabilities().get(secType).get(i - Constants.WINDOW_SIZE.getValue() / 2);
+                    probsPerPos.put(secType, currVal);
+                    min = Math.min(currVal, min);
+                    max = Math.max(currVal, max);
                 }
-                sequence.getNormalizedProbabilities().put(secType, normalizedProbabilities);
+
+
+                HashMap<Character, Double> normProbsPerPos = new HashMap<>();
+                double totalNormalizedSum = 0;
+                for (char secType : secStructTypes) {
+                    double valueToNormalize = probsPerPos.get(secType);
+                    double normalizedProbability = ((valueToNormalize - min) / (max - min));
+                    normProbsPerPos.put(secType, normalizedProbability);
+                    totalNormalizedSum += normalizedProbability;
+                }
+
+                double factor = 10 / totalNormalizedSum;
+                for (char secType : secStructTypes) {
+                    int normInteger = (int) (normProbsPerPos.get(secType) * factor);
+                    sequence.getNormalizedProbabilities().get(secType).add(normInteger);
+                }
             }
         }
+
     }
 
     private double calcLog(int sec, int notSec, int totalSec, int totalNotSec) {
