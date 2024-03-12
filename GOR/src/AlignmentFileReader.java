@@ -42,7 +42,7 @@ public class AlignmentFileReader {
                 sb.append("-".repeat(Math.max(0,  8)));
                 Sequence currSeq = new Sequence(pdbId, aaSequence,sb.toString());
                 for (int j = 3; j < lines.size(); j++) {
-                   String aliSeq = lines.get(j).substring(2);
+                   String aliSeq = lines.get(j).split(" ")[1];
                    currSeq.addAliSeq(aliSeq);
                 }
                 currSeq.setValiSeq(validationSequenceSecondaryStruct);

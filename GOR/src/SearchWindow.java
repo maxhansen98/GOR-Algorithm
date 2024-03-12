@@ -664,7 +664,9 @@ public class SearchWindow {
 
                 // now do the same for each alignment
                 for (String aliSeq : aliSeqs) {
-                    HashMap<Character, Double> predictionsForAliSeq = predictForGorType(gorType, windowSequence, sequence);
+                    String aliWindowSequence = cutSubsequence(aliSeq, windowMid);
+                    HashMap<Character, Double> predictionsForAliSeq = new HashMap<>();
+                    predictionsForAliSeq = predictForGorType(gorType, aliWindowSequence, sequence);
                     addCountsToSum(globalCounts, predictionsForAliSeq);
                 }
 
@@ -706,7 +708,9 @@ public class SearchWindow {
         for (char secType : global.keySet()) {
             double tmp = global.get(secType);
             double toAdd = scoresToAdd.get(secType);
-            global.put(secType, tmp + toAdd);
+            if (!(Double.isNaN(toAdd))) {
+                global.put(secType, tmp + toAdd);
+            }
         }
     }
 
@@ -742,9 +746,8 @@ public class SearchWindow {
                     }
                     // sum values into scoresPerSeq
                     scoresPerSeq.put(secType, scoresPerSeq.get(secType) + calcLog(sec, notSec, totalSec, totalNotSec));
-                } else { // add 0.0 prob and make no prediction that way
+                } else {
                     scoresPerSeq.put(secType, 0.0);
-                    sequence.updateProbabilities(secType, 0.0);
                 }
             }
         }
@@ -784,11 +787,10 @@ public class SearchWindow {
                             }
                         }
                         scoresPerSeq.put(secType, scoresPerSeq.get(secType) + calcLog(sec, notSec, totalSec, totalNotSec));
+                    } else {
+                        scoresPerSeq.put(secType, 0.0);
                     }
                 }
-            } else { // add 0.0 prob and make no prediction that way
-                scoresPerSeq.put(secType, 0.0);
-                sequence.updateProbabilities(secType, 0.0);
             }
         }
         return scoresPerSeq;
@@ -855,11 +857,10 @@ public class SearchWindow {
                 outerSum *= (2.0 / ((2 * m) + 1));
                 gor3Sum *= (2.0 * m - 1) / (2.0 * m + 1);
                 scoresPerSeq.put(secType, outerSum - gor3Sum);
-            } else { // add 0.0 prob and make no prediction that way
-                scoresPerSeq.put(secType, 0.0);
-                sequence.updateProbabilities(secType, 0.0);
             }
-
+            else {
+                scoresPerSeq.put(secType, 0.0);
+            }
         }
         return scoresPerSeq;
     }
