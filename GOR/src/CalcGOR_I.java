@@ -54,16 +54,14 @@ public class CalcGOR_I {
         String currentId = "";
 
         // init secondary seq with '--------'
-        // TODO: Dynamic Start / End Seq
-        // StringBuilder sb = new StringBuilder();
-        // sb.append("-".repeat(Math.max(0, window.getWINDOWSIZE() / 2)));
-        // sb.append('\n');
+        StringBuilder sb = new StringBuilder();
+        sb.append("-".repeat(Math.max(0, window.getWINDOWSIZE() / 2)));
+        String tail = sb.toString();
 
         while ((line = buff.readLine()) != null) {
             if (line.startsWith(">")) {
                 if (!currentId.isEmpty()) {
-
-                    sequencesToPredict.add(new Sequence(currentId, sequence.toString(), "--------"));
+                    sequencesToPredict.add(new Sequence(currentId, sequence.toString(), tail));
                     sequence.setLength(0); // Clear sequence StringBuilder
                 }
                 currentId = line;

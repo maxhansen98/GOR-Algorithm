@@ -1,3 +1,4 @@
+import constants.Constants;
 import utils.FileUtils;
 
 import java.io.File;
@@ -39,7 +40,7 @@ public class AlignmentFileReader {
                 String pdbId = lines.get(i).substring(2); // get pdb id (maybe useful later
                 String aaSequence  = lines.get(i+1).substring(3); // get AS seq
                 String validationSequenceSecondaryStruct = lines.get(i+2).substring(3); // get actual sec struct
-                sb.append("-".repeat(Math.max(0,  8)));
+                sb.append("-".repeat(Math.max(0, Constants.WINDOW_SIZE.getValue()) / 2));
                 Sequence currSeq = new Sequence(pdbId, aaSequence,sb.toString());
                 for (int j = 3; j < lines.size(); j++) {
                    String aliSeq = lines.get(j).split(" ")[1];

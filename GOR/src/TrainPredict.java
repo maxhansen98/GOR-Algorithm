@@ -1,3 +1,4 @@
+import constants.Constants;
 import net.sourceforge.argparse4j.ArgumentParsers;
 import net.sourceforge.argparse4j.inf.ArgumentParser;
 import net.sourceforge.argparse4j.inf.ArgumentParserException;
@@ -26,6 +27,7 @@ public class TrainPredict {
         parser.addArgument("--seq").setDefault("-1");
         parser.addArgument("--maf").setDefault("-1");
         parser.addArgument("--out").setDefault("-1");
+        parser.addArgument("--w").setDefault("17");
 
         Namespace ns = parser.parseArgs(args);
         String pathToModel = ns.getString("model");
@@ -37,7 +39,10 @@ public class TrainPredict {
         String method = ns.getString("method");
         String model = ns.getString("modelT");
         String pathOut = ns.getString("out");
+        // get window size
+        int wSize = Integer.parseInt(ns.getString("w"));
 
+        Constants.WINDOW_SIZE.setWindowSize(wSize);
 
         // training
         if (method.equals("gor1")) {

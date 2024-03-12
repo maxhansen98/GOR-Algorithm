@@ -28,16 +28,14 @@ public class CalcGOR_IV {
         StringBuilder sequence = new StringBuilder();
         ArrayList<Sequence> sequencesToPredict = new ArrayList<>();
         String currentId = "";
+        StringBuilder sb = new StringBuilder();
+        String tail = sb.append("-".repeat(Math.max(0, window.getWINDOWSIZE() / 2))).toString();
 
         while ((line = buff.readLine()) != null) {
             if (line.startsWith(">")) {
                 if (!currentId.isEmpty()) {
-                    // TODO: Dynamic Start / End Seq
-                    // init secondary seq with default '--------'
-                    // String startSeq = sb.append("-".repeat(Math.max(0, Constants.WINDOW_SIZE.getValue()) / 2)).toString();
-                    sequencesToPredict.add(new Sequence(currentId, sequence.toString(), "--------"));
+                    sequencesToPredict.add(new Sequence(currentId, sequence.toString(), tail));
                     sequence.setLength(0); // Clear sequence StringBuilder
-
                 }
                 currentId = line;
             } else {
@@ -47,7 +45,7 @@ public class CalcGOR_IV {
 
         // Add the last sequence (if any)
         if (!currentId.isEmpty()) {
-            sequencesToPredict.add(new Sequence(currentId, sequence.toString(), "--------"));
+            sequencesToPredict.add(new Sequence(currentId, sequence.toString(), tail));
         }
 
         buff.close(); // Close the BufferedReader

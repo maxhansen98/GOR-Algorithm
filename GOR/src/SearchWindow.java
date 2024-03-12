@@ -514,6 +514,7 @@ public class SearchWindow {
                         }
                     }
                     // sum values into scoresPerSeq
+                    double t = scoresPerSeq.get(secType) + calcLog(sec, notSec, totalSec, totalNotSec);
                     scoresPerSeq.put(secType, scoresPerSeq.get(secType) + calcLog(sec, notSec, totalSec, totalNotSec));
                 } else { // add 0.0 prob and make no prediction that way
                     scoresPerSeq.put(secType, 0.0);

@@ -40,7 +40,7 @@ public class CalcGOR_V {
                 // here are sequences that were too short and already have a ss struct like "----"
                 sb.append("> ").append(s.getId()).append("\n");
                 sb.append("AS ").append(s.getAaSequence()).append("\n");
-                sb.append("PS ").append(s.getSsSequence()).append("\n\n"); // don't add tail
+                sb.append("PS ").append("-".repeat(Math.max(0, s.getAaSequence().length()))).append("\n\n"); // don't add tail
             }
 
             if (probabilities) {
