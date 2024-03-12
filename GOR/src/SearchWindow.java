@@ -1,4 +1,3 @@
-import com.sun.security.jgss.GSSUtil;
 import constants.Constants;
 import utils.FileUtils;
 
@@ -7,8 +6,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 
 public class SearchWindow {
@@ -17,8 +14,10 @@ public class SearchWindow {
     private final HashMap<String, int[][]> gor4Matrices = new HashMap<>();
     private final HashMap<Integer, Character> INDEX_TO_AA = new HashMap<>();
     private final HashMap<Character, Integer> AA_TO_INDEX = new HashMap<>();
+    private final double GOR4PSEUDO_COUNT = 1e-10;
+
     private final char[] secStructTypes = {'H', 'E', 'C'};
-    private int gorType;
+    private final int gorType;
 
     public void initAAHashMaps() {
         char[] aminoAcids = {'A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y'};
@@ -869,9 +868,7 @@ public class SearchWindow {
         double max = Math.max(scoresPerSeq.get('H'), Math.max(scoresPerSeq.get('C'), scoresPerSeq.get('E')));
         // update all probabilities for current sequence
         for (char secType : scoresPerSeq.keySet()) {
-            double score = scoresPerSeq.get(secType);
             sequence.updateProbabilities(secType, scoresPerSeq.get(secType));
-
         }
         if (max == scoresPerSeq.get('H')) {
             return 'H';
@@ -886,7 +883,6 @@ public class SearchWindow {
         // iterate over each pos in seq and grab probabilities
         if (sequence.getProbabilities().get(secStructTypes[0]).size() != 0) {
             for (int i = Constants.WINDOW_SIZE.getValue() / 2; i < sequence.getAaSequence().length() - Constants.WINDOW_SIZE.getValue() / 2; i++) {
-                int len = sequence.getAaSequence().length() - Constants.WINDOW_SIZE.getValue() / 2;
 
                 HashMap<Character, Double> probsPerPos = new HashMap<>();
                 double max = Double.NEGATIVE_INFINITY;
@@ -925,17 +921,11 @@ public class SearchWindow {
     }
 
     private double gor4Log(double P_s_j, double P_s_not_j) {
-        double res = Math.log((P_s_j + 1e-10) / (P_s_not_j + 1e-10));
-        return res;
+        return Math.log((P_s_j + GOR4PSEUDO_COUNT) / (P_s_not_j + GOR4PSEUDO_COUNT));
     }
-
 
     public String cutSubsequence(String aaSequence, int windowMid) {
         return aaSequence.substring(windowMid - this.getWINDOWSIZE() / 2, windowMid + this.getWINDOWSIZE() / 2 + 1);
-    }
-
-    public HashMap<String, int[][]> getGor4Matrices() {
-        return this.gor4Matrices;
     }
 
     public int calculateMatrixColumn(int[][] matrix) {
