@@ -15,10 +15,9 @@ public class TrainerGOR1 {
         // for each entry, init
         for (Sequence sequence: this.trainingSequences) {
             // get entry content in readable vars
-            String pdbId = sequence.getId();
             String aaSequence = sequence.getAaSequence();
             String ssSequence = sequence.getSsSequence();
-            searchWindow.trainGor1(aaSequence, ssSequence, pdbId);
+            searchWindow.trainGor1(aaSequence, ssSequence);
         }
     }
 

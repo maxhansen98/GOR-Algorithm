@@ -45,9 +45,9 @@ public class GORMain {
             int gorType = getGorType(pathToModel);
             if (gorType == 1){
                 CalcGOR_I gorI = new CalcGOR_I(pathToModel, fastaPath, gorType, probabilities);
-                HashMap<Character, Integer> test = gorI.calcStructureOccurrencies();
+                //HashMap<Character, Integer> test = gorI.calcStructureOccurrencies();
                 gorI.predict();
-                predictions = gorI.getSequencesToPredict();
+                predictions = gorI.getSequencesToPredict(); // for post processing
                 if (format.equals("txt")){
                     System.out.println(gorI.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
@@ -56,7 +56,7 @@ public class GORMain {
             } else if (gorType == 3) {
                 CalcGOR_III gorIII = new CalcGOR_III(pathToModel, fastaPath, probabilities);
                 gorIII.predict();
-                predictions = gorIII.getSequencesToPredict();
+                predictions = gorIII.getSequencesToPredict();  // for post processing
                 if (format.equals("txt")){
                     System.out.println(gorIII.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
@@ -65,7 +65,7 @@ public class GORMain {
             } else if (gorType == 4) {
                 CalcGOR_IV gorIV = new CalcGOR_IV(pathToModel, fastaPath, probabilities);
                 gorIV.predict();
-                predictions = gorIV.getSequencesToPredict();
+                predictions = gorIV.getSequencesToPredict();  // for post processing
                 if (format.equals("txt")){
                     System.out.println(gorIV.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
@@ -78,7 +78,7 @@ public class GORMain {
             int gorType = getGorType(pathToModel);
             CalcGOR_V gor_v = new CalcGOR_V(pathToModel, mafPath, gorType, probabilities);
             gor_v.predict();
-            predictions = gor_v.getSequencesToPredict();
+            predictions = gor_v.getSequencesToPredict();  // for post processing
             if (format.equals("txt")) {
                 System.out.println(gor_v.predictionsToString(probabilities));
             }

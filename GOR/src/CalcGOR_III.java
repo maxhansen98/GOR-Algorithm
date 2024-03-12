@@ -32,7 +32,7 @@ public class CalcGOR_III {
         String currentId = "";
 
         // init secondary seq with '--------'
-        // TODO:
+        // TODO: Dynamic Start / End Seq
         // StringBuilder sb = new StringBuilder();
         // sb.append("-".repeat(Math.max(0, window.getWINDOWSIZE() / 2)));
         // sb.append("\n");

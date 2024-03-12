@@ -32,6 +32,7 @@ public class CalcGOR_IV {
         while ((line = buff.readLine()) != null) {
             if (line.startsWith(">")) {
                 if (!currentId.isEmpty()) {
+                    // TODO: Dynamic Start / End Seq
                     // init secondary seq with default '--------'
                     // String startSeq = sb.append("-".repeat(Math.max(0, Constants.WINDOW_SIZE.getValue()) / 2)).toString();
                     sequencesToPredict.add(new Sequence(currentId, sequence.toString(), "--------"));

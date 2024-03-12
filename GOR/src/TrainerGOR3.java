@@ -13,10 +13,9 @@ public class TrainerGOR3 extends TrainerGOR1 {
         // for each entry, init
         for (Sequence sequence: this.getTrainingSequences()) {
             // get entry content in readable vars
-            String pdbId = sequence.getId();
             String aaSequence = sequence.getAaSequence();
             String ssSequence = sequence.getSsSequence();
-            this.getSearchWindow().trainGor3(aaSequence, ssSequence, pdbId);
+            this.getSearchWindow().trainGor3(aaSequence, ssSequence);
         }
         // this.getSearchWindow().writeToFile(pathToModelFile);
     }

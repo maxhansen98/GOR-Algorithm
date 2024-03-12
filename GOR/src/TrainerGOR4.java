@@ -1,7 +1,6 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class TrainerGOR4 extends TrainerGOR1 {
 
@@ -17,10 +16,9 @@ public class TrainerGOR4 extends TrainerGOR1 {
         // for each entry, init
         for (Sequence sequence: this.getTrainingSequences()) {
             // get entry content in readable vars
-            String pdbId = sequence.getId();
             String aaSequence = sequence.getAaSequence();
             String ssSequence = sequence.getSsSequence();
-            this.getSearchWindow().trainGor4(aaSequence, ssSequence, pdbId);
+            this.getSearchWindow().trainGor4(aaSequence, ssSequence);
         }
         this.trainerGOR3.train(pathToModelFile);
         writeGor4ToFile(pathToModelFile);
