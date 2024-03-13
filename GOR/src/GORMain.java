@@ -26,6 +26,8 @@ public class GORMain {
         parser.addArgument("--seq").setDefault("-1");
         parser.addArgument("--maf").setDefault("-1");
 
+        parser.addArgument("--out").setDefault("-1");
+
         Namespace ns = parser.parseArgs(args);
         String pathToModel = ns.getString("model");
         String format = ns.getString("format");
@@ -33,6 +35,7 @@ public class GORMain {
         String fastaPath = ns.getString("seq");
         String mafPath = ns.getString("maf");
         boolean postProc = ns.get("post");
+        String pathOut = ns.getString("out");
 
         // either gor1|3|4 or gor5 !!!
         if(mafPath.equals("-1") && fastaPath.equals("-1")) {
@@ -53,10 +56,14 @@ public class GORMain {
                     predictions = gorI.getSequencesToPredict(); // for post processing
                     postProcess(predictions);
                 }
+
                 if (format.equals("txt")){
                     System.out.println(gorI.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
                     toJson(gorI.getSequencesToPredict());
+                }
+                if (!(pathOut.equals("-1"))) {
+                    writeToFile(gorI.predictionsToString(probabilities), pathOut);
                 }
             } else if (gorType == 3) {
                 CalcGOR_III gorIII = new CalcGOR_III(pathToModel, fastaPath, probabilities);
@@ -71,6 +78,10 @@ public class GORMain {
                 } else if (format.equals("html")) {
                     toJson(gorIII.getSequencesToPredict());
                 }
+
+                if (!(pathOut.equals("-1"))) {
+                    writeToFile(gorIII.predictionsToString(probabilities), pathOut);
+                }
             } else if (gorType == 4) {
                 CalcGOR_IV gorIV = new CalcGOR_IV(pathToModel, fastaPath, probabilities);
                 gorIV.predict();
@@ -82,6 +93,9 @@ public class GORMain {
                     System.out.println(gorIV.predictionsToString(probabilities));
                 } else if (format.equals("html")) {
                     toJson(gorIV.getSequencesToPredict());
+                }
+                if (!(pathOut.equals("-1"))) {
+                    writeToFile(gorIV.predictionsToString(probabilities), pathOut);
                 }
             }
         }
@@ -99,6 +113,9 @@ public class GORMain {
             }
             else if (format.equals("html")) {
                toJson(gor_v.getSequencesToPredict());
+            }
+            if (!(pathOut.equals("-1"))) {
+                writeToFile(gor_v.predictionsToString(probabilities), pathOut);
             }
         }
     }

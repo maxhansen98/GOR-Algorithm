@@ -34,7 +34,7 @@ public class CalcGOR_III {
         // init secondary seq with '--------'
         // TODO: Dynamic Start / End Seq
         StringBuilder sb = new StringBuilder();
-        String tail = sb.append("-".repeat(Math.max(0, window.getWINDOWSIZE() / 2))).toString();
+        String tail = sb.append("-".repeat(Math.max(0, Constants.WINDOW_SIZE.getValue() / 2))).toString();
 
         while ((line = buff.readLine()) != null) {
             if (line.startsWith(">")) {
@@ -50,7 +50,7 @@ public class CalcGOR_III {
 
         // Add the last sequence (if any)
         if (!currentId.isEmpty()) {
-            sequencesToPredict.add(new Sequence(currentId, sequence.toString(), "--------"));
+            sequencesToPredict.add(new Sequence(currentId, sequence.toString(), tail));
         }
 
         buff.close(); // Close the BufferedReader

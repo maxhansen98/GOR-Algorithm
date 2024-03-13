@@ -55,7 +55,7 @@ public class CalcGOR_I {
 
         // init secondary seq with '--------'
         StringBuilder sb = new StringBuilder();
-        sb.append("-".repeat(Math.max(0, window.getWINDOWSIZE() / 2)));
+        sb.append("-".repeat(Math.max(0, Constants.WINDOW_SIZE.getValue() / 2)));
         String tail = sb.toString();
 
         while ((line = buff.readLine()) != null) {
@@ -72,7 +72,7 @@ public class CalcGOR_I {
 
         // Add the last sequence (if any)
         if (!currentId.isEmpty()) {
-            sequencesToPredict.add(new Sequence(currentId, sequence.toString(), "--------"));
+            sequencesToPredict.add(new Sequence(currentId, sequence.toString(), tail));
         }
 
         buff.close(); // Close the BufferedReader

@@ -29,7 +29,7 @@ public class CalcGOR_IV {
         ArrayList<Sequence> sequencesToPredict = new ArrayList<>();
         String currentId = "";
         StringBuilder sb = new StringBuilder();
-        String tail = sb.append("-".repeat(Math.max(0, window.getWINDOWSIZE() / 2))).toString();
+        String tail = sb.append("-".repeat(Math.max(0, Constants.WINDOW_SIZE.getValue()) / 2)).toString();
 
         while ((line = buff.readLine()) != null) {
             if (line.startsWith(">")) {
