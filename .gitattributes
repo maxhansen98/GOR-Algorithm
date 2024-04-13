@@ -1,5 +1,2 @@
-*.java   merge=ours
-*.java   diff=java
-*.java   linguist-vendored
-
-*.py     diff=python
+*.java   merge=ours diff=java linguist-vendored=false
+*.py     diff=python linguist-vendored=false
