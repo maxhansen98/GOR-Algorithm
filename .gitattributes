@@ -1,0 +1,5 @@
+*.java   merge=ours
+*.java   diff=java
+*.java   linguist-vendored
+
+*.py     diff=python
