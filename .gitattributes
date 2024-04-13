@@ -1,2 +1,4 @@
+* linguist-vendored
 *.java   merge=ours diff=java linguist-vendored=false
+*.jar    merge=ours diff=java linguist-vendored=false
 *.py     diff=python linguist-vendored=false
